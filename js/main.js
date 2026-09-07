@@ -3,7 +3,31 @@
  * Handles mobile drawer, header scroll, app filtering, toasts, and form submission.
  */
 
+// Immediate Theme Application (Prevents Flash of Unstyled Theme)
+(function initThemeEarly() {
+  try {
+    const savedTheme = localStorage.getItem('rg_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  } catch (e) {}
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Theme Toggle Handler
+  const themeToggles = document.querySelectorAll('.theme-toggle, #themeToggleBtn');
+  themeToggles.forEach(toggleBtn => {
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      try {
+        localStorage.setItem('rg_theme', newTheme);
+      } catch (e) {}
+      if (typeof showToast === 'function') {
+        showToast(`Theme switched to ${newTheme.toUpperCase()} mode`, 'info');
+      }
+    });
+  });
+
   // 1. Sticky Header scroll effect
   const header = document.querySelector('.site-header');
   if (header) {
