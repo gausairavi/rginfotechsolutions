@@ -3,290 +3,217 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download The Grand Athlete App | Peak Performance & Biometric Tracking</title>
-  <meta name="description" content="Download The Grand Athlete App for Android. Advanced athletic conditioning, workout analytics, and recovery metrics engineered by RG Infotech Solutions.">
-  <link rel="stylesheet" href="../../css/style.css">
+  <title>Redirecting to The Grand Athlete on Google Play...</title>
+  <meta name="description" content="Download The Grand Athlete on Google Play Store. Smart workout, nutrition & daily athlete companion.">
+  <meta name="theme-color" content="#08090C">
+  
+  <!-- Immediate Refresh Redirect -->
+  <meta http-equiv="refresh" content="0; url=https://play.google.com/store/apps/details?id=com.thegrandathlete.app">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #08090C;
+      --bg-surface: #10121A;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --primary: #FF6E40;
+      --primary-glow: rgba(255, 110, 64, 0.35);
+      --accent-green: #00E676;
+      --text-main: #FFFFFF;
+      --text-secondary: #9E9EB8;
+      --text-muted: #64647A;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius-lg: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ambient Glow */
+    body::before {
+      content: '';
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(255, 110, 64, 0.18) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .redirect-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      max-width: 480px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px var(--primary-glow);
+      border: 2px solid rgba(255, 110, 64, 0.4);
+    }
+
+    .spinner-ring {
+      width: 48px;
+      height: 48px;
+      border: 3px solid rgba(255, 110, 64, 0.15);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .playstore-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      background: linear-gradient(135deg, #FF6E40 0%, #FF8A65 100%);
+      color: #000;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.9rem 2rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 8px 25px var(--primary-glow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      width: 100%;
+    }
+
+    .playstore-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(255, 110, 64, 0.5);
+    }
+
+    .fallback-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+  </style>
+
+  <script>
+    // Direct instantaneous redirection to Google Play Store
+    (function directPlayStoreRedirect() {
+      const playStorePackage = "com.thegrandathlete.app";
+      const webUrl = "https://play.google.com/store/apps/details?id=" + playStorePackage;
+      const marketUrl = "market://details?id=" + playStorePackage;
+      const isAndroid = /Android/i.test(navigator.userAgent);
+
+      if (isAndroid) {
+        // Attempt native Play Store application intent on Android devices
+        window.location.href = marketUrl;
+        // Fallback to Web Play Store URL after brief interval if native market intent doesn't resolve
+        setTimeout(function() {
+          window.location.replace(webUrl);
+        }, 500);
+      } else {
+        // Direct browser navigation to Google Play Store
+        window.location.replace(webUrl);
+      }
+    })();
+  </script>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <header class="site-header" id="siteHeader">
-    <div class="container nav-container">
-      <a href="../../index.html" class="logo-link">
-        <div class="logo-badge">RG</div>
-        <div class="logo-text">RG <span>Infotech</span></div>
-      </a>
+  <div class="redirect-card">
+    <img src="assets/icon.png" alt="The Grand Athlete App Icon" class="app-icon" onerror="this.src='assets/logo.png'">
+    
+    <div class="spinner-ring"></div>
 
-      <nav>
-        <ul class="nav-links">
-          <li><a href="../../index.html" class="nav-link">Home</a></li>
-          <li><a href="../../portfolio.html" class="nav-link">App Portfolio</a></li>
-          <li><a href="download.html" class="nav-link active">Grand Athlete</a></li>
-          <li><a href="privacy-policy.html" class="nav-link">Privacy Policy</a></li>
-          <li><a href="../../contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <button onclick="redirectToPlayStore('The Grand Athlete App', 'https://play.google.com/store/apps/details?id=com.rginfotech.thegrandathlete')" class="btn btn-primary" id="headerDownloadBtn">
-          <span>Get on Play Store</span>
-        </button>
-      </div>
-
-      <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
+    <div>
+      <h1>Redirecting to Google Play...</h1>
+      <p>Taking you directly to <strong>The Grand Athlete</strong> on the Google Play Store.</p>
     </div>
-  </header>
 
-  <!-- App Hero Section -->
-  <section class="app-hero">
-    <div class="container">
-      <div class="app-hero-grid">
-        <div class="app-hero-info">
-          <div class="app-badge-pill">
-            <span class="status-dot"></span>
-            Android Sports &amp; Performance Tech
-          </div>
-          <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.5rem); margin-bottom: 1rem;">
-            The Grand Athlete <span class="gradient-text">App</span>
-          </h1>
-          <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
-            Engineered for high-performing athletes, track competitors, and dedicated fitness enthusiasts. Track heart-rate variability, plan explosive periodized workouts, and synchronize your biometrics effortlessly.
-          </p>
+    <!-- Manual Action Button in case browser blocks auto-redirect -->
+    <a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" class="playstore-btn" id="playstore-manual-btn">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-1.686V3.5a2.41 2.41 0 0 1 .609-1.686zM15.207 13.414l2.658 2.658-11.8 6.777 9.142-9.435zm0-2.828L6.065 1.151l11.8 6.777-2.658 2.658zm1.414 1.414l3.443-1.975a1.412 1.412 0 0 0 0-2.45L16.621 12z"/>
+      </svg>
+      <span>Open in Google Play Store</span>
+    </a>
 
-          <!-- Download Action Card -->
-          <div class="download-box">
-            <div class="download-cta-row">
-              <button class="btn btn-playstore" onclick="redirectToPlayStore('The Grand Athlete App', 'https://play.google.com/store/apps/details?id=com.rginfotech.thegrandathlete')" id="mainPlayStoreDownloadBtn" style="padding: 0.8rem 1.8rem;">
-                <svg class="icon-ps" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-1.686V3.5a2.41 2.41 0 0 1 .609-1.686zM15.207 13.414l2.658 2.658-11.8 6.777 9.142-9.435zm0-2.828L6.065 1.151l11.8 6.777-2.658 2.658zm1.414 1.414l3.443-1.975a1.412 1.412 0 0 0 0-2.45L16.621 12z"/>
-                </svg>
-                <div class="ps-text">
-                  <span>Download Now on</span>
-                  <span>Google Play Store</span>
-                </div>
-              </button>
+    <p class="fallback-note">If you are not redirected automatically, tap the button above.</p>
 
-              <button onclick="showToast('Direct APK mirror build downloading in background...', 'success')" class="btn btn-secondary" id="directApkBtn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                <span>Direct APK (v2.4.1)</span>
-              </button>
-            </div>
-
-            <!-- Scan to Download QR -->
-            <div style="display: flex; align-items: center; gap: 1.25rem; margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
-              <div class="qr-code-box">
-                <!-- Clean Modern SVG QR code placeholder -->
-                <svg viewBox="0 0 100 100" width="100%" height="100%" fill="#0a0f1d">
-                  <rect x="0" y="0" width="30" height="30" rx="4" />
-                  <rect x="5" y="5" width="20" height="20" rx="2" fill="#fff" />
-                  <rect x="9" y="9" width="12" height="12" rx="1" />
-                  
-                  <rect x="70" y="0" width="30" height="30" rx="4" />
-                  <rect x="75" y="5" width="20" height="20" rx="2" fill="#fff" />
-                  <rect x="79" y="9" width="12" height="12" rx="1" />
-
-                  <rect x="0" y="70" width="30" height="30" rx="4" />
-                  <rect x="5" y="75" width="20" height="20" rx="2" fill="#fff" />
-                  <rect x="9" y="79" width="12" height="12" rx="1" />
-
-                  <rect x="36" y="10" width="10" height="10" />
-                  <rect x="52" y="10" width="10" height="10" />
-                  <rect x="36" y="26" width="10" height="10" />
-                  <rect x="52" y="38" width="10" height="10" />
-                  <rect x="12" y="44" width="10" height="10" />
-                  <rect x="74" y="44" width="10" height="10" />
-                  <rect x="36" y="54" width="26" height="10" />
-                  <rect x="36" y="72" width="10" height="20" />
-                  <rect x="54" y="72" width="18" height="10" />
-                  <rect x="78" y="72" width="12" height="20" />
-                </svg>
-              </div>
-              <div>
-                <strong style="display: block; font-size: 0.95rem; color: #fff;">Scan to Install Instantly</strong>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">
-                  Open your camera to redirect directly to the verified Google Play Store listing.
-                </p>
-              </div>
-            </div>
-
-            <!-- Meta stats -->
-            <div class="app-meta-stats">
-              <div class="app-meta-item">
-                <div class="val">v2.4.1</div>
-                <div class="lbl">Latest Version</div>
-              </div>
-              <div class="app-meta-item">
-                <div class="val">Android 8.0+</div>
-                <div class="lbl">Required OS</div>
-              </div>
-              <div class="app-meta-item">
-                <div class="val">42.6 MB</div>
-                <div class="lbl">Download Size</div>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top: 1.5rem; display: flex; gap: 1.5rem; font-size: 0.9rem;">
-            <a href="privacy-policy.html" style="color: var(--accent-cyan);">🔒 Google Play Privacy Policy &rarr;</a>
-            <a href="terms.html" style="color: var(--text-muted);">Terms &amp; Conditions</a>
-          </div>
-        </div>
-
-        <!-- Phone Mockup Display -->
-        <div class="app-hero-visual" style="text-align: center;">
-          <div class="phone-mockup" style="max-width: 360px; margin: 0 auto; box-shadow: 0 0 60px rgba(245, 158, 11, 0.25);">
-            <div class="phone-notch"></div>
-            <div class="phone-screen" style="padding: 1.5rem;">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 0.85rem; font-weight: 700; color: #f59e0b;">ATHLETE PRO</span>
-                <span style="font-size: 0.75rem; color: #94a3b8;">GPS Connected</span>
-              </div>
-
-              <!-- Biometric Live Card -->
-              <div class="mockup-card" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3);">
-                <div style="display: flex; justify-content: space-between;">
-                  <span style="font-size: 0.8rem; color: #f59e0b; font-weight: 600;">INTERVAL SPRINT</span>
-                  <span style="font-size: 0.8rem; color: #10b981;">Zone 4</span>
-                </div>
-                <div style="margin: 0.75rem 0;">
-                  <span style="font-size: 2.2rem; font-weight: 800; color: #fff;">164</span>
-                  <span style="font-size: 0.85rem; color: #94a3b8;">BPM</span>
-                </div>
-                <div style="height: 6px; width: 100%; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
-                  <div style="width: 82%; height: 100%; background: linear-gradient(90deg, #f59e0b, #ef4444);"></div>
-                </div>
-              </div>
-
-              <!-- Workout Stats -->
-              <div class="mockup-card">
-                <p style="font-size: 0.75rem; color: #94a3b8;">TODAY'S VOLUME</p>
-                <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
-                  <div>
-                    <strong style="font-size: 1.1rem; color: #fff;">8.4 km</strong>
-                    <p style="font-size: 0.75rem; color: #64748b;">Distance</p>
-                  </div>
-                  <div>
-                    <strong style="font-size: 1.1rem; color: #fff;">542 kcal</strong>
-                    <p style="font-size: 0.75rem; color: #64748b;">Active Burn</p>
-                  </div>
-                  <div>
-                    <strong style="font-size: 1.1rem; color: #fff;">44m 12s</strong>
-                    <p style="font-size: 0.75rem; color: #64748b;">Duration</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Recovery Score -->
-              <div class="mockup-card">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                  <div>
-                    <p style="font-size: 0.75rem; color: #94a3b8;">RECOVERY READINESS</p>
-                    <p style="font-size: 1rem; font-weight: 700; color: #10b981;">Optimal (92%)</p>
-                  </div>
-                  <span style="font-size: 1.5rem;">⚡</span>
-                </div>
-              </div>
-
-              <div style="margin-top: auto; text-align: center;">
-                <span style="font-size: 0.75rem; color: var(--text-dim);">Google Play Certified • Version 2.4.1</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="footer-links">
+      <a href="index.html">&larr; App Overview</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
     </div>
-  </section>
+  </div>
 
-  <!-- Key Features Deep Dive -->
-  <section style="padding: 5rem 0; background: var(--bg-secondary);">
-    <div class="container">
-      <div class="text-center" style="margin-bottom: 3.5rem;">
-        <div class="section-tag">Key Capabilities</div>
-        <h2 class="section-title">Built for Peak Human Performance</h2>
-        <p class="section-subtitle">Every millisecond and biometric datum matters. Discover how The Grand Athlete App elevates training.</p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon" style="color: #f59e0b; border-color: rgba(245, 158, 11, 0.3);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-          </div>
-          <h3>Real-time Biometrics</h3>
-          <p>Instant Bluetooth heart rate monitor pairing, continuous HRV evaluation, and dynamic anaerobic threshold tracking.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon" style="color: #f59e0b; border-color: rgba(245, 158, 11, 0.3);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          </div>
-          <h3>Smart Periodization</h3>
-          <p>Structured microcycles and macrocycles tailored to prevent overtraining while maximizing muscle hypertrophy and speed stamina.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon" style="color: #f59e0b; border-color: rgba(245, 158, 11, 0.3);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          </div>
-          <h3>Encrypted Local Storage</h3>
-          <p>Your physical health metrics remain completely private on your device with local Room DB encryption and optional cloud sync.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="logo-link">
-            <div class="logo-badge">RG</div>
-            <div class="logo-text">RG <span>Infotech</span></div>
-          </div>
-          <p>The Grand Athlete App is developed and maintained by RG Infotech Solutions, Ahmedabad, Gujarat.</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Grand Athlete App</h4>
-          <ul class="footer-links">
-            <li><a href="download.html">Download &amp; Overview</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy (Google Play)</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="../../portfolio.html">All Portfolio Apps</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Developer</h4>
-          <ul class="footer-links">
-            <li><a href="../../about.html">Ravi Gauswami</a></li>
-            <li><a href="https://www.linkedin.com/in/ravi-gausai/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
-            <li><a href="../../contact.html">Support &amp; Feedback</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Google Play Store</h4>
-          <ul class="footer-links">
-            <li><a href="https://play.google.com/store/apps/details?id=com.rginfotech.thegrandathlete" target="_blank" rel="noopener">Google Play Listing</a></li>
-            <li><a href="download.html#directApkBtn">Download Direct APK</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; <span class="current-year">2026</span> RG Infotech Solutions. The Grand Athlete App.</p>
-        <p><a href="privacy-policy.html">Privacy Policy</a> • <a href="terms.html">Terms</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="../../js/main.js"></script>
 </body>
 </html>

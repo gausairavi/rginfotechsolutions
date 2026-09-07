@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Grand Athlete — Smart Workout, Nutrition & Daily Athlete Companion</title>
+  <meta name="description" content="Transform your fitness journey with The Grand Athlete. Personalized adaptive home & gym workouts, metabolic macro meal planning, recovery readiness scoring, and private on-device storage.">
+  <meta name="keywords" content="fitness app, workout tracker, gym routines, diet planner, calorie calculator, recovery readiness, private fitness, Android 15, SDK 36">
+  <meta name="author" content="The Grand Athlete Team">
+
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Grand Athlete — Smart Workout & Diet Companion">
+  <meta property="og:description" content="Personalized workouts, macro meal planning, recovery scoring, and streak protection with private on-device storage.">
+  <meta property="og:image" content="assets/adaptive-icon.png">
+  <meta name="theme-color" content="#08090C">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+
+  <!-- Google Fonts: Outfit (Display Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #08090C;
+      --bg-surface: #10121A;
+      --bg-surface-elevated: #161924;
+      --bg-glass: rgba(16, 18, 26, 0.75);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(0, 230, 118, 0.3);
+      --primary: #FF6E40;
+      --primary-glow: rgba(255, 110, 64, 0.25);
+      --accent-green: #00E676;
+      --accent-green-glow: rgba(0, 230, 118, 0.25);
+      --accent-blue: #2979FF;
+      --text-main: #FFFFFF;
+      --text-secondary: #9E9EB8;
+      --text-muted: #64647A;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient Background Glows */
+    .ambient-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.15;
+    }
+    .glow-1 {
+      top: -150px;
+      right: -100px;
+      background: radial-gradient(circle, var(--primary), transparent 70%);
+    }
+    .glow-2 {
+      top: 40%;
+      left: -200px;
+      background: radial-gradient(circle, var(--accent-green), transparent 70%);
+    }
+    .glow-3 {
+      bottom: 0;
+      right: 10%;
+      background: radial-gradient(circle, var(--accent-blue), transparent 70%);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header & Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: var(--bg-glass);
+      border-bottom: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 12px var(--primary-glow));
+    }
+    .brand-text {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .brand-text span {
+      color: var(--primary);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+    .nav-links a:hover {
+      color: var(--accent-green);
+    }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--accent-green), #00C853);
+      color: #000000 !important;
+      font-family: var(--font-display);
+      font-weight: 800;
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 18px var(--accent-green-glow);
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0, 230, 118, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 90px 0 70px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .badge.sdk36 {
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+      background: rgba(0, 230, 118, 0.08);
+    }
+    .badge.privacy {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(255, 110, 64, 0.08);
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      line-height: 1.1;
+      font-weight: 900;
+      letter-spacing: -1.2px;
+      margin-bottom: 20px;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 40%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-lead {
+      font-size: 1.18rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      max-width: 560px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--primary), #FF5722);
+      color: #FFFFFF;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 16px 30px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      box-shadow: 0 8px 26px var(--primary-glow);
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(255, 110, 64, 0.45);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 28px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .store-note {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Hero Mockup Card */
+    .hero-mockup-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .mockup-card {
+      width: 100%;
+      max-width: 380px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 36px;
+      padding: 24px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 230, 118, 0.12);
+      position: relative;
+      overflow: hidden;
+      animation: floatSlow 6s ease-in-out infinite alternate;
+    }
+    @keyframes floatSlow {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-12px); }
+    }
+    .mockup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .mockup-avatar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .avatar-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent-green));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      color: #000;
+    }
+    .mockup-metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .metric-pill {
+      background: var(--bg-surface-elevated);
+      padding: 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+    .metric-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .metric-val {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 900;
+      margin-top: 4px;
+    }
+    .metric-val.green { color: var(--accent-green); }
+    .metric-val.orange { color: var(--primary); }
+    .mockup-workout-card {
+      background: linear-gradient(135deg, rgba(255, 110, 64, 0.12), rgba(255, 110, 64, 0.04));
+      border: 1px solid rgba(255, 110, 64, 0.35);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .mockup-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--accent-green);
+      color: #000000;
+      border-radius: var(--radius-full);
+      font-family: var(--font-display);
+      font-weight: 800;
+      text-align: center;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 80px 0;
+    }
+    .section-tag {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+      margin-bottom: 16px;
+    }
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+      line-height: 1.6;
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+    }
+    .feature-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 32px 26px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    .feature-icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+    }
+    .feature-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Interactive Showcase Tabs */
+    .showcase-wrapper {
+      margin-top: 50px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+    .showcase-tabs {
+      display: flex;
+      gap: 12px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 20px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 24px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      color: var(--text-main);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .tab-btn.active {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      box-shadow: 0 4px 18px var(--primary-glow);
+    }
+    .tab-pane {
+      display: none;
+      padding-top: 32px;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .tab-pane.active {
+      display: grid;
+    }
+    .tab-info h4 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .tab-info p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+    .feature-list li::before {
+      content: "✓";
+      color: var(--accent-green);
+      font-weight: 900;
+    }
+    .tab-visual-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+
+    /* Privacy & Architecture Section */
+    .privacy-box {
+      background: linear-gradient(135deg, rgba(0, 230, 118, 0.08), rgba(16, 18, 26, 0.8));
+      border: 1.5px solid var(--accent-green);
+      border-radius: 28px;
+      padding: 48px;
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .privacy-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .privacy-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .privacy-item-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .privacy-item-text strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .privacy-item-text span {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* CTA Bottom Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, #FF6E40 0%, #E64A19 50%, #BF360C 100%);
+      border-radius: 32px;
+      padding: 60px 40px;
+      text-align: center;
+      margin: 60px 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px var(--primary-glow);
+    }
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .cta-banner p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 32px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .btn-white {
+      background: #FFFFFF;
+      color: #000000;
+      font-family: var(--font-display);
+      font-weight: 900;
+      padding: 16px 36px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      transition: var(--transition);
+    }
+    .btn-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 60px 0 40px;
+      background: var(--bg-surface);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-desc {
+      max-width: 380px;
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+    .footer-col h5 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .footer-col a:hover {
+      color: var(--accent-green);
+    }
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    .social-link:hover {
+      color: #FFFFFF;
+      transform: translateX(4px);
+    }
+    .social-link svg {
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+    .social-link:hover svg {
+      transform: scale(1.1);
+    }
+    .social-link.instagram:hover { color: #E1306C; }
+    .social-link.youtube:hover { color: #FF0000; }
+    .social-link.facebook:hover { color: #1877F2; }
+    .social-link.website:hover { color: #00E5FF; }
+    .social-link.email:hover { color: #FF9100; }
+    .disclaimer-bar {
+      border-top: 1px solid var(--border-color);
+      padding-top: 24px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      text-align: center;
+    }
+    .disclaimer-bar a {
+      color: var(--accent-green);
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 50px 0;
+      }
+      .hero-badges {
+        justify-content: center;
+      }
+      .hero-lead {
+        margin: 0 auto 32px;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .store-note {
+        justify-content: center;
+      }
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .tab-pane {
+        grid-template-columns: 1fr;
+      }
+      .privacy-box {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .cta-banner h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="nav-inner">
+        <a href="index.html" class="brand" aria-label="The Grand Athlete Home">
+          <img src="assets/logo.png" alt="The Grand Athlete Logo" class="brand-logo">
+          <span class="brand-text">THE GRAND <span>ATHLETE</span></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#showcase">App Showcase</a></li>
+          <li><a href="#privacy">Privacy & Security</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+        <a href="#download" class="nav-cta" id="nav-download-btn">Get App</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero container">
+      <div class="hero-content">
+        <div class="hero-badges">
+          <span class="badge sdk36">⚡ Android 15 & 16 Ready • API 36</span>
+          <span class="badge privacy">🔒 Private On-Device Data</span>
+          <span class="badge">🌍 19 Global Languages</span>
+          <span class="badge">🛡️ AdMob & GDPR Compliant</span>
+        </div>
+        <h1>
+          Train Smarter.<br>
+          Stay Consistent.<br>
+          <span class="gradient-text">Lifetime Athletic Excellence.</span>
+        </h1>
+        <p class="hero-lead">
+          Adaptive home & gym workout sessions, precision macro diet plans, daily readiness pacing, and streak protection — built with private on-device storage.
+        </p>
+        <div class="hero-actions">
+          <a href="#download" class="btn-primary" id="hero-get-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.61-1.642V3.456c0-.624.225-1.2.61-1.642zM15.207 13.414l2.673 2.674-12.82 7.373 10.147-10.047zm0-2.828L5.06 .539l12.82 7.373-2.673 2.674zm3.93 1.414l3.242 1.866a1.442 1.442 0 0 1 0 2.488l-3.242 1.866-2.146-2.146 2.146-2.074z"/></svg>
+            Get on Google Play
+          </a>
+          <a href="#features" class="btn-secondary">
+            Explore Features ↓
+          </a>
+        </div>
+        <div class="store-note">
+          <span>✓ Zero Mandatory Account Creation</span>
+          <span>•</span>
+          <span>✓ Active Internet for Video Streaming & Ads</span>
+        </div>
+      </div>
+
+      <!-- Hero Visual Phone Card -->
+      <div class="hero-mockup-wrapper">
+        <div class="mockup-card">
+          <div class="mockup-header">
+            <div class="mockup-avatar">
+              <div class="avatar-circle">GF</div>
+              <div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">ATHLETE PROFILE</div>
+                <div style="font-size: 0.95rem; font-weight: 800;">Alex Mercer • Level 4</div>
+              </div>
+            </div>
+            <div style="background: rgba(0, 230, 118, 0.15); border: 1px solid var(--accent-green); padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 800; color: var(--accent-green);">
+              🔥 21-Day Streak
+            </div>
+          </div>
+
+          <div class="mockup-metric-grid">
+            <div class="metric-pill">
+              <div class="metric-label">Daily Readiness</div>
+              <div class="metric-val green">88% PRIME</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Optimal for heavy lifts</div>
+            </div>
+            <div class="metric-pill">
+              <div class="metric-label">Macro Calorie Goal</div>
+              <div class="metric-val orange">2,450 kcal</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">160g Protein target</div>
+            </div>
+          </div>
+
+          <div class="mockup-workout-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span style="font-size: 0.75rem; font-weight: 800; color: var(--primary);">TODAY'S BLUEPRINT</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">45 Min • 4 Moves</span>
+            </div>
+            <div style="font-size: 1.1rem; font-weight: 800; font-family: var(--font-display);">Upper Body Hypertrophy</div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">Bench Press • Dumbbell Row • Incline DB Press • Dips</div>
+          </div>
+
+          <div class="mockup-btn">START WORKOUT SESSION ›</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <span class="section-tag">COMPREHENSIVE ATHLETIC SUITE</span>
+        <h2 class="section-title">Engineered For Lifetime Consistency</h2>
+        <p class="section-subtitle">Everything you need to excel in strength, nutrition, recovery, and daily discipline in one beautifully polished experience.</p>
+      </div>
+
+      <div class="features-grid">
+        <article class="feature-card">
+          <div class="feature-icon-box" style="color: var(--primary);">🏋️</div>
+          <h3>Intelligent Workout Engine</h3>
+          <p>Over 300+ exercises across Home, Gym, Dumbbell, and Bodyweight spaces. Dynamic set/rep logging, rest countdowns, and real-time exercise substitution.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon-box" style="color: var(--accent-green);">🥗</div>
+          <h3>Precision Macro & Diet Planning</h3>
+          <p>Scientifically tuned Mifflin-St Jeor metabolic calculations. Daily macro targets, curated recipe database, dietary filters, and quick hydration tracking.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon-box" style="color: var(--accent-blue);">🎬</div>
+          <h3>HD Video Tutorials & Form Coach</h3>
+          <p>Watch full exercise execution form streamed via YouTube. Master technique with step-by-step instructions, muscle activation maps, and injury prevention cues.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon-box" style="color: #FFD600;">🧘</div>
+          <h3>Recovery & Daily Readiness</h3>
+          <p>Holistic morning readiness score combining sleep quality, soreness levels, and training strain to calibrate workout intensity and rest days.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon-box" style="color: #E040FB;">🔥</div>
+          <h3>Streaks & Gamification</h3>
+          <p>Never break the chain with streak freeze shields, milestone achievements, XP points, and athlete tier progression that celebrate your consistency.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon-box" style="color: #00E5FF;">🌍</div>
+          <h3>19 Languages & Full Accessibility</h3>
+          <p>Complete native translations in 19 global languages with full RTL (Right-to-Left) script rendering, TalkBack screen-reader support, and haptic feedback.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Interactive Showcase Section -->
+    <section id="showcase" class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <span class="section-tag">EXPLORE APP CAPABILITIES</span>
+        <h2 class="section-title">Designed For Athletes At Every Level</h2>
+        <p class="section-subtitle">Click through the primary modules to see how The Grand Athlete delivers a superior fitness tracking experience.</p>
+      </div>
+
+      <div class="showcase-wrapper">
+        <div class="showcase-tabs" role="tablist">
+          <button class="tab-btn active" onclick="switchTab('workout')" id="tab-btn-workout">Smart Workouts</button>
+          <button class="tab-btn" onclick="switchTab('nutrition')" id="tab-btn-nutrition">Diet & Macros</button>
+          <button class="tab-btn" onclick="switchTab('readiness')" id="tab-btn-readiness">Recovery & Readiness</button>
+          <button class="tab-btn" onclick="switchTab('analytics')" id="tab-btn-analytics">Streaks & Analytics</button>
+        </div>
+
+        <!-- Tab 1: Workout -->
+        <div class="tab-pane active" id="pane-workout">
+          <div class="tab-info">
+            <h4>Adaptive Daily Workouts</h4>
+            <p>Whether you have 20 minutes in a living room or 60 minutes at a commercial gym, the Smart Workout Engine dynamically adapts to your available gear and schedule.</p>
+            <ul class="feature-list">
+              <li>Automatic progression recommendations based on previous volume</li>
+              <li>Exercise swap alternatives when equipment is occupied</li>
+              <li>Tactile haptic countdown cues and audible interval beeps</li>
+              <li>Strictly 100% ad-free during active workout sessions</li>
+            </ul>
+          </div>
+          <div class="tab-visual-card">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span style="font-weight: 800; color: var(--primary);">BARBELL BENCH PRESS</span>
+              <span style="font-size: 0.85rem; color: var(--accent-green);">Set 3 of 4</span>
+            </div>
+            <div style="display: flex; gap: 10px; margin-bottom: 16px;">
+              <div style="flex: 1; background: var(--bg-surface); padding: 12px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">WEIGHT</div>
+                <div style="font-size: 1.25rem; font-weight: 800;">85 kg</div>
+              </div>
+              <div style="flex: 1; background: var(--bg-surface); padding: 12px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">REPS</div>
+                <div style="font-size: 1.25rem; font-weight: 800;">8 reps</div>
+              </div>
+              <div style="flex: 1; background: var(--bg-surface); padding: 12px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">RPE</div>
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--accent-green);">8.5</div>
+              </div>
+            </div>
+            <div style="background: rgba(0, 230, 118, 0.1); border: 1px dashed var(--accent-green); padding: 12px; border-radius: 8px; text-align: center; color: var(--accent-green); font-weight: 700; font-size: 0.85rem;">
+              ✓ Rest Timer Active: 01:15 remaining
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Nutrition -->
+        <div class="tab-pane" id="pane-nutrition">
+          <div class="tab-info">
+            <h4>Precision Metabolic Fueling</h4>
+            <p>Nutrition without guesswork. Our Mifflin-St Jeor engine computes your exact maintenance calories and customizes protein, carbohydrate, and healthy fat splits based on your body goal.</p>
+            <ul class="feature-list">
+              <li>BMR & TDEE calculation tuned for muscle building or fat loss</li>
+              <li>Curated healthy recipe library with step-by-step instructions</li>
+              <li>Dietary preference filters: High-Protein, Vegetarian, Low-Carb</li>
+              <li>One-tap hydration logging with smart water intake goals</li>
+            </ul>
+          </div>
+          <div class="tab-visual-card">
+            <div style="font-weight: 800; margin-bottom: 12px; display: flex; justify-content: space-between;">
+              <span>DAILY MACRO SCORECARD</span>
+              <span style="color: var(--primary);">2,450 / 2,450 kcal</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px;">
+                  <span>Protein</span><span>160g / 160g (100%)</span>
+                </div>
+                <div style="height: 8px; background: var(--bg-surface); border-radius: 99px; overflow: hidden;">
+                  <div style="width: 100%; height: 100%; background: var(--primary);"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px;">
+                  <span>Carbohydrates</span><span>280g / 280g (100%)</span>
+                </div>
+                <div style="height: 8px; background: var(--bg-surface); border-radius: 99px; overflow: hidden;">
+                  <div style="width: 100%; height: 100%; background: var(--accent-green);"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px;">
+                  <span>Healthy Fats</span><span>65g / 65g (100%)</span>
+                </div>
+                <div style="height: 8px; background: var(--bg-surface); border-radius: 99px; overflow: hidden;">
+                  <div style="width: 100%; height: 100%; background: var(--accent-blue);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Readiness -->
+        <div class="tab-pane" id="pane-readiness">
+          <div class="tab-info">
+            <h4>Holistic Recovery & Pacing</h4>
+            <p>Overtraining ruins consistency. Start each morning with a 30-second readiness assessment that evaluates your sleep quality, muscle recovery, and energy levels.</p>
+            <ul class="feature-list">
+              <li>Prime Status (85-100%): Full green light for heavy progressive overload</li>
+              <li>Solid Readiness (70-84%): Proceed with planned session with standard warmup</li>
+              <li>Moderate (50-69%): Auto-adjust sets down by 1 or increase rest timers</li>
+              <li>Rest Day Alert: Recommends mobility stretching or light active walks</li>
+            </ul>
+          </div>
+          <div class="tab-visual-card">
+            <div style="text-align: center; padding: 20px;">
+              <div style="width: 90px; height: 90px; border-radius: 50%; border: 6px solid var(--accent-green); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; font-family: var(--font-display); color: var(--accent-green);">
+                88%
+              </div>
+              <div style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 800;">Prime Recovery Status</div>
+              <div style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 6px;">
+                Muscular recovery is optimal. You are primed for high-intensity sets today.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Analytics -->
+        <div class="tab-pane" id="pane-analytics">
+          <div class="tab-info">
+            <h4>Consistency Calendar & XP Growth</h4>
+            <p>Fitness is won in months and years, not days. Track your athletic habit streaks, monitor personal bests, and earn XP badges that celebrate your dedication.</p>
+            <ul class="feature-list">
+              <li>Interactive 30-day consistency calendar heatmaps</li>
+              <li>Streak freeze shields to protect progress during emergency rest</li>
+              <li>Personal record (PR) tracking with volume calculations</li>
+              <li>Full portable JSON export to back up your records anytime</li>
+            </ul>
+          </div>
+          <div class="tab-visual-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span style="font-weight: 800;">ATHLETE PROGRESSION</span>
+              <span style="color: var(--accent-green); font-weight: 800;">2,450 TOTAL XP</span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 16px;">
+              <div style="height: 28px; background: var(--accent-green); border-radius: 4px;"></div>
+              <div style="height: 28px; background: var(--accent-green); border-radius: 4px;"></div>
+              <div style="height: 28px; background: var(--accent-green); border-radius: 4px;"></div>
+              <div style="height: 28px; background: var(--accent-green); border-radius: 4px;"></div>
+              <div style="height: 28px; background: var(--primary); border-radius: 4px;" title="Rest Day"></div>
+              <div style="height: 28px; background: var(--accent-green); border-radius: 4px;"></div>
+              <div style="height: 28px; background: var(--accent-green); border-radius: 4px;"></div>
+            </div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary); text-align: center;">
+              🔥 21 Consecutive Days • 2 Streak Shields Available
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy & Compliance Box -->
+    <section id="privacy" class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <span class="section-tag">DATA SOVEREIGNTY & PRIVACY</span>
+        <h2 class="section-title">Your Health Data Belongs To You</h2>
+        <p class="section-subtitle">We believe your personal body metrics, workout journals, and fitness milestones should remain strictly confidential.</p>
+      </div>
+
+      <div class="privacy-box">
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; margin-bottom: 12px; color: var(--accent-green);">
+            Private On-Device Data Storage
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
+            Unlike conventional fitness apps that force cloud registrations and sell your biometric records to telemetry brokers, The Grand Athlete stores your workout history, nutrition logs, and body weight directly on your device.
+          </p>
+          <a href="privacy-policy.html" class="btn-secondary" style="font-size: 0.9rem;">
+            Read Complete Privacy Policy →
+          </a>
+        </div>
+
+        <ul class="privacy-list">
+          <li class="privacy-item">
+            <div class="privacy-item-icon">🔒</div>
+            <div class="privacy-item-text">
+              <strong>Encrypted Local Storage</strong>
+              <span>Workouts, streaks, and meal plans stay on your smartphone with zero mandatory cloud registration.</span>
+            </div>
+          </li>
+          <li class="privacy-item">
+            <div class="privacy-item-icon">🛡️</div>
+            <div class="privacy-item-text">
+              <strong>Google AdMob & GDPR / UMP Compliance</strong>
+              <span>Non-intrusive ads conform to EU/UK consent choices via Google-certified CMP. Review or revoke consent anytime in Settings.</span>
+            </div>
+          </li>
+          <li class="privacy-item">
+            <div class="privacy-item-icon">🚫</div>
+            <div class="privacy-item-text">
+              <strong>100% Ad-Free Workout Sessions</strong>
+              <span>Active workout player screens are strictly and permanently ad-free so you can focus completely on your training.</span>
+            </div>
+          </li>
+          <li class="privacy-item">
+            <div class="privacy-item-icon">🌐</div>
+            <div class="privacy-item-text">
+              <strong>Active Internet Connection Required</strong>
+              <span>Internet connectivity is required to stream YouTube exercise video guides and load sponsor content safely.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Download CTA Banner -->
+    <section id="download" class="container">
+      <div class="cta-banner">
+        <h2>Start Your Fitness Journey Today</h2>
+        <p>Join athletes worldwide training smarter with adaptive workouts, personalized macros, and daily streak discipline.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" class="btn-white" id="cta-play-btn" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.61-1.642V3.456c0-.624.225-1.2.61-1.642zM15.207 13.414l2.673 2.674-12.82 7.373 10.147-10.047zm0-2.828L5.06 .539l12.82 7.373-2.673 2.674zm3.93 1.414l3.242 1.866a1.442 1.442 0 0 1 0 2.488l-3.242 1.866-2.146-2.146 2.146-2.074z"/></svg>
+          Download on Google Play
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand">
+            <img src="assets/logo.png" alt="Logo" class="brand-logo" style="width: 36px; height: 36px;">
+            <span class="brand-text" style="font-size: 1.2rem;">THE GRAND <span>ATHLETE</span></span>
+          </div>
+          <p class="footer-desc">
+            Production-ready intelligent fitness companion engineered for athletic discipline, smart nutrition, recovery scoring, and lifetime consistency.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Navigation</h5>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#showcase">App Showcase</a></li>
+            <li><a href="#privacy">Privacy Principles</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Platform & Standards</h5>
+          <ul>
+            <li><span>Target SDK: Android API 36</span></li>
+            <li><span>Architecture: React Native 0.76 • Hermes</span></li>
+            <li><span>Support: 19 Global Languages</span></li>
+            <li><span>Compliance: GDPR / Google UMP CMP</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Follow Us</h5>
+          <div class="social-links">
+            <a href="https://www.instagram.com/thegrandathlete/" target="_blank" rel="noopener" class="social-link instagram" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"></circle></svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.youtube.com/channel/UCdrHrAvkF3tq5HN19yWj5Ng" target="_blank" rel="noopener" class="social-link youtube" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#0c0e14"/></svg>
+              <span>YouTube</span>
+            </a>
+            <a href="https://www.facebook.com/thegrandathlete" target="_blank" rel="noopener" class="social-link facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Facebook</span>
+            </a>
+            <a href="https://www.thegrandathlete.com" target="_blank" rel="noopener" class="social-link website" title="Website">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>Website</span>
+            </a>
+            <a href="mailto:thegrandathlete@gmail.com" class="social-link email" title="Contact Us via Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              <span>thegrandathlete@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer-bar">
+        <p style="margin-bottom: 8px;">
+          <strong>Health & Fitness Disclaimer:</strong> The workouts, recovery routines, nutrition guidelines, and readiness calculations provided by The Grand Athlete are for general educational, wellness, and fitness purposes only. They do NOT constitute medical advice, diagnosis, or treatment. Always consult a qualified physician or healthcare provider before beginning any new exercise or dietary regimen.
+        </p>
+        <p>
+          © 2026 The Grand Athlete. All rights reserved. • <a href="privacy-policy.html">Privacy Policy</a> • Built with React Native & Expo.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchTab(tabKey) {
+      // Deactivate all tabs
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+      // Activate selected
+      const targetBtn = document.getElementById('tab-btn-' + tabKey);
+      const targetPane = document.getElementById('pane-' + tabKey);
+
+      if (targetBtn && targetPane) {
+        targetBtn.classList.add('active');
+        targetPane.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

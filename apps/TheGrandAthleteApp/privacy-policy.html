@@ -3,143 +3,440 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy | The Grand Athlete App - RG Infotech Solutions</title>
-  <meta name="description" content="Official Google Play Store Privacy Policy for The Grand Athlete App by RG Infotech Solutions. Details user data safety, device permissions, and security.">
-  <link rel="stylesheet" href="../../css/style.css">
+  <title>Privacy Policy — The Grand Athlete</title>
+  <meta name="description" content="Official Privacy Policy for The Grand Athlete mobile application. Explaining private on-device data storage, Google AdMob GDPR / UMP consent, and data rights.">
+  <meta name="author" content="The Grand Athlete Team">
+  <meta name="theme-color" content="#08090C">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #08090C;
+      --bg-surface: #10121A;
+      --bg-surface-elevated: #161924;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --primary: #FF6E40;
+      --accent-green: #00E676;
+      --accent-blue: #2979FF;
+      --text-main: #FFFFFF;
+      --text-secondary: #9E9EB8;
+      --text-muted: #64647A;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(16, 18, 26, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+    .brand-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+    .brand-title span {
+      color: var(--primary);
+    }
+    .back-btn {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s ease;
+    }
+    .back-btn:hover {
+      color: var(--accent-green);
+    }
+
+    /* Policy Content */
+    .policy-content {
+      padding: 50px 0 80px;
+    }
+    .policy-hero {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 30px;
+    }
+    .policy-hero h1 {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .effective-date {
+      color: var(--accent-green);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Key Summary Box */
+    .summary-card {
+      background: rgba(0, 230, 118, 0.08);
+      border: 1.5px solid var(--accent-green);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+    .summary-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--accent-green);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .summary-card p {
+      color: var(--text-main);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    /* Policy Sections */
+    .policy-section {
+      margin-bottom: 40px;
+    }
+    .policy-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .policy-section p {
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+    .policy-section ul {
+      margin: 14px 0 18px 24px;
+      color: var(--text-secondary);
+    }
+    .policy-section li {
+      margin-bottom: 8px;
+    }
+    .policy-section strong {
+      color: var(--text-main);
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    th, td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    th {
+      background: var(--bg-surface-elevated);
+      color: var(--text-main);
+      font-family: var(--font-display);
+      font-weight: 800;
+    }
+    td {
+      color: var(--text-secondary);
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .callout {
+      background: var(--bg-surface);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+    .callout strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 4px;
+      font-family: var(--font-display);
+    }
+
+    a {
+      color: var(--accent-green);
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #FFFFFF;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 36px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <header class="site-header" id="siteHeader">
-    <div class="container nav-container">
-      <a href="../../index.html" class="logo-link">
-        <div class="logo-badge">RG</div>
-        <div class="logo-text">RG <span>Infotech</span></div>
-      </a>
-
-      <nav>
-        <ul class="nav-links">
-          <li><a href="../../index.html" class="nav-link">Home</a></li>
-          <li><a href="../../portfolio.html" class="nav-link">App Portfolio</a></li>
-          <li><a href="download.html" class="nav-link">Grand Athlete</a></li>
-          <li><a href="privacy-policy.html" class="nav-link active">Privacy Policy</a></li>
-          <li><a href="terms.html" class="nav-link">Terms</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <a href="download.html" class="btn btn-secondary">
-          <span>&larr; Back to App</span>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand" aria-label="The Grand Athlete">
+          <img src="assets/logo.png" alt="The Grand Athlete Logo" class="brand-logo">
+          <span class="brand-title">THE GRAND <span>ATHLETE</span></span>
         </a>
+        <a href="index.html" class="back-btn">← Return to Website</a>
       </div>
-
-      <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
     </div>
   </header>
 
-  <!-- Policy Content Section -->
-  <section class="policy-section">
+  <main class="policy-content">
     <div class="container">
-      <div class="policy-card">
-        <div class="section-tag">Google Play Console Compliance</div>
-        <h1>Privacy Policy for The Grand Athlete App</h1>
-        <p class="policy-last-updated">Last Updated: September 2026 | Effective Date: September 2026</p>
-
-        <p>
-          At <strong>RG Infotech Solutions</strong> (accessible from <a href="https://rginfotechsolutions.com" style="color: var(--accent-cyan);">rginfotechsolutions.com</a>), operated by <strong>Ravi Gauswami (Gausai)</strong>, one of our main priorities is the privacy and data security of our visitors and users of <strong>The Grand Athlete App</strong> ("Application", "Service"). This Privacy Policy document contains types of information that is collected and recorded by The Grand Athlete App and how we use and protect it.
+      <div class="policy-hero">
+        <span class="effective-date">Last Updated: September 2026 • Version 1.0.0</span>
+        <h1>Privacy Policy</h1>
+        <p style="color: var(--text-secondary); font-size: 1.1rem;">
+          This Privacy Policy explains how <strong>The Grand Athlete</strong> ("we", "our", or "the app") handles your personal data, health metrics, and device information in compliance with Google Play Developer Policies, GDPR (EU/UK), and relevant data protection regulations.
         </p>
+      </div>
 
-        <h2>1. Information We Collect</h2>
-        <p>When you install and utilize The Grand Athlete App, we may collect the following categories of information to provide personal athletic analytics:</p>
-        <ul>
-          <li><strong>Health &amp; Physical Fitness Metrics:</strong> Workout durations, distance traveled, running cadence, heart rate, heart rate variability (HRV), and calculated calorie expenditures when granted permission.</li>
-          <li><strong>Device &amp; Hardware Information:</strong> Device model, operating system version, unique device identifiers, network state, and crash logs to maintain stability.</li>
-          <li><strong>Location Data (Optional):</strong> Precise or approximate location (GPS) solely while tracking outdoor athletic activities (such as running, cycling, or sprinting) to calculate routes and elevation changes. Background location is only accessed when you explicitly activate a background workout tracking session.</li>
-          <li><strong>Account &amp; Profile Details:</strong> If you choose to sync your workouts across devices, we collect your name, email address, and age/weight to calculate accurate metabolic rate analytics.</li>
-        </ul>
-
-        <h2>2. Android System Permissions Used</h2>
-        <p>In accordance with Google Play Developer Policy, The Grand Athlete App requests only the permissions strictly required to perform its core athletic functions:</p>
-        <ul>
-          <li><code>android.permission.ACTIVITY_RECOGNITION</code>: Used to detect steps, running intervals, and active workouts.</li>
-          <li><code>android.permission.ACCESS_FINE_LOCATION</code>: Used strictly to map exercise routes and accurately determine running speed.</li>
-          <li><code>android.permission.BLUETOOTH_CONNECT / BLUETOOTH_SCAN</code>: Used to discover and communicate with external chest-strap heart rate monitors or smart sensors.</li>
-          <li><code>android.permission.POST_NOTIFICATIONS</code>: Used to display ongoing workout timers and recovery reminders.</li>
-        </ul>
-
-        <h2>3. How We Use Your Data</h2>
-        <p>We use the collected information for purposes including:</p>
-        <ul>
-          <li>Generating personalized conditioning and recovery scorecards;</li>
-          <li>Providing offline chart rendering and local workout logs;</li>
-          <li>Improving app responsiveness, reducing latency, and resolving software crashes;</li>
-          <li>Ensuring compliance with Google Play Developer and security standards.</li>
-        </ul>
-
-        <h2>4. Third-Party Services &amp; Analytics</h2>
+      <!-- Key Summary Callout -->
+      <div class="summary-card">
+        <h3>🛡️ Summary: Private On-Device Data & Transparency</h3>
         <p>
-          The Application utilizes trusted third-party service providers that may collect information used to identify you:
+          <strong>Your fitness is your own business:</strong> All your workouts, body weight metrics, meal plans, streaks, and personal progress records reside exclusively in encrypted local storage on your device. We do NOT operate remote user profile databases and we do NOT sell your personal health information. An <strong>active internet connection is required</strong> to run the app, stream exercise demonstration videos, and load non-intrusive advertisements in compliance with Google AdMob and GDPR / UMP consent choices.
+        </p>
+      </div>
+
+      <!-- Section 1 -->
+      <section class="policy-section">
+        <h2>1. Architecture & On-Device Storage Model</h2>
+        <p>
+          The Grand Athlete is built on a private on-device storage architecture. Unlike conventional fitness applications:
         </p>
         <ul>
-          <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--accent-cyan);">Google Play Services</a></li>
-          <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener" style="color: var(--accent-cyan);">Firebase Crashlytics &amp; Analytics</a></li>
-          <li><a href="https://developers.google.com/fit" target="_blank" rel="noopener" style="color: var(--accent-cyan);">Google Fit / Health Connect API</a></li>
+          <li><strong>No Mandatory Account:</strong> You do not need to provide an email address, create a password, or link third-party social media accounts to use the application.</li>
+          <li><strong>Local Database / Key-Value Store:</strong> Your athletic profiles, workout sets, reps, weights, calorie and water logs, streak records, and achievements are stored directly in your smartphone's internal sandboxed application storage.</li>
+          <li><strong>Zero Remote Cloud Sync of Biometrics:</strong> We do not transmit your body measurements, workout history, or nutrition logs to proprietary external backend servers.</li>
         </ul>
+      </section>
 
-        <h2>5. Data Retention, Security &amp; Encryption</h2>
+      <!-- Section 2 -->
+      <section class="policy-section">
+        <h2>2. Network Connection Requirement</h2>
         <p>
-          We employ industry-standard encryption (AES-256 at rest and TLS 1.3 in transit). Your sensitive biometric data is stored primarily inside your device's encrypted SQLite/Room database. We do not sell, rent, or trade your personal or health data to advertisers, data brokers, or third-party marketing agencies.
-        </p>
-
-        <h2>6. User Rights &amp; Data Deletion (GDPR / CCPA / DPDP)</h2>
-        <p>
-          You have full ownership of your data. You may request to:
+          An <strong>active internet connection is required</strong> to run The Grand Athlete application. Network connectivity is utilized strictly for the following functions:
         </p>
         <ul>
-          <li>Export a copy of your stored training logs in CSV/JSON format directly inside the app settings;</li>
-          <li>Delete your workout history or permanently erase your synced account by sending an email to our data officer at <a href="mailto:privacy@rginfotechsolutions.com" style="color: var(--accent-cyan);">privacy@rginfotechsolutions.com</a>;</li>
-          <li>Revoke any device permission at any time from your Android device settings.</li>
+          <li><strong>Exercise Video Demonstrations:</strong> Streaming high-definition exercise technique guides and movement tutorials embedded via the official YouTube player in conformity with the YouTube Terms of Service.</li>
+          <li><strong>Google AdMob Monetization:</strong> Serving banner, app-open, and optional rewarded advertisements delivered by the Google Mobile Ads SDK.</li>
+          <li><strong>App Updates & Version Checks:</strong> Verifying Google Play Store version status for critical security and compatibility patches.</li>
         </ul>
+      </section>
 
+      <!-- Section 3 -->
+      <section class="policy-section">
+        <h2>3. Data Collection & Google Play Data Safety Declarations</h2>
+        <p>
+          In alignment with the Google Play Console Data Safety standard, the following table itemizes all data processed:
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Data Category</th>
+                <th>Collected?</th>
+                <th>Shared?</th>
+                <th>Purpose & Handling</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Health & Fitness</strong><br><small>(Workouts, weight, height, calories, water)</small></td>
+                <td><strong style="color: var(--accent-green);">No</strong></td>
+                <td><strong style="color: var(--accent-green);">No</strong></td>
+                <td>Saved strictly on-device in local storage. Zero third-party or ad network access.</td>
+              </tr>
+              <tr>
+                <td><strong>Device / Advertising ID</strong><br><small>(Google Advertising ID - GAID)</small></td>
+                <td>Yes</td>
+                <td>Yes (Google AdMob)</td>
+                <td>Used by Google Mobile Ads SDK for ad delivery, fraud detection, and frequency capping according to your regional consent.</td>
+              </tr>
+              <tr>
+                <td><strong>App Performance & Diagnostics</strong><br><small>(Crash logs, stack traces)</small></td>
+                <td>Yes (Optional)</td>
+                <td>Yes (Google Play)</td>
+                <td>Anonymous diagnostic logs used solely to debug fatal errors and optimize performance.</td>
+              </tr>
+              <tr>
+                <td><strong>User Account Credentials</strong><br><small>(Name, email, phone, passwords)</small></td>
+                <td><strong style="color: var(--accent-green);">No</strong></td>
+                <td><strong style="color: var(--accent-green);">No</strong></td>
+                <td>The app does not collect or request account registration credentials.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="policy-section">
+        <h2>4. Google AdMob, GDPR & User Messaging Platform (UMP)</h2>
+        <p>
+          To keep core workout planning and exercise databases accessible for free, The Grand Athlete displays non-intrusive advertisements supported by Google AdMob.
+        </p>
+
+        <div class="callout">
+          <strong>Strict Workout Isolation Rule:</strong>
+          Active workout player sessions are strictly 100% ad-free. No banner or interstitial ads are displayed during live exercise execution to protect your focus, timing, and safety.
+        </div>
+
+        <p><strong>Compliance with Google EU User Consent Policy & GDPR:</strong></p>
+        <ul>
+          <li>For users located in the European Economic Area (EEA) and the United Kingdom (UK), our application integrates the Google User Messaging Platform (UMP) SDK.</li>
+          <li>Users are presented with a Google-certified Consent Management Platform (CMP) dialog upon first launch to make informed choices regarding personalized vs. non-personalized advertisements.</li>
+          <li><strong>Right to Revoke or Change Consent:</strong> In full compliance with Google and GDPR policies, you can review, modify, or revoke your consent choices at any time directly within the app by navigating to <em>Settings → Privacy & Data Sovereignty → "Review GDPR Ad Consent Choices"</em>.</li>
+          <li>To learn more about how Google processes information when you use partner apps, please review <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">How Google uses information from sites or apps that use our services</a>.</li>
+        </ul>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="policy-section">
+        <h2>5. Health Connect & On-Device Sensors</h2>
+        <p>
+          If you choose to enable Health Connect synchronization:
+        </p>
+        <ul>
+          <li>The app requests read-only permissions for daily step counts and active calories solely to display local performance rings on your home dashboard.</li>
+          <li>Zero Health Connect or sensor measurements are ever transferred to advertising networks, data brokers, or external analytics partners.</li>
+          <li>You may revoke Health Connect permissions at any time through your Android system settings.</li>
+        </ul>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="policy-section">
+        <h2>6. Data Retention, Portability & Deletion Rights</h2>
+        <p>
+          Because your fitness data is stored on-device, you have absolute ownership and control over your records:
+        </p>
+        <ul>
+          <li><strong>Export Your History:</strong> You can export your complete workout logs, body metrics, meal plans, and streak history at any time as a portable JSON document via <em>Settings → Data Management & Backup → Export Backup</em>.</li>
+          <li><strong>Selective Cleanup:</strong> You can selectively delete specific categories of data (e.g. video watch cache, hydration history) without losing your workout templates.</li>
+          <li><strong>Permanent Deletion / Clean Slate:</strong> You can irrevocably wipe all local data and reset the application at any time using the <em>"Clean Slate / Reset All"</em> button in Settings, or by clearing app storage in Android settings / uninstalling the app.</li>
+        </ul>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="policy-section">
         <h2>7. Children's Privacy</h2>
         <p>
-          The Grand Athlete App is not targeted at children under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If you discover that your child has provided us with personal information without parental consent, please contact us immediately for prompt deletion.
+          The Grand Athlete is intended for general audiences aged 13 and older (or the minimum legal age in your jurisdiction). We do not knowingly target or collect personal data from children under the age of 13.
         </p>
+      </section>
 
-        <h2>8. Changes to This Privacy Policy</h2>
+      <!-- Section 8 -->
+      <section class="policy-section">
+        <h2>8. Medical & Health Disclaimer</h2>
         <p>
-          We may update our Privacy Policy periodically to adhere to evolving Google Play Console policies and data privacy regulations. We advise you to review this page periodically for any changes.
+          The workouts, recovery routines, nutrition guidelines, BMR/TDEE calculations, and readiness scores generated in this application are for general educational, wellness, and fitness purposes only. They do <strong>NOT</strong> constitute medical advice, diagnosis, or treatment. Always consult a qualified physician or healthcare provider before beginning any new exercise or dietary regimen, especially if you have pre-existing cardiovascular, musculoskeletal, or metabolic conditions.
         </p>
+      </section>
 
-        <h2>9. Contact Us</h2>
-        <p>If you have any questions, suggestions, or concerns regarding our Privacy Policy or data handling practices, please contact us:</p>
-        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-top: 1rem;">
-          <p style="margin-bottom: 0.3rem;"><strong>Developer:</strong> RG Infotech Solutions / Ravi Gauswami</p>
-          <p style="margin-bottom: 0.3rem;"><strong>Email:</strong> <a href="mailto:privacy@rginfotechsolutions.com" style="color: var(--accent-cyan);">privacy@rginfotechsolutions.com</a></p>
-          <p style="margin-bottom: 0.3rem;"><strong>Support:</strong> <a href="mailto:contact@rginfotechsolutions.com" style="color: var(--accent-cyan);">contact@rginfotechsolutions.com</a></p>
-          <p style="margin-bottom: 0.3rem;"><strong>Location:</strong> Ahmedabad, Gujarat, India</p>
-          <p style="margin-bottom: 0;"><strong>Founder LinkedIn:</strong> <a href="https://www.linkedin.com/in/ravi-gausai/" target="_blank" rel="noopener" style="color: var(--accent-cyan);">linkedin.com/in/ravi-gausai</a></p>
-        </div>
-      </div>
+      <!-- Section 9 -->
+      <section class="policy-section">
+        <h2>9. Policy Updates & Contact Information</h2>
+        <p>
+          We may periodically update this Privacy Policy to reflect technical enhancements or regulatory adjustments. Changes will be posted to this URL with a revised effective date.
+        </p>
+        <p>
+          If you have questions, feedback, or inquiries regarding this Privacy Policy or your data rights, please contact our privacy team at:
+        </p>
+        <p>
+          <strong>Email:</strong> <a href="mailto:thegrandathlete@gmail.com">thegrandathlete@gmail.com</a><br>
+          <strong>Official Website:</strong> <a href="https://www.thegrandathlete.com" target="_blank" rel="noopener">https://www.thegrandathlete.com</a><br>
+          <strong>Developer:</strong> The Grand Athlete App Team<br>
+          <strong>Application Identifier:</strong> <code>com.thegrandathlete.app</code>
+        </p>
+      </section>
     </div>
-  </section>
+  </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
+  <footer>
     <div class="container">
-      <div class="footer-bottom">
-        <p>&copy; <span class="current-year">2026</span> RG Infotech Solutions. The Grand Athlete App.</p>
-        <p><a href="download.html">App Download</a> • <a href="terms.html">Terms of Service</a></p>
-      </div>
+      <p>© 2026 The Grand Athlete. All rights reserved. • <a href="index.html">Return to Home</a></p>
     </div>
   </footer>
 
-  <script src="../../js/main.js"></script>
 </body>
 </html>
