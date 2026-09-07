@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Deletion Request & Instructions — The Grand Athlete</title>
+  <meta name="description" content="Data deletion policy and step-by-step instructions for deleting all local data and advertising identifiers in The Grand Athlete mobile application.">
+  <meta name="author" content="The Grand Athlete Team">
+  <meta name="theme-color" content="#08090C">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #08090C;
+      --bg-surface: #10121A;
+      --bg-surface-elevated: #161924;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --primary: #FF6E40;
+      --accent-green: #00E676;
+      --accent-blue: #2979FF;
+      --text-main: #FFFFFF;
+      --text-secondary: #9E9EB8;
+      --text-muted: #64647A;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(16, 18, 26, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .logo-badge img {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 110, 64, 0.3);
+    }
+    .logo-text {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+    .back-btn {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.2s;
+    }
+    .back-btn:hover {
+      opacity: 0.8;
+    }
+
+    /* Content Area */
+    main {
+      padding: 48px 0 80px;
+    }
+    .hero-title {
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 28px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--accent-green);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: 2.3rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    .step-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .step-number {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .step-body {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    .step-body p {
+      margin-bottom: 10px;
+    }
+    .step-body ul {
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+    .step-body li {
+      margin-bottom: 6px;
+    }
+
+    .callout {
+      background: rgba(255, 110, 64, 0.08);
+      border-left: 3px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 20px 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .callout strong {
+      color: var(--primary);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: var(--text-main);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo-badge">
+        <img src="assets/icon.png" alt="The Grand Athlete Logo">
+        <span class="logo-text">The Grand Athlete</span>
+      </a>
+      <a href="privacy-policy.html" class="back-btn">
+        ← Privacy Policy
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <div class="hero-title">
+        <div class="badge">Google Play Data Safety & Sovereignty</div>
+        <h1>Data Deletion Request & Policy</h1>
+        <p class="subtitle">
+          Instructions on how to view, manage, export, and permanently delete your personal health data and advertising identifiers.
+        </p>
+      </div>
+
+      <div class="callout">
+        <strong>Privacy-First Architecture:</strong> The Grand Athlete is built with a local-first, database-free architecture. Users do not register or maintain cloud accounts on our servers. All workouts, body metrics, calorie logs, and personal routines are stored strictly on your local device.
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">1</div>
+          <div class="step-title">Delete All Data In-App (Instant Clean Slate)</div>
+        </div>
+        <div class="step-body">
+          <p>You can instantly and permanently erase all fitness logs, saved routines, calorie history, and user preferences directly inside the application:</p>
+          <ul>
+            <li>Open <strong>The Grand Athlete</strong> app.</li>
+            <li>Tap the <strong>Settings</strong> tab in the bottom navigation.</li>
+            <li>Select <strong>Data Management & Backup</strong>.</li>
+            <li>Tap <strong>"Clean Slate / Reset All Data"</strong> and confirm the prompt.</li>
+          </ul>
+          <p>This action permanently wipes all local storage and returns the app to its freshly installed state.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">2</div>
+          <div class="step-title">Delete Data via Android Settings / Uninstall</div>
+        </div>
+        <div class="step-body">
+          <p>Because all personal records are stored strictly in your device's private app sandbox, you can delete everything through your Android operating system:</p>
+          <ul>
+            <li><strong>Clear App Storage:</strong> Open Android <em>Settings → Apps → The Grand Athlete → Storage & Cache → "Clear Storage" / "Clear Data"</em>.</li>
+            <li><strong>Uninstall the App:</strong> Long-press The Grand Athlete icon on your home screen and select <em>Uninstall</em>. All application files, databases, and cached videos will be immediately and irrevocably erased from your device.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">3</div>
+          <div class="step-title">Reset or Delete Google Advertising Identifier (GAID)</div>
+        </div>
+        <div class="step-body">
+          <p>To serve non-intrusive ads that keep our workout player free, Google AdMob processes your Google Advertising ID. You can reset or delete this identifier at any time through your Android device settings:</p>
+          <ul>
+            <li>Open your Android phone's <strong>Settings</strong> app.</li>
+            <li>Navigate to <strong>Google</strong> → <strong>Ads</strong>.</li>
+            <li>Tap <strong>"Delete advertising ID"</strong> (or <strong>"Reset advertising ID"</strong>).</li>
+          </ul>
+          <p>Once deleted, apps will receive a string of zeros instead of your advertising identifier.</p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-card">
+        <div class="step-header">
+          <div class="step-number">4</div>
+          <div class="step-title">Developer Contact for Data Inquiries & Verification</div>
+        </div>
+        <div class="step-body">
+          <p>If you have any questions, require confirmation of data handling, or wish to submit a formal data deletion inquiry, contact our team directly:</p>
+          <ul>
+            <li><strong>Support Email:</strong> <a href="mailto:thegrandathlete@gmail.com" style="color: var(--primary); text-decoration: none;">thegrandathlete@gmail.com</a></li>
+            <li><strong>Official Developer Website:</strong> <a href="https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none;">https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html</a></li>
+            <li><strong>Response Window:</strong> We respond to all user inquiries within 24–48 business hours.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 The Grand Athlete. All rights reserved. • <a href="privacy-policy.html">Privacy Policy</a> • <a href="index.html">Return to Home</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
