@@ -40,23 +40,87 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Mobile Menu Toggle
+  // 2. Mobile Menu Drawer Controller
   const mobileToggle = document.querySelector('.mobile-toggle');
   const body = document.body;
+  const navEl = document.querySelector('header.site-header nav');
+  const navActions = document.querySelector('.nav-actions');
+
+  // Ensure backdrop exists
+  let backdrop = document.querySelector('.nav-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+  }
+
+  function closeMobileMenu() {
+    body.classList.remove('mobile-nav-active');
+    body.style.overflow = '';
+    if (mobileToggle) {
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  function openMobileMenu() {
+    body.classList.add('mobile-nav-active');
+    body.style.overflow = 'hidden';
+    if (mobileToggle) {
+      mobileToggle.setAttribute('aria-expanded', 'true');
+    }
+  }
+
   if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-      body.classList.toggle('mobile-nav-active');
-      const isExpanded = body.classList.contains('mobile-nav-active');
-      mobileToggle.setAttribute('aria-expanded', isExpanded);
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (body.classList.contains('mobile-nav-active')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
     });
   }
 
-  // Close mobile nav when clicking any nav link
+  // Backdrop click dismisses mobile menu
+  backdrop.addEventListener('click', () => {
+    closeMobileMenu();
+  });
+
+  // Close when pressing Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && body.classList.contains('mobile-nav-active')) {
+      closeMobileMenu();
+    }
+  });
+
+  // Automatically reset mobile drawer if viewport exceeds mobile breakpoint
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 992 && body.classList.contains('mobile-nav-active')) {
+      closeMobileMenu();
+    }
+  });
+
+  // Close mobile nav when clicking any nav link or drawer CTA
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-      body.classList.remove('mobile-nav-active');
+      closeMobileMenu();
     });
   });
+
+  // Ensure drawer CTA exists inside nav drawer for mobile viewports
+  if (navEl && navActions && !navEl.querySelector('.mobile-drawer-cta')) {
+    const ctaContainer = document.createElement('div');
+    ctaContainer.className = 'mobile-drawer-cta';
+    const actionBtn = navActions.querySelector('.btn');
+    if (actionBtn) {
+      const cloneBtn = actionBtn.cloneNode(true);
+      ctaContainer.appendChild(cloneBtn);
+      cloneBtn.addEventListener('click', () => {
+        closeMobileMenu();
+      });
+    }
+    navEl.appendChild(ctaContainer);
+  }
 
   // 3. Portfolio Filters
   const filterBtns = document.querySelectorAll('.filter-btn');

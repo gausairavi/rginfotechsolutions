@@ -211,6 +211,36 @@
     .footer-links a:hover {
       color: var(--primary);
     }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem;
+      }
+      .redirect-card {
+        padding: 2rem 1.25rem;
+        border-radius: 20px;
+        gap: 1.25rem;
+      }
+      .app-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 18px;
+      }
+      .redirect-title {
+        font-size: 1.5rem;
+      }
+      .redirect-desc {
+        font-size: 0.9rem;
+      }
+      .playstore-btn {
+        padding: 0.85rem 1.25rem;
+        font-size: 0.95rem;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
   </style>
 
   <script>

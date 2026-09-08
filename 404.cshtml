@@ -232,12 +232,56 @@
       color: var(--accent-cyan);
       font-weight: 700;
     }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 640px) {
+      body {
+        padding: 1.25rem;
+      }
+      .error-container {
+        padding: 2.25rem 1.25rem 2rem;
+        border-radius: 20px;
+      }
+      .theme-toggle-wrapper {
+        position: static !important;
+        margin-bottom: 1.25rem;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .error-code {
+        font-size: clamp(4.5rem, 22vw, 6.5rem);
+      }
+      .error-title {
+        font-size: 1.45rem;
+      }
+      .error-desc {
+        font-size: 0.95rem;
+        margin-bottom: 1.75rem;
+      }
+      .btn-group {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+      .btn {
+        width: 100%;
+        padding: 0.85rem 1.25rem;
+      }
+      .links-grid {
+        gap: 0.85rem;
+      }
+      .links-grid a {
+        font-size: 0.85rem;
+        padding: 0.35rem 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="error-container">
-    <div style="position: absolute; top: 1.5rem; right: 1.5rem;">
+    <div class="theme-toggle-wrapper" style="position: absolute; top: 1.5rem; right: 1.5rem;">
       <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Light and Dark Mode" title="Toggle Light/Dark Theme">
         <span class="theme-icon-sun">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
