@@ -9,6 +9,7 @@
   <meta property="og:title" content="RG Infotech Solutions | Mobile Apps & Enterprise Software">
   <meta property="og:description" content="Discover premium mobile apps like The Grand Athlete App and PR Recipe Hub. Led by Senior Software Engineer Ravi Gausai.">
   <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="images/logo-icon.png">
   <link rel="stylesheet" href="css/style.css">
   <script>
     (function() {
@@ -24,9 +25,9 @@
   <!-- Navigation Bar -->
   <header class="site-header" id="siteHeader">
     <div class="container nav-container">
-      <a href="index.html" class="logo-link" id="navLogo">
-        <div class="logo-badge">RG</div>
-        <div class="logo-text">RG <span>Infotech</span></div>
+      <a href="index.html" class="logo-link" id="navLogo" aria-label="RG Infotech Solutions Home">
+        <img src="images/logo-dark.png" alt="RG Infotech Solutions" class="site-logo logo-dark">
+        <img src="images/logo-light.png" alt="RG Infotech Solutions" class="site-logo logo-light">
       </a>
 
       <nav>
@@ -62,12 +63,6 @@
           </span>
         </button>
 
-        <a href="portfolio.html" class="btn btn-primary" id="navCtaBtn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-          </svg>
-          <span>Explore Apps</span>
-        </a>
       </div>
 
       <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
@@ -193,7 +188,7 @@
           <h2>Ravi Gauswami (Gausai)</h2>
           <p class="founder-title">Senior Software Engineer &amp; Full-Stack Solutions Architect</p>
           <p class="founder-bio">
-            Experienced technologist with a demonstrated history of designing resilient mobile apps and enterprise software. Skilled in Android ecosystem, .NET Core, C#, Flutter, Ionic, and Python. Holding a Master of Computer Applications (MCA) from Atmiya Institute of Technology &amp; Science, Rajkot, Ravi bridges architectural robustness with fluid user experiences.
+            Experienced technologist with over 7 years of demonstrated expertise architecting resilient enterprise solutions, cloud backends, and high-performance mobile applications. Skilled across ASP.NET Core, ASP.NET Web API, nopCommerce, React.js, React Native, Next.js, and Azure DevOps. Holding a Master of Computer Applications (MCA) from Atmiya Institute of Technology &amp; Science, Rajkot, Ravi bridges architectural robustness with fluid user experiences.
           </p>
 
           <div class="founder-credentials">
@@ -206,12 +201,12 @@
               <div class="cred-value">MCA, Atmiya Institute (Rajkot)</div>
             </div>
             <div class="cred-item">
-              <div class="cred-label">Enterprise Role</div>
-              <div class="cred-value">Sr. Engineer at EonixTech</div>
+              <div class="cred-label">Core Stacks</div>
+              <div class="cred-value">ASP.NET Core, React.js, Next.js</div>
             </div>
             <div class="cred-item">
-              <div class="cred-label">Core Stacks</div>
-              <div class="cred-value">Android, .NET Core, C#, Flutter</div>
+              <div class="cred-label">Technology</div>
+              <div class="cred-value">SQL Server, Azure DevOps, Mobile</div>
             </div>
           </div>
 
@@ -248,7 +243,9 @@
         <!-- App 1: The Grand Athlete App -->
         <div class="app-card" data-category="mobile fitness">
           <div class="app-card-top">
-            <div class="app-icon athlete">🏆</div>
+            <div class="app-card-brand">
+              <img src="images/thegrandathlete-logo.png" alt="The Grand Athlete Logo" class="app-logo-img">
+            </div>
             <span class="app-badge-status">Featured Release</span>
           </div>
           <h3>The Grand Athlete App</h3>
@@ -277,18 +274,21 @@
           </div>
 
           <div class="app-card-actions">
-            <button class="btn btn-playstore" onclick="redirectToPlayStore('The Grand Athlete App', 'https://play.google.com/store/apps/details?id=com.thegrandathlete.app')" id="playBtnAthlete">
-              <svg class="icon-ps" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-1.686V3.5a2.41 2.41 0 0 1 .609-1.686zM15.207 13.414l2.658 2.658-11.8 6.777 9.142-9.435zm0-2.828L6.065 1.151l11.8 6.777-2.658 2.658zm1.414 1.414l3.443-1.975a1.412 1.412 0 0 0 0-2.45L16.621 12z"/>
+            <a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank" rel="noopener noreferrer" class="btn btn-playstore" id="playBtnAthlete">
+              <svg class="icon-ps" viewBox="0 0 512 512">
+                <path fill="#00e5ff" d="M48.7 13.1c-6.8 7.3-10.7 18.2-10.7 31.9v422c0 13.7 3.9 24.6 10.7 31.9l2.4 2.2L282.8 269.4v-5.8L51.1 10.9l-2.4 2.2z"/>
+                <path fill="#ff3a44" d="M358.5 345.1l-75.7-75.7v-5.8l75.7-75.7 1.8 1 89.6 51c25.6 14.5 25.6 38.3 0 52.9l-89.6 51-1.8 1.3z"/>
+                <path fill="#00e676" d="M282.8 263.6L51.1 495.3c8.5 9 22.4 10.1 38.1 1.2l269.3-152.9-75.7-76z"/>
+                <path fill="#ffd500" d="M282.8 248.4l75.7-76L89.2 19.5c-15.7-8.9-29.6-7.8-38.1 1.2l231.7 227.7z"/>
               </svg>
               <div class="ps-text">
-                <span>Get It On</span>
+                <span>GET IT ON</span>
                 <span>Google Play</span>
               </div>
-            </button>
+            </a>
 
             <div class="app-sublinks">
-              <a href="apps/TheGrandAthleteApp/download.html" id="linkAthleteDownload">App Overview &amp; APK &rarr;</a>
+              <a href="apps/TheGrandAthleteApp/index.html" id="linkAthleteDownload">Official App Website ↗</a>
               <a href="apps/TheGrandAthleteApp/privacy-policy.html" id="linkAthletePrivacy">Privacy Policy</a>
             </div>
           </div>
@@ -297,7 +297,9 @@
         <!-- App 2: PR Recipe Hub -->
         <div class="app-card" data-category="mobile lifestyle web">
           <div class="app-card-top">
-            <div class="app-icon recipe">🍳</div>
+            <div class="app-card-brand">
+              <img src="images/prrecipehub-logo.png" alt="PR Recipe Hub Logo" class="app-logo-img">
+            </div>
             <span class="app-badge-status" style="color: #10b981; border-color: rgba(16, 185, 129, 0.3);">Live on Play Store</span>
           </div>
           <h3>PR Recipe Hub</h3>
@@ -320,68 +322,28 @@
 
           <div class="app-tags">
             <span class="tag-badge">Android</span>
+            <span class="tag-badge">React Native</span>
             <span class="tag-badge">Web App</span>
-            <span class="tag-badge">Full-Stack</span>
             <span class="tag-badge">Cooking</span>
           </div>
 
           <div class="app-card-actions">
-            <button class="btn btn-playstore" onclick="redirectToPlayStore('PR Recipe Hub', 'https://lnkd.in/d6dU4D48')" id="playBtnRecipe">
-              <svg class="icon-ps" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-1.686V3.5a2.41 2.41 0 0 1 .609-1.686zM15.207 13.414l2.658 2.658-11.8 6.777 9.142-9.435zm0-2.828L6.065 1.151l11.8 6.777-2.658 2.658zm1.414 1.414l3.443-1.975a1.412 1.412 0 0 0 0-2.45L16.621 12z"/>
+            <a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" target="_blank" rel="noopener noreferrer" class="btn btn-playstore" id="playBtnRecipe">
+              <svg class="icon-ps" viewBox="0 0 512 512">
+                <path fill="#00e5ff" d="M48.7 13.1c-6.8 7.3-10.7 18.2-10.7 31.9v422c0 13.7 3.9 24.6 10.7 31.9l2.4 2.2L282.8 269.4v-5.8L51.1 10.9l-2.4 2.2z"/>
+                <path fill="#ff3a44" d="M358.5 345.1l-75.7-75.7v-5.8l75.7-75.7 1.8 1 89.6 51c25.6 14.5 25.6 38.3 0 52.9l-89.6 51-1.8 1.3z"/>
+                <path fill="#00e676" d="M282.8 263.6L51.1 495.3c8.5 9 22.4 10.1 38.1 1.2l269.3-152.9-75.7-76z"/>
+                <path fill="#ffd500" d="M282.8 248.4l75.7-76L89.2 19.5c-15.7-8.9-29.6-7.8-38.1 1.2l231.7 227.7z"/>
               </svg>
               <div class="ps-text">
-                <span>Get It On</span>
+                <span>GET IT ON</span>
                 <span>Google Play</span>
               </div>
-            </button>
-
-            <div class="app-sublinks">
-              <a href="apps/PRRecipeHub/download.html" id="linkRecipeDownload">Web &amp; App Hub &rarr;</a>
-              <a href="apps/PRRecipeHub/privacy-policy.html" id="linkRecipePrivacy">Privacy Policy</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- App 3: Enterprise ERP Connect -->
-        <div class="app-card" data-category="mobile enterprise">
-          <div class="app-card-top">
-            <div class="app-icon erp">⚡</div>
-            <span class="app-badge-status" style="color: #a855f7; border-color: rgba(168, 85, 247, 0.3);">Enterprise Mobile</span>
-          </div>
-          <h3>Smart ERP Connect</h3>
-          <p class="app-tagline">Integrated mobile enterprise suite bridging warehouse management, supply chain tracking, and real-time ERP data sync on the go.</p>
-
-          <ul class="app-features-list">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Secure OAuth2 &amp; enterprise single sign-on
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Offline barcode scanning &amp; batch synchronization
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Instant financial KPI dashboards
-            </li>
-          </ul>
-
-          <div class="app-tags">
-            <span class="tag-badge">Cross-Platform</span>
-            <span class="tag-badge">Flutter</span>
-            <span class="tag-badge">.NET Core API</span>
-            <span class="tag-badge">ERP</span>
-          </div>
-
-          <div class="app-card-actions">
-            <a href="portfolio.html" class="btn btn-secondary" id="linkErpPortfolio">
-              <span>View Enterprise Suite</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </a>
+
             <div class="app-sublinks">
-              <span>Enterprise Private Release</span>
-              <a href="contact.html">Request Demo</a>
+              <a href="https://prrecipehub.com" target="_blank" rel="noopener noreferrer" id="linkRecipeLive">prrecipehub.com ↗</a>
+              <a href="apps/TheGrandAthleteApp/privacy-policy.html" id="linkRecipePrivacy">Privacy Policy</a>
             </div>
           </div>
         </div>
@@ -396,15 +358,16 @@
         <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim);">Core Technical Stacks &amp; Frameworks</span>
       </div>
       <div class="tech-grid">
-        <div class="tech-chip">🤖 Android Native (Kotlin)</div>
-        <div class="tech-chip">💙 Flutter &amp; Dart</div>
-        <div class="tech-chip">⚡ .NET Core &amp; C#</div>
-        <div class="tech-chip">🐍 Python &amp; FastAPI</div>
-        <div class="tech-chip">🔷 Ionic Framework</div>
-        <div class="tech-chip">🌐 HTML5 &amp; Modern JS</div>
-        <div class="tech-chip">🗄️ SQL Server &amp; PostgreSQL</div>
-        <div class="tech-chip">☁️ AWS &amp; Azure Cloud</div>
-        <div class="tech-chip">🔒 Google Play Console Compliance</div>
+        <div class="tech-chip">⚡ ASP.NET Core</div>
+        <div class="tech-chip">🔌 ASP.NET Web API</div>
+        <div class="tech-chip">🛒 nopCommerce</div>
+        <div class="tech-chip">🗄️ Microsoft SQL Server</div>
+        <div class="tech-chip">🚀 Azure DevOps</div>
+        <div class="tech-chip">⚛️ React.js</div>
+        <div class="tech-chip">📱 React Native</div>
+        <div class="tech-chip">▲ Next.js</div>
+        <div class="tech-chip">💚 Vue.js</div>
+        <div class="tech-chip">🅰️ Angular</div>
       </div>
     </div>
   </section>
@@ -421,26 +384,50 @@
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
           </div>
-          <h3>Native &amp; Cross-Platform Mobile</h3>
-          <p>Custom Android (Kotlin/Java) and cross-platform (Flutter/Ionic) applications tailored for high user retention, fluid 60fps animations, and strict store policy compliance.</p>
+          <h3>ASP.NET Core &amp; Web API</h3>
+          <p>Architecting secure, asynchronous RESTful APIs and microservices using ASP.NET Core and C#, optimized with Entity Framework Core, caching, and clean architecture.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
           </div>
-          <h3>Enterprise .NET &amp; API Architecture</h3>
-          <p>Mission-critical backend systems using ASP.NET Core, C#, and Microservices with optimized query planning, caching strategies, and resilient error recovery.</p>
+          <h3>nopCommerce E-Commerce</h3>
+          <p>Custom nopCommerce store implementation, customized plugins, theme development, ERP/payment integrations, and high-conversion e-commerce performance tuning.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          </div>
+          <h3>Modern Web Apps (React, Next.js, Vue, Angular)</h3>
+          <p>Building lightning-fast, SEO-optimized web frontends and dynamic single-page applications using Next.js, React.js, Vue.js, and Angular with responsive UX.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          </div>
+          <h3>Mobile Engineering (React Native &amp; Android)</h3>
+          <p>Cross-platform React Native and native Android applications built for fluid 60fps performance, hardware sensor integration, and high-reliability local data sync.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+          </div>
+          <h3>Microsoft SQL Server Architecture</h3>
+          <p>Database schema modeling, query execution plan optimization, indexing strategies, complex stored procedures, and high-throughput data reliability.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
           </div>
-          <h3>Play Store Deployment &amp; Compliance</h3>
-          <p>End-to-end management of Google Play Store releases: data privacy agreements, permission auditing, automated testing tracks, and app store optimization (ASO).</p>
+          <h3>Azure DevOps &amp; CI/CD Pipelines</h3>
+          <p>Automated build &amp; release pipelines, containerized deployments, cloud hosting configuration, and continuous delivery with strict quality gates.</p>
         </div>
       </div>
     </div>
@@ -471,11 +458,11 @@
 
           <div class="info-item">
             <div class="info-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             </div>
             <div class="info-text">
-              <h4>Direct Email</h4>
-              <p><a href="mailto:contact@rginfotechsolutions.com">contact@rginfotechsolutions.com</a></p>
+              <h4>Direct Consultation</h4>
+              <p>Available for architecture advisory &amp; dev sprints</p>
             </div>
           </div>
 
@@ -492,29 +479,46 @@
 
         <div class="contact-form-card">
           <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Send a Direct Message</h3>
-          <form id="contactForm">
+          <form id="contactForm" action="https://formsubmit.co/gausairavi24@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Inquiry from RG Infotech Solutions Website">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
+
             <div class="form-group">
               <label for="userName">Full Name *</label>
-              <input type="text" id="userName" class="form-control" placeholder="e.g. John Doe" required>
+              <input type="text" id="userName" name="name" class="form-control" placeholder="e.g. John Doe" required>
             </div>
             <div class="form-group">
               <label for="userEmail">Email Address *</label>
-              <input type="email" id="userEmail" class="form-control" placeholder="john@company.com" required>
+              <input type="email" id="userEmail" name="email" class="form-control" placeholder="john@company.com" required>
             </div>
             <div class="form-group">
               <label for="appTopic">Project Category</label>
-              <select id="appTopic" class="form-control">
-                <option value="mobile">Android / Mobile App Development</option>
+              <select id="appTopic" name="category" class="form-control">
+                <option value="aspnet">ASP.NET Core &amp; Web API Architecture</option>
+                <option value="nopcommerce">nopCommerce E-Commerce Development</option>
+                <option value="react-next">React.js / Next.js / Frontend Development</option>
+                <option value="mobile">React Native / Android App Engineering</option>
+                <option value="database">SQL Server &amp; Database Optimization</option>
+                <option value="devops">Azure DevOps CI/CD Consulting</option>
                 <option value="athlete">The Grand Athlete App Inquiry</option>
                 <option value="recipe">PR Recipe Hub Partnership</option>
-                <option value="enterprise">Enterprise .NET &amp; Cloud Architecture</option>
-                <option value="consultation">Technical Consultation</option>
               </select>
             </div>
             <div class="form-group">
               <label for="userMessage">Your Message *</label>
-              <textarea id="userMessage" class="form-control" placeholder="Tell us about your requirements, project scope, or questions..." required></textarea>
+              <textarea id="userMessage" name="message" class="form-control" placeholder="Tell us about your requirements, project scope, or questions..." required></textarea>
             </div>
+
+            <!-- Security Math Captcha -->
+            <div class="form-group">
+              <label for="captchaAnswer">Security Verification *</label>
+              <div class="captcha-container">
+                <span class="captcha-badge" id="captchaQuestion">6 + 3 = ?</span>
+                <input type="number" id="captchaAnswer" name="captchaAnswer" class="form-control captcha-input" placeholder="Enter answer" required>
+              </div>
+            </div>
+
             <button type="submit" class="btn btn-primary" style="width: 100%;" id="submitFormBtn">
               <span>Send Message</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
@@ -529,55 +533,61 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
+        <!-- Brand & Profile -->
         <div class="footer-brand">
-          <div class="logo-link">
-            <div class="logo-badge">RG</div>
-            <div class="logo-text">RG <span>Infotech</span></div>
-          </div>
-          <p>Engineering premium Android applications, robust cloud APIs, and enterprise web solutions from Ahmedabad, Gujarat.</p>
+          <a href="index.html" class="logo-link" aria-label="RG Infotech Solutions Home">
+            <img src="images/logo-dark.png" alt="RG Infotech Solutions" class="site-logo logo-dark">
+            <img src="images/logo-light.png" alt="RG Infotech Solutions" class="site-logo logo-light">
+          </a>
+          <p>Engineering premium Android applications, robust cloud APIs, and scalable enterprise software architectures from Ahmedabad, Gujarat.</p>
           <div style="margin-top: 1.25rem;">
-            <a href="https://www.linkedin.com/in/ravi-gausai/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">
-              LinkedIn: /in/ravi-gausai
+            <a href="https://www.linkedin.com/in/ravi-gausai/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.45rem 1.1rem; font-size: 0.85rem; gap: 0.5rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.2a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+              <span>Connect on LinkedIn</span>
             </a>
           </div>
         </div>
 
+        <!-- Navigation Links -->
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="portfolio.html">App Portfolio</a></li>
-            <li><a href="about.html">About Ravi Gausai</a></li>
+            <li><a href="about.html">About Founder</a></li>
             <li><a href="services.html">Engineering Services</a></li>
             <li><a href="contact.html">Contact &amp; Consult</a></li>
           </ul>
         </div>
 
+        <!-- Mobile & Web Apps -->
         <div class="footer-col">
-          <h4>Our Apps</h4>
+          <h4>Portfolio Apps</h4>
           <ul class="footer-links">
-            <li><a href="apps/TheGrandAthleteApp/download.html">The Grand Athlete App</a></li>
-            <li><a href="apps/TheGrandAthleteApp/privacy-policy.html">Grand Athlete Privacy Policy</a></li>
-            <li><a href="apps/PRRecipeHub/download.html">PR Recipe Hub</a></li>
-            <li><a href="apps/PRRecipeHub/privacy-policy.html">Recipe Hub Privacy Policy</a></li>
-            <li><a href="portfolio.html">Google Play Store Hub</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank" rel="noopener noreferrer">The Grand Athlete (Google Play) ↗</a></li>
+            <li><a href="apps/TheGrandAthleteApp/index.html">The Grand Athlete (Website) ↗</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" target="_blank" rel="noopener noreferrer">PR Recipe Hub (Google Play) ↗</a></li>
+            <li><a href="https://prrecipehub.com/" target="_blank" rel="noopener noreferrer">PR Recipe Hub (Web Portal) ↗</a></li>
           </ul>
         </div>
 
+        <!-- Core Technical Stacks -->
         <div class="footer-col">
-          <h4>Official Links</h4>
+          <h4>Core Expertise</h4>
           <ul class="footer-links">
-            <li><a href="https://prrecipehub.com/" target="_blank" rel="noopener">PR Recipe Hub (Web Portal)</a></li>
-            <li><a href="https://lnkd.in/d6dU4D48" target="_blank" rel="noopener">PR Recipe Hub (Play Store)</a></li>
-            <li><a href="https://www.linkedin.com/in/ravi-gausai/" target="_blank" rel="noopener">Founder LinkedIn</a></li>
-            <li><a href="apps/TheGrandAthleteApp/terms.html">Terms of Service</a></li>
+            <li><a href="services.html#backend">ASP.NET Core &amp; Web API</a></li>
+            <li><a href="services.html#ecommerce">nopCommerce Solutions</a></li>
+            <li><a href="services.html#frontend">React.js &amp; Next.js</a></li>
+            <li><a href="services.html#mobile">React Native &amp; Android</a></li>
+            <li><a href="services.html#database">Microsoft SQL Server</a></li>
+            <li><a href="services.html#devops">Azure DevOps CI/CD</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
         <p>&copy; <span class="current-year">2026</span> RG Infotech Solutions. All rights reserved.</p>
-        <p>Engineered by Ravi Gauswami | Scalable Mobile &amp; Cloud Architectures</p>
+        <p>Engineered by Ravi Gauswami | Scalable Mobile &amp; Enterprise Architectures</p>
       </div>
     </div>
   </footer>

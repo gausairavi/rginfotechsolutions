@@ -203,71 +203,168 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      background: var(--bg-glass);
-      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: rgba(8, 9, 12, 0.85);
+      border-bottom: 1px solid rgba(0, 230, 118, 0.18);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       transition: var(--transition);
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 8%;
+      right: 8%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 230, 118, 0.6) 40%, rgba(41, 121, 255, 0.6) 60%, transparent);
+      pointer-events: none;
+    }
+    [data-theme="light"] header {
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom-color: rgba(15, 23, 42, 0.08);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+    [data-theme="light"] header::after {
+      background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5) 40%, rgba(37, 99, 235, 0.5) 60%, transparent);
     }
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 76px;
+      height: 78px;
     }
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-decoration: none;
       color: var(--text-main);
+      transition: transform var(--transition);
+    }
+    .brand:hover {
+      transform: translateY(-1px);
+    }
+    .brand-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #ffffff;
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 16px rgba(0, 230, 118, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      flex-shrink: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .brand:hover .brand-badge {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0, 230, 118, 0.35);
     }
     .brand-logo {
-      width: 44px;
-      height: 44px;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
-      filter: drop-shadow(0 0 12px var(--primary-glow));
+      border-radius: 11px;
     }
     .brand-text {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
     }
-    .brand-text span {
-      color: var(--primary);
+    .brand-text-main {
+      font-family: var(--font-display);
+      font-size: 1.22rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+    [data-theme="light"] .brand-text-main {
+      color: #0f172a;
+    }
+    .brand-text-sub {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--accent-green);
+      text-transform: uppercase;
     }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 4px;
       list-style: none;
     }
-    .nav-links a {
+    .nav-links li a {
       color: var(--text-secondary);
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
       transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
-    .nav-links a:hover {
-      color: var(--accent-green);
+    .nav-links li a:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    [data-theme="light"] .nav-links li a:hover {
+      color: #0f172a;
+      background: rgba(15, 23, 42, 0.06);
+    }
+    .nav-back-pill {
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      background: rgba(255, 255, 255, 0.04) !important;
+      font-size: 0.85rem !important;
+      padding: 6px 14px !important;
+      color: var(--text-secondary) !important;
+    }
+    .nav-back-pill:hover {
+      border-color: var(--accent-green) !important;
+      color: var(--accent-green) !important;
+      background: rgba(0, 230, 118, 0.08) !important;
+    }
+    [data-theme="light"] .nav-back-pill {
+      border-color: rgba(15, 23, 42, 0.12) !important;
+      background: rgba(15, 23, 42, 0.03) !important;
+    }
+    .nav-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
     .nav-cta {
-      background: linear-gradient(135deg, var(--accent-green), #00C853);
-      color: #000000 !important;
+      background: linear-gradient(135deg, #00E676 0%, #00C853 100%);
+      color: #05180f !important;
       font-family: var(--font-display);
       font-weight: 800;
-      padding: 10px 22px;
+      padding: 9px 20px;
       border-radius: var(--radius-full);
       text-transform: uppercase;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       letter-spacing: 0.5px;
-      box-shadow: 0 4px 18px var(--accent-green-glow);
+      box-shadow: 0 4px 18px rgba(0, 230, 118, 0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
     .nav-cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(0, 230, 118, 0.4);
+      box-shadow: 0 6px 24px rgba(0, 230, 118, 0.55);
+      color: #000000 !important;
+    }
+    .mobile-menu-cta {
+      display: none;
     }
 
     /* Hero Section */
@@ -1035,18 +1132,35 @@
     <div class="container">
       <nav class="nav-inner">
         <a href="index.html" class="brand" aria-label="The Grand Athlete Home">
-          <img src="assets/logo.png" alt="The Grand Athlete Logo" class="brand-logo">
-          <span class="brand-text">THE GRAND <span>ATHLETE</span></span>
+          <div class="brand-badge">
+            <img src="assets/logo.png" alt="The Grand Athlete Logo" class="brand-logo">
+          </div>
+          <div class="brand-text">
+            <span class="brand-text-main">THE GRAND ATHLETE</span>
+            <span class="brand-text-sub">Smart Conditioning</span>
+          </div>
         </a>
+
         <ul class="nav-links">
           <li><a href="#features">Features</a></li>
-          <li><a href="#showcase">App Showcase</a></li>
-          <li><a href="#privacy">Privacy & Security</a></li>
+          <li><a href="#showcase">Showcase</a></li>
+          <li><a href="#privacy">Privacy &amp; Security</a></li>
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="data-deletion.html">Data Deletion</a></li>
-          <li class="mobile-menu-cta"><a href="#download" class="nav-cta">Get App</a></li>
+          <li>
+            <a href="../../index.html" class="nav-back-pill" title="Return to RG Infotech Solutions">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              <span>RG Infotech</span>
+            </a>
+          </li>
+          <li class="mobile-menu-cta">
+            <a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank" rel="noopener noreferrer" class="nav-cta">
+              <svg viewBox="0 0 512 512" style="width: 14px; height: 14px;"><path fill="currentColor" d="M48.7 13.1c-6.8 7.3-10.7 18.2-10.7 31.9v422c0 13.7 3.9 24.6 10.7 31.9l2.4 2.2L282.8 269.4v-5.8L51.1 10.9l-2.4 2.2z"/><path fill="currentColor" d="M358.5 345.1l-75.7-75.7v-5.8l75.7-75.7 1.8 1 89.6 51c25.6 14.5 25.6 38.3 0 52.9l-89.6 51-1.8 1.3z"/><path fill="currentColor" d="M282.8 263.6L51.1 495.3c8.5 9 22.4 10.1 38.1 1.2l269.3-152.9-75.7-76z"/><path fill="currentColor" d="M282.8 248.4l75.7-76L89.2 19.5c-15.7-8.9-29.6-7.8-38.1 1.2l231.7 227.7z"/></svg>
+              <span>Get on Google Play</span>
+            </a>
+          </li>
         </ul>
-        <div style="display: flex; align-items: center; gap: 10px;">
+
+        <div class="nav-actions-group">
           <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Light and Dark Mode" title="Toggle Light/Dark Theme">
             <span class="theme-icon-sun">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1067,7 +1181,12 @@
               </svg>
             </span>
           </button>
-          <a href="#download" class="nav-cta" id="nav-download-btn">Get App</a>
+
+          <a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank" rel="noopener noreferrer" class="nav-cta" id="nav-download-btn">
+            <svg viewBox="0 0 512 512" style="width: 13px; height: 13px;"><path fill="currentColor" d="M48.7 13.1c-6.8 7.3-10.7 18.2-10.7 31.9v422c0 13.7 3.9 24.6 10.7 31.9l2.4 2.2L282.8 269.4v-5.8L51.1 10.9l-2.4 2.2z"/><path fill="currentColor" d="M358.5 345.1l-75.7-75.7v-5.8l75.7-75.7 1.8 1 89.6 51c25.6 14.5 25.6 38.3 0 52.9l-89.6 51-1.8 1.3z"/><path fill="currentColor" d="M282.8 263.6L51.1 495.3c8.5 9 22.4 10.1 38.1 1.2l269.3-152.9-75.7-76z"/><path fill="currentColor" d="M282.8 248.4l75.7-76L89.2 19.5c-15.7-8.9-29.6-7.8-38.1 1.2l231.7 227.7z"/></svg>
+            <span>Google Play</span>
+          </a>
+
           <button class="mobile-nav-toggle" id="appMobileToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>

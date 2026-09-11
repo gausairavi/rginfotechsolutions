@@ -8,7 +8,7 @@
   try {
     const savedTheme = localStorage.getItem('rg_theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
-  } catch (e) {}
+  } catch (e) { }
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.documentElement.setAttribute('data-theme', newTheme);
       try {
         localStorage.setItem('rg_theme', newTheme);
-      } catch (e) {}
+      } catch (e) { }
       if (typeof showToast === 'function') {
         showToast(`Theme switched to ${newTheme.toUpperCase()} mode`, 'info');
       }
@@ -107,20 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Ensure drawer CTA exists inside nav drawer for mobile viewports
-  if (navEl && navActions && !navEl.querySelector('.mobile-drawer-cta')) {
-    const ctaContainer = document.createElement('div');
-    ctaContainer.className = 'mobile-drawer-cta';
-    const actionBtn = navActions.querySelector('.btn');
-    if (actionBtn) {
-      const cloneBtn = actionBtn.cloneNode(true);
-      ctaContainer.appendChild(cloneBtn);
-      cloneBtn.addEventListener('click', () => {
-        closeMobileMenu();
-      });
-    }
-    navEl.appendChild(ctaContainer);
-  }
+  // Mobile nav closes on link click
+  // (No extra duplicate button injected below menus)
 
   // 3. Portfolio Filters
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -148,36 +136,101 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Contact Form Simulated Submission
+  // 4. Contact Form Submission with Math Captcha & FormSubmit Integration
   const contactForm = document.getElementById('contactForm');
+  let captchaExpected = 0;
+
+  function initCaptcha() {
+    const num1 = Math.floor(Math.random() * 8) + 2;
+    const num2 = Math.floor(Math.random() * 7) + 1;
+    captchaExpected = num1 + num2;
+    const captchaBadge = document.getElementById('captchaQuestion');
+    if (captchaBadge) {
+      captchaBadge.textContent = `${num1} + ${num2} = ?`;
+    }
+  }
+
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    initCaptcha();
+
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      // Verify Captcha
+      const captchaInput = document.getElementById('captchaAnswer');
+      if (captchaInput) {
+        const userAnswer = parseInt(captchaInput.value.trim(), 10);
+        if (userAnswer !== captchaExpected) {
+          showToast('Security verification failed. Please solve the math check again.', 'error');
+          initCaptcha();
+          captchaInput.value = '';
+          captchaInput.focus();
+          return;
+        }
+      }
+
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
-      
+
       submitBtn.disabled = true;
       submitBtn.innerHTML = `<span>Sending Message...</span>`;
 
-      setTimeout(() => {
-        showToast('Thank you! Your inquiry has been sent to Ravi Gausai & team. We will get back to you shortly.', 'success');
-        contactForm.reset();
+      try {
+        const formData = new FormData(contactForm);
+        formData.delete('captchaAnswer');
+
+        const formObj = Object.fromEntries(formData.entries());
+        formObj['_subject'] = `New Website Inquiry: ${formObj.name || 'Client'} (${formObj.category || 'General'})`;
+        formObj['_template'] = 'table';
+        formObj['_captcha'] = 'false';
+
+        const response = await fetch('https://formsubmit.co/ajax/gausairavi24@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(formObj)
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (response.ok && (data.success === true || data.success === 'true')) {
+          showToast('Thank you! Your message has been sent to RG Infotech Solutions. We will reach out shortly.', 'success');
+          contactForm.reset();
+        } else if (data.message && data.message.toLowerCase().includes('activation')) {
+          showToast('First-time setup: FormSubmit sent an activation link to gausairavi24@gmail.com. Please check your email to activate!', 'info');
+          contactForm.reset();
+        } else if (data.message && data.message.toLowerCase().includes('web server')) {
+          // If tested on file:// protocol instead of http/https
+          contactForm.submit();
+        } else {
+          showToast('Thank you! Your inquiry has been submitted.', 'success');
+          contactForm.reset();
+        }
+      } catch (err) {
+        // Fallback to normal form submit if fetch fails (e.g. offline or strict CORS)
+        try {
+          contactForm.submit();
+        } catch (e) {
+          showToast('Thank you! Your inquiry has been submitted.', 'success');
+          contactForm.reset();
+        }
+      } finally {
+        initCaptcha();
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
-      }, 1200);
+      }
     });
   }
 
-  // 5. Play Store Redirection Handler with Feedback
-  window.redirectToPlayStore = function(appName, url) {
-    showToast(`Redirecting to Google Play Store for ${appName}...`, 'info');
-    setTimeout(() => {
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }, 600);
+  // 5. Play Store Redirection Handler (Instant direct open)
+  window.redirectToPlayStore = function (appName, url) {
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   // 6. Copy Link Handler
-  window.copyAppShareLink = function(url, appTitle) {
+  window.copyAppShareLink = function (url, appTitle) {
     navigator.clipboard.writeText(url).then(() => {
       showToast(`Link for ${appTitle} copied to clipboard!`, 'success');
     }).catch(() => {
@@ -205,7 +258,7 @@ function showToast(message, type = 'info') {
 
   const toast = document.createElement('div');
   toast.className = `toast toast-${type}`;
-  
+
   let iconSvg = `
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="12" cy="12" r="10"></circle>

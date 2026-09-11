@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact & Consultation | RG Infotech Solutions</title>
   <meta name="description" content="Get in touch with Ravi Gausai and the RG Infotech Solutions team for mobile app development, enterprise software architecture, and technical consultation in Ahmedabad.">
+  <link rel="icon" type="image/png" href="images/logo-icon.png">
   <link rel="stylesheet" href="css/style.css">
   <script>
     (function() {
@@ -20,9 +21,9 @@
   <!-- Navigation Bar -->
   <header class="site-header" id="siteHeader">
     <div class="container nav-container">
-      <a href="index.html" class="logo-link">
-        <div class="logo-badge">RG</div>
-        <div class="logo-text">RG <span>Infotech</span></div>
+      <a href="index.html" class="logo-link" aria-label="RG Infotech Solutions Home">
+        <img src="images/logo-dark.png" alt="RG Infotech Solutions" class="site-logo logo-dark">
+        <img src="images/logo-light.png" alt="RG Infotech Solutions" class="site-logo logo-light">
       </a>
 
       <nav>
@@ -109,16 +110,6 @@
 
           <div class="info-item">
             <div class="info-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </div>
-            <div class="info-text">
-              <h4>Direct Email</h4>
-              <p><a href="mailto:contact@rginfotechsolutions.com">contact@rginfotechsolutions.com</a></p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.66 1.66 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.66 1.66 0 0 0 1.66-1.66 1.66 1.66 0 0 0-1.66-1.66z"/></svg>
             </div>
             <div class="info-text">
@@ -135,29 +126,46 @@
 
         <div class="contact-form-card">
           <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Send Inquiry / Consultation Request</h3>
-          <form id="contactForm">
+          <form id="contactForm" action="https://formsubmit.co/gausairavi24@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Inquiry from RG Infotech Solutions Website">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
+
             <div class="form-group">
               <label for="userName">Your Name *</label>
-              <input type="text" id="userName" class="form-control" placeholder="e.g. John Doe" required>
+              <input type="text" id="userName" name="name" class="form-control" placeholder="e.g. John Doe" required>
             </div>
             <div class="form-group">
               <label for="userEmail">Business Email *</label>
-              <input type="email" id="userEmail" class="form-control" placeholder="john@company.com" required>
+              <input type="email" id="userEmail" name="email" class="form-control" placeholder="john@company.com" required>
             </div>
             <div class="form-group">
               <label for="appTopic">Inquiry Category</label>
-              <select id="appTopic" class="form-control">
-                <option value="mobile">Android / Mobile App Development</option>
+              <select id="appTopic" name="category" class="form-control">
+                <option value="aspnet">ASP.NET Core &amp; Web API Architecture</option>
+                <option value="nopcommerce">nopCommerce E-Commerce Solutions</option>
+                <option value="react-next">React.js / Next.js Frontend Development</option>
+                <option value="mobile">React Native &amp; Android App Engineering</option>
+                <option value="database">SQL Server &amp; Database Architecture</option>
+                <option value="devops">Azure DevOps CI/CD Consulting</option>
                 <option value="athlete">The Grand Athlete App Support / Collab</option>
                 <option value="recipe">PR Recipe Hub Partnership</option>
-                <option value="enterprise">Enterprise .NET &amp; API Architecture</option>
-                <option value="compliance">Google Play Store Compliance &amp; Policies</option>
               </select>
             </div>
             <div class="form-group">
               <label for="userMessage">Project Details / Message *</label>
-              <textarea id="userMessage" class="form-control" placeholder="Tell us about your project, timeline, or specific questions..." required></textarea>
+              <textarea id="userMessage" name="message" class="form-control" placeholder="Tell us about your project, timeline, or specific questions..." required></textarea>
             </div>
+
+            <!-- Security Math Captcha -->
+            <div class="form-group">
+              <label for="captchaAnswer">Security Verification *</label>
+              <div class="captcha-container">
+                <span class="captcha-badge" id="captchaQuestion">5 + 4 = ?</span>
+                <input type="number" id="captchaAnswer" name="captchaAnswer" class="form-control captcha-input" placeholder="Enter answer" required>
+              </div>
+            </div>
+
             <button type="submit" class="btn btn-primary" style="width: 100%;" id="submitFormBtn">
               <span>Submit Message</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
@@ -168,45 +176,65 @@
     </div>
   </section>
 
-  <!-- Frequently Asked Questions -->
-  <section style="padding: 4rem 0 6rem; background: var(--bg-secondary);">
-    <div class="container">
-      <div class="text-center" style="margin-bottom: 3rem;">
-        <div class="section-tag">FAQ</div>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-      </div>
-
-      <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
-        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem;">
-          <h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem;">How do you ensure apps comply with Google Play Developer Policies?</h4>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-            We audit all Android permissions, prepare complete transparent privacy policies (such as those for The Grand Athlete App and PR Recipe Hub), verify Target SDK levels, and properly configure Data Safety declarations in the Google Play Console before submission.
-          </p>
-        </div>
-
-        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem;">
-          <h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem;">Can we add new apps to the portfolio later?</h4>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-            Yes! The website architecture is modularized. Each app has its own folder under <code>apps/&lt;AppName&gt;/</code> containing its dedicated <code>download.html</code>, <code>privacy-policy.html</code>, and assets, and is automatically featured on the central <code>portfolio.html</code> page.
-          </p>
-        </div>
-
-        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem;">
-          <h4 style="font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem;">Do you work on both mobile apps and enterprise backends?</h4>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-            Yes. Our core specialty is full-stack synergy: connecting native Android / Flutter mobile clients with enterprise ASP.NET Core, C#, Python, and SQL microservices for end-to-end performance.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
+      <div class="footer-grid">
+        <!-- Brand & Profile -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo-link" aria-label="RG Infotech Solutions Home">
+            <img src="images/logo-dark.png" alt="RG Infotech Solutions" class="site-logo logo-dark">
+            <img src="images/logo-light.png" alt="RG Infotech Solutions" class="site-logo logo-light">
+          </a>
+          <p>Engineering premium Android applications, robust cloud APIs, and scalable enterprise software architectures from Ahmedabad, Gujarat.</p>
+          <div style="margin-top: 1.25rem;">
+            <a href="https://www.linkedin.com/in/ravi-gausai/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.45rem 1.1rem; font-size: 0.85rem; gap: 0.5rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.2a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+              <span>Connect on LinkedIn</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">App Portfolio</a></li>
+            <li><a href="about.html">About Founder</a></li>
+            <li><a href="services.html">Engineering Services</a></li>
+            <li><a href="contact.html">Contact &amp; Consult</a></li>
+          </ul>
+        </div>
+
+        <!-- Mobile & Web Apps -->
+        <div class="footer-col">
+          <h4>Portfolio Apps</h4>
+          <ul class="footer-links">
+            <li><a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank" rel="noopener noreferrer">The Grand Athlete (Google Play) ↗</a></li>
+            <li><a href="apps/TheGrandAthleteApp/index.html">The Grand Athlete (Website) ↗</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" target="_blank" rel="noopener noreferrer">PR Recipe Hub (Google Play) ↗</a></li>
+            <li><a href="https://prrecipehub.com/" target="_blank" rel="noopener noreferrer">PR Recipe Hub (Web Portal) ↗</a></li>
+          </ul>
+        </div>
+
+        <!-- Core Technical Stacks -->
+        <div class="footer-col">
+          <h4>Core Expertise</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#backend">ASP.NET Core &amp; Web API</a></li>
+            <li><a href="services.html#ecommerce">nopCommerce Solutions</a></li>
+            <li><a href="services.html#frontend">React.js &amp; Next.js</a></li>
+            <li><a href="services.html#mobile">React Native &amp; Android</a></li>
+            <li><a href="services.html#database">Microsoft SQL Server</a></li>
+            <li><a href="services.html#devops">Azure DevOps CI/CD</a></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="footer-bottom">
         <p>&copy; <span class="current-year">2026</span> RG Infotech Solutions. All rights reserved.</p>
-        <p><a href="index.html">Home</a> • <a href="portfolio.html">Apps</a></p>
+        <p>Engineered by Ravi Gauswami | Scalable Mobile &amp; Enterprise Architectures</p>
       </div>
     </div>
   </footer>

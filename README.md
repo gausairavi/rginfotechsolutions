@@ -12,16 +12,14 @@ Official corporate website and mobile application ecosystem for **RG Infotech So
 
 This repository hosts the static web portal and dedicated app landing pages, download links, and legally compliant Google Play Developer policies:
 
-* **[The Grand Athlete App](apps/TheGrandAthleteApp/download.html)**: Athletic conditioning, biometric heart-rate tracking, and performance analytics.
-  * [Download & Features](apps/TheGrandAthleteApp/download.html)
-  * [Privacy Policy (Google Play Compliant)](apps/TheGrandAthleteApp/privacy-policy.html)
-  * [Terms of Service](apps/TheGrandAthleteApp/terms.html)
-* **[PR Recipe Hub](apps/PRRecipeHub/download.html)**: Culinary platform connecting home cooks with step-by-step recipes.
-  * [Download & App Overview](apps/PRRecipeHub/download.html)
+* **[The Grand Athlete App](apps/TheGrandAthleteApp/index.html)**: Athletic conditioning, biometric heart-rate tracking, and performance analytics.
+  * [Official Web Platform](apps/TheGrandAthleteApp/index.html)
+  * [Google Play Store](https://play.google.com/store/apps/details?id=com.thegrandathlete.app)
+  * [Privacy Policy](apps/TheGrandAthleteApp/privacy-policy.html)
+  * [Data Deletion Request](apps/TheGrandAthleteApp/data-deletion.html)
+* **[PR Recipe Hub](https://prrecipehub.com/)**: Culinary platform connecting home cooks with step-by-step recipes.
   * [Live Web Platform](https://prrecipehub.com/)
-  * [Google Play Store](https://lnkd.in/d6dU4D48)
-  * [Privacy Policy](apps/PRRecipeHub/privacy-policy.html)
-  * [Terms of Service](apps/PRRecipeHub/terms.html)
+  * [Google Play Store](https://play.google.com/store/apps/details?id=com.prrecipehub.app)
 
 ---
 
@@ -30,8 +28,8 @@ This repository hosts the static web portal and dedicated app landing pages, dow
 * `index.html` — Main homepage featuring hero, founder profile spotlight, core solutions, and client contact.
 * `portfolio.html` — Interactive filterable app portfolio with Google Play Store redirection and clipboard sharing.
 * `about.html` — Detailed biography of Ravi Gauswami, education (MCA from Atmiya Institute, Rajkot), and engineering tenets.
-* `services.html` — Engineering services: Android (Kotlin), Cross-platform (Flutter), Enterprise .NET Core, and Play Store Compliance.
-* `contact.html` — Consultation request form and FAQs.
+* `services.html` — Engineering services: ASP.NET Core & Web API, nopCommerce, React/Next.js, and Mobile Engineering.
+* `contact.html` — Consultation request form with direct email routing and security verification.
 * `css/style.css` — Modern dark obsidian design system with cyan & violet gradients, glassmorphism, and responsive breakpoints.
 * `js/main.js` — Mobile navigation drawer, portfolio filter tabs, and toast alerts.
 
@@ -39,10 +37,9 @@ This repository hosts the static web portal and dedicated app landing pages, dow
 
 ## 🛠️ Tech Stack
 
-* **Core Web**: HTML5, Vanilla CSS, Modern JavaScript
-* **Typography**: Outfit & Inter (Google Fonts)
-* **Mobile Ecosystem**: Android (Kotlin), Flutter, Ionic Framework
-* **Enterprise Backend**: ASP.NET Core, C#, Python, SQL Server
+* **Core Technical Stacks**: ASP.NET Core, ASP.NET Web API, nopCommerce, Microsoft SQL Server, Azure DevOps, React.js, React Native, Next.js, Vue.js, Angular
+* **Typography**: Plus Jakarta Sans, Outfit, Space Grotesk (Google Fonts)
+* **Mobile Ecosystem**: React Native, Android Native (Kotlin)
 
 ---
 
