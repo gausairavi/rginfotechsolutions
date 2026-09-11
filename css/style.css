@@ -1505,7 +1505,9 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 0.85rem 1.1rem;
-  color: #fff;
+  color: #f8fafc;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
   transition: var(--transition-fast);
 }
 
@@ -1513,6 +1515,74 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--accent-cyan);
   background: rgba(255, 255, 255, 0.07);
   box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+  outline: none;
+}
+
+/* Custom Dropdown (Select) Styling with High-Contrast Dark & Light Support */
+select.form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-color: #0d1527;
+  color: #f8fafc;
+  color-scheme: dark;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2300f2fe' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.1rem center;
+  background-size: 16px 16px;
+  padding-right: 2.75rem;
+}
+
+select.form-control:focus {
+  border-color: var(--accent-cyan);
+  background-color: #101c33;
+}
+
+/* Explicit styling for options inside dropdown popups */
+select.form-control option {
+  background-color: #0b1120;
+  color: #f8fafc;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+}
+
+select.form-control option:hover,
+select.form-control option:focus,
+select.form-control option:checked {
+  background-color: #1e293b;
+  color: #00f2fe;
+}
+
+[data-theme="light"] .form-control {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.18);
+  color: #0f172a;
+}
+
+[data-theme="light"] .form-control:focus {
+  border-color: #0284c7;
+  background: #ffffff;
+  box-shadow: 0 0 15px rgba(2, 132, 199, 0.2);
+}
+
+[data-theme="light"] select.form-control {
+  background-color: #ffffff;
+  color: #0f172a;
+  color-scheme: light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230284c7' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+[data-theme="light"] select.form-control option {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+[data-theme="light"] select.form-control option:hover,
+[data-theme="light"] select.form-control option:focus,
+[data-theme="light"] select.form-control option:checked {
+  background-color: #f1f5f9;
+  color: #0284c7;
 }
 
 textarea.form-control {
