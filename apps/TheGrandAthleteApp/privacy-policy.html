@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — The Grand Athlete</title>
-  <meta name="description" content="Official Privacy Policy for The Grand Athlete mobile application. Explaining private on-device data storage, Google AdMob GDPR / UMP consent, and data rights.">
+  <meta name="description"
+    content="Official Privacy Policy for The Grand Athlete mobile application. Explaining private on-device data storage, Google AdMob GDPR / UMP consent, and data rights.">
   <meta name="author" content="The Grand Athlete Team">
   <meta name="theme-color" content="#08090C">
 
@@ -14,14 +16,16 @@
   <!-- Google Fonts: Outfit & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
 
   <script>
-    (function() {
+    (function () {
       try {
         const t = localStorage.getItem('rg_theme') || 'dark';
         document.documentElement.setAttribute('data-theme', t);
-      } catch(e) {}
+      } catch (e) { }
     })();
   </script>
 
@@ -88,14 +92,29 @@
       cursor: pointer;
       transition: all 0.2s ease;
     }
+
     .theme-toggle:hover {
       border-color: var(--primary);
       transform: scale(1.05);
     }
-    .theme-icon-sun { display: flex; color: #f59e0b; }
-    .theme-icon-moon { display: none; color: #6366f1; }
-    [data-theme="light"] .theme-icon-sun { display: none; }
-    [data-theme="light"] .theme-icon-moon { display: flex; }
+
+    .theme-icon-sun {
+      display: flex;
+      color: #f59e0b;
+    }
+
+    .theme-icon-moon {
+      display: none;
+      color: #6366f1;
+    }
+
+    [data-theme="light"] .theme-icon-sun {
+      display: none;
+    }
+
+    [data-theme="light"] .theme-icon-moon {
+      display: flex;
+    }
 
     * {
       margin: 0;
@@ -127,12 +146,14 @@
       top: 0;
       z-index: 50;
     }
+
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 70px;
     }
+
     .brand {
       display: flex;
       align-items: center;
@@ -140,19 +161,23 @@
       text-decoration: none;
       color: var(--text-main);
     }
+
     .brand-logo {
       width: 38px;
       height: 38px;
       object-fit: contain;
     }
+
     .brand-title {
       font-family: var(--font-display);
       font-weight: 800;
       font-size: 1.25rem;
     }
+
     .brand-title span {
       color: var(--primary);
     }
+
     .back-btn {
       color: var(--text-secondary);
       text-decoration: none;
@@ -163,6 +188,7 @@
       gap: 6px;
       transition: color 0.2s ease;
     }
+
     .back-btn:hover {
       color: var(--accent-green);
     }
@@ -171,11 +197,13 @@
     .policy-content {
       padding: 50px 0 80px;
     }
+
     .policy-hero {
       margin-bottom: 40px;
       border-bottom: 1px solid var(--border-color);
       padding-bottom: 30px;
     }
+
     .policy-hero h1 {
       font-family: var(--font-display);
       font-size: 2.75rem;
@@ -183,6 +211,7 @@
       letter-spacing: -0.5px;
       margin-bottom: 12px;
     }
+
     .effective-date {
       color: var(--accent-green);
       font-weight: 700;
@@ -199,6 +228,7 @@
       padding: 24px 28px;
       margin-bottom: 40px;
     }
+
     .summary-card h3 {
       font-family: var(--font-display);
       font-size: 1.25rem;
@@ -209,6 +239,7 @@
       align-items: center;
       gap: 8px;
     }
+
     .summary-card p {
       color: var(--text-main);
       font-size: 0.98rem;
@@ -219,6 +250,7 @@
     .policy-section {
       margin-bottom: 40px;
     }
+
     .policy-section h2 {
       font-family: var(--font-display);
       font-size: 1.6rem;
@@ -229,18 +261,22 @@
       align-items: center;
       gap: 10px;
     }
+
     .policy-section p {
       color: var(--text-secondary);
       margin-bottom: 14px;
       font-size: 1rem;
     }
+
     .policy-section ul {
       margin: 14px 0 18px 24px;
       color: var(--text-secondary);
     }
+
     .policy-section li {
       margin-bottom: 8px;
     }
+
     .policy-section strong {
       color: var(--text-main);
     }
@@ -252,25 +288,31 @@
       border-radius: var(--radius-md);
       background: var(--bg-surface);
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
       font-size: 0.92rem;
     }
-    th, td {
+
+    th,
+    td {
       padding: 14px 18px;
       border-bottom: 1px solid var(--border-color);
     }
+
     th {
       background: var(--bg-surface-elevated);
       color: var(--text-main);
       font-family: var(--font-display);
       font-weight: 800;
     }
+
     td {
       color: var(--text-secondary);
     }
+
     tr:last-child td {
       border-bottom: none;
     }
@@ -282,6 +324,7 @@
       padding: 18px 22px;
       margin: 20px 0;
     }
+
     .callout strong {
       display: block;
       color: var(--primary);
@@ -293,6 +336,7 @@
       color: var(--accent-green);
       text-decoration: underline;
     }
+
     a:hover {
       color: #FFFFFF;
     }
@@ -314,29 +358,38 @@
         flex-wrap: wrap;
         gap: 12px;
       }
+
       .brand-title {
         font-size: 1.15rem;
       }
+
       .back-btn {
         font-size: 0.82rem;
         padding: 6px 14px;
       }
+
       .policy-hero h1 {
         font-size: clamp(1.8rem, 6vw, 2.5rem);
       }
+
       .policy-content {
         padding: 30px 0 50px;
       }
+
       .summary-card {
         padding: 20px 16px;
       }
+
       .policy-section h2 {
         font-size: 1.35rem;
       }
+
       .callout {
         padding: 14px 16px;
       }
-      th, td {
+
+      th,
+      td {
         padding: 10px 12px;
         font-size: 0.85rem;
       }
@@ -346,22 +399,27 @@
       .container {
         padding: 0 16px;
       }
+
       .header-inner {
         justify-content: space-between;
       }
+
       .brand-title {
         font-size: 1.05rem;
       }
+
       .back-btn {
         padding: 6px 10px;
         font-size: 0.78rem;
       }
+
       .policy-section ul {
         margin-left: 16px;
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Header -->
@@ -373,9 +431,11 @@
           <span class="brand-title">THE GRAND <span>ATHLETE</span></span>
         </a>
         <div style="display: flex; align-items: center; gap: 16px;">
-          <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Light and Dark Mode" title="Toggle Light/Dark Theme">
+          <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Light and Dark Mode"
+            title="Toggle Light/Dark Theme">
             <span class="theme-icon-sun">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="5"></circle>
                 <line x1="12" y1="1" x2="12" y2="3"></line>
                 <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -388,7 +448,8 @@
               </svg>
             </span>
             <span class="theme-icon-moon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
               </svg>
             </span>
@@ -405,7 +466,9 @@
         <span class="effective-date">Last Updated: September 2026 • Version 1.1.0</span>
         <h1>Privacy Policy</h1>
         <p style="color: var(--text-secondary); font-size: 1.1rem;">
-          This Privacy Policy explains how <strong>The Grand Athlete</strong> ("we", "our", or "the app") handles your personal data, health metrics, device information, and subscription billing in compliance with Google Play Developer Policies, GDPR (EU/UK), and relevant consumer protection regulations.
+          This Privacy Policy explains how <strong>The Grand Athlete</strong> ("we", "our", or "the app") handles your
+          personal data, health metrics, device information, and subscription billing in compliance with Google Play
+          Developer Policies, GDPR (EU/UK), and relevant consumer protection regulations.
         </p>
       </div>
 
@@ -413,7 +476,13 @@
       <div class="summary-card">
         <h3>🛡️ Summary: Private On-Device Data & Transparency</h3>
         <p>
-          <strong>Your fitness is your own business:</strong> All your workouts, body weight metrics, meal plans, streaks, and personal progress records reside exclusively in encrypted local storage on your device. We do NOT operate remote user profile databases and we do NOT sell your personal health information. An <strong>active internet connection is required</strong> to run the app, stream exercise demonstration videos, verify subscription entitlements, and load non-intrusive advertisements in compliance with Google AdMob and GDPR / UMP consent choices. <strong>Grand Athlete Pro subscribers enjoy an entirely 100% ad-free experience across the entire application.</strong>
+          <strong>Your fitness is your own business:</strong> All your workouts, body weight metrics, meal plans,
+          streaks, and personal progress records reside exclusively in encrypted local storage on your device. We do NOT
+          operate remote user profile databases and we do NOT sell your personal health information. An <strong>active
+            internet connection is required</strong> to run the app, stream exercise demonstration videos, verify
+          subscription entitlements, and load non-intrusive advertisements in compliance with Google AdMob and GDPR /
+          UMP consent choices. <strong>Grand Athlete Pro subscribers enjoy an entirely 100% ad-free experience across
+            the entire application.</strong>
         </p>
       </div>
 
@@ -421,12 +490,17 @@
       <section class="policy-section">
         <h2>1. Architecture & On-Device Storage Model</h2>
         <p>
-          The Grand Athlete is built on a private on-device storage architecture. Unlike conventional fitness applications:
+          The Grand Athlete is built on a private on-device storage architecture. Unlike conventional fitness
+          applications:
         </p>
         <ul>
-          <li><strong>No Mandatory Account:</strong> You do not need to provide an email address, create a password, or link third-party social media accounts to use the application.</li>
-          <li><strong>Local Database / Key-Value Store:</strong> Your athletic profiles, workout sets, reps, weights, calorie and water logs, streak records, and achievements are stored directly in your smartphone's internal sandboxed application storage.</li>
-          <li><strong>Zero Remote Cloud Sync of Biometrics:</strong> We do not transmit your body measurements, workout history, or nutrition logs to proprietary external backend servers.</li>
+          <li><strong>No Mandatory Account:</strong> You do not need to provide an email address, create a password, or
+            link third-party social media accounts to use the application.</li>
+          <li><strong>Local Database / Key-Value Store:</strong> Your athletic profiles, workout sets, reps, weights,
+            calorie and water logs, streak records, and achievements are stored directly in your smartphone's internal
+            sandboxed application storage.</li>
+          <li><strong>Zero Remote Cloud Sync of Biometrics:</strong> We do not transmit your body measurements, workout
+            history, or nutrition logs to proprietary external backend servers.</li>
         </ul>
       </section>
 
@@ -434,13 +508,19 @@
       <section class="policy-section">
         <h2>2. Network Connection Requirement</h2>
         <p>
-          An <strong>active internet connection is required</strong> to run The Grand Athlete application. Network connectivity is utilized strictly for the following functions:
+          An <strong>active internet connection is required</strong> to run The Grand Athlete application. Network
+          connectivity is utilized strictly for the following functions:
         </p>
         <ul>
-          <li><strong>Google Play Billing & Subscription Verification:</strong> Verifying active Grand Athlete Pro entitlements, handling purchase tokens, and restoring subscriptions securely with Google Play.</li>
-          <li><strong>Exercise Video Demonstrations:</strong> Streaming high-definition exercise technique guides and movement tutorials embedded via the official YouTube player in conformity with the YouTube Terms of Service.</li>
-          <li><strong>Google AdMob Monetization (Free Tier):</strong> Serving banner, app-open, and optional rewarded advertisements delivered by the Google Mobile Ads SDK for non-Pro users.</li>
-          <li><strong>App Updates & Version Checks:</strong> Verifying Google Play Store version status for critical security and compatibility patches.</li>
+          <li><strong>Google Play Billing & Subscription Verification:</strong> Verifying active Grand Athlete Pro
+            entitlements, handling purchase tokens, and restoring subscriptions securely with Google Play.</li>
+          <li><strong>Exercise Video Demonstrations:</strong> Streaming high-definition exercise technique guides and
+            movement tutorials embedded via the official YouTube player in conformity with the YouTube Terms of Service.
+          </li>
+          <li><strong>Google AdMob Monetization (Free Tier):</strong> Serving banner, app-open, and optional rewarded
+            advertisements delivered by the Google Mobile Ads SDK for non-Pro users.</li>
+          <li><strong>App Updates & Version Checks:</strong> Verifying Google Play Store version status for critical
+            security and compatibility patches.</li>
         </ul>
       </section>
 
@@ -448,7 +528,8 @@
       <section class="policy-section">
         <h2>3. Data Collection & Google Play Data Safety Declarations</h2>
         <p>
-          In alignment with the Google Play Console Data Safety standard, the following table itemizes all data processed:
+          In alignment with the Google Play Console Data Safety standard, the following table itemizes all data
+          processed:
         </p>
 
         <div class="table-container">
@@ -469,16 +550,21 @@
                 <td>Saved strictly on-device in local storage. Zero third-party or ad network access.</td>
               </tr>
               <tr>
-                <td><strong>Financial Information</strong><br><small>(In-App Purchase history, Subscription tokens)</small></td>
-                <td>Yes (Google Play)</td>
-                <td>Yes (Google Play)</td>
-                <td>Processed strictly by Google Play In-App Billing to activate and verify Grand Athlete Pro subscription status and restore purchases. <strong>We do NOT collect, receive, or store your credit card numbers, CVVs, or banking details.</strong></td>
+                <td><strong>Financial Information</strong><br><small>(In-App Purchase history, Subscription
+                    tokens)</small></td>
+                <td>Yes (Optional)</td>
+                <td><strong style="color: var(--accent-green);">No</strong></td>
+                <td>Processed securely via Google Play In-App Billing (<code>com.android.vending.BILLING</code>) to
+                  activate and verify Grand Athlete Pro entitlement and restore purchases. Zero purchase or financial
+                  data is shared with third-party advertisers, data brokers, or external analytics partners. <strong>We
+                    do NOT collect, receive, or store your credit card numbers, CVVs, or banking details.</strong></td>
               </tr>
               <tr>
                 <td><strong>Device / Advertising ID</strong><br><small>(Google Advertising ID - GAID)</small></td>
                 <td>Yes (Free tier)</td>
                 <td>Yes (Google AdMob)</td>
-                <td>Used by Google Mobile Ads SDK for free-tier ad delivery, fraud detection, and frequency capping according to your regional consent. Completely disabled for active Pro subscribers.</td>
+                <td>Used by Google Mobile Ads SDK for free-tier ad delivery, fraud detection, and frequency capping
+                  according to your regional consent. Completely disabled for active Pro subscribers.</td>
               </tr>
               <tr>
                 <td><strong>App Performance & Diagnostics</strong><br><small>(Crash logs, stack traces)</small></td>
@@ -490,7 +576,8 @@
                 <td><strong>User Account Credentials</strong><br><small>(Name, email, phone, passwords)</small></td>
                 <td><strong style="color: var(--accent-green);">No</strong></td>
                 <td><strong style="color: var(--accent-green);">No</strong></td>
-                <td>The app does not collect or request account registration credentials. Entitlements are tied directly to your authenticated Google Play account.</td>
+                <td>The app does not collect or request account registration credentials. Entitlements are tied directly
+                  to your authenticated Google Play account.</td>
               </tr>
             </tbody>
           </table>
@@ -501,43 +588,73 @@
       <section class="policy-section" id="subscriptions">
         <h2>4. Subscriptions & In-App Purchases (Google Play Billing)</h2>
         <p>
-          The Grand Athlete offers both a free-to-use tier and optional auto-renewable premium subscriptions known as <strong>Grand Athlete Pro</strong>. By subscribing, you unlock advanced athletic features, custom workout builders, comprehensive macro tailoring, unlimited streak freeze shields, and a <strong>100% ad-free experience</strong> across the entire app.
+          The Grand Athlete offers both a free-to-use tier and optional premium upgrades known as <strong>Grand Athlete
+            Pro</strong>. By upgrading, you unlock advanced athletic analytics, custom routine builders, tailored macro
+          tracking, unlimited streak freeze shields, and a <strong>100% ad-free experience</strong> across the entire
+          app.
         </p>
 
         <div class="callout">
           <strong>Transparent Billing Commitment:</strong>
-          All transactions are handled securely through Google Play In-App Billing under Google Play's Terms of Service. The Grand Athlete never has access to, nor retains, your sensitive financial information or payment card credentials.
+          All transactions are handled securely through Google Play In-App Billing under Google Play's Terms of Service.
+          The Grand Athlete never has access to, nor retains, your sensitive financial information or payment card
+          credentials.
         </div>
+
+        <p><strong>Available Grand Athlete Pro Plans:</strong></p>
+        <ul>
+          <li><strong>Monthly Subscription :</strong> Flexible auto-renewing monthly membership with full access to all
+            Pro features and permanent ad removal.</li>
+          <li><strong>Yearly Subscription :</strong> Best-value auto-renewing annual membership with over 50% savings
+            compared to monthly billing.</li>
+          <li><strong>Lifetime Pro Access :</strong> Pay once, unlock forever. A one-time purchase granting lifetime
+            permanent ad removal and access to all future Pro features with zero recurring charges.</li>
+        </ul>
 
         <p><strong>Auto-Renewal & Billing Terms:</strong></p>
         <ul>
-          <li><strong>Billing Cycle:</strong> Subscriptions are billed on a recurring basis (e.g., monthly or annually) as selected at the time of purchase. Pricing is clearly displayed within the app prior to confirming the transaction.</li>
-          <li><strong>Automatic Renewal:</strong> Your subscription automatically renews unless auto-renewal is cancelled at least <strong>24 hours</strong> before the end of the current billing cycle.</li>
-          <li><strong>Payment Authorization:</strong> Payment is charged directly to your Google account upon confirmation of purchase. Your account will be charged for renewal within 24 hours prior to the end of the current period at the confirmed rate.</li>
-          <li><strong>Free Trials (if applicable):</strong> If a free trial period is offered, any unused portion of the trial will be forfeited when you purchase a subscription, where applicable.</li>
+          <li><strong>Billing Cycle:</strong> Subscriptions are billed on a recurring basis (e.g., monthly or annually)
+            as selected at the time of purchase. Pricing is clearly displayed within the app prior to confirming the
+            transaction.</li>
+          <li><strong>Automatic Renewal:</strong> Your subscription automatically renews unless auto-renewal is
+            cancelled at least <strong>24 hours</strong> before the end of the current billing cycle.</li>
+          <li><strong>Payment Authorization:</strong> Payment is charged directly to your Google account upon
+            confirmation of purchase. Your account will be charged for renewal within 24 hours prior to the end of the
+            current period at the confirmed rate.</li>
+          <li><strong>Free Trials (if applicable):</strong> If a free trial period is offered, any unused portion of the
+            trial will be forfeited when you purchase a subscription, where applicable.</li>
         </ul>
 
         <p><strong>How to Manage or Cancel Your Subscription:</strong></p>
         <p>
-          You have full control over your subscription at all times. You can cancel, pause, or change your subscription plan directly in your Google Play Store account settings:
+          You have full control over your subscription at all times. You can cancel, pause, or change your subscription
+          plan directly in your Google Play Store account settings:
         </p>
         <ol style="margin: 14px 0 18px 24px; color: var(--text-secondary);">
           <li style="margin-bottom: 8px;">Open the <strong>Google Play Store</strong> app on your Android device.</li>
           <li style="margin-bottom: 8px;">Tap your <strong>Profile icon</strong> located at the top-right corner.</li>
-          <li style="margin-bottom: 8px;">Tap <strong>Payments &amp; subscriptions</strong>, then select <strong>Subscriptions</strong>.</li>
-          <li style="margin-bottom: 8px;">Find and tap <strong>The Grand Athlete</strong> from your active subscriptions list.</li>
-          <li style="margin-bottom: 8px;">Tap <strong>Cancel subscription</strong> and follow the on-screen prompts to confirm.</li>
+          <li style="margin-bottom: 8px;">Tap <strong>Payments &amp; subscriptions</strong>, then select
+            <strong>Subscriptions</strong>.</li>
+          <li style="margin-bottom: 8px;">Find and tap <strong>The Grand Athlete</strong> from your active subscriptions
+            list.</li>
+          <li style="margin-bottom: 8px;">Tap <strong>Cancel subscription</strong> and follow the on-screen prompts to
+            confirm.</li>
         </ol>
 
         <div class="callout" style="border-left-color: #ffd700;">
           <strong style="color: #ffd700;">Crucial Cancellation Notice:</strong>
-          Uninstalling the application, wiping local app data, or using the "Clean Slate" feature does <strong>NOT</strong> automatically cancel an active Google Play subscription. Recurring billing must be cancelled through your Google Play Store account settings as detailed above.
+          Uninstalling the application, wiping local app data, or using the "Clean Slate" feature does
+          <strong>NOT</strong> automatically cancel an active Google Play subscription. Recurring billing must be
+          cancelled through your Google Play Store account settings as detailed above.
         </div>
 
         <p><strong>Refunds & Purchase Restoration:</strong></p>
         <ul>
-          <li><strong>Refund Policy:</strong> All refund requests are governed by Google Play Store Refund Policies. Users may request a refund via their Google Play Order History or Google Play customer support.</li>
-          <li><strong>Restoring Purchases:</strong> If you switch to a new device or reinstall the app, you can restore your active Pro subscription at any time using the <em>"Restore Purchases"</em> option in the app settings while logged into the Google account used to make the purchase.</li>
+          <li><strong>Refund Policy:</strong> All refund requests are governed by Google Play Store Refund Policies.
+            Users may request a refund via their Google Play Order History or Google Play customer support.</li>
+          <li><strong>Restoring Purchases:</strong> If you switch to a new device or reinstall the app, you can restore
+            your active Pro subscription at any time using the <em>"Restore Purchases"</em> option in the app settings
+            while logged into the Google account used to make the purchase.</li>
         </ul>
       </section>
 
@@ -545,20 +662,29 @@
       <section class="policy-section">
         <h2>5. Google AdMob, GDPR & User Messaging Platform (UMP)</h2>
         <p>
-          To keep core workout planning and exercise databases accessible for free to athletes worldwide, the free tier of The Grand Athlete displays non-intrusive advertisements supported by Google AdMob. <strong>Active Grand Athlete Pro subscribers do not see any advertisements.</strong>
+          To keep core workout planning and exercise databases accessible for free to athletes worldwide, the free tier
+          of The Grand Athlete displays non-intrusive advertisements supported by Google AdMob. <strong>Active Grand
+            Athlete Pro subscribers do not see any advertisements.</strong>
         </p>
 
         <div class="callout">
           <strong>Strict Workout Isolation Rule (Free Tier):</strong>
-          Active workout player sessions are strictly 100% ad-free even on the free tier. No banner or interstitial ads are displayed during live exercise execution to protect your focus, timing, and safety.
+          Active workout player sessions are strictly 100% ad-free even on the free tier. No banner or interstitial ads
+          are displayed during live exercise execution to protect your focus, timing, and safety.
         </div>
 
         <p><strong>Compliance with Google EU User Consent Policy & GDPR:</strong></p>
         <ul>
-          <li>For users located in the European Economic Area (EEA) and the United Kingdom (UK), our application integrates the Google User Messaging Platform (UMP) SDK.</li>
-          <li>Users are presented with a Google-certified Consent Management Platform (CMP) dialog upon first launch to make informed choices regarding personalized vs. non-personalized advertisements.</li>
-          <li><strong>Right to Revoke or Change Consent:</strong> In full compliance with Google and GDPR policies, free-tier users can review, modify, or revoke their consent choices at any time directly within the app by navigating to <em>Settings → Privacy & Data Sovereignty → "Review GDPR Ad Consent Choices"</em>.</li>
-          <li>To learn more about how Google processes information when you use partner apps, please review <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">How Google uses information from sites or apps that use our services</a>.</li>
+          <li>For users located in the European Economic Area (EEA) and the United Kingdom (UK), our application
+            integrates the Google User Messaging Platform (UMP) SDK.</li>
+          <li>Users are presented with a Google-certified Consent Management Platform (CMP) dialog upon first launch to
+            make informed choices regarding personalized vs. non-personalized advertisements.</li>
+          <li><strong>Right to Revoke or Change Consent:</strong> In full compliance with Google and GDPR policies,
+            free-tier users can review, modify, or revoke their consent choices at any time directly within the app by
+            navigating to <em>Settings → Privacy & Data Sovereignty → "Review GDPR Ad Consent Choices"</em>.</li>
+          <li>To learn more about how Google processes information when you use partner apps, please review <a
+              href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">How Google uses
+              information from sites or apps that use our services</a>.</li>
         </ul>
       </section>
 
@@ -569,8 +695,10 @@
           If you choose to enable Health Connect synchronization:
         </p>
         <ul>
-          <li>The app requests read-only permissions for daily step counts and active calories solely to display local performance rings on your home dashboard.</li>
-          <li>Zero Health Connect or sensor measurements are ever transferred to advertising networks, data brokers, or external analytics partners.</li>
+          <li>The app requests read-only permissions for daily step counts and active calories solely to display local
+            performance rings on your home dashboard.</li>
+          <li>Zero Health Connect or sensor measurements are ever transferred to advertising networks, data brokers, or
+            external analytics partners.</li>
           <li>You may revoke Health Connect permissions at any time through your Android system settings.</li>
         </ul>
       </section>
@@ -582,11 +710,21 @@
           Because your fitness data is stored on-device, you have absolute ownership and control over your records:
         </p>
         <ul>
-          <li><strong>Export Your History:</strong> You can export your complete workout logs, body metrics, meal plans, and streak history at any time as a portable JSON document via <em>Settings → Data Management & Backup → Export Backup</em>.</li>
-          <li><strong>Selective Cleanup:</strong> You can selectively delete specific categories of data (e.g. video watch cache, hydration history) without losing your workout templates.</li>
-          <li><strong>Permanent Deletion / Clean Slate:</strong> You can irrevocably wipe all local data and reset the application at any time using the <em>"Clean Slate / Reset All"</em> button in Settings, or by clearing app storage in Android settings / uninstalling the app. <em>(Note: As stated in Section 4, this does not cancel recurring Google Play subscriptions).</em></li>
-          <li><strong>Advertising ID Deletion / Reset:</strong> You can reset or delete your Google Advertising ID (GAID) at any time through your Android device settings under <em>Settings → Google → Ads → "Delete advertising ID"</em>.</li>
-          <li><strong>Data Deletion Assistance:</strong> For dedicated instructions or assistance with data deletion, visit our <a href="data-deletion.html">Data Deletion Instructions Page</a> or contact <a href="mailto:thegrandathlete@gmail.com">thegrandathlete@gmail.com</a>.</li>
+          <li><strong>Export Your History:</strong> You can export your complete workout logs, body metrics, meal plans,
+            and streak history at any time as a portable JSON document via <em>Settings → Data Management & Backup →
+              Export Backup</em>.</li>
+          <li><strong>Selective Cleanup:</strong> You can selectively delete specific categories of data (e.g. video
+            watch cache, hydration history) without losing your workout templates.</li>
+          <li><strong>Permanent Deletion / Clean Slate:</strong> You can irrevocably wipe all local data and reset the
+            application at any time using the <em>"Clean Slate / Reset All"</em> button in Settings, or by clearing app
+            storage in Android settings / uninstalling the app. <em>(Note: As stated in Section 4, this does not cancel
+              recurring Google Play subscriptions).</em></li>
+          <li><strong>Advertising ID Deletion / Reset:</strong> You can reset or delete your Google Advertising ID
+            (GAID) at any time through your Android device settings under <em>Settings → Google → Ads → "Delete
+              advertising ID"</em>.</li>
+          <li><strong>Data Deletion Assistance:</strong> For dedicated instructions or assistance with data deletion,
+            visit our <a href="data-deletion.html">Data Deletion Instructions Page</a> or contact <a
+              href="mailto:thegrandathlete@gmail.com">thegrandathlete@gmail.com</a>.</li>
         </ul>
       </section>
 
@@ -594,7 +732,8 @@
       <section class="policy-section">
         <h2>8. Children's Privacy</h2>
         <p>
-          The Grand Athlete is intended for general audiences aged 13 and older (or the minimum legal age in your jurisdiction). We do not knowingly target or collect personal data from children under the age of 13.
+          The Grand Athlete is intended for general audiences aged 13 and older (or the minimum legal age in your
+          jurisdiction). We do not knowingly target or collect personal data from children under the age of 13.
         </p>
       </section>
 
@@ -602,7 +741,11 @@
       <section class="policy-section">
         <h2>9. Medical & Health Disclaimer</h2>
         <p>
-          The workouts, recovery routines, nutrition guidelines, BMR/TDEE calculations, and readiness scores generated in this application are for general educational, wellness, and fitness purposes only. They do <strong>NOT</strong> constitute medical advice, diagnosis, or treatment. Always consult a qualified physician or healthcare provider before beginning any new exercise or dietary regimen, especially if you have pre-existing cardiovascular, musculoskeletal, or metabolic conditions.
+          The workouts, recovery routines, nutrition guidelines, BMR/TDEE calculations, and readiness scores generated
+          in this application are for general educational, wellness, and fitness purposes only. They do
+          <strong>NOT</strong> constitute medical advice, diagnosis, or treatment. Always consult a qualified physician
+          or healthcare provider before beginning any new exercise or dietary regimen, especially if you have
+          pre-existing cardiovascular, musculoskeletal, or metabolic conditions.
         </p>
       </section>
 
@@ -610,15 +753,20 @@
       <section class="policy-section">
         <h2>10. Policy Updates & Contact Information</h2>
         <p>
-          We may periodically update this Privacy Policy to reflect technical enhancements or regulatory adjustments. Changes will be posted to this URL with a revised effective date.
+          We may periodically update this Privacy Policy to reflect technical enhancements or regulatory adjustments.
+          Changes will be posted to this URL with a revised effective date.
         </p>
         <p>
-          If you have questions, feedback, or inquiries regarding this Privacy Policy or your data rights, please contact our privacy team at:
+          If you have questions, feedback, or inquiries regarding this Privacy Policy or your data rights, please
+          contact our privacy team at:
         </p>
         <p>
           <strong>Email:</strong> <a href="mailto:thegrandathlete@gmail.com">thegrandathlete@gmail.com</a><br>
-          <strong>Official Website:</strong> <a href="https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html" target="_blank" rel="noopener">https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html</a><br>
-          <strong>Developer:</strong> The Grand Athlete App Team
+          <strong>Official Website:</strong> <a
+            href="https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html" target="_blank"
+            rel="noopener">https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html</a><br>
+          <strong>Developer:</strong> The Grand Athlete App Team<br>
+          <strong>Application Identifier:</strong> <code>com.thegrandathlete.app</code>
         </p>
       </section>
     </div>
@@ -631,12 +779,13 @@
   </footer>
 
   <script>
-    document.getElementById('themeToggleBtn')?.addEventListener('click', function() {
+    document.getElementById('themeToggleBtn')?.addEventListener('click', function () {
       const cur = document.documentElement.getAttribute('data-theme') || 'dark';
       const next = cur === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
-      try { localStorage.setItem('rg_theme', next); } catch(e) {}
+      try { localStorage.setItem('rg_theme', next); } catch (e) { }
     });
   </script>
 </body>
+
 </html>
