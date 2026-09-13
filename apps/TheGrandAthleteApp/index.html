@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Grand Athlete — Smart Workout, Nutrition & Daily Athlete Companion</title>
-  <meta name="description" content="Transform your fitness journey with The Grand Athlete. Personalized adaptive home & gym workouts, metabolic macro meal planning, recovery readiness scoring, and private on-device storage.">
-  <meta name="keywords" content="fitness app, workout tracker, gym routines, diet planner, calorie calculator, recovery readiness, private fitness, Android 15, SDK 36">
+  <meta name="description"
+    content="Transform your fitness journey with The Grand Athlete. Personalized adaptive home & gym workouts, metabolic macro meal planning, recovery readiness scoring, and private on-device storage.">
+  <meta name="keywords"
+    content="fitness app, workout tracker, gym routines, diet planner, calorie calculator, recovery readiness, private fitness, Android 15, SDK 36">
   <meta name="author" content="The Grand Athlete Team">
 
   <!-- OpenGraph / Social Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="The Grand Athlete — Smart Workout & Diet Companion">
-  <meta property="og:description" content="Personalized workouts, macro meal planning, recovery scoring, and streak protection with private on-device storage.">
+  <meta property="og:description"
+    content="Personalized workouts, macro meal planning, recovery scoring, and streak protection with private on-device storage.">
   <meta property="og:image" content="assets/adaptive-icon.png">
   <meta name="theme-color" content="#08090C">
 
@@ -21,14 +25,16 @@
   <!-- Google Fonts: Outfit (Display Headings) & Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
 
   <script>
-    (function() {
+    (function () {
       try {
         const t = localStorage.getItem('rg_theme') || 'dark';
         document.documentElement.setAttribute('data-theme', t);
-      } catch(e) {}
+      } catch (e) { }
     })();
   </script>
 
@@ -90,10 +96,17 @@
     [data-theme="light"] .privacy-box,
     [data-theme="light"] .tab-visual-card,
     [data-theme="light"] .step-card,
+    [data-theme="light"] .pricing-card,
+    [data-theme="light"] .billing-note,
     [data-theme="light"] .showcase-wrapper {
       background: #ffffff;
       border-color: rgba(15, 23, 42, 0.08);
       box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+    }
+
+    [data-theme="light"] .pricing-card.featured {
+      background: linear-gradient(180deg, rgba(255, 215, 0, 0.08) 0%, #ffffff 100%);
+      border-color: #f59e0b;
     }
 
     [data-theme="light"] footer {
@@ -134,14 +147,29 @@
       cursor: pointer;
       transition: all 0.2s ease;
     }
+
     .theme-toggle:hover {
       border-color: var(--primary);
       transform: scale(1.05);
     }
-    .theme-icon-sun { display: flex; color: #f59e0b; }
-    .theme-icon-moon { display: none; color: #6366f1; }
-    [data-theme="light"] .theme-icon-sun { display: none; }
-    [data-theme="light"] .theme-icon-moon { display: flex; }
+
+    .theme-icon-sun {
+      display: flex;
+      color: #f59e0b;
+    }
+
+    .theme-icon-moon {
+      display: none;
+      color: #6366f1;
+    }
+
+    [data-theme="light"] .theme-icon-sun {
+      display: none;
+    }
+
+    [data-theme="light"] .theme-icon-moon {
+      display: flex;
+    }
 
     * {
       margin: 0;
@@ -173,16 +201,19 @@
       z-index: 0;
       opacity: 0.15;
     }
+
     .glow-1 {
       top: -150px;
       right: -100px;
       background: radial-gradient(circle, var(--primary), transparent 70%);
     }
+
     .glow-2 {
       top: 40%;
       left: -200px;
       background: radial-gradient(circle, var(--accent-green), transparent 70%);
     }
+
     .glow-3 {
       bottom: 0;
       right: 10%;
@@ -210,6 +241,7 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       transition: var(--transition);
     }
+
     header::after {
       content: '';
       position: absolute;
@@ -220,20 +252,24 @@
       background: linear-gradient(90deg, transparent, rgba(0, 230, 118, 0.6) 40%, rgba(41, 121, 255, 0.6) 60%, transparent);
       pointer-events: none;
     }
+
     [data-theme="light"] header {
       background: rgba(255, 255, 255, 0.92);
       border-bottom-color: rgba(15, 23, 42, 0.08);
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
     }
+
     [data-theme="light"] header::after {
       background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.5) 40%, rgba(37, 99, 235, 0.5) 60%, transparent);
     }
+
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 78px;
     }
+
     .brand {
       display: flex;
       align-items: center;
@@ -242,9 +278,11 @@
       color: var(--text-main);
       transition: transform var(--transition);
     }
+
     .brand:hover {
       transform: translateY(-1px);
     }
+
     .brand-badge {
       width: 48px;
       height: 48px;
@@ -259,21 +297,25 @@
       flex-shrink: 0;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
     .brand:hover .brand-badge {
       transform: scale(1.05);
       box-shadow: 0 8px 24px rgba(0, 230, 118, 0.35);
     }
+
     .brand-logo {
       width: 100%;
       height: 100%;
       object-fit: contain;
       border-radius: 11px;
     }
+
     .brand-text {
       display: flex;
       flex-direction: column;
       gap: 1px;
     }
+
     .brand-text-main {
       font-family: var(--font-display);
       font-size: 1.22rem;
@@ -282,9 +324,11 @@
       color: #ffffff;
       line-height: 1.1;
     }
+
     [data-theme="light"] .brand-text-main {
       color: #0f172a;
     }
+
     .brand-text-sub {
       font-family: var(--font-body);
       font-size: 0.68rem;
@@ -293,12 +337,14 @@
       color: var(--accent-green);
       text-transform: uppercase;
     }
+
     .nav-links {
       display: flex;
       align-items: center;
       gap: 4px;
       list-style: none;
     }
+
     .nav-links li a {
       color: var(--text-secondary);
       text-decoration: none;
@@ -311,14 +357,17 @@
       align-items: center;
       gap: 6px;
     }
+
     .nav-links li a:hover {
       color: #ffffff;
       background: rgba(255, 255, 255, 0.08);
     }
+
     [data-theme="light"] .nav-links li a:hover {
       color: #0f172a;
       background: rgba(15, 23, 42, 0.06);
     }
+
     .nav-back-pill {
       border: 1px solid rgba(255, 255, 255, 0.12) !important;
       background: rgba(255, 255, 255, 0.04) !important;
@@ -326,20 +375,24 @@
       padding: 6px 14px !important;
       color: var(--text-secondary) !important;
     }
+
     .nav-back-pill:hover {
       border-color: var(--accent-green) !important;
       color: var(--accent-green) !important;
       background: rgba(0, 230, 118, 0.08) !important;
     }
+
     [data-theme="light"] .nav-back-pill {
       border-color: rgba(15, 23, 42, 0.12) !important;
       background: rgba(15, 23, 42, 0.03) !important;
     }
+
     .nav-actions-group {
       display: flex;
       align-items: center;
       gap: 12px;
     }
+
     .nav-cta {
       background: linear-gradient(135deg, #00E676 0%, #00C853 100%);
       color: #05180f !important;
@@ -358,11 +411,13 @@
       transition: var(--transition);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
+
     .nav-cta:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 24px rgba(0, 230, 118, 0.55);
       color: #000000 !important;
     }
+
     .mobile-menu-cta {
       display: none;
     }
@@ -375,12 +430,14 @@
       gap: 48px;
       align-items: center;
     }
+
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-bottom: 24px;
     }
+
     .badge {
       display: inline-flex;
       align-items: center;
@@ -393,16 +450,31 @@
       border: 1px solid var(--border-color);
       background: rgba(255, 255, 255, 0.04);
     }
+
     .badge.sdk36 {
       border-color: var(--accent-green);
       color: var(--accent-green);
       background: rgba(0, 230, 118, 0.08);
     }
+
+    .badge.pro {
+      border-color: #ffd700;
+      color: #ffd700;
+      background: rgba(255, 215, 0, 0.1);
+    }
+
+    [data-theme="light"] .badge.pro {
+      border-color: #d97706;
+      color: #b45309;
+      background: rgba(245, 158, 11, 0.12);
+    }
+
     .badge.privacy {
       border-color: var(--primary);
       color: var(--primary);
       background: rgba(255, 110, 64, 0.08);
     }
+
     .hero h1 {
       font-family: var(--font-display);
       font-size: 3.5rem;
@@ -411,12 +483,14 @@
       letter-spacing: -1.2px;
       margin-bottom: 20px;
     }
+
     .gradient-text {
       background: linear-gradient(135deg, #FFFFFF 40%, var(--primary) 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     .hero-lead {
       font-size: 1.18rem;
       color: var(--text-secondary);
@@ -424,12 +498,14 @@
       margin-bottom: 36px;
       max-width: 560px;
     }
+
     .hero-actions {
       display: flex;
       align-items: center;
       gap: 16px;
       flex-wrap: wrap;
     }
+
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -447,10 +523,12 @@
       border: none;
       cursor: pointer;
     }
+
     .btn-primary:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 32px rgba(255, 110, 64, 0.45);
     }
+
     .btn-secondary {
       display: inline-flex;
       align-items: center;
@@ -466,10 +544,12 @@
       text-decoration: none;
       transition: var(--transition);
     }
+
     .btn-secondary:hover {
       background: rgba(255, 255, 255, 0.1);
       border-color: rgba(255, 255, 255, 0.2);
     }
+
     .store-note {
       display: flex;
       align-items: center;
@@ -485,6 +565,7 @@
       display: flex;
       justify-content: center;
     }
+
     .mockup-card {
       width: 100%;
       max-width: 380px;
@@ -497,21 +578,30 @@
       overflow: hidden;
       animation: floatSlow 6s ease-in-out infinite alternate;
     }
+
     @keyframes floatSlow {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-12px); }
+      0% {
+        transform: translateY(0px);
+      }
+
+      100% {
+        transform: translateY(-12px);
+      }
     }
+
     .mockup-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px;
     }
+
     .mockup-avatar {
       display: flex;
       align-items: center;
       gap: 10px;
     }
+
     .avatar-circle {
       width: 40px;
       height: 40px;
@@ -524,18 +614,21 @@
       font-size: 1rem;
       color: #000;
     }
+
     .mockup-metric-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
       margin-bottom: 18px;
     }
+
     .metric-pill {
       background: var(--bg-surface-elevated);
       padding: 14px;
       border-radius: var(--radius-md);
       border: 1px solid var(--border-color);
     }
+
     .metric-label {
       font-size: 0.72rem;
       color: var(--text-muted);
@@ -543,14 +636,22 @@
       font-weight: 700;
       letter-spacing: 0.5px;
     }
+
     .metric-val {
       font-family: var(--font-display);
       font-size: 1.35rem;
       font-weight: 900;
       margin-top: 4px;
     }
-    .metric-val.green { color: var(--accent-green); }
-    .metric-val.orange { color: var(--primary); }
+
+    .metric-val.green {
+      color: var(--accent-green);
+    }
+
+    .metric-val.orange {
+      color: var(--primary);
+    }
+
     .mockup-workout-card {
       background: linear-gradient(135deg, rgba(255, 110, 64, 0.12), rgba(255, 110, 64, 0.04));
       border: 1px solid rgba(255, 110, 64, 0.35);
@@ -558,6 +659,7 @@
       padding: 16px;
       margin-bottom: 16px;
     }
+
     .mockup-btn {
       width: 100%;
       padding: 12px;
@@ -576,6 +678,7 @@
     section {
       padding: 80px 0;
     }
+
     .section-tag {
       font-family: var(--font-display);
       font-weight: 800;
@@ -586,6 +689,7 @@
       margin-bottom: 12px;
       display: inline-block;
     }
+
     .section-title {
       font-family: var(--font-display);
       font-size: 2.6rem;
@@ -594,6 +698,7 @@
       letter-spacing: -0.8px;
       margin-bottom: 16px;
     }
+
     .section-subtitle {
       font-size: 1.1rem;
       color: var(--text-secondary);
@@ -608,6 +713,7 @@
       gap: 24px;
       margin-top: 50px;
     }
+
     .feature-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
@@ -617,11 +723,13 @@
       position: relative;
       overflow: hidden;
     }
+
     .feature-card:hover {
       transform: translateY(-6px);
       border-color: rgba(255, 255, 255, 0.2);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     }
+
     .feature-icon-box {
       width: 54px;
       height: 54px;
@@ -634,12 +742,14 @@
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-color);
     }
+
     .feature-card h3 {
       font-family: var(--font-display);
       font-size: 1.35rem;
       font-weight: 800;
       margin-bottom: 10px;
     }
+
     .feature-card p {
       font-size: 0.95rem;
       color: var(--text-secondary);
@@ -655,6 +765,7 @@
       padding: 36px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
     }
+
     .showcase-tabs {
       display: flex;
       gap: 12px;
@@ -662,6 +773,7 @@
       padding-bottom: 20px;
       overflow-x: auto;
     }
+
     .tab-btn {
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-color);
@@ -675,16 +787,19 @@
       transition: var(--transition);
       white-space: nowrap;
     }
+
     .tab-btn:hover {
       color: var(--text-main);
       border-color: rgba(255, 255, 255, 0.2);
     }
+
     .tab-btn.active {
       background: var(--primary);
       color: #FFFFFF;
       border-color: var(--primary);
       box-shadow: 0 4px 18px var(--primary-glow);
     }
+
     .tab-pane {
       display: none;
       padding-top: 32px;
@@ -692,27 +807,32 @@
       gap: 40px;
       align-items: center;
     }
+
     .tab-pane.active {
       display: grid;
     }
+
     .tab-info h4 {
       font-family: var(--font-display);
       font-size: 1.8rem;
       font-weight: 800;
       margin-bottom: 14px;
     }
+
     .tab-info p {
       color: var(--text-secondary);
       font-size: 1.05rem;
       line-height: 1.65;
       margin-bottom: 20px;
     }
+
     .feature-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
+
     .feature-list li {
       display: flex;
       align-items: center;
@@ -720,16 +840,220 @@
       font-size: 0.95rem;
       color: var(--text-main);
     }
+
     .feature-list li::before {
       content: "✓";
       color: var(--accent-green);
       font-weight: 900;
     }
+
     .tab-visual-card {
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
       padding: 28px;
+    }
+
+    /* Pricing & Subscription Section */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 40px;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .pricing-card.featured {
+      border: 2px solid #ffd700;
+      background: linear-gradient(180deg, rgba(255, 215, 0, 0.06) 0%, var(--bg-surface-elevated) 100%);
+      box-shadow: 0 12px 40px rgba(255, 215, 0, 0.15);
+    }
+
+    .pricing-ribbon {
+      position: absolute;
+      top: -14px;
+      right: 28px;
+      background: linear-gradient(135deg, #ffd700, #ff9100);
+      color: #000;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 0.78rem;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 14px rgba(255, 215, 0, 0.35);
+    }
+
+    .tier-header {
+      margin-bottom: 24px;
+    }
+
+    .tier-name {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .tier-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .tier-price-box {
+      padding: 20px 0;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 28px;
+    }
+
+    .tier-price {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--text-main);
+      line-height: 1;
+    }
+
+    .tier-period {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-left: 6px;
+    }
+
+    .tier-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 36px;
+      flex-grow: 1;
+    }
+
+    .tier-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.94rem;
+      color: var(--text-main);
+      line-height: 1.45;
+    }
+
+    .tier-features li svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .tier-features li.dimmed {
+      color: var(--text-muted);
+      opacity: 0.7;
+    }
+
+    .tier-features li.dimmed svg {
+      stroke: var(--text-muted);
+    }
+
+    .btn-tier {
+      width: 100%;
+      text-align: center;
+      padding: 15px 24px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.98rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-tier.free-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-tier.free-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    [data-theme="light"] .btn-tier.free-btn {
+      background: rgba(15, 23, 42, 0.06);
+      color: #0f172a;
+    }
+
+    .btn-tier.pro-btn {
+      background: linear-gradient(135deg, #ffd700 0%, #ff9100 100%);
+      color: #0c0e14 !important;
+      border: none;
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+    }
+
+    .btn-tier.pro-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(255, 215, 0, 0.45);
+      color: #000 !important;
+    }
+
+    .billing-note {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .billing-note-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .billing-note {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     /* Privacy & Architecture Section */
@@ -744,28 +1068,33 @@
       gap: 40px;
       align-items: center;
     }
+
     .privacy-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
+
     .privacy-item {
       display: flex;
       gap: 14px;
       align-items: flex-start;
     }
+
     .privacy-item-icon {
       font-size: 1.3rem;
       line-height: 1;
       margin-top: 2px;
     }
+
     .privacy-item-text strong {
       display: block;
       color: var(--text-main);
       font-size: 1rem;
       margin-bottom: 4px;
     }
+
     .privacy-item-text span {
       color: var(--text-secondary);
       font-size: 0.9rem;
@@ -783,6 +1112,7 @@
       overflow: hidden;
       box-shadow: 0 20px 60px var(--primary-glow);
     }
+
     .cta-banner h2 {
       font-family: var(--font-display);
       font-size: 2.8rem;
@@ -790,12 +1120,14 @@
       letter-spacing: -0.5px;
       margin-bottom: 16px;
     }
+
     .cta-banner p {
       font-size: 1.2rem;
       max-width: 600px;
       margin: 0 auto 32px;
       color: rgba(255, 255, 255, 0.9);
     }
+
     .btn-white {
       background: #FFFFFF;
       color: #000000;
@@ -811,6 +1143,7 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
       transition: var(--transition);
     }
+
     .btn-white:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
@@ -824,17 +1157,20 @@
       font-size: 0.9rem;
       color: var(--text-secondary);
     }
+
     .footer-grid {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
       gap: 40px;
       margin-bottom: 40px;
     }
+
     .footer-desc {
       max-width: 380px;
       margin-top: 14px;
       line-height: 1.6;
     }
+
     .footer-col h5 {
       font-family: var(--font-display);
       font-size: 1.05rem;
@@ -842,25 +1178,30 @@
       color: var(--text-main);
       margin-bottom: 16px;
     }
+
     .footer-col ul {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
+
     .footer-col a {
       color: var(--text-secondary);
       text-decoration: none;
       transition: var(--transition);
     }
+
     .footer-col a:hover {
       color: var(--accent-green);
     }
+
     .social-links {
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
+
     .social-link {
       display: inline-flex;
       align-items: center;
@@ -871,22 +1212,41 @@
       font-weight: 600;
       transition: var(--transition);
     }
+
     .social-link:hover {
       color: #FFFFFF;
       transform: translateX(4px);
     }
+
     .social-link svg {
       flex-shrink: 0;
       transition: transform 0.2s ease;
     }
+
     .social-link:hover svg {
       transform: scale(1.1);
     }
-    .social-link.instagram:hover { color: #E1306C; }
-    .social-link.youtube:hover { color: #FF0000; }
-    .social-link.facebook:hover { color: #1877F2; }
-    .social-link.website:hover { color: #00E5FF; }
-    .social-link.email:hover { color: #FF9100; }
+
+    .social-link.instagram:hover {
+      color: #E1306C;
+    }
+
+    .social-link.youtube:hover {
+      color: #FF0000;
+    }
+
+    .social-link.facebook:hover {
+      color: #1877F2;
+    }
+
+    .social-link.website:hover {
+      color: #00E5FF;
+    }
+
+    .social-link.email:hover {
+      color: #FF9100;
+    }
+
     .disclaimer-bar {
       border-top: 1px solid var(--border-color);
       padding-top: 24px;
@@ -895,6 +1255,7 @@
       line-height: 1.6;
       text-align: center;
     }
+
     .disclaimer-bar a {
       color: var(--accent-green);
       text-decoration: underline;
@@ -915,15 +1276,18 @@
       transition: var(--transition);
       z-index: 101;
     }
+
     .mobile-nav-toggle:hover {
       border-color: var(--accent-green);
       color: var(--accent-green);
     }
+
     .mobile-nav-toggle svg {
       width: 22px;
       height: 22px;
       transition: transform 0.3s ease;
     }
+
     body.nav-open .mobile-nav-toggle svg {
       transform: rotate(90deg);
     }
@@ -943,6 +1307,7 @@
       pointer-events: none;
       transition: opacity 0.3s ease;
     }
+
     body.nav-open .app-nav-backdrop {
       opacity: 1;
       pointer-events: auto;
@@ -956,28 +1321,36 @@
         padding: 50px 0;
         gap: 36px;
       }
+
       .hero-badges {
         justify-content: center;
       }
+
       .hero-lead {
         margin: 0 auto 32px;
       }
+
       .hero-actions {
         justify-content: center;
       }
+
       .store-note {
         justify-content: center;
       }
+
       .features-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .tab-pane {
         grid-template-columns: 1fr;
         gap: 28px;
       }
+
       .privacy-box {
         grid-template-columns: 1fr;
       }
+
       .footer-grid {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -988,6 +1361,7 @@
       .mobile-nav-toggle {
         display: inline-flex;
       }
+
       .nav-links {
         position: fixed;
         top: 76px;
@@ -1009,14 +1383,17 @@
         z-index: 100;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
       }
+
       [data-theme="light"] .nav-links {
         background: rgba(255, 255, 255, 0.98);
       }
+
       body.nav-open .nav-links {
         transform: translateY(0);
         opacity: 1;
         pointer-events: auto;
       }
+
       .nav-links li a {
         display: block;
         padding: 12px 16px;
@@ -1025,19 +1402,23 @@
         border: 1px solid transparent;
         font-size: 1rem;
       }
+
       .nav-links li a:hover {
         border-color: var(--accent-green);
         background: rgba(0, 230, 118, 0.08);
       }
+
       #nav-download-btn {
         display: none;
       }
+
       .mobile-menu-cta {
         display: block;
         margin-top: 12px;
         padding-top: 12px;
         border-top: 1px solid var(--border-color);
       }
+
       .mobile-menu-cta .nav-cta {
         display: block;
         text-align: center;
@@ -1050,16 +1431,20 @@
       .hero h1 {
         font-size: clamp(2.2rem, 7.5vw, 2.75rem);
       }
+
       .hero-lead {
         font-size: 1rem;
       }
+
       .features-grid {
         grid-template-columns: 1fr;
       }
+
       .showcase-wrapper {
         padding: 24px 16px;
         border-radius: 20px;
       }
+
       .showcase-tabs {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -1067,36 +1452,46 @@
         gap: 8px;
         padding-bottom: 12px;
       }
+
       .showcase-tabs::-webkit-scrollbar {
         display: none;
       }
+
       .tab-btn {
         flex-shrink: 0;
         padding: 10px 18px;
         font-size: 0.85rem;
       }
+
       .cta-banner {
         padding: 40px 20px;
         border-radius: 24px;
       }
+
       .cta-banner h2 {
         font-size: clamp(1.6rem, 6vw, 2.2rem);
       }
+
       .mockup-card {
         padding: 18px;
         border-radius: 28px;
         max-width: min(100%, 380px);
       }
+
       .metric-pill {
         padding: 10px;
       }
+
       .metric-val {
         font-size: 1.15rem;
       }
-      .btn-primary, .btn-secondary {
+
+      .btn-primary,
+      .btn-secondary {
         width: 100%;
         justify-content: center;
       }
+
       .hero-actions {
         flex-direction: column;
         width: 100%;
@@ -1107,19 +1502,23 @@
       .container {
         padding: 0 16px;
       }
+
       .brand-text {
         font-size: 1.15rem;
       }
+
       .badge {
         font-size: 0.72rem;
         padding: 5px 10px;
       }
+
       .feature-card {
         padding: 24px 18px;
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Ambient Glow Effects -->
@@ -1144,26 +1543,40 @@
         <ul class="nav-links">
           <li><a href="#features">Features</a></li>
           <li><a href="#showcase">Showcase</a></li>
+          <li><a href="#premium">Premium 👑</a></li>
           <li><a href="#privacy">Privacy &amp; Security</a></li>
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
           <li>
             <a href="../../index.html" class="nav-back-pill" title="Return to RG Infotech Solutions">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
               <span>RG Infotech</span>
             </a>
           </li>
           <li class="mobile-menu-cta">
-            <a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank" rel="noopener noreferrer" class="nav-cta">
-              <svg viewBox="0 0 512 512" style="width: 14px; height: 14px;"><path fill="currentColor" d="M48.7 13.1c-6.8 7.3-10.7 18.2-10.7 31.9v422c0 13.7 3.9 24.6 10.7 31.9l2.4 2.2L282.8 269.4v-5.8L51.1 10.9l-2.4 2.2z"/><path fill="currentColor" d="M358.5 345.1l-75.7-75.7v-5.8l75.7-75.7 1.8 1 89.6 51c25.6 14.5 25.6 38.3 0 52.9l-89.6 51-1.8 1.3z"/><path fill="currentColor" d="M282.8 263.6L51.1 495.3c8.5 9 22.4 10.1 38.1 1.2l269.3-152.9-75.7-76z"/><path fill="currentColor" d="M282.8 248.4l75.7-76L89.2 19.5c-15.7-8.9-29.6-7.8-38.1 1.2l231.7 227.7z"/></svg>
+            <a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank"
+              rel="noopener noreferrer" class="nav-cta">
+              <svg viewBox="0 0 512 512" style="width: 14px; height: 14px;">
+                <path fill="currentColor"
+                  d="M48.7 13.1c-6.8 7.3-10.7 18.2-10.7 31.9v422c0 13.7 3.9 24.6 10.7 31.9l2.4 2.2L282.8 269.4v-5.8L51.1 10.9l-2.4 2.2z" />
+                <path fill="currentColor"
+                  d="M358.5 345.1l-75.7-75.7v-5.8l75.7-75.7 1.8 1 89.6 51c25.6 14.5 25.6 38.3 0 52.9l-89.6 51-1.8 1.3z" />
+                <path fill="currentColor" d="M282.8 263.6L51.1 495.3c8.5 9 22.4 10.1 38.1 1.2l269.3-152.9-75.7-76z" />
+                <path fill="currentColor" d="M282.8 248.4l75.7-76L89.2 19.5c-15.7-8.9-29.6-7.8-38.1 1.2l231.7 227.7z" />
+              </svg>
               <span>Get on Google Play</span>
             </a>
           </li>
         </ul>
 
         <div class="nav-actions-group">
-          <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Light and Dark Mode" title="Toggle Light/Dark Theme">
+          <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Light and Dark Mode"
+            title="Toggle Light/Dark Theme">
             <span class="theme-icon-sun">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="5"></circle>
                 <line x1="12" y1="1" x2="12" y2="3"></line>
                 <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -1176,19 +1589,30 @@
               </svg>
             </span>
             <span class="theme-icon-moon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
               </svg>
             </span>
           </button>
 
-          <a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank" rel="noopener noreferrer" class="nav-cta" id="nav-download-btn">
-            <svg viewBox="0 0 512 512" style="width: 13px; height: 13px;"><path fill="currentColor" d="M48.7 13.1c-6.8 7.3-10.7 18.2-10.7 31.9v422c0 13.7 3.9 24.6 10.7 31.9l2.4 2.2L282.8 269.4v-5.8L51.1 10.9l-2.4 2.2z"/><path fill="currentColor" d="M358.5 345.1l-75.7-75.7v-5.8l75.7-75.7 1.8 1 89.6 51c25.6 14.5 25.6 38.3 0 52.9l-89.6 51-1.8 1.3z"/><path fill="currentColor" d="M282.8 263.6L51.1 495.3c8.5 9 22.4 10.1 38.1 1.2l269.3-152.9-75.7-76z"/><path fill="currentColor" d="M282.8 248.4l75.7-76L89.2 19.5c-15.7-8.9-29.6-7.8-38.1 1.2l231.7 227.7z"/></svg>
+          <a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank"
+            rel="noopener noreferrer" class="nav-cta" id="nav-download-btn">
+            <svg viewBox="0 0 512 512" style="width: 13px; height: 13px;">
+              <path fill="currentColor"
+                d="M48.7 13.1c-6.8 7.3-10.7 18.2-10.7 31.9v422c0 13.7 3.9 24.6 10.7 31.9l2.4 2.2L282.8 269.4v-5.8L51.1 10.9l-2.4 2.2z" />
+              <path fill="currentColor"
+                d="M358.5 345.1l-75.7-75.7v-5.8l75.7-75.7 1.8 1 89.6 51c25.6 14.5 25.6 38.3 0 52.9l-89.6 51-1.8 1.3z" />
+              <path fill="currentColor" d="M282.8 263.6L51.1 495.3c8.5 9 22.4 10.1 38.1 1.2l269.3-152.9-75.7-76z" />
+              <path fill="currentColor" d="M282.8 248.4l75.7-76L89.2 19.5c-15.7-8.9-29.6-7.8-38.1 1.2l231.7 227.7z" />
+            </svg>
             <span>Google Play</span>
           </a>
 
-          <button class="mobile-nav-toggle" id="appMobileToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button class="mobile-nav-toggle" id="appMobileToggle" aria-label="Toggle Navigation Menu"
+            aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -1206,6 +1630,7 @@
       <div class="hero-content">
         <div class="hero-badges">
           <span class="badge sdk36">⚡ Android 15 & 16 Ready • API 36</span>
+          <span class="badge pro">👑 Free &amp; Pro Subscriptions</span>
           <span class="badge privacy">🔒 Private On-Device Data</span>
           <span class="badge">🌍 19 Global Languages</span>
           <span class="badge">🛡️ AdMob & GDPR Compliant</span>
@@ -1216,11 +1641,15 @@
           <span class="gradient-text">Lifetime Athletic Excellence.</span>
         </h1>
         <p class="hero-lead">
-          Adaptive home & gym workout sessions, precision macro diet plans, daily readiness pacing, and streak protection — built with private on-device storage.
+          Adaptive home & gym workout sessions, precision macro diet plans, daily readiness pacing, and streak
+          protection — built with private on-device storage.
         </p>
         <div class="hero-actions">
           <a href="#download" class="btn-primary" id="hero-get-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.61-1.642V3.456c0-.624.225-1.2.61-1.642zM15.207 13.414l2.673 2.674-12.82 7.373 10.147-10.047zm0-2.828L5.06 .539l12.82 7.373-2.673 2.674zm3.93 1.414l3.242 1.866a1.442 1.442 0 0 1 0 2.488l-3.242 1.866-2.146-2.146 2.146-2.074z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.61-1.642V3.456c0-.624.225-1.2.61-1.642zM15.207 13.414l2.673 2.674-12.82 7.373 10.147-10.047zm0-2.828L5.06 .539l12.82 7.373-2.673 2.674zm3.93 1.414l3.242 1.866a1.442 1.442 0 0 1 0 2.488l-3.242 1.866-2.146-2.146 2.146-2.074z" />
+            </svg>
             Get on Google Play
           </a>
           <a href="#features" class="btn-secondary">
@@ -1245,7 +1674,8 @@
                 <div style="font-size: 0.95rem; font-weight: 800;">Alex Mercer • Level 4</div>
               </div>
             </div>
-            <div style="background: rgba(0, 230, 118, 0.15); border: 1px solid var(--accent-green); padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 800; color: var(--accent-green);">
+            <div
+              style="background: rgba(0, 230, 118, 0.15); border: 1px solid var(--accent-green); padding: 4px 10px; border-radius: 99px; font-size: 0.75rem; font-weight: 800; color: var(--accent-green);">
               🔥 21-Day Streak
             </div>
           </div>
@@ -1268,8 +1698,10 @@
               <span style="font-size: 0.75rem; font-weight: 800; color: var(--primary);">TODAY'S BLUEPRINT</span>
               <span style="font-size: 0.75rem; color: var(--text-muted);">45 Min • 4 Moves</span>
             </div>
-            <div style="font-size: 1.1rem; font-weight: 800; font-family: var(--font-display);">Upper Body Hypertrophy</div>
-            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">Bench Press • Dumbbell Row • Incline DB Press • Dips</div>
+            <div style="font-size: 1.1rem; font-weight: 800; font-family: var(--font-display);">Upper Body Hypertrophy
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">Bench Press • Dumbbell Row •
+              Incline DB Press • Dips</div>
           </div>
 
           <div class="mockup-btn">START WORKOUT SESSION ›</div>
@@ -1282,44 +1714,51 @@
       <div style="text-align: center; max-width: 700px; margin: 0 auto;">
         <span class="section-tag">COMPREHENSIVE ATHLETIC SUITE</span>
         <h2 class="section-title">Engineered For Lifetime Consistency</h2>
-        <p class="section-subtitle">Everything you need to excel in strength, nutrition, recovery, and daily discipline in one beautifully polished experience.</p>
+        <p class="section-subtitle">Everything you need to excel in strength, nutrition, recovery, and daily discipline
+          in one beautifully polished experience.</p>
       </div>
 
       <div class="features-grid">
         <article class="feature-card">
           <div class="feature-icon-box" style="color: var(--primary);">🏋️</div>
           <h3>Intelligent Workout Engine</h3>
-          <p>Over 300+ exercises across Home, Gym, Dumbbell, and Bodyweight spaces. Dynamic set/rep logging, rest countdowns, and real-time exercise substitution.</p>
+          <p>Over 300+ exercises across Home, Gym, Dumbbell, and Bodyweight spaces. Dynamic set/rep logging, rest
+            countdowns, and real-time exercise substitution.</p>
         </article>
 
         <article class="feature-card">
           <div class="feature-icon-box" style="color: var(--accent-green);">🥗</div>
           <h3>Precision Macro & Diet Planning</h3>
-          <p>Scientifically tuned Mifflin-St Jeor metabolic calculations. Daily macro targets, curated recipe database, dietary filters, and quick hydration tracking.</p>
+          <p>Scientifically tuned Mifflin-St Jeor metabolic calculations. Daily macro targets, curated recipe database,
+            dietary filters, and quick hydration tracking.</p>
         </article>
 
         <article class="feature-card">
           <div class="feature-icon-box" style="color: var(--accent-blue);">🎬</div>
           <h3>HD Video Tutorials & Form Coach</h3>
-          <p>Watch full exercise execution form streamed via YouTube. Master technique with step-by-step instructions, muscle activation maps, and injury prevention cues.</p>
+          <p>Watch full exercise execution form streamed via YouTube. Master technique with step-by-step instructions,
+            muscle activation maps, and injury prevention cues.</p>
         </article>
 
         <article class="feature-card">
           <div class="feature-icon-box" style="color: #FFD600;">🧘</div>
           <h3>Recovery & Daily Readiness</h3>
-          <p>Holistic morning readiness score combining sleep quality, soreness levels, and training strain to calibrate workout intensity and rest days.</p>
+          <p>Holistic morning readiness score combining sleep quality, soreness levels, and training strain to calibrate
+            workout intensity and rest days.</p>
         </article>
 
         <article class="feature-card">
           <div class="feature-icon-box" style="color: #E040FB;">🔥</div>
           <h3>Streaks & Gamification</h3>
-          <p>Never break the chain with streak freeze shields, milestone achievements, XP points, and athlete tier progression that celebrate your consistency.</p>
+          <p>Never break the chain with streak freeze shields, milestone achievements, XP points, and athlete tier
+            progression that celebrate your consistency.</p>
         </article>
 
         <article class="feature-card">
           <div class="feature-icon-box" style="color: #00E5FF;">🌍</div>
           <h3>19 Languages & Full Accessibility</h3>
-          <p>Complete native translations in 19 global languages with full RTL (Right-to-Left) script rendering, TalkBack screen-reader support, and haptic feedback.</p>
+          <p>Complete native translations in 19 global languages with full RTL (Right-to-Left) script rendering,
+            TalkBack screen-reader support, and haptic feedback.</p>
         </article>
       </div>
     </section>
@@ -1329,7 +1768,8 @@
       <div style="text-align: center; max-width: 700px; margin: 0 auto;">
         <span class="section-tag">EXPLORE APP CAPABILITIES</span>
         <h2 class="section-title">Designed For Athletes At Every Level</h2>
-        <p class="section-subtitle">Click through the primary modules to see how The Grand Athlete delivers a superior fitness tracking experience.</p>
+        <p class="section-subtitle">Click through the primary modules to see how The Grand Athlete delivers a superior
+          fitness tracking experience.</p>
       </div>
 
       <div class="showcase-wrapper">
@@ -1344,7 +1784,8 @@
         <div class="tab-pane active" id="pane-workout">
           <div class="tab-info">
             <h4>Adaptive Daily Workouts</h4>
-            <p>Whether you have 20 minutes in a living room or 60 minutes at a commercial gym, the Smart Workout Engine dynamically adapts to your available gear and schedule.</p>
+            <p>Whether you have 20 minutes in a living room or 60 minutes at a commercial gym, the Smart Workout Engine
+              dynamically adapts to your available gear and schedule.</p>
             <ul class="feature-list">
               <li>Automatic progression recommendations based on previous volume</li>
               <li>Exercise swap alternatives when equipment is occupied</li>
@@ -1358,20 +1799,24 @@
               <span style="font-size: 0.85rem; color: var(--accent-green);">Set 3 of 4</span>
             </div>
             <div style="display: flex; gap: 10px; margin-bottom: 16px;">
-              <div style="flex: 1; background: var(--bg-surface); padding: 12px; border-radius: 8px; text-align: center;">
+              <div
+                style="flex: 1; background: var(--bg-surface); padding: 12px; border-radius: 8px; text-align: center;">
                 <div style="font-size: 0.75rem; color: var(--text-muted);">WEIGHT</div>
                 <div style="font-size: 1.25rem; font-weight: 800;">85 kg</div>
               </div>
-              <div style="flex: 1; background: var(--bg-surface); padding: 12px; border-radius: 8px; text-align: center;">
+              <div
+                style="flex: 1; background: var(--bg-surface); padding: 12px; border-radius: 8px; text-align: center;">
                 <div style="font-size: 0.75rem; color: var(--text-muted);">REPS</div>
                 <div style="font-size: 1.25rem; font-weight: 800;">8 reps</div>
               </div>
-              <div style="flex: 1; background: var(--bg-surface); padding: 12px; border-radius: 8px; text-align: center;">
+              <div
+                style="flex: 1; background: var(--bg-surface); padding: 12px; border-radius: 8px; text-align: center;">
                 <div style="font-size: 0.75rem; color: var(--text-muted);">RPE</div>
                 <div style="font-size: 1.25rem; font-weight: 800; color: var(--accent-green);">8.5</div>
               </div>
             </div>
-            <div style="background: rgba(0, 230, 118, 0.1); border: 1px dashed var(--accent-green); padding: 12px; border-radius: 8px; text-align: center; color: var(--accent-green); font-weight: 700; font-size: 0.85rem;">
+            <div
+              style="background: rgba(0, 230, 118, 0.1); border: 1px dashed var(--accent-green); padding: 12px; border-radius: 8px; text-align: center; color: var(--accent-green); font-weight: 700; font-size: 0.85rem;">
               ✓ Rest Timer Active: 01:15 remaining
             </div>
           </div>
@@ -1381,7 +1826,8 @@
         <div class="tab-pane" id="pane-nutrition">
           <div class="tab-info">
             <h4>Precision Metabolic Fueling</h4>
-            <p>Nutrition without guesswork. Our Mifflin-St Jeor engine computes your exact maintenance calories and customizes protein, carbohydrate, and healthy fat splits based on your body goal.</p>
+            <p>Nutrition without guesswork. Our Mifflin-St Jeor engine computes your exact maintenance calories and
+              customizes protein, carbohydrate, and healthy fat splits based on your body goal.</p>
             <ul class="feature-list">
               <li>BMR & TDEE calculation tuned for muscle building or fat loss</li>
               <li>Curated healthy recipe library with step-by-step instructions</li>
@@ -1427,7 +1873,8 @@
         <div class="tab-pane" id="pane-readiness">
           <div class="tab-info">
             <h4>Holistic Recovery & Pacing</h4>
-            <p>Overtraining ruins consistency. Start each morning with a 30-second readiness assessment that evaluates your sleep quality, muscle recovery, and energy levels.</p>
+            <p>Overtraining ruins consistency. Start each morning with a 30-second readiness assessment that evaluates
+              your sleep quality, muscle recovery, and energy levels.</p>
             <ul class="feature-list">
               <li>Prime Status (85-100%): Full green light for heavy progressive overload</li>
               <li>Solid Readiness (70-84%): Proceed with planned session with standard warmup</li>
@@ -1437,10 +1884,12 @@
           </div>
           <div class="tab-visual-card">
             <div style="text-align: center; padding: 20px;">
-              <div style="width: 90px; height: 90px; border-radius: 50%; border: 6px solid var(--accent-green); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; font-family: var(--font-display); color: var(--accent-green);">
+              <div
+                style="width: 90px; height: 90px; border-radius: 50%; border: 6px solid var(--accent-green); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; font-family: var(--font-display); color: var(--accent-green);">
                 88%
               </div>
-              <div style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 800;">Prime Recovery Status</div>
+              <div style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 800;">Prime Recovery Status
+              </div>
               <div style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 6px;">
                 Muscular recovery is optimal. You are primed for high-intensity sets today.
               </div>
@@ -1452,7 +1901,8 @@
         <div class="tab-pane" id="pane-analytics">
           <div class="tab-info">
             <h4>Consistency Calendar & XP Growth</h4>
-            <p>Fitness is won in months and years, not days. Track your athletic habit streaks, monitor personal bests, and earn XP badges that celebrate your dedication.</p>
+            <p>Fitness is won in months and years, not days. Track your athletic habit streaks, monitor personal bests,
+              and earn XP badges that celebrate your dedication.</p>
             <ul class="feature-list">
               <li>Interactive 30-day consistency calendar heatmaps</li>
               <li>Streak freeze shields to protect progress during emergency rest</li>
@@ -1482,21 +1932,212 @@
       </div>
     </section>
 
+    <!-- Premium / Subscriptions Section -->
+    <section id="premium" class="container" style="padding: 70px 24px 30px;">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <span class="section-tag" style="border-color: rgba(255, 215, 0, 0.4); color: #ffd700;">TRANSPARENT VALUE</span>
+        <h2 class="section-title">Simple Plans. Pure Athletic Growth.</h2>
+        <p class="section-subtitle">
+          Start for free forever with core workouts and on-device privacy, or upgrade to Grand Athlete Pro for an
+          entirely ad-free experience, unlimited custom blueprints, and deep recovery analytics.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Free Tier Card -->
+        <div class="pricing-card">
+          <div>
+            <div class="tier-header">
+              <div class="tier-name">
+                <span>Free Forever</span>
+              </div>
+              <p class="tier-desc">Essential daily training, on-device tracking, and foundational macro calculator for
+                all athletes.</p>
+            </div>
+
+            <div class="tier-price-box">
+              <span class="tier-price">$0</span>
+              <span class="tier-period">/ No Credit Card Required</span>
+            </div>
+
+            <ul class="tier-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Full access to basic bodyweight, dumbbell &amp; gym exercises</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Daily calorie &amp; macro calculator (Mifflin-St Jeor)</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Encrypted on-device workout logs &amp; streak tracking</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>100% Ad-free active workout player</strong></span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>YouTube exercise form video tutorials</span>
+              </li>
+              <li class="dimmed">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                <span>Completely ad-free experience across all screens</span>
+              </li>
+              <li class="dimmed">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                <span>Unlimited custom workout blueprints &amp; periodization</span>
+              </li>
+              <li class="dimmed">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                <span>Unlimited streak freeze shields &amp; priority support</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" class="btn-tier free-btn">
+            <span>Download Free on Google Play</span>
+          </a>
+        </div>
+
+        <!-- Pro Tier Card -->
+        <div class="pricing-card featured">
+          <div class="pricing-ribbon">👑 MOST POPULAR</div>
+          <div>
+            <div class="tier-header">
+              <div class="tier-name">
+                <span
+                  style="background: linear-gradient(135deg, #ffd700, #ff9100); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Grand
+                  Athlete Pro</span>
+              </div>
+              <p class="tier-desc">Uncapped athletic conditioning, completely ad-free focus, unlimited custom routines,
+                and pro tools.</p>
+            </div>
+
+            <div class="tier-price-box">
+              <span class="tier-price" style="color: #ffd700;">Pro Access</span>
+              <span class="tier-period">/ Flexible Monthly or Annual Billing</span>
+            </div>
+
+            <ul class="tier-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>100% Completely Ad-Free</strong> across the entire app</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Unlimited custom workout blueprints &amp; periodization planning</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Advanced metabolic macro tailoring &amp; nutrient timing</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Unlimited streak freeze shields to protect progress during rest</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Comprehensive recovery pacing &amp; muscular strain analytics</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Instant purchase restoration across devices via Google Play</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Priority athletic feature updates &amp; dedicated support</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank"
+            rel="noopener noreferrer" class="btn-tier pro-btn">
+            <span>Upgrade in App via Google Play ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Google Play Billing Trust Banner -->
+      <div class="billing-note">
+        <div class="billing-note-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span><strong>Secure Google Play Billing:</strong> Encrypted Google checkout with zero third-party card
+            storage.</span>
+        </div>
+        <div class="billing-note-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span><strong>Cancel Anytime in 1 Tap:</strong> Manage or cancel directly via Google Play Store
+            subscriptions.</span>
+        </div>
+        <div class="billing-note-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2979FF" stroke-width="2">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+          </svg>
+          <span><strong>Instant Restore:</strong> Seamlessly restore your subscription whenever you switch
+            phones.</span>
+        </div>
+      </div>
+    </section>
+
     <!-- Privacy & Compliance Box -->
     <section id="privacy" class="container">
       <div style="text-align: center; max-width: 700px; margin: 0 auto;">
         <span class="section-tag">DATA SOVEREIGNTY & PRIVACY</span>
         <h2 class="section-title">Your Health Data Belongs To You</h2>
-        <p class="section-subtitle">We believe your personal body metrics, workout journals, and fitness milestones should remain strictly confidential.</p>
+        <p class="section-subtitle">We believe your personal body metrics, workout journals, and fitness milestones
+          should remain strictly confidential.</p>
       </div>
 
       <div class="privacy-box">
         <div>
-          <h3 style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; margin-bottom: 12px; color: var(--accent-green);">
+          <h3
+            style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; margin-bottom: 12px; color: var(--accent-green);">
             Private On-Device Data Storage
           </h3>
           <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">
-            Unlike conventional fitness apps that force cloud registrations and sell your biometric records to telemetry brokers, The Grand Athlete stores your workout history, nutrition logs, and body weight directly on your device.
+            Unlike conventional fitness apps that force cloud registrations and sell your biometric records to telemetry
+            brokers, The Grand Athlete stores your workout history, nutrition logs, and body weight directly on your
+            device.
           </p>
           <a href="privacy-policy.html" class="btn-secondary" style="font-size: 0.9rem;">
             Read Complete Privacy Policy →
@@ -1508,28 +2149,32 @@
             <div class="privacy-item-icon">🔒</div>
             <div class="privacy-item-text">
               <strong>Encrypted Local Storage</strong>
-              <span>Workouts, streaks, and meal plans stay on your smartphone with zero mandatory cloud registration.</span>
+              <span>Workouts, streaks, and meal plans stay on your smartphone with zero mandatory cloud
+                registration.</span>
             </div>
           </li>
           <li class="privacy-item">
             <div class="privacy-item-icon">🛡️</div>
             <div class="privacy-item-text">
               <strong>Google AdMob & GDPR / UMP Compliance</strong>
-              <span>Non-intrusive ads conform to EU/UK consent choices via Google-certified CMP. Review or revoke consent anytime in Settings.</span>
+              <span>Non-intrusive ads conform to EU/UK consent choices via Google-certified CMP. Review or revoke
+                consent anytime in Settings.</span>
             </div>
           </li>
           <li class="privacy-item">
-            <div class="privacy-item-icon">🚫</div>
+            <div class="privacy-item-icon">👑</div>
             <div class="privacy-item-text">
-              <strong>100% Ad-Free Workout Sessions</strong>
-              <span>Active workout player screens are strictly and permanently ad-free so you can focus completely on your training.</span>
+              <strong>100% Ad-Free in Pro &amp; Live Workouts</strong>
+              <span>Active workout player sessions are 100% ad-free on all tiers. Upgrading to Grand Athlete Pro removes
+                all ads completely across the entire app.</span>
             </div>
           </li>
           <li class="privacy-item">
             <div class="privacy-item-icon">🌐</div>
             <div class="privacy-item-text">
               <strong>Active Internet Connection Required</strong>
-              <span>Internet connectivity is required to stream YouTube exercise video guides and load sponsor content safely.</span>
+              <span>Internet connectivity is required to stream YouTube exercise video guides and load sponsor content
+                safely.</span>
             </div>
           </li>
         </ul>
@@ -1540,9 +2185,14 @@
     <section id="download" class="container">
       <div class="cta-banner">
         <h2>Start Your Fitness Journey Today</h2>
-        <p>Join athletes worldwide training smarter with adaptive workouts, personalized macros, and daily streak discipline.</p>
-        <a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" class="btn-white" id="cta-play-btn" target="_blank" rel="noopener">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.61-1.642V3.456c0-.624.225-1.2.61-1.642zM15.207 13.414l2.673 2.674-12.82 7.373 10.147-10.047zm0-2.828L5.06 .539l12.82 7.373-2.673 2.674zm3.93 1.414l3.242 1.866a1.442 1.442 0 0 1 0 2.488l-3.242 1.866-2.146-2.146 2.146-2.074z"/></svg>
+        <p>Join athletes worldwide training smarter with adaptive workouts, personalized macros, and daily streak
+          discipline.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" class="btn-white"
+          id="cta-play-btn" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.61-1.642V3.456c0-.624.225-1.2.61-1.642zM15.207 13.414l2.673 2.674-12.82 7.373 10.147-10.047zm0-2.828L5.06 .539l12.82 7.373-2.673 2.674zm3.93 1.414l3.242 1.866a1.442 1.442 0 0 1 0 2.488l-3.242 1.866-2.146-2.146 2.146-2.074z" />
+          </svg>
           Download on Google Play
         </a>
       </div>
@@ -1559,7 +2209,8 @@
             <span class="brand-text" style="font-size: 1.2rem;">THE GRAND <span>ATHLETE</span></span>
           </div>
           <p class="footer-desc">
-            Production-ready intelligent fitness companion engineered for athletic discipline, smart nutrition, recovery scoring, and lifetime consistency.
+            Production-ready intelligent fitness companion engineered for athletic discipline, smart nutrition, recovery
+            scoring, and lifetime consistency.
           </p>
         </div>
 
@@ -1568,16 +2219,16 @@
           <ul>
             <li><a href="#features">Features</a></li>
             <li><a href="#showcase">App Showcase</a></li>
+            <li><a href="#premium">Pro Subscriptions</a></li>
             <li><a href="#privacy">Privacy Principles</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="data-deletion.html">Data Deletion</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h5>Platform & Standards</h5>
           <ul>
-            <li><span>Target SDK: Android API 36</span></li>
-            <li><span>Architecture: React Native 0.76 • Hermes</span></li>
             <li><span>Support: 19 Global Languages</span></li>
             <li><span>Compliance: GDPR / Google UMP CMP</span></li>
           </ul>
@@ -1586,24 +2237,50 @@
         <div class="footer-col">
           <h5>Follow Us</h5>
           <div class="social-links">
-            <a href="https://www.instagram.com/thegrandathlete/" target="_blank" rel="noopener" class="social-link instagram" title="Instagram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"></circle></svg>
+            <a href="https://www.instagram.com/thegrandathlete/" target="_blank" rel="noopener"
+              class="social-link instagram" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"></circle>
+              </svg>
               <span>Instagram</span>
             </a>
-            <a href="https://www.youtube.com/channel/UCdrHrAvkF3tq5HN19yWj5Ng" target="_blank" rel="noopener" class="social-link youtube" title="YouTube">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#0c0e14"/></svg>
+            <a href="https://www.youtube.com/channel/UCdrHrAvkF3tq5HN19yWj5Ng" target="_blank" rel="noopener"
+              class="social-link youtube" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
+                <path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#0c0e14" />
+              </svg>
               <span>YouTube</span>
             </a>
-            <a href="https://www.facebook.com/thegrandathlete" target="_blank" rel="noopener" class="social-link facebook" title="Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <a href="https://www.facebook.com/thegrandathlete" target="_blank" rel="noopener"
+              class="social-link facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
               <span>Facebook</span>
             </a>
-            <a href="https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html" target="_blank" rel="noopener" class="social-link website" title="Website">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <a href="https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html" target="_blank"
+              rel="noopener" class="social-link website" title="Website">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M2 12h20"></path>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                </path>
+              </svg>
               <span>Website</span>
             </a>
             <a href="mailto:thegrandathlete@gmail.com" class="social-link email" title="Contact Us via Email">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="M22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
               <span>thegrandathlete@gmail.com</span>
             </a>
           </div>
@@ -1612,10 +2289,13 @@
 
       <div class="disclaimer-bar">
         <p style="margin-bottom: 8px;">
-          <strong>Health & Fitness Disclaimer:</strong> The workouts, recovery routines, nutrition guidelines, and readiness calculations provided by The Grand Athlete are for general educational, wellness, and fitness purposes only. They do NOT constitute medical advice, diagnosis, or treatment. Always consult a qualified physician or healthcare provider before beginning any new exercise or dietary regimen.
+          <strong>Health & Fitness Disclaimer:</strong> The workouts, recovery routines, nutrition guidelines, and
+          readiness calculations provided by The Grand Athlete are for general educational, wellness, and fitness
+          purposes only. They do NOT constitute medical advice, diagnosis, or treatment. Always consult a qualified
+          physician or healthcare provider before beginning any new exercise or dietary regimen.
         </p>
         <p>
-          © 2026 The Grand Athlete. All rights reserved. • <a href="privacy-policy.html">Privacy Policy</a> • Built with React Native & Expo.
+          © 2026 The Grand Athlete. All rights reserved. • <a href="privacy-policy.html">Privacy Policy</a>
         </p>
       </div>
     </div>
@@ -1637,11 +2317,11 @@
       }
     }
 
-    document.getElementById('themeToggleBtn')?.addEventListener('click', function() {
+    document.getElementById('themeToggleBtn')?.addEventListener('click', function () {
       const cur = document.documentElement.getAttribute('data-theme') || 'dark';
       const next = cur === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
-      try { localStorage.setItem('rg_theme', next); } catch(e) {}
+      try { localStorage.setItem('rg_theme', next); } catch (e) { }
     });
 
     // Mobile Navigation Drawer Controller
@@ -1679,4 +2359,5 @@
     });
   </script>
 </body>
+
 </html>
