@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — The Grand Athlete</title>
+  <meta name="description"
+    content="Terms of Service, subscription billing conditions, and Google Play Store compliance disclosures for The Grand Athlete mobile application.">
+  <meta name="author" content="RG Infotech Solutions">
+  <meta name="theme-color" content="#08090C">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <script>
+    (function () {
+      try {
+        const t = localStorage.getItem('rg_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { }
+    })();
+  </script>
+
+  <style>
+    :root {
+      --bg-main: #08090C;
+      --bg-surface: #10121A;
+      --bg-surface-elevated: #161924;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --primary: #FF6E40;
+      --accent-green: #00E676;
+      --accent-blue: #2979FF;
+      --text-main: #FFFFFF;
+      --text-secondary: #9E9EB8;
+      --text-muted: #64647A;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    [data-theme="light"] {
+      --bg-main: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: #f1f5f9;
+      --border-color: rgba(15, 23, 42, 0.09);
+      --text-main: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+    }
+
+    [data-theme="light"] .policy-section h2 {
+      color: #0f172a;
+    }
+
+    [data-theme="light"] header {
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 9, 12, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 0;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), #FF3D00);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 900;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .brand-text {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .theme-toggle-btn {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .home-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .hero-banner {
+      padding: 60px 0 36px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(255, 110, 64, 0.12);
+      border: 1px solid rgba(255, 110, 64, 0.3);
+      border-radius: 999px;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 44px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .effective-meta {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .policy-content {
+      padding: 44px 0 70px 0;
+    }
+
+    .policy-section {
+      margin-bottom: 40px;
+    }
+
+    .policy-section h2 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .policy-section p {
+      margin-bottom: 14px;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    .policy-section ul {
+      margin: 12px 0 18px 24px;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    .policy-section li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .highlight-card.green {
+      border-left-color: var(--accent-green);
+    }
+
+    .highlight-card.blue {
+      border-left-color: var(--accent-blue);
+    }
+
+    .highlight-card h3 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .highlight-card p,
+    .highlight-card li {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 30px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav-content">
+      <a href="index.html" class="brand-group">
+        <div class="brand-logo">GA</div>
+        <span class="brand-text">The Grand Athlete</span>
+      </a>
+      <div class="nav-actions">
+        <a href="index.html" class="home-link">← Home</a>
+        <a href="privacy-policy.html" class="home-link">Privacy Policy</a>
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Theme">🌓 Theme</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-banner">
+      <div class="container">
+        <div class="badge-pill">Legal &amp; Policy Terms</div>
+        <h1>Terms of Service</h1>
+        <p class="effective-meta">
+          <strong>Effective Date:</strong> September 14, 2026 &bull;
+          <strong>Publisher:</strong> RG Infotech Solutions &bull;
+          <strong>App:</strong> The Grand Athlete (<code>com.thegrandathlete.app</code>)
+        </p>
+      </div>
+    </section>
+
+    <div class="container policy-content">
+      <!-- Section 1 -->
+      <section class="policy-section">
+        <h2>1. Acceptance of Terms &amp; Eligibility</h2>
+        <p>
+          Welcome to <strong>The Grand Athlete</strong> ("the Application"), created, owned, and published by <strong>RG
+            Infotech Solutions</strong>. By downloading, accessing,
+          or using this mobile application, you agree to be bound by these Terms of Service ("Terms") and our <a
+            href="privacy-policy.html" style="color: var(--primary); text-decoration: none;">Privacy Policy</a>.
+        </p>
+        <p>
+          You must be at least 18 years of age (or the age of legal majority in your jurisdiction) to enter into these
+          Terms independently. Users aged 16–17 may use the Application only with the verifiable involvement and consent
+          of a parent or legal guardian.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="policy-section">
+        <h2>2. Health, Fitness &amp; Medical Disclaimer</h2>
+        <div class="highlight-card">
+          <h3>CRITICAL HEALTH NOTICE</h3>
+          <p>
+            The Grand Athlete provides exercise routines, workout timers, nutrition calculations (such as BMR, TDEE, and
+            macro ratios), recovery readiness scores, and hydration tracking solely for general fitness, athletic
+            conditioning, and educational purposes.
+          </p>
+          <p style="margin-top: 8px;">
+            The Application is <strong>NOT a medical device</strong> and does <strong>NOT provide medical advice,
+              clinical diagnosis, physical therapy, or healthcare treatment</strong>. You should always consult with a
+            qualified physician or healthcare professional before starting any new exercise routine or diet program,
+            especially if you have pre-existing cardiovascular, musculoskeletal, metabolic, or chronic health
+            conditions.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="policy-section">
+        <h2>3. Local-First Architecture &amp; User Data</h2>
+        <p>
+          The Grand Athlete is built with a <strong>privacy-first, local-first architecture</strong>. Core workout
+          tracking, logs, body metrics, custom routines, and streak records are stored directly on your physical mobile
+          device. We do not maintain remote cloud user accounts or sell your private fitness records to third parties.
+        </p>
+        <p>
+          An active internet connection is required to stream demonstration video guides, verify in-app entitlements
+          with Google Play, and load Google Mobile Ads (AdMob).
+        </p>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="policy-section">
+        <h2>4. In-App Subscriptions, Billing &amp; Google Play Policy</h2>
+        <p>
+          The Grand Athlete offers optional paid upgrades to <strong>The Grand Athlete Pro</strong> to enhance your
+          training with ad-free workouts, unlimited custom workout routines, and advanced volume analytics.
+        </p>
+
+        <div class="highlight-card green">
+          <h3>Subscription &amp; Payment Terms (Google Play In-App Billing)</h3>
+          <ul>
+            <li><strong>Subscription Options:</strong>
+              <ul>
+                <li><strong>Monthly Pro Plan:</strong> Auto-renewing monthly subscription
+                  (<code>gym_premium_monthly</code>).</li>
+                <li><strong>3-Month Pro Plan:</strong> Auto-renewing quarterly subscription
+                  (<code>gym_premium_3months</code>).</li>
+                <li><strong>6-Month Pro Plan:</strong> Auto-renewing half-yearly subscription
+                  (<code>gym_premium_6months</code>).</li>
+                <li><strong>Yearly Pro Plan:</strong> Auto-renewing annual subscription with discounted rate
+                  (<code>gym_premium_yearly</code>).</li>
+              </ul>
+            </li>
+            <li><strong>Payment Processing:</strong> All in-app subscriptions are billed through
+              <strong>Google Play In-App Billing</strong>. Payment is charged directly to your Google Play account upon
+              confirmation of purchase.
+            </li>
+            <li><strong>Automatic Renewal:</strong> Subscriptions automatically renew at the current advertised price
+              unless auto-renew is cancelled at least <strong>24 hours before the end of the current billing
+                cycle</strong>. Your Google Play account will be charged for renewal within 24 hours prior to the
+              conclusion of the active period.</li>
+            <li><strong>Price Transparency:</strong> Prices in your local currency and all applicable taxes (such as GST
+              where applicable) are clearly displayed prior to checkout.</li>
+          </ul>
+        </div>
+
+        <div class="highlight-card blue">
+          <h3>How to Manage or Cancel Your Subscription</h3>
+          <p>
+            You can manage, change, or cancel your subscription at any time directly through the Google Play Store on
+            your Android device:
+          </p>
+          <ul style="margin-top: 8px;">
+            <li>1. Open the <strong>Google Play Store</strong> app on your Android device.</li>
+            <li>2. Tap your <strong>Profile Icon</strong> in the top right corner.</li>
+            <li>3. Select <strong>Payments &amp; subscriptions</strong> &rarr; <strong>Subscriptions</strong>.</li>
+            <li>4. Locate and select <strong>The Grand Athlete</strong>.</li>
+            <li>5. Tap <strong>Cancel subscription</strong> and confirm.</li>
+          </ul>
+          <p style="margin-top: 8px;">
+            Cancelling a subscription stops subsequent recurring renewals. You will retain full access to all Pro
+            features until the conclusion of your current paid billing period.
+          </p>
+        </div>
+
+        <p>
+          <strong>Refunds:</strong> Because all transactions are executed through Google Play Billing, refund requests
+          are evaluated and processed in accordance with the official <a
+            href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener"
+            style="color: var(--primary); text-decoration: none;">Google Play Refund Policies</a>.
+        </p>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="policy-section">
+        <h2>5. Advertisements &amp; AdMob Compliance</h2>
+        <p>
+          Free-tier users may receive advertisements served by the <strong>Google Mobile Ads SDK (Google
+            AdMob)</strong>. Advertising identifiers (GAID) are processed strictly in accordance with Google Play
+          Developer Policies and GDPR / EU User Messaging Platform (UMP) consent standards.
+        </p>
+        <p>
+          Active workout execution sessions are strictly <strong>100% ad-free</strong> for all athletes. Upgrading to
+          The Grand Athlete Pro suppresses banner, interstitial, and native advertisements across the entire
+          application throughout your active subscription.
+        </p>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="policy-section">
+        <h2>6. Intellectual Property &amp; Acceptable Use</h2>
+        <p>
+          All software code, user interface designs, logos, graphics, icons, and curated exercise routines in The Grand
+          Athlete are the intellectual property of <strong>RG Infotech Solutions</strong>. You may not decompile,
+          reverse-engineer, copy, distribute, or create derivative works from the Application without prior written
+          authorization.
+        </p>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="policy-section">
+        <h2>7. Limitation of Liability &amp; Governing Law</h2>
+        <p>
+          To the maximum extent permitted by applicable law, RG Infotech Solutions and its proprietors shall not be
+          liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the
+          Application or physical injuries sustained during physical exercise. Exercise within your physical limitations
+          and warm up adequately.
+        </p>
+        <p>
+          These Terms are governed by and construed in accordance with the laws of the Republic of India. Any disputes
+          arising hereunder shall be subject to the exclusive jurisdiction of the competent courts in Gir Somnath /
+          Gujarat, India.
+        </p>
+      </section>
+
+      <!-- Section 8 -->
+      <section class="policy-section">
+        <h2>8. Contact Information</h2>
+        <p>
+          If you have questions, feedback, or concerns regarding these Terms of Service or subscription billing, please
+          reach out to our team:
+        </p>
+        <div class="highlight-card">
+          <p>
+            <strong>Publisher:</strong> RG Infotech Solutions<br>
+            <strong>Official Support Email:</strong> <a href="mailto:thegrandathlete@gmail.com"
+              style="color: var(--primary); text-decoration: none;">thegrandathlete@gmail.com</a><br>
+            <strong>Official Website:</strong> <a
+              href="https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html" target="_blank"
+              rel="noopener"
+              style="color: var(--primary); text-decoration: none;">https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html</a><br>
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 The Grand Athlete &bull; Published by RG Infotech Solutions. All rights reserved. &bull; <a
+          href="privacy-policy.html">Privacy Policy</a> &bull; <a href="index.html">Return to Home</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('themeToggleBtn')?.addEventListener('click', function () {
+      const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('rg_theme', next); } catch (e) { }
+    });
+  </script>
+</body>
+
+</html>
