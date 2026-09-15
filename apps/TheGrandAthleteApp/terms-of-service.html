@@ -77,6 +77,17 @@
       font-family: var(--font-body);
       line-height: 1.68;
       -webkit-font-smoothing: antialiased;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    a, code, p, li {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    a.url-break, .break-all {
+      word-break: break-all;
     }
 
     .container {
@@ -111,17 +122,12 @@
     }
 
     .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--primary), #FF3D00);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-weight: 900;
-      color: #fff;
-      font-size: 20px;
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: contain;
+      display: block;
+      flex-shrink: 0;
     }
 
     .brand-text {
@@ -269,6 +275,37 @@
       color: var(--primary);
       text-decoration: none;
     }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .nav-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .hero-banner {
+        padding: 36px 0 24px 0;
+      }
+
+      h1 {
+        font-size: clamp(26px, 7vw, 34px);
+      }
+
+      .highlight-card {
+        padding: 16px 18px;
+      }
+    }
   </style>
 </head>
 
@@ -276,8 +313,8 @@
 
   <header>
     <div class="container nav-content">
-      <a href="index.html" class="brand-group">
-        <div class="brand-logo">GA</div>
+      <a href="index.html" class="brand-group" aria-label="The Grand Athlete Home">
+        <img src="assets/logo.png" alt="The Grand Athlete Logo" class="brand-logo">
         <span class="brand-text">The Grand Athlete</span>
       </a>
       <div class="nav-actions">
@@ -471,8 +508,8 @@
               style="color: var(--primary); text-decoration: none;">thegrandathlete@gmail.com</a><br>
             <strong>Official Website:</strong> <a
               href="https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html" target="_blank"
-              rel="noopener"
-              style="color: var(--primary); text-decoration: none;">https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html</a><br>
+              rel="noopener" class="url-break"
+              style="color: var(--primary); text-decoration: none; word-break: break-all;">https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html</a><br>
           </p>
         </div>
       </section>
@@ -482,7 +519,7 @@
   <footer>
     <div class="container">
       <p>&copy; 2026 The Grand Athlete &bull; Published by RG Infotech Solutions. All rights reserved. &bull; <a
-          href="privacy-policy.html">Privacy Policy</a> &bull; <a href="index.html">Return to Home</a></p>
+          href="privacy-policy.html">Privacy Policy</a> &bull; <a href="data-deletion.html">Data Deletion</a> &bull; <a href="index.html">Return to Home</a></p>
     </div>
   </footer>
 
