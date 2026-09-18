@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — The Grand Athlete</title>
   <meta name="description"
-    content="Official Privacy Policy for The Grand Athlete mobile application. Explaining private on-device data storage, Google AdMob GDPR / UMP consent, and data rights.">
-  <meta name="author" content="The Grand Athlete Team">
+    content="Official Privacy Policy for The Grand Athlete mobile application. Explaining private on-device data storage, Camera / AI Food & Macro Scanner, YouTube API Services compliance, Google AdMob GDPR / UMP consent, and user data sovereignty.">
+  <meta name="author" content="RG Infotech Solutions">
   <meta name="theme-color" content="#08090C">
 
   <!-- Favicon -->
@@ -543,6 +543,12 @@
                 <td>Anonymous diagnostic logs used solely to debug fatal errors and optimize performance.</td>
               </tr>
               <tr>
+                <td><strong>Photos &amp; Videos (Camera / Media)</strong><br><small>(Meal plate photos, food gallery uploads)</small></td>
+                <td>Optional (Transient / Local)</td>
+                <td><strong style="color: var(--accent-green);">No</strong></td>
+                <td>Used strictly by the AI Food &amp; Macro Scanner to recognize meal items and estimate calories and macronutrients. Photos are processed transiently and stored locally on your device; images are never uploaded to remote user databases, never used for facial recognition or surveillance, and never shared or sold.</td>
+              </tr>
+              <tr>
                 <td><strong>User Account Credentials</strong><br><small>(Name, email, phone, passwords)</small></td>
                 <td><strong style="color: var(--accent-green);">No</strong></td>
                 <td><strong style="color: var(--accent-green);">No</strong></td>
@@ -617,7 +623,46 @@
 
       <!-- Section 6 -->
       <section class="policy-section">
-        <h2>6. Health Connect & On-Device Sensors</h2>
+        <h2>6. Camera, Photos &amp; AI Food &amp; Macro Scanner Permissions</h2>
+        <p>
+          The Grand Athlete includes an optional <strong>AI Food &amp; Macro Scanner</strong> designed to help athletes effortlessly log meals and calculate estimated nutritional intake (calories, protein, carbohydrates, and fats).
+        </p>
+        <p>
+          To enable this functionality, the application may request the following system permissions on your mobile device:
+        </p>
+        <ul>
+          <li><strong>Camera Permission (<code>android.permission.CAMERA</code>):</strong> Requested only when you tap the camera icon to photograph a meal plate or food item in real time.</li>
+          <li><strong>Read Media Images / Storage Permission (<code>android.permission.READ_MEDIA_IMAGES</code> / <code>READ_EXTERNAL_STORAGE</code>):</strong> Requested only when you choose to select an existing food image from your device's photo gallery.</li>
+        </ul>
+        <div class="callout">
+          <strong>Strict Image Privacy &amp; Local On-Device Handling:</strong>
+          Photos captured or selected for food scanning are used <em>strictly and exclusively</em> to analyze meal components and estimate macronutrients. The Grand Athlete does <strong>NOT</strong> collect facial biometrics, does <strong>NOT</strong> maintain a remote photo repository, does <strong>NOT</strong> access your broader personal photo library, and does <strong>NOT</strong> sell or share your images with advertising partners or external data brokers.
+        </div>
+        <p>
+          <strong>Voluntary Consent &amp; Revocation:</strong> Granting camera and photo access is completely voluntary. You can use all core workout, exercise, and hydration features of the application without granting camera or media permissions. You can review or revoke camera and photo library permissions at any time through your Android system settings under <em>Settings &rarr; Apps &rarr; The Grand Athlete &rarr; Permissions</em>.
+        </p>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="policy-section">
+        <h2>7. YouTube API Services &amp; Third-Party Video Streaming</h2>
+        <p>
+          The Grand Athlete incorporates YouTube API Services and the official YouTube embedded player to provide athletes with structured follow-along workouts, exercise technique demonstrations, and healthy recipe tutorials.
+        </p>
+        <p>
+          In accordance with Section 5 of the <strong>YouTube API Terms of Service</strong>:
+        </p>
+        <ul>
+          <li>By accessing, streaming, or viewing video content within The Grand Athlete, you acknowledge and agree to be bound by the <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener" class="url-break">YouTube Terms of Service</a> (<a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">https://www.youtube.com/t/terms</a>).</li>
+          <li>When you stream video content, YouTube and Google may collect and process information about your device, IP address, playback activity, and cookies pursuant to the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="url-break">Google Privacy Policy</a> (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>).</li>
+          <li><strong>No Content Modification or Unauthorized Storage:</strong> The Grand Athlete streams videos directly through the official YouTube embed interface. We do not download, store offline, re-host, sell, or modify video or audio streams.</li>
+          <li><strong>Intellectual Property &amp; Creator Rights:</strong> All trademarks, copyrights, channel identities, musical scores, and audiovisual assets displayed in workout and recipe videos remain the exclusive property of their respective creators and YouTube channels (e.g. Pamela Reif, Chloe Ting, Mady Morrison, Tom Merrick, POPSUGAR Fitness, Well+Good, and culinary partners).</li>
+        </ul>
+      </section>
+
+      <!-- Section 8 -->
+      <section class="policy-section">
+        <h2>8. Health Connect &amp; On-Device Sensors</h2>
         <p>
           If you choose to enable Health Connect synchronization:
         </p>
@@ -630,15 +675,15 @@
         </ul>
       </section>
 
-      <!-- Section 7: Data Retention, Portability & Deletion Rights -->
+      <!-- Section 9: Data Retention, Portability & Deletion Rights -->
       <section class="policy-section" id="data-deletion">
-        <h2>7. Data Retention, Portability & Deletion Rights</h2>
+        <h2>9. Data Retention, Portability &amp; Deletion Rights</h2>
         <p>
           Because your fitness data is stored on-device, you have absolute ownership and control over your records:
         </p>
         <ul>
           <li><strong>Export Your History:</strong> You can export your complete workout logs, body metrics, meal plans,
-            and streak history at any time as a portable JSON document via <em>Settings → Data Management & Backup →
+            and streak history at any time as a portable JSON document via <em>Settings &rarr; Data Management &amp; Backup &rarr;
               Export Backup</em>.</li>
           <li><strong>Selective Cleanup:</strong> You can selectively delete specific categories of data (e.g. video
             watch cache, hydration history) without losing your workout templates.</li>
@@ -646,7 +691,7 @@
             application at any time using the <em>"Clean Slate / Reset All"</em> button in Settings, or by clearing app
             storage in Android settings / uninstalling the app.</li>
           <li><strong>Advertising ID Deletion / Reset:</strong> You can reset or delete your Google Advertising ID
-            (GAID) at any time through your Android device settings under <em>Settings → Google → Ads → "Delete
+            (GAID) at any time through your Android device settings under <em>Settings &rarr; Google &rarr; Ads &rarr; "Delete
               advertising ID"</em>.</li>
           <li><strong>Data Deletion Assistance:</strong> For dedicated instructions or assistance with data deletion,
             visit our <a href="data-deletion.html">Data Deletion Instructions Page</a> or contact <a
@@ -654,18 +699,18 @@
         </ul>
       </section>
 
-      <!-- Section 8 -->
+      <!-- Section 10 -->
       <section class="policy-section">
-        <h2>8. Children's Privacy</h2>
+        <h2>10. Children's Privacy</h2>
         <p>
           The Grand Athlete is intended for general audiences aged 13 and older (or the minimum legal age in your
           jurisdiction). We do not knowingly target or collect personal data from children under the age of 13.
         </p>
       </section>
 
-      <!-- Section 9 -->
+      <!-- Section 11 -->
       <section class="policy-section">
-        <h2>9. Medical & Health Disclaimer</h2>
+        <h2>11. Medical &amp; Health Disclaimer</h2>
         <p>
           The workouts, recovery routines, nutrition guidelines, BMR/TDEE calculations, and readiness scores generated
           in this application are for general educational, wellness, and fitness purposes only. They do
@@ -673,25 +718,42 @@
           or healthcare provider before beginning any new exercise or dietary regimen, especially if you have
           pre-existing cardiovascular, musculoskeletal, or metabolic conditions.
         </p>
+        <div class="callout" style="border-left-color: #FF9100;">
+          <strong style="color: #FF9100;">AI Food &amp; Macro Scanner Disclaimer:</strong>
+          Nutritional values, calorie counts, and macronutrient breakdowns generated by the AI Food &amp; Macro Scanner are automated algorithmic estimations for personal fitness tracking only. They do not constitute certified nutritional analysis or clinical dietary prescriptions. Do <strong>NOT</strong> rely on AI estimations for medical management (such as calculating diabetic insulin dosages) or verifying the absence of critical allergens (such as peanuts, gluten, shellfish, or dairy).
+        </div>
       </section>
 
-      <!-- Section 10 -->
+      <!-- Section 12 -->
       <section class="policy-section">
-        <h2>10. Policy Updates & Contact Information</h2>
+        <h2>12. Regional Privacy Rights (GDPR, CCPA &amp; India DPDP)</h2>
         <p>
-          We may periodically update this Privacy Policy to reflect technical enhancements or regulatory adjustments.
-          Changes will be posted to this URL with a revised effective date.
+          Depending on your location, you may have specific statutory rights concerning your personal information:
         </p>
+        <ul>
+          <li><strong>European Economic Area (EEA) &amp; UK (GDPR):</strong> You have the right to access, rectify, port, or erase your data, and to restrict or object to certain processing. Because The Grand Athlete operates on a local-first on-device architecture, you can exercise your access and portability rights at any time via <em>Settings &rarr; Export Backup (JSON)</em>, and your right to erasure via <em>Settings &rarr; Clean Slate / Reset All Data</em>. You can modify your ad consent choices at any time in the app settings under <em>Settings &rarr; Privacy &amp; Data Sovereignty &rarr; "Review GDPR Ad Consent Choices"</em>.</li>
+          <li><strong>California &amp; US State Privacy Laws (CCPA / CPRA):</strong> We do not "sell" or "share" personal information or biometric data for monetary or other valuable consideration. We do not engage in cross-context behavioral profiling.</li>
+          <li><strong>India (Digital Personal Data Protection Act - DPDP):</strong> Personal data processing complies with applicable provisions of the DPDP Act and the Information Technology Act, 2000. Data principals retain full rights to review and request erasure of their information.</li>
+        </ul>
+      </section>
+
+      <!-- Section 13 -->
+      <section class="policy-section">
+        <h2>13. Grievance Redressal Officer &amp; Contact Information</h2>
         <p>
-          If you have questions, feedback, or inquiries regarding this Privacy Policy or your data rights, please
-          contact our privacy team at:
+          In accordance with the Information Technology Act, 2000 and the Digital Personal Data Protection standards, the details of the designated <strong>Grievance Redressal Officer</strong> are provided below:
         </p>
-        <p>
-          <strong>Email:</strong> <a href="mailto:thegrandathlete@gmail.com">thegrandathlete@gmail.com</a><br>
+        <div class="callout">
+          <strong>Grievance &amp; Compliance Redressal:</strong>
+          <strong>Legal Entity:</strong> RG Infotech Solutions<br>
+          <strong>Official Support Email:</strong> <a href="mailto:thegrandathlete@gmail.com">thegrandathlete@gmail.com</a><br>
           <strong>Official Website:</strong> <a
             href="https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html" target="_blank"
             rel="noopener" class="url-break" style="word-break: break-all;">https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html</a><br>
-          <strong>Developer:</strong> Rg Info tech Solutions Team<br>
+          <strong>Statutory Turnaround:</strong> Inquiries and grievances are acknowledged within 24–48 business hours and resolved within 30 days.
+        </div>
+        <p>
+          We may periodically update this Privacy Policy to reflect technical enhancements or regulatory adjustments. Changes will be posted to this URL with a revised effective date.
         </p>
       </section>
     </div>
