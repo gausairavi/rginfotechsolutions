@@ -1,10 +1,9 @@
 # RG Infotech Solutions
 
 [![Website](https://img.shields.io/badge/Website-rginfotechsolutions.com-00f2fe?style=flat-square)](https://rginfotechsolutions.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ravi%20Gauswami-0a66c2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/ravi-gausai/)
 [![Google Play](https://img.shields.io/badge/Google%20Play-Apps%20Ecosystem-414141?style=flat-square&logo=google-play)](https://play.google.com)
 
-Official corporate website and mobile application ecosystem for **RG Infotech Solutions**, founded and led by **Ravi Gauswami (Gausai)** — Senior Software Engineer &amp; Full-Stack Solutions Architect.
+Official corporate website and mobile application ecosystem for **RG Infotech Solutions** — delivering high-performance mobile apps and scalable enterprise architectures.
 
 ---
 
@@ -46,4 +45,3 @@ This repository hosts the static web portal and dedicated app landing pages, dow
 ## 📄 License & Ownership
 
 &copy; 2026 RG Infotech Solutions. All rights reserved.  
-Engineered by [Ravi Gauswami](https://www.linkedin.com/in/ravi-gausai/).
