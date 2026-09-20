@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formObj['_template'] = 'table';
         formObj['_captcha'] = 'false';
 
-        const response = await fetch('https://formsubmit.co/ajax/gausairavi24@gmail.com', {
+        const response = await fetch('https://formsubmit.co/ajax/info@rginfotechsolutions.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
           showToast('Thank you! Your message has been sent to RG Infotech Solutions. We will reach out shortly.', 'success');
           contactForm.reset();
         } else if (data.message && data.message.toLowerCase().includes('activation')) {
-          showToast('First-time setup: FormSubmit sent an activation link to gausairavi24@gmail.com. Please check your email to activate!', 'info');
+          showToast('First-time setup: FormSubmit sent an activation link to info@rginfotechsolutions.com. Please check your email to activate!', 'info');
           contactForm.reset();
         } else if (data.message && data.message.toLowerCase().includes('web server')) {
           // If tested on file:// protocol instead of http/https
