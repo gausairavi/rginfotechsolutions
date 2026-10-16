@@ -1,0 +1,17 @@
+{
+  "version": "1.0.13",
+  "versionCode": 20,
+  "lastFetchedAt": "2026-10-16T22:00:00.000Z",
+  "productIds": [
+    "gym_premium_monthly",
+    "gym_premium_3months",
+    "gym_premium_6months",
+    "gym_premium_yearly"
+  ],
+  "featuredPlan": "yearly",
+  "promoBanner": {
+    "enabled": false,
+    "text": "Upgrade to The Grand Athlete Pro",
+    "highlight": "SAVE 58%"
+  }
+}

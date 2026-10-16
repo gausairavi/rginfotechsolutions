@@ -1,0 +1,18 @@
+{
+  "appName": "The Grand Athlete",
+  "packageName": "com.thegrandathlete.app",
+  "version": "1.0.13",
+  "versionCode": 20,
+  "buildNumber": "20",
+  "compileSdkVersion": 36,
+  "targetSdkVersion": 36,
+  "minSdkVersion": 26,
+  "releaseDate": "2026-10-16",
+  "publisher": "RG Infotech Solutions",
+  "supportEmail": "info@rginfotechsolutions.com",
+  "playStoreUrl": "https://play.google.com/store/apps/details?id=com.thegrandathlete.app",
+  "websiteUrl": "https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html",
+  "privacyPolicyUrl": "https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/privacy-policy.html",
+  "termsOfServiceUrl": "https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/terms-of-service.html",
+  "dataDeletionUrl": "https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/data-deletion.html"
+}
