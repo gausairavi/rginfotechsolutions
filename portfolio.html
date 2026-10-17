@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>App Portfolio | RG Infotech Solutions - Google Play Store Apps</title>
-  <meta name="description" content="Explore RG Infotech Solutions' mobile applications portfolio. Discover The Grand Athlete App, PR Recipe Hub, and enterprise solutions with direct Google Play Store redirects.">
+  <meta name="description" content="Explore RG Infotech Solutions' mobile applications portfolio. Discover Kizmo Kids, The Grand Athlete App, PR Recipe Hub, and enterprise solutions with direct Google Play Store redirects.">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -92,9 +92,10 @@
 
       <!-- Category Filter Tabs -->
       <div class="portfolio-filter" id="portfolioFilterBar">
-        <button class="filter-btn active" data-filter="all">All Applications (2)</button>
+        <button class="filter-btn active" data-filter="all">All Applications (3)</button>
         <button class="filter-btn" data-filter="fitness">Sports &amp; Fitness</button>
         <button class="filter-btn" data-filter="culinary">Food &amp; Lifestyle</button>
+        <button class="filter-btn" data-filter="education">Education &amp; Kids</button>
       </div>
     </div>
   </section>
@@ -239,6 +240,75 @@
           </div>
         </div>
 
+        <!-- Card 3: Kizmo Kids -->
+        <div class="app-card" data-category="playstore education mobile" id="cardKizmoKids">
+          <div class="app-card-top">
+            <div class="app-card-brand">
+              <img src="images/kizmokids-logo.png" alt="Kizmo Kids Logo" class="app-logo-img">
+            </div>
+            <div>
+              <span class="app-badge-status" style="display: block; text-align: right; margin-bottom: 4px; color: #10b981; border-color: rgba(16, 185, 129, 0.3);">🎈 Ages 2–8 • Family Safe</span>
+              <span style="font-size: 0.8rem; color: #f59e0b; font-weight: 700;">★ 4.9 (Educational)</span>
+            </div>
+          </div>
+          <h3>Kizmo Kids: Learn, Play &amp; Grow</h3>
+          <p class="app-tagline">Comprehensive early learning adventure for toddlers and preschoolers. 200+ games covering phonics, math, nursery rhymes, bedtime stories, and creativity studio with 100% on-device privacy.</p>
+
+          <ul class="app-features-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              12+ Immersive worlds: ABCs, numbers, math, animals &amp; bedtime stories
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              100% On-device storage &amp; zero personal data collection (COPPA / Families)
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Parent-gated adult controls &amp; optional ad-free Kizmo Kids Premium
+            </li>
+          </ul>
+
+          <div class="app-tags">
+            <span class="tag-badge">React Native</span>
+            <span class="tag-badge">Designed for Families</span>
+            <span class="tag-badge">COPPA Compliant</span>
+            <span class="tag-badge">100% Private</span>
+          </div>
+
+          <div class="app-card-actions">
+            <!-- Direct Google Play Store Button -->
+            <a href="https://play.google.com/store/apps/details?id=com.kizmokids.learnplaygrow" target="_blank" rel="noopener noreferrer" class="btn btn-playstore" id="playStoreKizmoBtn">
+              <svg class="icon-ps" viewBox="0 0 512 512">
+                <path fill="#00e5ff" d="M48.7 13.1c-6.8 7.3-10.7 18.2-10.7 31.9v422c0 13.7 3.9 24.6 10.7 31.9l2.4 2.2L282.8 269.4v-5.8L51.1 10.9l-2.4 2.2z"/>
+                <path fill="#ff3a44" d="M358.5 345.1l-75.7-75.7v-5.8l75.7-75.7 1.8 1 89.6 51c25.6 14.5 25.6 38.3 0 52.9l-89.6 51-1.8 1.3z"/>
+                <path fill="#00e676" d="M282.8 263.6L51.1 495.3c8.5 9 22.4 10.1 38.1 1.2l269.3-152.9-75.7-76z"/>
+                <path fill="#ffd500" d="M282.8 248.4l75.7-76L89.2 19.5c-15.7-8.9-29.6-7.8-38.1 1.2l231.7 227.7z"/>
+              </svg>
+              <div class="ps-text">
+                <span>GET IT ON</span>
+                <span>Google Play</span>
+              </div>
+            </a>
+
+            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+              <a href="apps/KizmoKidsApp/index.html" class="btn btn-secondary" style="flex: 1; font-size: 0.85rem; padding: 0.6rem;" id="kizmoWebsiteLink">
+                <span>Official App Website ↗</span>
+              </a>
+              <button onclick="copyAppShareLink('https://play.google.com/store/apps/details?id=com.kizmokids.learnplaygrow', 'Kizmo Kids: Learn, Play & Grow')" class="btn btn-secondary" style="padding: 0.6rem 0.8rem;" title="Share App Link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              </button>
+            </div>
+
+            <div class="app-sublinks">
+              <a href="apps/KizmoKidsApp/index.html#pricing">Family Pass ⭐</a>
+              <a href="apps/KizmoKidsApp/privacy-policy.html">Privacy Policy</a>
+              <a href="apps/KizmoKidsApp/terms-of-service.html">Terms</a>
+              <a href="apps/KizmoKidsApp/data-deletion.html">Data Reset</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -293,6 +363,8 @@
           <ul class="footer-links">
             <li><a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank" rel="noopener noreferrer">The Grand Athlete (Google Play) ↗</a></li>
             <li><a href="apps/TheGrandAthleteApp/index.html">The Grand Athlete (Website) ↗</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.kizmokids.learnplaygrow" target="_blank" rel="noopener noreferrer">Kizmo Kids (Google Play) ↗</a></li>
+            <li><a href="apps/KizmoKidsApp/index.html">Kizmo Kids (Website) ↗</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" target="_blank" rel="noopener noreferrer">PR Recipe Hub (Google Play) ↗</a></li>
             <li><a href="https://prrecipehub.com/" target="_blank" rel="noopener noreferrer">PR Recipe Hub (Web Portal) ↗</a></li>
           </ul>

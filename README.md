@@ -15,7 +15,15 @@ This repository hosts the static web portal and dedicated app landing pages, dow
   * [Official Web Platform](apps/TheGrandAthleteApp/index.html)
   * [Google Play Store](https://play.google.com/store/apps/details?id=com.thegrandathlete.app)
   * [Privacy Policy](apps/TheGrandAthleteApp/privacy-policy.html)
+  * [Terms of Service](apps/TheGrandAthleteApp/terms-of-service.html)
   * [Data Deletion Request](apps/TheGrandAthleteApp/data-deletion.html)
+* **[Kizmo Kids App](apps/KizmoKidsApp/index.html)**: Child-safe early learning adventures for toddlers & preschoolers (Ages 2–8).
+  * [Official Web Platform](apps/KizmoKidsApp/index.html)
+  * [Google Play Store](https://play.google.com/store/apps/details?id=com.kizmokids.learnplaygrow)
+  * [Smart Download Page](apps/KizmoKidsApp/download.html)
+  * [Privacy Policy](apps/KizmoKidsApp/privacy-policy.html)
+  * [Terms of Service](apps/KizmoKidsApp/terms-of-service.html)
+  * [Data Deletion Request](apps/KizmoKidsApp/data-deletion.html)
 * **[PR Recipe Hub](https://prrecipehub.com/)**: Culinary platform connecting home cooks with step-by-step recipes.
   * [Live Web Platform](https://prrecipehub.com/)
   * [Google Play Store](https://play.google.com/store/apps/details?id=com.prrecipehub.app)

@@ -1,0 +1,18 @@
+{
+  "appName": "Kizmo Kids: Learn, Play & Grow",
+  "packageName": "com.kizmokids.learnplaygrow",
+  "version": "1.0.0",
+  "versionCode": 42,
+  "buildNumber": "42",
+  "targetAgeGroup": "Ages 2–8",
+  "category": "Education / Pre-School",
+  "releaseDate": "2026-10-17",
+  "publisher": "RG Infotech Solutions",
+  "supportEmail": "info@rginfotechsolutions.com",
+  "playStoreUrl": "https://play.google.com/store/apps/details?id=com.kizmokids.learnplaygrow",
+  "websiteUrl": "https://www.rginfotechsolutions.com/apps/KizmoKidsApp/index.html",
+  "privacyPolicyUrl": "https://www.rginfotechsolutions.com/apps/KizmoKidsApp/privacy-policy.html",
+  "termsOfServiceUrl": "https://www.rginfotechsolutions.com/apps/KizmoKidsApp/terms-of-service.html",
+  "downloadUrl": "https://www.rginfotechsolutions.com/apps/KizmoKidsApp/download.html",
+  "dataDeletionUrl": "https://www.rginfotechsolutions.com/apps/KizmoKidsApp/data-deletion.html"
+}

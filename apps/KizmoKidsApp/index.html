@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kizmo Kids: Learn, Play & Grow — Child-Safe Early Learning Adventures for Ages 2–8</title>
+  <meta name="description"
+    content="Kizmo Kids is the joyful, safe, and comprehensive early learning app for toddlers, preschoolers, and early elementary children ages 2 to 8. Featuring 200+ educational games, phonics, math, nursery rhymes, bedtime stories, and 100% on-device child privacy.">
+  <meta name="keywords"
+    content="kids learning app, toddler games, phonics for kids, kindergarten math, preschool educational games, child-safe app, COPPA compliant, nursery rhymes, bedtime stories, drawing for kids, Android educational app">
+  <meta name="author" content="RG Infotech Solutions">
+  <meta name="theme-color" content="#FF7043">
+
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kizmo Kids: Learn, Play & Grow — Safe Early Learning for Kids Ages 2–8">
+  <meta property="og:description"
+    content="200+ educational games, phonics, numbers, nursery rhymes, bedtime stories, and creativity studio. 100% on-device privacy, zero personal data collection, and parent-gated safety.">
+  <meta property="og:image" content="assets/icon.png">
+  <meta property="og:url" content="https://www.rginfotechsolutions.com/apps/KizmoKidsApp/index.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kizmo Kids: Learn, Play & Grow">
+  <meta name="twitter:description" content="Safe, joyful early learning adventures for kids ages 2–8.">
+  <meta name="twitter:image" content="assets/icon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+
+  <!-- Google Fonts: Outfit (Display & Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Structured Data Schema (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Kizmo Kids: Learn, Play & Grow",
+    "operatingSystem": "Android",
+    "applicationCategory": "EducationalApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "RG Infotech Solutions",
+      "url": "https://www.rginfotechsolutions.com"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "128"
+    },
+    "description": "Fun ABCs, math, reading & creative learning games for kids ages 2–8. 100% child-safe, parent-gated, and family friendly."
+  }
+  </script>
+
+  <script>
+    (function () {
+      try {
+        const t = localStorage.getItem('rg_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { }
+    })();
+  </script>
+
+  <style>
+    :root {
+      --bg-main: #FFFDF9;
+      --bg-surface: #FFFFFF;
+      --bg-surface-elevated: #F9FAFB;
+      --bg-glass: rgba(255, 255, 255, 0.85);
+      --border-color: rgba(255, 112, 67, 0.14);
+      --border-subtle: rgba(0, 0, 0, 0.06);
+      
+      /* Vibrant Kid-Safe Brand Palette */
+      --primary: #FF7043;
+      --primary-dark: #F4511E;
+      --primary-glow: rgba(255, 112, 67, 0.35);
+      
+      --accent-coral: #FF6B6B;
+      --accent-blue: #3B82F6;
+      --accent-blue-glow: rgba(59, 130, 246, 0.25);
+      --accent-green: #10B981;
+      --accent-green-glow: rgba(16, 185, 129, 0.25);
+      --accent-yellow: #F59E0B;
+      --accent-yellow-glow: rgba(245, 158, 11, 0.25);
+      --accent-purple: #8B5CF6;
+      --accent-purple-glow: rgba(139, 92, 246, 0.25);
+      
+      --text-main: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #64748B;
+      
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --bg-main: #0B0F19;
+      --bg-surface: #111827;
+      --bg-surface-elevated: #1F2937;
+      --bg-glass: rgba(17, 24, 39, 0.85);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --text-main: #F9FAFB;
+      --text-secondary: #CBD5E1;
+      --text-muted: #94A3B8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Ambient Background Floating Circles */
+    .bg-ambience {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.18;
+      transition: opacity 0.3s ease;
+    }
+
+    [data-theme="dark"] .orb {
+      opacity: 0.12;
+    }
+
+    .orb-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--primary);
+      top: -100px;
+      right: -100px;
+    }
+
+    .orb-2 {
+      width: 450px;
+      height: 450px;
+      background: var(--accent-blue);
+      top: 40%;
+      left: -150px;
+    }
+
+    .orb-3 {
+      width: 400px;
+      height: 400px;
+      background: var(--accent-green);
+      bottom: -100px;
+      right: 15%;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 6px 16px var(--primary-glow);
+      border: 2px solid rgba(255, 112, 67, 0.3);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .brand-name span {
+      color: var(--primary);
+    }
+
+    .brand-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-green);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #FF7043 0%, #FF5722 100%);
+      color: #FFFFFF;
+      box-shadow: 0 8px 20px var(--primary-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(255, 112, 67, 0.5);
+      background: linear-gradient(135deg, #F4511E 0%, #E64A19 100%);
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface-elevated);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      background: var(--bg-surface);
+    }
+
+    .theme-toggle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--primary);
+      transform: scale(1.08);
+    }
+
+    .theme-icon-sun { display: none; color: #F59E0B; }
+    .theme-icon-moon { display: flex; color: #6366F1; }
+    [data-theme="dark"] .theme-icon-sun { display: flex; }
+    [data-theme="dark"] .theme-icon-moon { display: none; }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-main);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      z-index: 1;
+      padding: 64px 0 80px;
+      text-align: center;
+    }
+
+    .hero-badge-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: rgba(255, 112, 67, 0.1);
+      border: 1.5px solid rgba(255, 112, 67, 0.25);
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--primary-dark);
+      animation: gentle-pulse 3s infinite ease-in-out;
+    }
+
+    [data-theme="dark"] .hero-badge {
+      background: rgba(255, 112, 67, 0.2);
+      color: #FFAB91;
+    }
+
+    @keyframes gentle-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 3.6rem;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      max-width: 900px;
+      margin: 0 auto 20px;
+    }
+
+    .hero-title .text-gradient {
+      background: linear-gradient(135deg, #FF7043 0%, #F59E0B 50%, #8B5CF6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 760px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .hero-trust-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      padding: 16px 24px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      max-width: 880px;
+      margin: 0 auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .trust-item span.icon {
+      font-size: 1.15rem;
+    }
+
+    /* Hero Showcase Showcase Card */
+    .hero-mockup-wrapper {
+      position: relative;
+      margin-top: 56px;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .showcase-card {
+      background: var(--bg-surface);
+      border: 2px solid var(--border-color);
+      border-radius: 28px;
+      padding: 36px 32px;
+      box-shadow: 0 30px 80px rgba(255, 112, 67, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .showcase-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .showcase-avatar-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar-bubble {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FFD54F, #FFB300);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .showcase-tagline {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .showcase-tagline span {
+      color: var(--primary);
+    }
+
+    .stars-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.12);
+      color: #D97706;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+    [data-theme="dark"] .stars-badge {
+      color: #FBBF24;
+    }
+
+    /* Showcase Mini Worlds Carousel/Grid Preview */
+    .worlds-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 14px;
+    }
+
+    .mini-world-card {
+      background: var(--bg-surface-elevated);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 16px 12px;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .mini-world-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: 0 8px 20px rgba(255, 112, 67, 0.15);
+    }
+
+    .mini-world-icon {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .mini-world-card:hover .mini-world-icon {
+      transform: scale(1.15) rotate(5deg);
+    }
+
+    .mini-world-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.88rem;
+      line-height: 1.25;
+      color: var(--text-main);
+    }
+
+    /* Section Headings */
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 52px;
+    }
+
+    .section-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--accent-blue);
+      border-radius: var(--radius-full);
+      font-weight: 800;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 4 Safety Pillars Section */
+    .pillars-section {
+      padding: 80px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .pillar-card {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 32px 26px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent-yellow));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+    }
+
+    .pillar-card:hover::before {
+      opacity: 1;
+    }
+
+    .pillar-icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .pillar-1 .pillar-icon-box { background: rgba(16, 185, 129, 0.12); color: #10B981; }
+    .pillar-2 .pillar-icon-box { background: rgba(59, 130, 246, 0.12); color: #3B82F6; }
+    .pillar-3 .pillar-icon-box { background: rgba(245, 158, 11, 0.12); color: #F59E0B; }
+    .pillar-4 .pillar-icon-box { background: rgba(139, 92, 246, 0.12); color: #8B5CF6; }
+
+    .pillar-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .pillar-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* All 14 Learning Worlds Interactive Filter Section */
+    .worlds-section {
+      padding: 80px 0;
+      position: relative;
+      z-index: 1;
+      background: var(--bg-surface-elevated);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .category-filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    .worlds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 22px;
+    }
+
+    .world-item {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .world-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+      border-color: var(--primary);
+    }
+
+    .world-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .world-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--bg-surface-elevated);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.9rem;
+    }
+
+    .world-age-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 112, 67, 0.1);
+      color: var(--primary-dark);
+    }
+
+    [data-theme="dark"] .world-age-badge {
+      background: rgba(255, 112, 67, 0.2);
+      color: #FFAB91;
+    }
+
+    .world-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .world-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .world-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-chip {
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--bg-surface-elevated);
+      color: var(--text-muted);
+    }
+
+    /* Interactive Parent Gate Demo Section */
+    .gate-demo-section {
+      padding: 80px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .gate-interactive-box {
+      background: var(--bg-surface);
+      border: 2px solid var(--accent-blue);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.1);
+      text-align: center;
+    }
+
+    .gate-icon {
+      font-size: 3rem;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .math-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 440px;
+      margin: 24px auto;
+    }
+
+    .math-problem {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+    }
+
+    .math-input-group {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .math-input {
+      width: 140px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 2px solid var(--border-color);
+      background: var(--bg-surface);
+      color: var(--text-main);
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-align: center;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .math-input:focus {
+      border-color: var(--accent-blue);
+    }
+
+    .gate-result-msg {
+      margin-top: 16px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      min-height: 24px;
+    }
+
+    .gate-result-msg.success { color: var(--accent-green); }
+    .gate-result-msg.error { color: var(--accent-coral); }
+
+    /* Creativity Studio Spotlight */
+    .creativity-section {
+      padding: 80px 0;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(255, 112, 67, 0.04) 0%, rgba(139, 92, 246, 0.04) 100%);
+    }
+
+    .split-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .creativity-feature-list {
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .creativity-feature-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .check-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .creativity-feature-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+      color: var(--text-main);
+    }
+
+    .creativity-feature-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .creativity-visual-card {
+      background: var(--bg-surface);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .canvas-palette {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .color-dot {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 3px solid #FFF;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .color-dot:hover {
+      transform: scale(1.2);
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+      padding: 80px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .billing-toggle-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+
+    .toggle-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+
+    .toggle-label.active {
+      color: var(--text-main);
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 54px;
+      height: 30px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      inset: 0;
+      background-color: var(--border-color);
+      border-radius: 34px;
+      transition: 0.3s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.3s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    input:checked + .slider {
+      background-color: var(--primary);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+
+    .save-badge {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .pricing-card.featured {
+      border: 2.5px solid var(--primary);
+      box-shadow: 0 20px 60px var(--primary-glow);
+    }
+
+    .featured-ribbon {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #FF7043, #FF5722);
+      color: #FFF;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 4px 16px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(255, 112, 67, 0.4);
+    }
+
+    .plan-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .plan-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .plan-price-wrap {
+      margin-bottom: 24px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .plan-price {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--text-main);
+      line-height: 1;
+    }
+
+    .plan-period {
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 32px;
+      flex-grow: 1;
+    }
+
+    .plan-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .plan-feature-item strong {
+      color: var(--text-main);
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 80px 0;
+      position: relative;
+      z-index: 1;
+      background: var(--bg-surface-elevated);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .faq-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-question {
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--text-main);
+      user-select: none;
+    }
+
+    .faq-toggle-icon {
+      font-size: 1.4rem;
+      font-weight: 400;
+      transition: transform 0.3s ease;
+      color: var(--primary);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 24px;
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 280px;
+      padding-bottom: 22px;
+    }
+
+    .faq-item.open .faq-toggle-icon {
+      transform: rotate(45deg);
+    }
+
+    /* Bottom Final CTA */
+    .cta-banner-section {
+      padding: 90px 0;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .cta-banner-card {
+      background: linear-gradient(135deg, #FF7043 0%, #FF5722 50%, #F59E0B 100%);
+      color: #FFFFFF;
+      border-radius: 32px;
+      padding: 60px 36px;
+      box-shadow: 0 30px 80px rgba(255, 112, 67, 0.3);
+      max-width: 960px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner-card h2 {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .cta-banner-card p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      max-width: 680px;
+      margin: 0 auto 36px;
+    }
+
+    .btn-white {
+      background: #FFFFFF;
+      color: var(--primary-dark);
+      font-weight: 800;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      padding: 14px 32px;
+      font-size: 1.05rem;
+    }
+
+    .btn-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+      background: #FFFDF9;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      padding: 60px 0 36px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand-desc {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-top: 14px;
+      max-width: 320px;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    .footer-menu {
+      list-style: none;
+    }
+
+    .footer-menu li {
+      margin-bottom: 10px;
+    }
+
+    .footer-menu a {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-menu a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links-inline {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links-inline a:hover {
+      color: var(--primary);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      .split-row {
+        grid-template-columns: 1fr;
+      }
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: flex;
+      }
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      .hero-subtitle {
+        font-size: 1.05rem;
+      }
+      .hero-trust-bar {
+        border-radius: var(--radius-lg);
+        flex-direction: column;
+        gap: 12px;
+      }
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+      .cta-banner-card {
+        padding: 40px 24px;
+      }
+      .cta-banner-card h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Ambient Light Orbs -->
+  <div class="bg-ambience">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/icon.png" alt="Kizmo Kids Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name">Kizmo <span>Kids</span></span>
+          <span class="brand-tag">Learn • Play • Grow</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#worlds" class="nav-link">Learning Worlds</a></li>
+        <li><a href="#safety" class="nav-link">Child Safety</a></li>
+        <li><a href="#creativity" class="nav-link">Creativity Studio</a></li>
+        <li><a href="#parentgate" class="nav-link">Parent Gate</a></li>
+        <li><a href="#pricing" class="nav-link">Family Pass</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle theme">
+          <svg class="theme-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="download.html" class="btn btn-primary" id="btnHeaderDownload">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a2.03 2.03 0 0 1-.61-1.472V3.286c0-.568.225-1.107.609-1.472zM15.207 13.414l2.748-2.748-12.87-7.43 10.122 10.178zm0-2.828L5.085 20.764l12.87-7.43-2.748-2.748zm3.923.828l3.195 1.845a1.5 1.5 0 0 1 0 2.6l-3.195 1.845-2.046-2.045 2.046-2.245z"/>
+          </svg>
+          Get on Google Play
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      
+      <div class="hero-badge-wrap">
+        <div class="hero-badge">
+          <span>🌟</span> Designed for Families • Ages 2–8 • 100% Child-Safe
+        </div>
+      </div>
+
+      <h1 class="hero-title">
+        The Joyful Learning Adventure Where Little Minds <span class="text-gradient">Bloom!</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Discover 200+ interactive educational games, animated stories, letter tracing, math puzzles, and creative drawing tools that nurture early literacy, numeracy, and motor skills at your child’s natural pace.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="download.html" class="btn btn-primary" style="font-size: 1.05rem; padding: 14px 28px;" id="heroDownloadBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a2.03 2.03 0 0 1-.61-1.472V3.286c0-.568.225-1.107.609-1.472zM15.207 13.414l2.748-2.748-12.87-7.43 10.122 10.178zm0-2.828L5.085 20.764l12.87-7.43-2.748-2.748zm3.923.828l3.195 1.845a1.5 1.5 0 0 1 0 2.6l-3.195 1.845-2.046-2.045 2.046-2.245z"/>
+          </svg>
+          Download Free on Google Play
+        </a>
+        <a href="#worlds" class="btn btn-secondary" style="font-size: 1.05rem; padding: 14px 28px;">
+          Explore 12+ Learning Worlds 🚀
+        </a>
+      </div>
+
+      <!-- Trust Bar -->
+      <div class="hero-trust-bar">
+        <div class="trust-item">
+          <span class="icon">🛡️</span>
+          <span>100% On-Device Storage</span>
+        </div>
+        <div class="trust-item">
+          <span class="icon">🚫</span>
+          <span>Zero Personal Data Tracking</span>
+        </div>
+        <div class="trust-item">
+          <span class="icon">🔒</span>
+          <span>Adult Mental Math Gate</span>
+        </div>
+        <div class="trust-item">
+          <span class="icon">📶</span>
+          <span>Offline-Friendly Learning</span>
+        </div>
+      </div>
+
+      <!-- Hero Showcase Card -->
+      <div class="hero-mockup-wrapper">
+        <div class="showcase-card">
+          <div class="showcase-header">
+            <div class="showcase-avatar-group">
+              <div class="avatar-bubble">🦁</div>
+              <div class="showcase-tagline">
+                Welcome, <span>Little Explorer!</span><br>
+                <small style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 500;">Preschool &amp; Kindergarten Curriculum</small>
+              </div>
+            </div>
+            <div class="stars-badge">
+              ⭐ 48 Stars Earned Today!
+            </div>
+          </div>
+
+          <div class="worlds-mini-grid">
+            <div class="mini-world-card">
+              <span class="mini-world-icon">🔤</span>
+              <div class="mini-world-title">Alphabet &amp; Phonics</div>
+            </div>
+            <div class="mini-world-card">
+              <span class="mini-world-icon">🔢</span>
+              <div class="mini-world-title">Numbers &amp; Math</div>
+            </div>
+            <div class="mini-world-card">
+              <span class="mini-world-icon">🎨</span>
+              <div class="mini-world-title">Colors &amp; Art</div>
+            </div>
+            <div class="mini-world-card">
+              <span class="mini-world-icon">🦁</span>
+              <div class="mini-world-title">Animals &amp; Safari</div>
+            </div>
+            <div class="mini-world-card">
+              <span class="mini-world-icon">🚀</span>
+              <div class="mini-world-title">Space &amp; Planets</div>
+            </div>
+            <div class="mini-world-card">
+              <span class="mini-world-icon">📖</span>
+              <div class="mini-world-title">Bedtime Stories</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4 Pillars of Child Safety -->
+  <section class="pillars-section" id="safety">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-pill">Child Safety &amp; Trust First</div>
+        <h2 class="section-title">Designed with Love, Built with Extreme Privacy</h2>
+        <p class="section-desc">
+          We treat your child's digital universe with the same sacred protection you provide at home. Zero tracking, zero manipulative tricks, and positive screen time.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card pillar-1">
+          <div class="pillar-icon-box">🛡️</div>
+          <h3 class="pillar-title">100% On-Device Privacy</h3>
+          <p class="pillar-text">
+            All child profiles, stars, learning milestones, and drawings remain exclusively on your physical phone or tablet in private sandboxed storage. We operate zero cloud tracking databases.
+          </p>
+        </div>
+
+        <div class="pillar-card pillar-2">
+          <div class="pillar-icon-box">🔒</div>
+          <h3 class="pillar-title">Mental Math Parental Gate</h3>
+          <p class="pillar-text">
+            Settings, screen-time controls, and subscription management are locked behind an adult-only mental math barrier with anti-brute-force timeouts to keep curious little fingers safe.
+          </p>
+        </div>
+
+        <div class="pillar-card pillar-3">
+          <div class="pillar-icon-box">⏰</div>
+          <h3 class="pillar-title">Positive Screen Time</h3>
+          <p class="pillar-text">
+            Friendly break suggestions and gentle session guidance with no anxious countdown clocks or punitive lockouts, fostering healthy digital habits and emotional calm.
+          </p>
+        </div>
+
+        <div class="pillar-card pillar-4">
+          <div class="pillar-icon-box">🧸</div>
+          <h3 class="pillar-title">G-Rated Family Ad Protection</h3>
+          <p class="pillar-text">
+            Child-directed banner ads strictly limited to the home screen in the free tier. Never interrupting gameplay, stories, or drawing. Completely removed with family Premium.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Worlds Section -->
+  <section class="worlds-section" id="worlds">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-pill">Rich Educational Curriculum</div>
+        <h2 class="section-title">12+ Immersive Learning Worlds</h2>
+        <p class="section-desc">
+          From foundational phonics and hands-on math to wildlife safaris and interstellar explorations, every world is thoughtfully crafted for young developing minds.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="category-filter-bar">
+        <button class="filter-btn active" data-category="all">All Learning Worlds (14)</button>
+        <button class="filter-btn" data-category="literacy">Literacy &amp; Phonics</button>
+        <button class="filter-btn" data-category="math">Numbers &amp; Logic</button>
+        <button class="filter-btn" data-category="creativity">Art &amp; Stories</button>
+        <button class="filter-btn" data-category="nature">World &amp; Nature</button>
+      </div>
+
+      <!-- Worlds Grid -->
+      <div class="worlds-grid" id="worldsGrid">
+        
+        <!-- World 1 -->
+        <div class="world-item" data-category="literacy">
+          <div class="world-header">
+            <div class="world-icon-wrap">🔤</div>
+            <span class="world-age-badge">Ages 2–6</span>
+          </div>
+          <h3 class="world-name">Alphabet &amp; Phonics</h3>
+          <p class="world-desc">
+            Guided letter tracing, uppercase &amp; lowercase matching, animated phonics songs, and auditory sound recognition.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Letter Tracing</span>
+            <span class="skill-chip">Phonemic Sound</span>
+            <span class="skill-chip">ABC Song</span>
+          </div>
+        </div>
+
+        <!-- World 2 -->
+        <div class="world-item" data-category="math">
+          <div class="world-header">
+            <div class="world-icon-wrap">🔢</div>
+            <span class="world-age-badge">Ages 3–7</span>
+          </div>
+          <h3 class="world-name">Numbers &amp; Counting</h3>
+          <p class="world-desc">
+            Learn 1–100 counting, number formation, visual quantity estimation, and foundational number bonds with cute interactive objects.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Counting 1–100</span>
+            <span class="skill-chip">Number Writing</span>
+            <span class="skill-chip">Quantities</span>
+          </div>
+        </div>
+
+        <!-- World 3 -->
+        <div class="world-item" data-category="math">
+          <div class="world-header">
+            <div class="world-icon-wrap">➕</div>
+            <span class="world-age-badge">Ages 4–8</span>
+          </div>
+          <h3 class="world-name">Addition &amp; Subtraction</h3>
+          <p class="world-desc">
+            Pictorial math challenges, number line jumping, Singapore bar modeling, and fact family houses for intuitive arithmetic confidence.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Visual Math</span>
+            <span class="skill-chip">Number Lines</span>
+            <span class="skill-chip">Fact Families</span>
+          </div>
+        </div>
+
+        <!-- World 4 -->
+        <div class="world-item" data-category="math">
+          <div class="world-header">
+            <div class="world-icon-wrap">🔷</div>
+            <span class="world-age-badge">Ages 3–7</span>
+          </div>
+          <h3 class="world-name">Shapes &amp; Geometry</h3>
+          <p class="world-desc">
+            Discover 2D and 3D shapes, solve tangram puzzles, and complete visual pattern recognition games.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Tangrams</span>
+            <span class="skill-chip">3D Solids</span>
+            <span class="skill-chip">Pattern Logic</span>
+          </div>
+        </div>
+
+        <!-- World 5 -->
+        <div class="world-item" data-category="creativity">
+          <div class="world-header">
+            <div class="world-icon-wrap">🎨</div>
+            <span class="world-age-badge">Ages 2–8</span>
+          </div>
+          <h3 class="world-name">Colors &amp; Rainbow Studio</h3>
+          <p class="world-desc">
+            Color mixing experiments, rainbow blending, shade discovery, and dozens of playful guided coloring sheets.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Color Mixing</span>
+            <span class="skill-chip">Crayon Art</span>
+            <span class="skill-chip">Rainbow Wheels</span>
+          </div>
+        </div>
+
+        <!-- World 6 -->
+        <div class="world-item" data-category="nature">
+          <div class="world-header">
+            <div class="world-icon-wrap">🦁</div>
+            <span class="world-age-badge">Ages 2–6</span>
+          </div>
+          <h3 class="world-name">Animals &amp; Safari Safari</h3>
+          <p class="world-desc">
+            Meet safari wildlife, barnyard friends, and family pets accompanied by authentic animal sounds, habitat facts, and puzzle games.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Animal Sounds</span>
+            <span class="skill-chip">Habitats</span>
+            <span class="skill-chip">Wildlife Quiz</span>
+          </div>
+        </div>
+
+        <!-- World 7 -->
+        <div class="world-item" data-category="nature">
+          <div class="world-header">
+            <div class="world-icon-wrap">🐦</div>
+            <span class="world-age-badge">Ages 3–7</span>
+          </div>
+          <h3 class="world-name">Birds &amp; Garden Insects</h3>
+          <p class="world-desc">
+            Explore feathered explorers of the sky, friendly honeybees, gentle caterpillars, and butterfly life-cycles in a vibrant garden.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Bird Calls</span>
+            <span class="skill-chip">Butterflies</span>
+            <span class="skill-chip">Garden Critters</span>
+          </div>
+        </div>
+
+        <!-- World 8 -->
+        <div class="world-item" data-category="nature">
+          <div class="world-header">
+            <div class="world-icon-wrap">🚗</div>
+            <span class="world-age-badge">Ages 2–7</span>
+          </div>
+          <h3 class="world-name">Vehicles &amp; Wheels</h3>
+          <p class="world-desc">
+            Discover trains, airplanes, fire trucks, city emergency helpers, tractors, and ships through assembly puzzles and joyful sound effects.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Rescue Trucks</span>
+            <span class="skill-chip">Trains &amp; Tracks</span>
+            <span class="skill-chip">City Helpers</span>
+          </div>
+        </div>
+
+        <!-- World 9 -->
+        <div class="world-item" data-category="nature">
+          <div class="world-header">
+            <div class="world-icon-wrap">🚀</div>
+            <span class="world-age-badge">Ages 4–8</span>
+          </div>
+          <h3 class="world-name">Space, Stars &amp; Planets</h3>
+          <p class="world-desc">
+            Blast off on astronaut missions to discover our solar system, constellation maps, Moon phases, and Earth science.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Solar System</span>
+            <span class="skill-chip">Constellations</span>
+            <span class="skill-chip">Astronauts</span>
+          </div>
+        </div>
+
+        <!-- World 10 -->
+        <div class="world-item" data-category="nature">
+          <div class="world-header">
+            <div class="world-icon-wrap">🦕</div>
+            <span class="world-age-badge">Ages 3–8</span>
+          </div>
+          <h3 class="world-name">Deep Sea &amp; Gentle Dinosaurs</h3>
+          <p class="world-desc">
+            Dive into coral reefs with playful dolphins and friendly whales, then dig for gentle dinosaur fossils in prehistoric puzzle worlds.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Ocean Life</span>
+            <span class="skill-chip">Fossil Digging</span>
+            <span class="skill-chip">Gentle Dinos</span>
+          </div>
+        </div>
+
+        <!-- World 11 -->
+        <div class="world-item" data-category="nature">
+          <div class="world-header">
+            <div class="world-icon-wrap">🧼</div>
+            <span class="world-age-badge">Ages 2–6</span>
+          </div>
+          <h3 class="world-name">Good Habits &amp; Safety</h3>
+          <p class="world-desc">
+            Reinforce positive routines: handwashing, dental care, healthy nutritious meals, tidy bedroom habits, and road-crossing awareness.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Handwashing</span>
+            <span class="skill-chip">Dental Hygiene</span>
+            <span class="skill-chip">Healthy Meals</span>
+          </div>
+        </div>
+
+        <!-- World 12 -->
+        <div class="world-item" data-category="creativity">
+          <div class="world-header">
+            <div class="world-icon-wrap">📖</div>
+            <span class="world-age-badge">Ages 2–8</span>
+          </div>
+          <h3 class="world-name">Bedtime Stories &amp; Rhymes</h3>
+          <p class="world-desc">
+            Calmly narrated illustrated bedtime stories with word-by-word read-along highlighting, plus classic nursery rhymes and soothing lullabies.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Read-Along Audio</span>
+            <span class="skill-chip">Moral Tales</span>
+            <span class="skill-chip">Soothing Lullabies</span>
+          </div>
+        </div>
+
+        <!-- World 13 -->
+        <div class="world-item" data-category="creativity">
+          <div class="world-header">
+            <div class="world-icon-wrap">🖍️</div>
+            <span class="world-age-badge">Ages 2–8</span>
+          </div>
+          <h3 class="world-name">Creativity Studio &amp; Canvas</h3>
+          <p class="world-desc">
+            Digital freehand canvas with child-friendly crayons, rainbow brushes, tap-to-fill coloring books, and an animated sticker story creator.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Freehand Drawing</span>
+            <span class="skill-chip">Tap-to-Fill</span>
+            <span class="skill-chip">Sticker Scenes</span>
+          </div>
+        </div>
+
+        <!-- World 14 -->
+        <div class="world-item" data-category="math">
+          <div class="world-header">
+            <div class="world-icon-wrap">✖️</div>
+            <span class="world-age-badge">Ages 6–8</span>
+          </div>
+          <h3 class="world-name">Multiplication Basics</h3>
+          <p class="world-desc">
+            Introduction to equal sharing, visual arrays, repeated addition, and gentle skip-counting for early elementary learners.
+          </p>
+          <div class="world-skills">
+            <span class="skill-chip">Skip Counting</span>
+            <span class="skill-chip">Visual Arrays</span>
+            <span class="skill-chip">Equal Sharing</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Creativity Studio Spotlight -->
+  <section class="creativity-section" id="creativity">
+    <div class="container">
+      <div class="split-row">
+        <div>
+          <div class="section-pill" style="background: rgba(139, 92, 246, 0.1); color: var(--accent-purple);">Creativity &amp; Imagination</div>
+          <h2 class="section-title">An Artist’s Canvas for Little Imaginations</h2>
+          <p class="section-desc">
+            Unleash your child’s creative confidence! Kizmo Kids includes a full digital art studio built with gentle touch sensitivity and kid-sized tools.
+          </p>
+
+          <ul class="creativity-feature-list">
+            <li class="creativity-feature-item">
+              <div class="check-icon">✓</div>
+              <div>
+                <div class="creativity-feature-title">Vibrant Crayons &amp; Rainbow Magic Brushes</div>
+                <div class="creativity-feature-desc">Sparkling strokes, neon pastels, and gentle undo/redo controls crafted specifically for young hands.</div>
+              </div>
+            </li>
+            <li class="creativity-feature-item">
+              <div class="check-icon">✓</div>
+              <div>
+                <div class="creativity-feature-title">50+ Beautiful Coloring Sheets</div>
+                <div class="creativity-feature-desc">Tap-to-fill with auto-containment so toddlers never feel frustrated by coloring outside the lines.</div>
+              </div>
+            </li>
+            <li class="creativity-feature-item">
+              <div class="check-icon">✓</div>
+              <div>
+                <div class="creativity-feature-title">Interactive Sticker Storybooks</div>
+                <div class="creativity-feature-desc">Drag animated animals, stars, castles, and dinosaurs onto canvas backgrounds to create their own visual tales.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="creativity-visual-card">
+            <div style="font-size: 4rem; margin-bottom: 12px;">🎨 🖍️ ✨</div>
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; margin-bottom: 8px;">Rainbow Canvas Preview</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">Pick a color to test our cheerful palette:</p>
+            
+            <div class="canvas-palette">
+              <div class="color-dot" style="background: #FF5252;" onclick="setPaletteColor('#FF5252')" title="Cherry Red"></div>
+              <div class="color-dot" style="background: #FF9800;" onclick="setPaletteColor('#FF9800')" title="Sunshine Orange"></div>
+              <div class="color-dot" style="background: #FFEB3B;" onclick="setPaletteColor('#FFEB3B')" title="Lemon Yellow"></div>
+              <div class="color-dot" style="background: #4CAF50;" onclick="setPaletteColor('#4CAF50')" title="Meadow Green"></div>
+              <div class="color-dot" style="background: #2196F3;" onclick="setPaletteColor('#2196F3')" title="Ocean Blue"></div>
+              <div class="color-dot" style="background: #9C27B0;" onclick="setPaletteColor('#9C27B0')" title="Grape Violet"></div>
+            </div>
+
+            <div id="paletteDisplay" style="background: #FF5252; color: #FFF; padding: 14px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; transition: background 0.3s ease;">
+              Selected Color: Cherry Red 🖍️
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Parent Gate Demo -->
+  <section class="gate-demo-section" id="parentgate">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-pill">Interactive Security Demonstration</div>
+        <h2 class="section-title">Experience the Adult Mental Math Gate</h2>
+        <p class="section-desc">
+          Test the exact safety mechanism that keeps your child out of adult settings and Google Play subscription management! Solve the equation below:
+        </p>
+      </div>
+
+      <div class="gate-interactive-box">
+        <span class="gate-icon">🔒</span>
+        <h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; margin-bottom: 8px;">Parental Verification Challenge</h3>
+        <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto;">
+          In Kizmo Kids, every adult screen is guarded by an automated equation that young children cannot solve.
+        </p>
+
+        <div class="math-card">
+          <div class="math-problem" id="mathProblemLabel">14 × 3 = ?</div>
+          <div class="math-input-group">
+            <input type="number" class="math-input" id="mathAnswerInput" placeholder="Answer" aria-label="Math answer">
+            <button class="btn btn-primary" onclick="verifyParentGate()" id="btnVerifyGate">Unlock</button>
+          </div>
+          <div class="gate-result-msg" id="gateResultMsg"></div>
+        </div>
+
+        <small style="color: var(--text-muted); font-size: 0.85rem;">
+          Repeated failed attempts trigger a 30-second security cooldown inside the app.
+        </small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing & Kizmo Kids Premium Section -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-pill">Honest &amp; Fair Family Value</div>
+        <h2 class="section-title">Free to Start, Ad-Free for the Whole Family</h2>
+        <p class="section-desc">
+          Full foundational curriculum is completely free. Upgrade to <strong>Kizmo Kids Premium</strong> to eliminate all ads and unlock unlimited creativity sheets for all children on your device.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        
+        <!-- Free Starter Plan -->
+        <div class="pricing-card">
+          <h3 class="plan-name">Free Starter</h3>
+          <p class="plan-desc">Full foundational learning curriculum for every child.</p>
+
+          <ul class="plan-features">
+            <li class="plan-feature-item"><span>✓</span> <strong>All 14 Learning Worlds</strong> included</li>
+            <li class="plan-feature-item"><span>✓</span> 200+ games, phonics &amp; math puzzles</li>
+            <li class="plan-feature-item"><span>✓</span> 100% On-device private storage</li>
+            <li class="plan-feature-item"><span>✓</span> Adult mental math parent gate</li>
+            <li class="plan-feature-item"><span>✓</span> Child-directed, G-rated banner ads on menu only</li>
+          </ul>
+
+          <a href="download.html" class="btn btn-secondary" style="width: 100%;" id="btnPlanFree">
+            Download Free
+          </a>
+        </div>
+
+        <!-- Kizmo Kids Premium -->
+        <div class="pricing-card featured">
+          <div class="featured-ribbon">⭐ Most Popular for Families</div>
+          <h3 class="plan-name">Kizmo Kids Premium</h3>
+          <p class="plan-desc">The ultimate, 100% ad-free creative learning suite for your home.</p>
+
+          <ul class="plan-features">
+            <li class="plan-feature-item"><span>🌟</span> <strong>100% Ad-Free Experience</strong> everywhere</li>
+            <li class="plan-feature-item"><span>🌟</span> <strong>Covers all child profiles</strong> on the device</li>
+            <li class="plan-feature-item"><span>🌟</span> <strong>Unlimited Canvas &amp; Drawing sheets</strong></li>
+            <li class="plan-feature-item"><span>🌟</span> <strong>All future storybook updates</strong> included</li>
+            <li class="plan-feature-item"><span>🌟</span> Offline playback for bedtime stories</li>
+            <li class="plan-feature-item"><span>🌟</span> Cancel anytime with Google Play</li>
+          </ul>
+
+          <a href="download.html" class="btn btn-primary" style="width: 100%;" id="btnPlanPremium">
+            Get on Google Play
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-pill">Have Questions?</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">
+          Everything parents need to know about safety, privacy, content, and subscriptions.
+        </p>
+      </div>
+
+      <div class="faq-wrapper">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item open">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What age group is Kizmo Kids designed for?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Kizmo Kids is tailored specifically for toddlers, preschoolers, kindergartners, and early elementary learners aged <strong>2 to 8 years old</strong>. The modules adapt to different skill levels—from initial sensory colors and ABC songs for toddlers up to multiplication basics and reading sentences for 7-8 year olds.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Is my child's data truly safe and private?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes, completely! Kizmo Kids operates on a <strong>local-first architecture</strong>. We do not require accounts, logins, email addresses, or real names. All stars, lessons, and artwork are stored strictly inside your device’s sandboxed storage. We do not operate remote user tracking databases, and we comply strictly with COPPA, GDPR-K, and Google Play Families requirements.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Can my child play the app while offline?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes! All core learning games, flashcards, drawing canvases, and educational modules run completely offline without an active Wi-Fi or cellular network connection. Perfect for airplane trips, road travel, or low-connectivity environments.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>How does the Parent Gate prevent accidental purchases?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Whenever an adult action is triggered (such as accessing settings, reviewing privacy options, or managing subscriptions), Kizmo Kids presents a dynamically generated adult mental math problem (like 17 + 8 or 14 × 3). Children cannot guess or bypass this barrier, and 3 incorrect tries triggers a temporary lockout.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Can multiple siblings use the same device?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes! Parents can set up separate child profiles (using nicknames and cheerful cartoon avatars) for each child in your family. Each child has their own individual star progress, drawing portfolio, and favorite worlds saved on the device.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Call to Action Banner -->
+  <section class="cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-card">
+        <h2>Give Your Child the Gift of Joyful Learning!</h2>
+        <p>
+          Download Kizmo Kids today and watch your little explorer discover the wonder of reading, math, and creativity in a 100% child-safe world.
+        </p>
+
+        <a href="download.html" class="btn btn-white" id="btnBottomDownload">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a2.03 2.03 0 0 1-.61-1.472V3.286c0-.568.225-1.107.609-1.472zM15.207 13.414l2.748-2.748-12.87-7.43 10.122 10.178zm0-2.828L5.085 20.764l12.87-7.43-2.748-2.748zm3.923.828l3.195 1.845a1.5 1.5 0 0 1 0 2.6l-3.195 1.845-2.046-2.045 2.046-2.245z"/>
+          </svg>
+          Get Kizmo Kids on Google Play
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="brand">
+            <img src="assets/icon.png" alt="Kizmo Kids Logo" class="brand-logo" style="width: 38px; height: 38px;">
+            <span class="brand-name">Kizmo <span>Kids</span></span>
+          </div>
+          <p class="footer-brand-desc">
+            The safe, joyful, and comprehensive digital learning adventure designed for young minds ages 2 to 8. Published by RG Infotech Solutions.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Learning Worlds</h4>
+          <ul class="footer-menu">
+            <li><a href="#worlds">Alphabet &amp; Phonics</a></li>
+            <li><a href="#worlds">Numbers &amp; Counting</a></li>
+            <li><a href="#worlds">Addition &amp; Subtraction</a></li>
+            <li><a href="#creativity">Creativity Studio</a></li>
+            <li><a href="#worlds">Bedtime Stories</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Child Privacy &amp; Trust</h4>
+          <ul class="footer-menu">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="data-deletion.html">Data Deletion Guide</a></li>
+            <li><a href="#safety">Google Play Families</a></li>
+            <li><a href="#parentgate">Parent Gate Security</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Get the App</h4>
+          <ul class="footer-menu">
+            <li><a href="download.html">Download on Google Play</a></li>
+            <li><a href="#pricing">Kizmo Kids Premium</a></li>
+            <li><a href="mailto:info@rginfotechsolutions.com">Support &amp; Feedback</a></li>
+            <li><a href="https://www.rginfotechsolutions.com" target="_blank" rel="noopener">RG Infotech Solutions ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Kizmo Kids • Learn, Play &amp; Grow. Developed &amp; Published by RG Infotech Solutions. All rights reserved.
+        </div>
+        <div class="footer-links-inline">
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms-of-service.html">Terms</a>
+          <a href="data-deletion.html">Data Reset</a>
+          <a href="download.html">Download</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Switcher
+    document.getElementById('themeToggleBtn')?.addEventListener('click', function () {
+      const cur = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('rg_theme', next); } catch (e) { }
+    });
+
+    // Worlds Category Filter
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const worldCards = document.querySelectorAll('.world-item');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const cat = btn.getAttribute('data-category');
+        worldCards.forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-category') === cat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Parent Gate Interactive Demo
+    let currentMathA = 14;
+    let currentMathB = 3;
+    let currentMathOp = '×';
+    let currentMathAns = 42;
+
+    function generateMathChallenge() {
+      const ops = ['+', '×'];
+      const op = ops[Math.floor(Math.random() * ops.length)];
+      let a, b, ans;
+      if (op === '+') {
+        a = Math.floor(Math.random() * 30) + 12;
+        b = Math.floor(Math.random() * 20) + 9;
+        ans = a + b;
+      } else {
+        a = Math.floor(Math.random() * 8) + 6;
+        b = Math.floor(Math.random() * 8) + 4;
+        ans = a * b;
+      }
+      currentMathA = a;
+      currentMathB = b;
+      currentMathOp = op;
+      currentMathAns = ans;
+      const label = document.getElementById('mathProblemLabel');
+      if (label) label.textContent = `${a} ${op} ${b} = ?`;
+      const input = document.getElementById('mathAnswerInput');
+      if (input) input.value = '';
+    }
+
+    function verifyParentGate() {
+      const input = document.getElementById('mathAnswerInput');
+      const msg = document.getElementById('gateResultMsg');
+      if (!input || !msg) return;
+
+      const userVal = parseInt(input.value.trim(), 10);
+      if (isNaN(userVal)) {
+        msg.textContent = 'Please enter a number.';
+        msg.className = 'gate-result-msg error';
+        return;
+      }
+
+      if (userVal === currentMathAns) {
+        msg.textContent = '🎉 Adult verified! Parent Dashboard unlocked.';
+        msg.className = 'gate-result-msg success';
+        setTimeout(() => {
+          generateMathChallenge();
+        }, 2200);
+      } else {
+        msg.textContent = '❌ Incorrect. Child safety protection active!';
+        msg.className = 'gate-result-msg error';
+        setTimeout(() => {
+          generateMathChallenge();
+        }, 1500);
+      }
+    }
+
+    document.getElementById('mathAnswerInput')?.addEventListener('keyup', function(e) {
+      if (e.key === 'Enter') verifyParentGate();
+    });
+
+    // Palette Preview
+    function setPaletteColor(hex) {
+      const display = document.getElementById('paletteDisplay');
+      if (!display) return;
+      display.style.background = hex;
+      let name = 'Vibrant Tint';
+      if (hex === '#FF5252') name = 'Cherry Red 🖍️';
+      if (hex === '#FF9800') name = 'Sunshine Orange 🍊';
+      if (hex === '#FFEB3B') { name = 'Lemon Yellow 🍋'; display.style.color = '#000'; }
+      else { display.style.color = '#FFF'; }
+      if (hex === '#4CAF50') name = 'Meadow Green 🍏';
+      if (hex === '#2196F3') name = 'Ocean Blue 🌊';
+      if (hex === '#9C27B0') name = 'Grape Violet 🍇';
+      display.textContent = `Selected Color: ${name}`;
+    }
+
+
+    // FAQ Accordion
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    }
+  </script>
+</body>
+
+</html>
