@@ -81,12 +81,16 @@
       word-break: break-word;
     }
 
-    a, code, p, li {
+    a,
+    code,
+    p,
+    li {
       overflow-wrap: anywhere;
       word-break: break-word;
     }
 
-    a.url-break, .break-all {
+    a.url-break,
+    .break-all {
       word-break: break-all;
     }
 
@@ -249,6 +253,36 @@
       border-left-color: var(--accent-blue);
     }
 
+    .highlight-card.amber {
+      border-left-color: #FF9100;
+    }
+
+    .highlight-card.alert {
+      border-left-color: #FF5252;
+      background: rgba(255, 82, 82, 0.05);
+    }
+
+    .highlight-card.cyan {
+      border-left-color: #00E5FF;
+    }
+
+    .disclaimer-bar {
+      margin: 24px 0 16px 0;
+      padding: 18px 22px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-md);
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .disclaimer-bar strong {
+      color: var(--primary);
+    }
+
     .highlight-card h3 {
       font-family: var(--font-display);
       font-size: 16px;
@@ -339,6 +373,28 @@
     </section>
 
     <div class="container policy-content">
+      <!-- Prominent Medical & Safety Disclaimer Notice -->
+      <div class="highlight-card alert" style="margin-top: 0; margin-bottom: 34px;">
+        <h3 style="color: #FF5252; display: flex; align-items: center; gap: 8px;">
+          <span>⚠️</span> MANDATORY HEALTH, MEDICAL &amp; SAFETY NOTICE
+        </h3>
+        <p style="font-size: 14.5px; line-height: 1.65; color: var(--text-main);">
+          <strong>The Grand Athlete is strictly a fitness tracking, workout logging, and wellness educational
+            application — it is NOT a medical device, clinic, or healthcare provider.</strong> No workout routine,
+          exercise guide, nutrition calculation, or AI macro scan provided by the Application constitutes medical
+          advice, physical therapy, clinical diagnosis, or individualized healthcare treatment.
+        </p>
+        <p style="font-size: 14px; margin-top: 10px; color: var(--text-secondary);">
+          You must consult a qualified physician or healthcare provider before starting any new training or dietary
+          program. By using the Application, you acknowledge and agree that you voluntarily participate in all physical
+          exercises at your own risk. Refer to <a href="#disclaimers"
+            style="color: var(--primary); font-weight: 700; text-decoration: underline;">Section 2 (Comprehensive
+            Disclaimers)</a> and <a href="#liability"
+            style="color: var(--primary); font-weight: 700; text-decoration: underline;">Section 8 (Assumption of
+            Physical Risk)</a> for full details.
+        </p>
+      </div>
+
       <!-- Section 1 -->
       <section class="policy-section">
         <h2>1. Acceptance of Terms &amp; Eligibility</h2>
@@ -353,38 +409,129 @@
           Terms independently. Users aged 16–17 may use the Application only with the verifiable involvement and consent
           of a parent or legal guardian.
         </p>
+        <p>
+          <strong>Acknowledgment of Health &amp; Safety Terms:</strong> By accessing or using the Application, you
+          expressly acknowledge and agree that you have read, understood, and accept all disclaimers set forth in <a
+            href="#disclaimers" style="color: var(--primary); font-weight: 600; text-decoration: underline;">Section 2
+            (Comprehensive Disclaimers)</a>, including the Medical Disclaimer, Exercise Safety Guidance, and AI
+          Estimation Limits, and that you voluntarily assume all physical risks pursuant to <a href="#liability"
+            style="color: var(--primary); font-weight: 600; text-decoration: underline;">Section 8 (Voluntary
+            Participation &amp; Assumption of Risk)</a>.
+        </p>
       </section>
 
       <!-- Section 2 -->
-      <section class="policy-section">
-        <h2>2. Health, Fitness &amp; Medical Disclaimer</h2>
+      <section class="policy-section" id="disclaimers">
+        <h2>2. Comprehensive Health, Fitness &amp; Safety Disclaimers</h2>
+
+        <!-- 2.1 Critical Medical Disclaimer -->
         <div class="highlight-card">
-          <h3>CRITICAL HEALTH &amp; MEDICAL NOTICE</h3>
+          <h3>2.1 CRITICAL MEDICAL DISCLAIMER &amp; NON-CLINICAL STATUS</h3>
           <p>
-            The Grand Athlete provides exercise routines, workout timers, nutrition calculations (such as BMR, TDEE, and
-            macro ratios), recovery readiness scores, and hydration tracking solely for general fitness, athletic
-            conditioning, and educational purposes.
+            The Grand Athlete provides exercise routines, workout timers, instructional video guides, nutrition
+            calculations (including BMR, TDEE, and macronutrient splits), daily recovery readiness indicators, and
+            hydration tracking solely for general fitness, habit-forming, athletic conditioning, and educational
+            purposes.
           </p>
           <p style="margin-top: 8px;">
             The Application is <strong>NOT a medical device</strong> and does <strong>NOT provide medical advice,
-              clinical diagnosis, physical therapy, or healthcare treatment</strong>. You should always consult with a
-            qualified physician or healthcare professional before starting any new exercise routine or diet program,
-            especially if you have pre-existing cardiovascular, musculoskeletal, metabolic, or chronic health
-            conditions.
+              clinical diagnosis, physical therapy, rehabilitation, or individualized healthcare treatment</strong>. You
+            must always consult with a qualified physician or licensed healthcare provider before starting any new
+            exercise routine, training program, or dietary regimen, especially if you have pre-existing cardiovascular,
+            musculoskeletal, metabolic, or chronic health conditions.
           </p>
         </div>
 
-        <div class="highlight-card" style="border-left-color: #FF9100; margin-top: 14px;">
-          <h3 style="color: #FF9100;">AI FOOD &amp; MACRO SCANNER ESTIMATION DISCLAIMER</h3>
+        <!-- 2.2 Exercise Safety & Physical Health Guidance -->
+        <div class="highlight-card cyan" style="margin-top: 14px;">
+          <h3 style="color: var(--primary);">2.2 EXERCISE SAFETY &amp; BIOMECHANICAL GUIDANCE</h3>
+          <ul>
+            <li><strong>Proper Warm-Up &amp; Gradual Progression:</strong> Always begin every training session with
+              active mobility, dynamic stretching, and lighter warm-up sets. Progressively increase resistance, training
+              volume, or tempo only when strict biomechanical form, postural control, and joint stability have been
+              solidly established.</li>
+            <li><strong>Immediate Cessation of Exercise:</strong> Cease exercise immediately if you experience
+              dizziness, lightheadedness, chest pain, palpitations, severe shortness of breath, joint clicking
+              accompanied by acute pain, or any unusual physical discomfort. Seek immediate emergency medical care if
+              symptoms persist or do not resolve promptly.</li>
+            <li><strong>Special Populations &amp; Pre-Existing Conditions:</strong> If you are recovering from surgery,
+              have hypertension or heart disease, manage spinal, disc, or orthopedic injuries, or are pregnant or
+              postpartum, obtain explicit written clearance from a certified physician or physiotherapist prior to
+              undertaking any workout routine.</li>
+            <li><strong>No Guaranteed Physical Outcomes:</strong> Human physical adaptations vary widely based on
+              individual genetics, daily nutrition, sleep quality, recovery, environmental factors, and biological
+              metabolic rate. The Application and its publishers make <strong>no promises, warranties, or
+                guarantees</strong> regarding specific rates of weight loss, muscular hypertrophy, body fat reduction,
+              or athletic benchmark achievements.</li>
+            <li><strong>Equipment, Space &amp; Environmental Safety:</strong> You are solely responsible for ensuring
+              your training environment has sufficient clearance, level footing, and is free of slip or trip hazards.
+              Inspect all exercise equipment (dumbbells, barbells, pull-up bars, resistance bands) for damage, wear, or
+              instability prior to each workout.</li>
+            <li><strong>Hydration, Recovery &amp; Heat Safety:</strong> Maintain proper fluid intake before, during, and
+              after exercise. Never train in excessive heat or unventilated spaces without acclimatization. Adhere to
+              rest days to prevent overtraining syndrome, central nervous system fatigue, and musculoskeletal injury.
+            </li>
+          </ul>
+        </div>
+
+        <!-- 2.3 Nutrition, Allergy & Dietary Disclaimers -->
+        <div class="highlight-card green" style="margin-top: 14px;">
+          <h3 style="color: var(--accent-green);">2.3 NUTRITION, ALLERGY &amp; DIETARY GUIDANCE DISCLAIMER</h3>
           <p>
-            The <strong>AI Food &amp; Macro Scanner</strong> utilizes automated computer vision heuristics and nutrition estimation algorithms to estimate meal composition, calories, and macronutrients (protein, carbohydrates, and fats).
+            All daily meal suggestions, vegetarian recipes, calorie estimates, and macronutrient allocations generated
+            by The Grand Athlete are computational approximations designed exclusively for general wellness and
+            lifestyle motivation. They do <strong>NOT</strong> constitute medical nutrition therapy or personalized
+            registered dietitian prescriptions.
+          </p>
+          <ul style="margin-top: 8px;">
+            <li><strong>Food Allergens &amp; Cross-Contamination:</strong> While the Application provides automated
+              allergen filter exclusions, you must always independently verify food labels, manufacturer packaging, and
+              preparation equipment for traces of allergens or cross-contamination during storage and cooking.</li>
+            <li><strong>Sustainable Nutrition (No Dangerous Crash Diets):</strong> The Grand Athlete advocates
+              sustainable, nutrient-dense eating. We do not prescribe or endorse extreme caloric deficits (&lt;1200
+              kcal/day for women, &lt;1500 kcal/day for men), unverified proprietary supplements, or dangerous
+              dehydration protocols.</li>
+            <li><strong>Clinical Dietary Conditions:</strong> Individuals diagnosed with diabetes, renal disorders,
+              hepatic disease, metabolic syndrome, or eating disorders must consult a licensed medical doctor or
+              registered clinical dietitian for therapeutic meal planning.</li>
+          </ul>
+        </div>
+
+        <!-- 2.4 AI Food & Macro Scanner Estimation Disclaimer -->
+        <div class="highlight-card amber" style="margin-top: 14px;">
+          <h3 style="color: #FF9100;">2.4 AI FOOD &amp; MACRO SCANNER ESTIMATION DISCLAIMER</h3>
+          <p>
+            The <strong>AI Food &amp; Macro Scanner</strong> utilizes automated computer vision heuristics and nutrition
+            estimation algorithms to estimate meal composition, calories, and macronutrients (protein, carbohydrates,
+            and fats).
           </p>
           <p style="margin-top: 8px;">
-            Nutritional calculations are <strong>approximate estimations</strong> for personal lifestyle tracking and general fitness motivation only. Actual nutritional values may differ significantly based on cooking methods, hidden ingredients, cooking oils, portion weights, and regional recipes.
+            Nutritional calculations are <strong>approximate estimations</strong> for personal lifestyle tracking and
+            general fitness motivation only. Actual nutritional values may differ significantly based on cooking
+            methods, hidden ingredients, cooking oils, portion weights, and regional recipes.
           </p>
           <p style="margin-top: 8px;">
-            <strong>ALLERGEN &amp; MEDICAL WARNING:</strong> You must <strong>NEVER</strong> rely on the AI Food &amp; Macro Scanner to identify allergens (including but not limited to peanuts, tree nuts, shellfish, milk, eggs, gluten, or soy) or to manage serious medical conditions such as calculating diabetic insulin dosages. You assume full personal responsibility for all food consumption decisions.
+            <strong>ALLERGEN &amp; MEDICAL WARNING:</strong> You must <strong>NEVER</strong> rely on the AI Food &amp;
+            Macro Scanner to identify allergens (including but not limited to peanuts, tree nuts, shellfish, milk, eggs,
+            gluten, or soy) or to manage serious medical conditions such as calculating diabetic insulin dosages. You
+            assume full personal responsibility for all food consumption decisions.
           </p>
+        </div>
+
+        <!-- 2.5 Health Data & Progress Tracking Integrity -->
+        <div class="highlight-card blue" style="margin-top: 14px;">
+          <h3 style="color: var(--accent-blue);">2.5 HEALTH DATA &amp; PROGRESS TRACKING INTEGRITY</h3>
+          <ul>
+            <li><strong>Authentic User Records Only:</strong> Progress percentages, weight delta trajectories, and
+              workout adherence milestones are calculated strictly from authentic records logged by you. The Application
+              never fabricates simulated step counts or artificial body measurements.</li>
+            <li><strong>Dynamic Target Recalibration:</strong> When you update your target weight, experience level, or
+              weekly workout availability in your profile, trajectory metrics dynamically recalculate to reflect your
+              new benchmark while safeguarding all historical dated measurements.</li>
+            <li><strong>Algorithmic Estimation Formulas:</strong> Calories burned, daily readiness compass scores, and
+              BMR/TDEE values are scientific formula approximations (Mifflin-St Jeor equation). Actual individual energy
+              expenditure varies based on physiological and environmental factors.</li>
+          </ul>
         </div>
       </section>
 
@@ -401,7 +548,11 @@
           with Google Play, and load Google Mobile Ads (AdMob).
         </p>
         <p style="margin-top: 10px;">
-          <strong>Camera &amp; Meal Photo Access:</strong> When utilizing the AI Food &amp; Macro Scanner, you may voluntarily grant access to your device camera or photo gallery to photograph or upload pictures of meals. You agree to use this feature solely for photographing meal items and agree not to upload non-food, offensive, unlawful, or infringing images. Meal photos are processed transiently and stored locally on your device; they are never uploaded to remote public repositories.
+          <strong>Camera &amp; Meal Photo Access:</strong> When utilizing the AI Food &amp; Macro Scanner, you may
+          voluntarily grant access to your device camera or photo gallery to photograph or upload pictures of meals. You
+          agree to use this feature solely for photographing meal items and agree not to upload non-food, offensive,
+          unlawful, or infringing images. Meal photos are processed transiently and stored locally on your device; they
+          are never uploaded to remote public repositories.
         </p>
       </section>
 
@@ -409,16 +560,29 @@
       <section class="policy-section">
         <h2>4. YouTube API Terms of Service &amp; Creator Rights</h2>
         <p>
-          The Grand Athlete embeds and streams workout follow-alongs, exercise technique guides, and recipe videos through YouTube API Services and the official YouTube embedded player.
+          The Grand Athlete embeds and streams workout follow-alongs, exercise technique guides, and recipe videos
+          through YouTube API Services and the official YouTube embedded player.
         </p>
         <div class="highlight-card blue">
           <h3>YouTube Terms of Service Agreement</h3>
           <p>
-            By viewing or interacting with video demonstrations within the Application, you agree to be bound by the <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 700;">YouTube Terms of Service</a> (<a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener" style="color: var(--primary);">https://www.youtube.com/t/terms</a>) and acknowledge that data is processed in accordance with the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 700;">Google Privacy Policy</a> (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--primary);">https://policies.google.com/privacy</a>).
+            By viewing or interacting with video demonstrations within the Application, you agree to be bound by the <a
+              href="https://www.youtube.com/t/terms" target="_blank" rel="noopener"
+              style="color: var(--primary); font-weight: 700;">YouTube Terms of Service</a> (<a
+              href="https://www.youtube.com/t/terms" target="_blank" rel="noopener"
+              style="color: var(--primary);">https://www.youtube.com/t/terms</a>) and acknowledge that data is processed
+            in accordance with the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener"
+              style="color: var(--primary); font-weight: 700;">Google Privacy Policy</a> (<a
+              href="https://policies.google.com/privacy" target="_blank" rel="noopener"
+              style="color: var(--primary);">https://policies.google.com/privacy</a>).
           </p>
         </div>
         <p>
-          <strong>Third-Party Intellectual Property &amp; Channel Attribution:</strong> All video content, soundtracks, voiceovers, trademarks, and channel brandings belong exclusively to their respective creators and channels (such as Pamela Reif, Chloe Ting, Mady Morrison, Tom Merrick, POPSUGAR Fitness, Well+Good, and culinary creators). The Grand Athlete does not claim ownership of these third-party materials and does not permit the unauthorized downloading, redistribution, or extraction of audio or video content.
+          <strong>Third-Party Intellectual Property &amp; Channel Attribution:</strong> All video content, soundtracks,
+          voiceovers, trademarks, and channel brandings belong exclusively to their respective creators and channels
+          (such as Pamela Reif, Chloe Ting, Mady Morrison, Tom Merrick, POPSUGAR Fitness, Well+Good, and culinary
+          creators). The Grand Athlete does not claim ownership of these third-party materials and does not permit the
+          unauthorized downloading, redistribution, or extraction of audio or video content.
         </p>
       </section>
 
@@ -512,17 +676,73 @@
       </section>
 
       <!-- Section 8 -->
-      <section class="policy-section">
-        <h2>8. Limitation of Liability &amp; Governing Law</h2>
+      <section class="policy-section" id="liability">
+        <h2>8. Voluntary Participation, Assumption of Risk &amp; Limitation of Liability</h2>
         <p>
-          To the maximum extent permitted by applicable law, RG Infotech Solutions and its proprietors shall not be
-          liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the
-          Application or physical injuries sustained during physical exercise. Exercise within your physical limitations
-          and warm up adequately.
+          Your physical safety and wellbeing are paramount. Please review the following legal allocations of risk
+          carefully:
         </p>
-        <p>
-          These Terms are governed by and construed in accordance with the laws of the Republic of India. Any disputes
-          arising hereunder shall be subject to the exclusive jurisdiction of the competent courts in Gujarat, India.
+
+        <!-- 8.1 Voluntary Assumption of Physical Risk -->
+        <div class="highlight-card alert" style="margin-top: 14px;">
+          <h3 style="color: #FF5252;">8.1 VOLUNTARY PARTICIPATION &amp; ASSUMPTION OF PHYSICAL RISK</h3>
+          <p>
+            By downloading, accessing, or utilizing The Grand Athlete, you expressly acknowledge that physical exercise,
+            resistance strength training, cardiovascular intervals, high-intensity workouts, calisthenics, flexibility
+            mobility drills, and dietary changes inherently carry risks of physical fatigue, muscle strain, sprains,
+            cardiovascular stress, or serious injury.
+          </p>
+          <p style="margin-top: 8px;">
+            You confirm that you <strong>voluntarily participate</strong> in all training routines, exercises, and
+            dietary suggestions with full awareness of these inherent physical risks. You bear complete personal
+            responsibility for evaluating your current health, using appropriate exercise form, maintaining a safe
+            workout environment, ensuring equipment is in safe operating condition, and discontinuing any exercise that
+            causes unusual distress or pain.
+          </p>
+        </div>
+
+        <!-- 8.2 Limitation of Damages & Statutory Rights -->
+        <div class="highlight-card">
+          <h3>8.2 LIMITATION OF DAMAGES &amp; STATUTORY CONSUMER PROTECTIONS</h3>
+          <p>
+            To the maximum extent permitted by applicable law, RG Infotech Solutions, its directors, developers, and
+            affiliates shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary
+            damages, including but not limited to physical injury, personal discomfort, lost profits, or data loss,
+            arising from or related to:
+          </p>
+          <ul style="margin-top: 8px;">
+            <li>Your use of, or inability to use, the Application or its exercise schedules;</li>
+            <li>Inaccuracies or computational approximations in nutritional calculations, macro estimations, or AI
+              scanner detections;</li>
+            <li>Any injury or damage resulting from workout execution, exercise form, or home/gym equipment failure;
+            </li>
+            <li>Third-party content or video streams delivered via YouTube API Services.</li>
+          </ul>
+          <p style="margin-top: 8px;">
+            Nothing in these Terms is intended to exclude or limit any statutory liability that cannot be lawfully
+            disclaimed under the Consumer Protection Act, 2019 (India) or applicable mandatory consumer protection laws
+            in your jurisdiction of residence.
+          </p>
+        </div>
+
+        <!-- 8.3 Emergency Situations Directive -->
+        <div class="highlight-card amber">
+          <h3 style="color: #FF9100;">8.3 EMERGENCY MEDICAL DIRECTIVE</h3>
+          <p>
+            The Grand Athlete is an automated software application and is <strong>NOT an emergency service or clinical
+              hotline</strong>. If you experience severe chest pain, shortness of breath, sudden lightheadedness,
+            numbness, or any acute trauma while exercising, immediately cease all physical activity and dial emergency
+            services (such as 112 in India, 911 in the United States, 999 in the United Kingdom, or your local emergency
+            number) or proceed to the nearest emergency medical facility.
+          </p>
+        </div>
+
+        <!-- 8.4 Governing Law -->
+        <p style="margin-top: 14px;">
+          <strong>Governing Law &amp; Jurisdiction:</strong> These Terms and any dispute arising out of or related to
+          your use of The Grand Athlete shall be governed by and construed in accordance with the laws of the Republic
+          of India. Any legal action, proceeding, or arbitration arising hereunder shall be subject to the exclusive
+          jurisdiction of the competent courts in Gujarat, India.
         </p>
       </section>
 
@@ -530,7 +750,8 @@
       <section class="policy-section">
         <h2>9. Grievance Redressal &amp; Contact Information</h2>
         <p>
-          If you have questions, feedback, concerns, or legal notices regarding these Terms of Service, subscription billing, or content attribution, please contact our support and compliance team:
+          If you have questions, feedback, concerns, or legal notices regarding these Terms of Service, subscription
+          billing, or content attribution, please contact our support and compliance team:
         </p>
         <div class="highlight-card">
           <p>
@@ -541,7 +762,8 @@
               href="https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html" target="_blank"
               rel="noopener" class="url-break"
               style="color: var(--primary); text-decoration: none; word-break: break-all;">https://www.rginfotechsolutions.com/apps/TheGrandAthleteApp/index.html</a><br>
-            <strong>Statutory Turnaround:</strong> Inquiries are acknowledged within 24–48 business hours and resolved within 30 days.
+            <strong>Statutory Turnaround:</strong> Inquiries are acknowledged within 24–48 business hours and resolved
+            within 30 days.
           </p>
         </div>
       </section>
@@ -550,8 +772,23 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 The Grand Athlete &bull; Published by RG Infotech Solutions. All rights reserved. &bull; <a
-          href="privacy-policy.html">Privacy Policy</a> &bull; <a href="data-deletion.html">Data Deletion</a> &bull; <a href="index.html">Return to Home</a></p>
+      <div class="disclaimer-bar">
+        <p style="margin-bottom: 6px;">
+          <strong>Health &amp; Fitness Disclaimer:</strong> The workouts, exercise guides, recovery routines, nutrition
+          calculations, AI macro estimations, and readiness scores provided by The Grand Athlete are strictly for
+          general educational, wellness, and fitness motivation purposes. They do <strong>NOT</strong> constitute
+          medical advice, clinical diagnosis, or healthcare treatment. Always consult a qualified physician or
+          healthcare provider before beginning any new exercise routine or nutritional regimen.
+        </p>
+        <p style="font-size: 12px; color: var(--text-muted);">
+          Voluntary participation: Users voluntarily assume all inherent physical risks associated with exercise and
+          training.
+        </p>
+      </div>
+
+      <p style="margin-top: 20px;">&copy; 2026 The Grand Athlete &bull; Published by RG Infotech Solutions. All rights
+        reserved. &bull; <a href="privacy-policy.html">Privacy Policy</a> &bull; <a href="data-deletion.html">Data
+          Deletion</a> &bull; <a href="index.html">Return to Home</a></p>
     </div>
   </footer>
 
