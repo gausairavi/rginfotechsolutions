@@ -1,133 +1,103 @@
 /**
- * RG Infotech Solutions - Interactive Scripts
- * Handles mobile drawer, header scroll, app filtering, toasts, and form submission.
+ * RG Infotech Solutions — Executive Corporate JavaScript System
+ * Core logic for theme switching, mobile drawer navigation,
+ * portfolio filtering, form math verification, and animations.
  */
 
-// Immediate Theme Application (Prevents Flash of Unstyled Theme)
-(function initThemeEarly() {
-  try {
-    const savedTheme = localStorage.getItem('rg_theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  } catch (e) { }
-})();
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
-  // 0. Theme Toggle Handler
-  const themeToggles = document.querySelectorAll('.theme-toggle, #themeToggleBtn');
-  themeToggles.forEach(toggleBtn => {
-    toggleBtn.addEventListener('click', () => {
+  // 1. Current Year Auto-Update
+  document.querySelectorAll('.current-year').forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+  });
+
+  // 2. Theme Toggle Controller
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function () {
       const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', newTheme);
       try {
         localStorage.setItem('rg_theme', newTheme);
-      } catch (e) { }
-      if (typeof showToast === 'function') {
-        showToast(`Theme switched to ${newTheme.toUpperCase()} mode`, 'info');
-      }
-    });
-  });
-
-  // 1. Sticky Header scroll effect
-  const header = document.querySelector('.site-header');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+      } catch (e) {
+        console.warn('LocalStorage not available for theme persistence.', e);
       }
     });
   }
 
-  // 2. Mobile Menu Drawer Controller
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  const body = document.body;
-  const navEl = document.querySelector('header.site-header nav');
-  const navActions = document.querySelector('.nav-actions');
+  // 3. Mobile Navigation Drawer Controller
+  const mobileNavToggle = document.getElementById('mobileNavToggle');
+  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+  const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
 
-  // Ensure backdrop exists
-  let backdrop = document.querySelector('.nav-backdrop');
-  if (!backdrop) {
-    backdrop = document.createElement('div');
-    backdrop.className = 'nav-backdrop';
-    document.body.appendChild(backdrop);
-  }
+  function toggleMobileMenu(forceState) {
+    const isCurrentlyOpen = document.body.classList.contains('menu-open');
+    const willOpen = typeof forceState === 'boolean' ? forceState : !isCurrentlyOpen;
 
-  function closeMobileMenu() {
-    body.classList.remove('mobile-nav-active');
-    body.style.overflow = '';
-    if (mobileToggle) {
-      mobileToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.toggle('menu-open', willOpen);
+    if (mobileNavToggle) {
+      mobileNavToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
     }
-  }
-
-  function openMobileMenu() {
-    body.classList.add('mobile-nav-active');
-    body.style.overflow = 'hidden';
-    if (mobileToggle) {
-      mobileToggle.setAttribute('aria-expanded', 'true');
+    if (mobileNavDrawer) {
+      mobileNavDrawer.setAttribute('aria-hidden', willOpen ? 'false' : 'true');
     }
+    document.body.style.overflow = willOpen ? 'hidden' : '';
   }
 
-  if (mobileToggle) {
-    mobileToggle.addEventListener('click', (e) => {
+  if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', function (e) {
       e.stopPropagation();
-      if (body.classList.contains('mobile-nav-active')) {
-        closeMobileMenu();
-      } else {
-        openMobileMenu();
-      }
+      toggleMobileMenu();
     });
   }
 
-  // Backdrop click dismisses mobile menu
-  backdrop.addEventListener('click', () => {
-    closeMobileMenu();
-  });
+  if (mobileNavBackdrop) {
+    mobileNavBackdrop.addEventListener('click', function () {
+      toggleMobileMenu(false);
+    });
+  }
 
-  // Close when pressing Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && body.classList.contains('mobile-nav-active')) {
-      closeMobileMenu();
-    }
-  });
-
-  // Automatically reset mobile drawer if viewport exceeds mobile breakpoint
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 992 && body.classList.contains('mobile-nav-active')) {
-      closeMobileMenu();
-    }
-  });
-
-  // Close mobile nav when clicking any nav link or drawer CTA
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      closeMobileMenu();
+  // Close mobile drawer when any link inside it is clicked
+  document.querySelectorAll('.mobile-nav-link, .mobile-drawer-contact a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      toggleMobileMenu(false);
     });
   });
 
-  // Mobile nav closes on link click
-  // (No extra duplicate button injected below menus)
+  // Close mobile drawer on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+      toggleMobileMenu(false);
+    }
+  });
 
-  // 3. Portfolio Filters
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const appCards = document.querySelectorAll('.app-card[data-category]');
+  // Reset drawer if window resized above mobile threshold
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 992 && document.body.classList.contains('menu-open')) {
+      toggleMobileMenu(false);
+    }
+  });
 
-  if (filterBtns.length > 0 && appCards.length > 0) {
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Active class
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+  // 4. Portfolio Filter Tabs Controller
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const portfolioCards = document.querySelectorAll('.portfolio-grid .app-card');
 
-        const filter = btn.getAttribute('data-filter');
+  if (filterTabs.length && portfolioCards.length) {
+    filterTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        filterTabs.forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
 
-        appCards.forEach(card => {
-          const categories = card.getAttribute('data-category').split(' ');
-          if (filter === 'all' || categories.includes(filter)) {
+        const filterValue = tab.getAttribute('data-filter') || 'all';
+
+        portfolioCards.forEach(function (card) {
+          const categories = (card.getAttribute('data-category') || '').split(' ');
+          if (filterValue === 'all' || categories.includes(filterValue)) {
             card.style.display = 'flex';
-            card.style.animation = 'fadeIn 0.4s ease forwards';
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
           } else {
             card.style.display = 'none';
           }
@@ -136,157 +106,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Contact Form Submission with Math Captcha & FormSubmit Integration
+  // 5. Anti-Spam Security Math Challenge for Contact Form
+  const captchaQuestion = document.getElementById('captchaQuestion');
+  const captchaAnswerInput = document.getElementById('captchaAnswer');
   const contactForm = document.getElementById('contactForm');
-  let captchaExpected = 0;
 
-  function initCaptcha() {
-    const num1 = Math.floor(Math.random() * 8) + 2;
-    const num2 = Math.floor(Math.random() * 7) + 1;
-    captchaExpected = num1 + num2;
-    const captchaBadge = document.getElementById('captchaQuestion');
-    if (captchaBadge) {
-      captchaBadge.textContent = `${num1} + ${num2} = ?`;
-    }
+  let captchaResult = 0;
+
+  function generateCaptcha() {
+    if (!captchaQuestion) return;
+    const num1 = Math.floor(Math.random() * 9) + 2;
+    const num2 = Math.floor(Math.random() * 9) + 2;
+    captchaResult = num1 + num2;
+    captchaQuestion.textContent = `${num1} + ${num2} = ?`;
+    if (captchaAnswerInput) captchaAnswerInput.value = '';
   }
+
+  generateCaptcha();
 
   if (contactForm) {
-    initCaptcha();
-
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      // Verify Captcha
-      const captchaInput = document.getElementById('captchaAnswer');
-      if (captchaInput) {
-        const userAnswer = parseInt(captchaInput.value.trim(), 10);
-        if (userAnswer !== captchaExpected) {
-          showToast('Security verification failed. Please solve the math check again.', 'error');
-          initCaptcha();
-          captchaInput.value = '';
-          captchaInput.focus();
-          return;
-        }
-      }
-
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>Sending Message...</span>`;
-
-      try {
-        const formData = new FormData(contactForm);
-        formData.delete('captchaAnswer');
-
-        const formObj = Object.fromEntries(formData.entries());
-        formObj['_subject'] = `New Website Inquiry: ${formObj.name || 'Client'} (${formObj.category || 'General'})`;
-        formObj['_template'] = 'table';
-        formObj['_captcha'] = 'false';
-
-        const response = await fetch('https://formsubmit.co/ajax/info@rginfotechsolutions.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(formObj)
-        });
-
-        const data = await response.json().catch(() => ({}));
-
-        if (response.ok && (data.success === true || data.success === 'true')) {
-          showToast('Thank you! Your message has been sent to RG Infotech Solutions. We will reach out shortly.', 'success');
-          contactForm.reset();
-        } else if (data.message && data.message.toLowerCase().includes('activation')) {
-          showToast('First-time setup: FormSubmit sent an activation link to info@rginfotechsolutions.com. Please check your email to activate!', 'info');
-          contactForm.reset();
-        } else if (data.message && data.message.toLowerCase().includes('web server')) {
-          // If tested on file:// protocol instead of http/https
-          contactForm.submit();
-        } else {
-          showToast('Thank you! Your inquiry has been submitted.', 'success');
-          contactForm.reset();
-        }
-      } catch (err) {
-        // Fallback to normal form submit if fetch fails (e.g. offline or strict CORS)
-        try {
-          contactForm.submit();
-        } catch (e) {
-          showToast('Thank you! Your inquiry has been submitted.', 'success');
-          contactForm.reset();
-        }
-      } finally {
-        initCaptcha();
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
+    contactForm.addEventListener('submit', function (e) {
+      if (!captchaAnswerInput) return;
+      const userAnswer = parseInt(captchaAnswerInput.value.trim(), 10);
+      if (userAnswer !== captchaResult) {
+        e.preventDefault();
+        alert('Security verification failed. Please enter the correct math sum.');
+        generateCaptcha();
+        captchaAnswerInput.focus();
       }
     });
   }
 
-  // 5. Play Store Redirection Handler (Instant direct open)
-  window.redirectToPlayStore = function (appName, url) {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
-  // 6. Copy Link Handler
-  window.copyAppShareLink = function (url, appTitle) {
-    navigator.clipboard.writeText(url).then(() => {
-      showToast(`Link for ${appTitle} copied to clipboard!`, 'success');
-    }).catch(() => {
-      showToast(`Direct URL: ${url}`, 'info');
+  // 6. Smooth Scrolling for on-page hash anchors
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          const headerHeight = document.querySelector('.site-header')?.offsetHeight || 78;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
     });
-  };
-
-  // 7. Update Current Year
-  const yearEls = document.querySelectorAll('.current-year');
-  yearEls.forEach(el => {
-    el.textContent = new Date().getFullYear();
   });
 });
 
-/**
- * Toast Notification Dispatcher
- */
-function showToast(message, type = 'info') {
-  let container = document.querySelector('.toast-container');
-  if (!container) {
-    container = document.createElement('div');
-    container.className = 'toast-container';
-    document.body.appendChild(container);
-  }
-
-  const toast = document.createElement('div');
-  toast.className = `toast toast-${type}`;
-
-  let iconSvg = `
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"></circle>
-      <line x1="12" y1="16" x2="12" y2="12"></line>
-      <line x1="12" y1="8" x2="12.01" y2="8"></line>
-    </svg>
-  `;
-
-  if (type === 'success') {
-    iconSvg = `
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-        <polyline points="22 4 12 14.01 9 11.01"></polyline>
-      </svg>
-    `;
-  }
-
-  toast.innerHTML = `
-    ${iconSvg}
-    <span style="font-size: 0.9rem; line-height: 1.4;">${message}</span>
-  `;
-
-  container.appendChild(toast);
-
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.transform = 'translateY(10px)';
-    toast.style.transition = 'all 0.3s ease';
-    setTimeout(() => toast.remove(), 300);
-  }, 4000);
-}

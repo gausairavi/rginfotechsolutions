@@ -1,28 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | RG Infotech Solutions</title>
-  <meta name="description" content="Learn about RG Infotech Solutions, engineering high-performance Android apps, cloud architectures, and scalable digital solutions from Ahmedabad, Gujarat.">
+  <title>About Founder &amp; Company | RG Infotech Solutions</title>
+  <meta name="description"
+    content="Learn about RG Infotech Solutions, founded by Senior Software Engineer & Solutions Architect Ravi Gauswami. Crafting mobile apps and enterprise .NET systems from Ahmedabad, India.">
+  <meta name="keywords"
+    content="About RG Infotech Solutions, Ravi Gauswami, Solutions Architect Ahmedabad, MCA Atmiya Institute, Software Engineering Founder">
+  <meta name="author" content="RG Infotech Solutions">
+  <meta property="og:title" content="About Founder &amp; Company | RG Infotech Solutions">
+  <meta property="og:description"
+    content="Discover the engineering philosophy, background, and vision behind RG Infotech Solutions and founder Ravi Gauswami.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/logo-icon.png">
+
+  <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="icon" type="image/png" href="images/logo-icon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+
   <script>
-    (function() {
+    (function () {
       try {
-        const t = localStorage.getItem('rg_theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', t);
-      } catch(e) {}
+        const savedTheme = localStorage.getItem('rg_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } catch (e) { }
     })();
   </script>
 </head>
+
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-contact">
+        <a href="mailto:info@rginfotechsolutions.com" class="top-bar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>info@rginfotechsolutions.com</span>
+        </a>
+        <div class="top-bar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Ahmedabad, Gujarat, India</span>
+        </div>
+      </div>
+      <div class="top-bar-badge">
+        <span class="status-dot"></span>
+        <span>Leadership &amp; Engineering Culture</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
   <header class="site-header" id="siteHeader">
     <div class="container nav-container">
       <a href="index.html" class="logo-link" aria-label="RG Infotech Solutions Home">
@@ -30,206 +72,253 @@
         <img src="images/logo-light.png" alt="RG Infotech Solutions" class="site-logo logo-light">
       </a>
 
-      <nav>
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="portfolio.html" class="nav-link">App Portfolio</a></li>
-          <li><a href="about.html" class="nav-link active">About Founder</a></li>
           <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link active">About Founder</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <!-- Theme Toggle Button -->
-        <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Light and Dark Mode" title="Toggle Light/Dark Theme">
-          <span class="theme-icon-sun">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" y1="1" x2="12" y2="3"></line>
-              <line x1="12" y1="21" x2="12" y2="23"></line>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-              <line x1="1" y1="12" x2="3" y2="12"></line>
-              <line x1="21" y1="12" x2="23" y2="12"></line>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-          </span>
-          <span class="theme-icon-moon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </span>
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Light and Dark Mode" title="Toggle Theme">
+          <svg class="theme-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
         </button>
 
-        <a href="contact.html" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
-          <span>Contact Us</span>
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.88rem;">
+          <span>Get in Touch</span>
         </a>
-      </div>
 
-      <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Mobile Navigation" aria-expanded="false">
+          <span class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <div class="mobile-nav-content">
+        <ul class="mobile-nav-links">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li><a href="portfolio.html" class="mobile-nav-link">App Portfolio</a></li>
+          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+          <li><a href="about.html" class="mobile-nav-link active">About Founder</a></li>
+          <li><a href="contact.html" class="mobile-nav-link">Contact &amp; Consult</a></li>
+        </ul>
+        <div class="mobile-drawer-contact">
+          <a href="contact.html" class="btn btn-primary" style="width: 100%;">Consult Architect</a>
+        </div>
+      </div>
     </div>
   </header>
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
-  <!-- About Hero -->
-  <section class="hero" style="padding-bottom: 3rem;">
-    <div class="container text-center">
-      <div class="section-tag">
-        <span class="status-dot"></span>
-        Meet the Architect
+  <!-- Page Hero Banner -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>About Founder &amp; Company</span>
       </div>
-      <h1 class="section-title">About <span class="gradient-text">Ravi Gauswami</span></h1>
-      <p class="section-subtitle">
-        Senior Software Engineer, Mobile &amp; Enterprise Architect, and Creator of high-performance digital products that scale.
+      <h1 class="page-hero-title">Engineering Excellence with <span class="text-gradient">Vision</span></h1>
+      <p class="page-hero-subtitle">
+        Learn about RG Infotech Solutions, our core values, and founder Ravi Gauswami's 7+ year journey architecting scalable software and high-impact mobile apps.
       </p>
     </div>
   </section>
 
-  <!-- In-depth Bio Section -->
-  <section style="padding: 2rem 0 6rem;">
+  <!-- Detailed Founder Spotlight -->
+  <section class="about-section">
     <div class="container">
-      <div class="founder-card" style="margin-bottom: 4rem;">
-        <div class="founder-avatar-wrap">
-          <img src="images/logo-icon.png" alt="RG Infotech Solutions" class="founder-avatar">
-          <div class="founder-status-badge">
-            <span class="status-dot"></span>
-            Ahmedabad, Gujarat, India
+      <div class="about-grid">
+        <div class="about-founder-box">
+          <div class="founder-profile-header">
+            <img src="images/logo-icon.png" alt="Ravi Gauswami" class="founder-avatar">
+            <div>
+              <h3 class="founder-name">Ravi Gauswami</h3>
+              <p class="founder-role">Founder &amp; Senior Solutions Architect</p>
+            </div>
+          </div>
+          <p style="font-size: 0.98rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+            Experienced technologist with over 7 years of demonstrated expertise architecting resilient enterprise solutions, cloud backends, and high-performance mobile applications. Skilled across ASP.NET Core, ASP.NET Web API, nopCommerce, React.js, React Native, Next.js, and Azure DevOps. Holding a Master of Computer Applications (MCA) from Atmiya Institute of Technology &amp; Science, Rajkot, Ravi bridges architectural robustness with fluid user experiences.
+          </p>
+
+          <div class="founder-credentials-grid">
+            <div class="cred-card">
+              <div class="cred-card-title">Headquarters</div>
+              <div class="cred-card-val">Ahmedabad, Gujarat, India</div>
+            </div>
+            <div class="cred-card">
+              <div class="cred-card-title">Education</div>
+              <div class="cred-card-val">MCA, Atmiya Institute (Rajkot)</div>
+            </div>
+            <div class="cred-card">
+              <div class="cred-card-title">Primary Focus</div>
+              <div class="cred-card-val">Mobile Apps &amp; Cloud .NET</div>
+            </div>
+            <div class="cred-card">
+              <div class="cred-card-title">Industry Experience</div>
+              <div class="cred-card-val">7+ Years Active Depth</div>
+            </div>
           </div>
         </div>
 
-        <div class="founder-info">
-          <h2>Engineering with Precision &amp; Pragmatism</h2>
-          <p class="founder-title">Founder at RG Infotech Solutions • Senior Software Engineer</p>
-          
-          <p class="founder-bio">
-            With over 7 years of hands-on experience in software engineering, Ravi Gauswami specializes in architecting high-scale mobile applications, enterprise .NET backends, and cloud microservices. His engineering ethos emphasizes end-to-end system speed: eliminating synchronous service chains, refining database roundtrips, and creating delightful user experiences that don't make users wait.
+        <div class="about-content-col">
+          <div class="section-tag">Company Mission &amp; Values</div>
+          <h2>Building Software That <span class="text-gradient">Endures &amp; Performs</span></h2>
+          <p class="about-bio">
+            RG Infotech Solutions was established with a singular objective: to eliminate the gap between high-level architectural design and practical, reliable implementation. Whether engineering a consumer mobile app serving thousands of daily active users or architecting a mission-critical enterprise microservice, our team delivers software with obsessive attention to performance, privacy, and long-term maintainability.
           </p>
 
-          <p class="founder-bio">
-            Ravi completed his <strong>Master of Computer Applications (MCA)</strong> from the prestigious <strong>Atmiya Institute of Technology &amp; Science (SFI), Rajkot</strong> (2017 – 2019), building on a solid computer science foundation. As a Senior Software Engineer and founder of RG Infotech Solutions, he has spearheaded the architecture, development, and release of enterprise web solutions and mobile applications like <strong>The Grand Athlete App</strong> and <strong>PR Recipe Hub</strong> (live on the Google Play Store and web at prrecipehub.com).
-          </p>
-
-          <div class="founder-credentials">
-            <div class="cred-item">
-              <div class="cred-label">Degree</div>
-              <div class="cred-value">MCA (Computer Applications)</div>
+          <div class="about-pillars-list">
+            <div class="about-pillar-row">
+              <div class="check-icon">✓</div>
+              <div>
+                <h4>Direct Founder-Level Accountability</h4>
+                <p>Clients work directly with seasoned solutions architects rather than layers of middlemen, ensuring clear communication and technical accuracy.</p>
+              </div>
             </div>
-            <div class="cred-item">
-              <div class="cred-label">Alma Mater</div>
-              <div class="cred-value">Atmiya Institute, Rajkot</div>
+            <div class="about-pillar-row">
+              <div class="check-icon">✓</div>
+              <div>
+                <h4>Privacy &amp; Compliance by Default</h4>
+                <p>We build our consumer apps (such as Kizmo Kids and The Grand Athlete) with strict on-device data safety, avoiding unnecessary third-party tracking.</p>
+              </div>
             </div>
-            <div class="cred-item">
-              <div class="cred-label">Core Stacks</div>
-              <div class="cred-value">ASP.NET Core, React.js, Next.js</div>
-            </div>
-            <div class="cred-item">
-              <div class="cred-label">Technologies</div>
-              <div class="cred-value">SQL Server, nopCommerce, DevOps</div>
+            <div class="about-pillar-row">
+              <div class="check-icon">✓</div>
+              <div>
+                <h4>Battle-Tested Technical Stacks</h4>
+                <p>We leverage industry-standard technologies with proven stability: ASP.NET Core, SQL Server, React Native, and Azure DevOps.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Engineering Philosophy -->
-      <div class="text-center" style="margin-bottom: 3rem;">
-        <div class="section-tag">Core Tenets</div>
-        <h2 class="section-title">The RG Infotech Engineering Philosophy</h2>
+  <!-- Journey Milestones -->
+  <section class="process-section">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">Our History</div>
+        <h2 class="section-title">Milestones of Growth</h2>
+        <p class="section-subtitle">How RG Infotech Solutions evolved from academic roots to a published mobile and enterprise software studio.</p>
       </div>
 
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          </div>
-          <h3>"System Speed Over Component Vanity"</h3>
-          <p>An API endpoint can return in 20ms, but if synchronous service hops and blocking calls chain together, user experience degrades. We architect for the total journey of each request.</p>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-step-num">2017</div>
+          <h3 class="process-title">Academic Foundations</h3>
+          <p class="process-desc">
+            Ravi completed his Master of Computer Applications (MCA) at Atmiya Institute of Technology &amp; Science, focusing on distributed systems and software design.
+          </p>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-          </div>
-          <h3>"The Product Chooses the Framework"</h3>
-          <p>We avoid trend-chasing debates like Flutter vs React Native or Native vs Hybrid. The product's longevity, team competencies, and native integration depth determine the tool.</p>
+        <div class="process-card">
+          <div class="process-step-num">2019</div>
+          <h3 class="process-title">Enterprise .NET &amp; E-Commerce</h3>
+          <p class="process-desc">
+            Delivered high-concurrency ASP.NET Core microservices, complex SQL Server schemas, and customized nopCommerce e-commerce platforms.
+          </p>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          </div>
-          <h3>"Architecture &amp; Quality from Day One"</h3>
-          <p>Every mobile application and enterprise service is engineered with clean modular architecture, rigorous automated testing, encrypted storage, and high-throughput reliability.</p>
+        <div class="process-card">
+          <div class="process-step-num">2022</div>
+          <h3 class="process-title">Mobile Engineering Expansion</h3>
+          <p class="process-desc">
+            Pioneered cross-platform mobile app development with React Native, creating PR Recipe Hub on both web and Google Play Store.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step-num">2026</div>
+          <h3 class="process-title">Flagship App Ecosystem</h3>
+          <p class="process-desc">
+            Launched The Grand Athlete App and Kizmo Kids (COPPA-compliant, 100% on-device private early learning) to international acclaim on the Google Play Store.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Banner -->
-  <section class="container" style="margin-bottom: 6rem;">
-    <div style="background: linear-gradient(135deg, rgba(0, 242, 254, 0.1) 0%, rgba(127, 0, 255, 0.1) 100%); border: 1px solid var(--border-glow); border-radius: var(--radius-lg); padding: 3rem; text-align: center;">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem;">Ready to Build Your Next Breakthrough Application?</h2>
-      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem;">
-        Whether you are starting from concept or looking to refactor an enterprise codebase, let's connect.
-      </p>
-      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-        <a href="contact.html" class="btn btn-primary">Start a Conversation &rarr;</a>
-        <a href="portfolio.html" class="btn btn-secondary">Explore Published Apps</a>
+  <section class="cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-card">
+        <h2>Let's Discuss Your Project Goals</h2>
+        <p>
+          Connect directly with Ravi Gauswami to review your application ideas, technical architecture, or enterprise software roadmap.
+        </p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary">
+            <span>Get in Touch with Ravi</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <!-- Brand & Profile -->
         <div class="footer-brand">
-          <a href="index.html" class="logo-link" aria-label="RG Infotech Solutions Home">
+          <a href="index.html" class="logo-link">
             <img src="images/logo-dark.png" alt="RG Infotech Solutions" class="site-logo logo-dark">
             <img src="images/logo-light.png" alt="RG Infotech Solutions" class="site-logo logo-light">
           </a>
-          <p>Engineering premium Android applications, robust cloud APIs, and scalable enterprise software architectures from Ahmedabad, Gujarat.</p>
-          <div style="margin-top: 1.25rem;">
-            <a href="mailto:info@rginfotechsolutions.com" class="btn btn-secondary" style="padding: 0.45rem 1.1rem; font-size: 0.85rem; gap: 0.5rem;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span>Email Support</span>
-            </a>
-          </div>
+          <p>
+            Engineering premium Android applications, robust cloud APIs, and scalable enterprise software architectures from Ahmedabad, Gujarat.
+          </p>
         </div>
 
-        <!-- Navigation Links -->
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="portfolio.html">App Portfolio</a></li>
-            <li><a href="about.html">About Founder</a></li>
             <li><a href="services.html">Engineering Services</a></li>
-            <li><a href="contact.html">Contact &amp; Consult</a></li>
+            <li><a href="about.html">About Founder</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
 
-        <!-- Mobile & Web Apps -->
         <div class="footer-col">
-          <h4>Portfolio Apps</h4>
+          <h4>Flagship Apps</h4>
           <ul class="footer-links">
-            <li><a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank" rel="noopener noreferrer">The Grand Athlete (Google Play) ↗</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank" rel="noopener noreferrer">The Grand Athlete (Play Store) ↗</a></li>
             <li><a href="apps/TheGrandAthleteApp/index.html">The Grand Athlete (Website) ↗</a></li>
-            <li><a href="https://play.google.com/store/apps/details?id=com.kizmokids.learnplaygrow" target="_blank" rel="noopener noreferrer">Kizmo Kids (Google Play) ↗</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.kizmokids.learnplaygrow" target="_blank" rel="noopener noreferrer">Kizmo Kids (Play Store) ↗</a></li>
             <li><a href="apps/KizmoKidsApp/index.html">Kizmo Kids (Website) ↗</a></li>
-            <li><a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" target="_blank" rel="noopener noreferrer">PR Recipe Hub (Google Play) ↗</a></li>
-            <li><a href="https://prrecipehub.com/" target="_blank" rel="noopener noreferrer">PR Recipe Hub (Web Portal) ↗</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" target="_blank" rel="noopener noreferrer">PR Recipe Hub (Play Store) ↗</a></li>
           </ul>
         </div>
 
-        <!-- Core Technical Stacks -->
         <div class="footer-col">
           <h4>Core Expertise</h4>
           <ul class="footer-links">
@@ -238,7 +327,6 @@
             <li><a href="services.html#frontend">React.js &amp; Next.js</a></li>
             <li><a href="services.html#mobile">React Native &amp; Android</a></li>
             <li><a href="services.html#database">Microsoft SQL Server</a></li>
-            <li><a href="services.html#devops">Azure DevOps CI/CD</a></li>
           </ul>
         </div>
       </div>
@@ -252,4 +340,6 @@
 
   <script src="js/main.js"></script>
 </body>
+
 </html>
+

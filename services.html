@@ -1,26 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Engineering Services | RG Infotech Solutions</title>
-  <meta name="description" content="Custom Android &amp; React Native app development, enterprise ASP.NET Core architecture, nopCommerce e-commerce, and cloud DevOps solutions.">
+  <meta name="description"
+    content="Full-lifecycle software engineering services by RG Infotech Solutions: Android & React Native apps, ASP.NET Core Web APIs, nopCommerce e-commerce, SQL Server, and Azure DevOps.">
+  <meta name="keywords"
+    content="ASP.NET Core Developer, React Native Developer, nopCommerce developer, SQL Server architect, Azure DevOps consulting, Ahmedabad, India">
+  <meta name="author" content="RG Infotech Solutions">
+  <meta property="og:title" content="Engineering Services | RG Infotech Solutions">
+  <meta property="og:description"
+    content="Explore full-lifecycle software engineering: mobile apps, cloud microservices, database architecture, and DevOps.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/logo-icon.png">
+
+  <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="icon" type="image/png" href="images/logo-icon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+
   <script>
-    (function() {
+    (function () {
       try {
-        const t = localStorage.getItem('rg_theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', t);
-      } catch(e) {}
+        const savedTheme = localStorage.getItem('rg_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } catch (e) { }
     })();
   </script>
 </head>
+
 <body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-contact">
+        <a href="mailto:info@rginfotechsolutions.com" class="top-bar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>info@rginfotechsolutions.com</span>
+        </a>
+        <div class="top-bar-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Ahmedabad, Gujarat, India</span>
+        </div>
+      </div>
+      <div class="top-bar-badge">
+        <span class="status-dot"></span>
+        <span>Enterprise Consulting &amp; Development</span>
+      </div>
+    </div>
+  </div>
 
   <!-- Header -->
   <header class="site-header" id="siteHeader">
@@ -29,174 +71,303 @@
         <img src="images/logo-dark.png" alt="RG Infotech Solutions" class="site-logo logo-dark">
         <img src="images/logo-light.png" alt="RG Infotech Solutions" class="site-logo logo-light">
       </a>
-      <nav>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="portfolio.html" class="nav-link">App Portfolio</a></li>
-          <li><a href="about.html" class="nav-link">About Founder</a></li>
           <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="about.html" class="nav-link">About Founder</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
+
       <div class="nav-actions">
-        <!-- Theme Toggle Button -->
-        <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Light and Dark Mode" title="Toggle Light/Dark Theme">
-          <span class="theme-icon-sun">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" y1="1" x2="12" y2="3"></line>
-              <line x1="12" y1="21" x2="12" y2="23"></line>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-              <line x1="1" y1="12" x2="3" y2="12"></line>
-              <line x1="21" y1="12" x2="23" y2="12"></line>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-          </span>
-          <span class="theme-icon-moon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </span>
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Light and Dark Mode" title="Toggle Theme">
+          <svg class="theme-icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
         </button>
 
-        <a href="contact.html" class="btn btn-primary"><span>Get a Quote</span></a>
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.88rem;">
+          <span>Get in Touch</span>
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Mobile Navigation" aria-expanded="false">
+          <span class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
       </div>
-      <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <div class="mobile-nav-content">
+        <ul class="mobile-nav-links">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li><a href="portfolio.html" class="mobile-nav-link">App Portfolio</a></li>
+          <li><a href="services.html" class="mobile-nav-link active">Services</a></li>
+          <li><a href="about.html" class="mobile-nav-link">About Founder</a></li>
+          <li><a href="contact.html" class="mobile-nav-link">Contact &amp; Consult</a></li>
+        </ul>
+        <div class="mobile-drawer-contact">
+          <a href="contact.html" class="btn btn-primary" style="width: 100%;">Consult Architect</a>
+        </div>
+      </div>
     </div>
   </header>
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
-  <!-- Services Hero -->
-  <section class="hero" style="padding-bottom: 2rem;">
-    <div class="container text-center">
-      <div class="section-tag"><span class="status-dot"></span> Full-Cycle Software Solutions</div>
-      <h1 class="section-title">Comprehensive Engineering <span class="gradient-text">Services</span></h1>
-      <p class="section-subtitle">
-        We specialize in building resilient mobile applications, enterprise-grade backends, and cloud microservices tailored for performance and scale.
+  <!-- Page Hero Banner -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Engineering Services</span>
+      </div>
+      <h1 class="page-hero-title">End-to-End <span class="text-gradient">Engineering Services</span></h1>
+      <p class="page-hero-subtitle">
+        From architectural strategy and high-concurrency cloud backends to cross-platform mobile apps and nopCommerce e-commerce, explore our comprehensive software engineering capabilities.
       </p>
     </div>
   </section>
 
-  <!-- Detailed Services Grid -->
-  <section class="services-section" style="padding-top: 2rem;">
+  <!-- Detailed Services Section -->
+  <section class="services-section">
     <div class="container">
       <div class="services-grid">
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+        <!-- 1. ASP.NET Core -->
+        <div class="service-card" id="backend">
+          <div class="service-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
           </div>
-          <h3>ASP.NET Core &amp; Web API Architecture</h3>
-          <p>Architecting secure, asynchronous RESTful APIs, clean microservices architecture, Entity Framework Core, JWT authentication, caching strategies, and resilient error recovery.</p>
+          <h3 class="service-title">ASP.NET Core &amp; Web API Architecture</h3>
+          <p class="service-desc">
+            Architecting secure, asynchronous RESTful APIs and distributed microservices with clean architecture, CQRS, and high-speed caching. Designed for enterprise scalability and sub-45ms latency.
+          </p>
+          <div class="service-deliverables">
+            <div class="deliverable-item"><span>✓</span> C# &amp; .NET 8 / 9 Frameworks</div>
+            <div class="deliverable-item"><span>✓</span> JWT, OAuth2, OpenID Connect &amp; RBAC</div>
+            <div class="deliverable-item"><span>✓</span> Entity Framework Core &amp; Dapper Tuning</div>
+            <div class="deliverable-item"><span>✓</span> Swagger / OpenAPI Documentation</div>
+          </div>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <!-- 2. Mobile App Engineering -->
+        <div class="service-card" id="mobile">
+          <div class="service-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
           </div>
-          <h3>nopCommerce E-Commerce Solutions</h3>
-          <p>Custom nopCommerce store implementation, customized plugins, custom theme design, payment gateways, ERP connectors, catalog tuning, and headless commerce architectures.</p>
+          <h3 class="service-title">Mobile Engineering (React Native &amp; Android)</h3>
+          <p class="service-desc">
+            Cross-platform React Native and native Android applications built for fluid 60fps performance, hardware sensor integration, and high-reliability local data synchronization.
+          </p>
+          <div class="service-deliverables">
+            <div class="deliverable-item"><span>✓</span> Android API 36 compliance &amp; modern Jetpack</div>
+            <div class="deliverable-item"><span>✓</span> Google Play Billing &amp; In-App Subscriptions</div>
+            <div class="deliverable-item"><span>✓</span> Offline-first SQLite &amp; encrypted storage</div>
+            <div class="deliverable-item"><span>✓</span> COPPA compliance &amp; Google Play Families approval</div>
+          </div>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        <!-- 3. nopCommerce -->
+        <div class="service-card" id="ecommerce">
+          <div class="service-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
           </div>
-          <h3>Modern Web Apps (React, Next.js, Vue, Angular)</h3>
-          <p>Responsive, high-speed single-page applications and SSR/SSG portals utilizing Next.js, React.js, Vue.js, and Angular with intuitive user experiences and clean component systems.</p>
+          <h3 class="service-title">nopCommerce E-Commerce Solutions</h3>
+          <p class="service-desc">
+            Custom nopCommerce store implementations, customized plugins, theme development, ERP/payment integrations, and high-conversion e-commerce performance tuning.
+          </p>
+          <div class="service-deliverables">
+            <div class="deliverable-item"><span>✓</span> Custom Plugin Engineering &amp; Upgrades</div>
+            <div class="deliverable-item"><span>✓</span> Stripe, PayPal, Razorpay &amp; custom gateways</div>
+            <div class="deliverable-item"><span>✓</span> Multi-store &amp; multi-vendor configurations</div>
+            <div class="deliverable-item"><span>✓</span> High-throughput catalog &amp; caching optimizations</div>
+          </div>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        <!-- 4. Modern Web Development -->
+        <div class="service-card" id="frontend">
+          <div class="service-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
           </div>
-          <h3>Mobile Engineering (React Native &amp; Android)</h3>
-          <p>Cross-platform React Native and native Android applications designed for 60fps performance, hardware integrations, offline database sync, and store-ready stability.</p>
+          <h3 class="service-title">Modern Web (React, Next.js, Vue, Angular)</h3>
+          <p class="service-desc">
+            Building lightning-fast, SEO-optimized web frontends and dynamic single-page applications using Next.js, React.js, Vue.js, and Angular with responsive UX.
+          </p>
+          <div class="service-deliverables">
+            <div class="deliverable-item"><span>✓</span> Next.js Server Components &amp; SSR</div>
+            <div class="deliverable-item"><span>✓</span> TypeScript strict typing &amp; clean code</div>
+            <div class="deliverable-item"><span>✓</span> State management (Redux Toolkit, Zustand, Pinia)</div>
+            <div class="deliverable-item"><span>✓</span> 100/100 Core Web Vitals optimization</div>
+          </div>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+        <!-- 5. SQL Server Architecture -->
+        <div class="service-card" id="database">
+          <div class="service-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+            </svg>
           </div>
-          <h3>Microsoft SQL Server &amp; DB Optimization</h3>
-          <p>Database schema design, query plan profiling, index optimizations, high-throughput stored procedures, and scalable data persistence strategies.</p>
+          <h3 class="service-title">Microsoft SQL Server Architecture</h3>
+          <p class="service-desc">
+            Database schema modeling, query execution plan optimization, indexing strategies, complex stored procedures, and high-throughput data reliability.
+          </p>
+          <div class="service-deliverables">
+            <div class="deliverable-item"><span>✓</span> Normalized schema design &amp; partitioning</div>
+            <div class="deliverable-item"><span>✓</span> Query profiling &amp; missing index remediation</div>
+            <div class="deliverable-item"><span>✓</span> Transaction safety &amp; deadlock mitigation</div>
+            <div class="deliverable-item"><span>✓</span> Backup, disaster recovery &amp; replication</div>
+          </div>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+        <!-- 6. Azure DevOps & CI/CD -->
+        <div class="service-card" id="devops">
+          <div class="service-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+            </svg>
           </div>
-          <h3>Azure DevOps &amp; CI/CD Automation</h3>
-          <p>Automated build and release management, containerized deployments, cloud hosting configuration, automated testing tracks, and continuous delivery pipelines.</p>
+          <h3 class="service-title">Azure DevOps &amp; Cloud CI/CD Pipelines</h3>
+          <p class="service-desc">
+            Automated build &amp; release pipelines, containerized deployments, cloud hosting configuration, and continuous delivery with strict quality gates.
+          </p>
+          <div class="service-deliverables">
+            <div class="deliverable-item"><span>✓</span> Declarative YAML multi-stage pipelines</div>
+            <div class="deliverable-item"><span>✓</span> Docker containerization &amp; registry setups</div>
+            <div class="deliverable-item"><span>✓</span> Static code analysis &amp; security scans</div>
+            <div class="deliverable-item"><span>✓</span> Infrastructure monitoring &amp; automated rollback</div>
+          </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="container" style="margin: 3rem auto 5rem;">
-    <div class="cta-box">
-      <h2 style="font-size: clamp(1.6rem, 5vw, 2rem); margin-bottom: 1rem;">Discuss Your Technical Architecture</h2>
-      <p style="color: var(--text-muted); max-width: 550px; margin: 0 auto 2rem;">
-        Speak directly with Senior Software Engineer Ravi Gauswami regarding your application requirements or migration challenges.
-      </p>
-      <a href="contact.html" class="btn btn-primary">Schedule Consultation &rarr;</a>
+  <!-- Engineering Standards Matrix -->
+  <section class="pillars-section">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">Quality Engineering</div>
+        <h2 class="section-title">Our Architectural Standards</h2>
+        <p class="section-subtitle">Every project is built according to battle-tested software engineering principles.</p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box">🛡️</div>
+          <h3 class="pillar-title">Security First</h3>
+          <p class="pillar-desc">Rigorous input sanitization, token rotation, OWASP Top 10 defense, and on-device user data privacy.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon-box">⚡</div>
+          <h3 class="pillar-title">Ultra-Low Latency</h3>
+          <p class="pillar-desc">Asynchronous execution, connection pooling, and multi-layer distributed Redis caching.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon-box">🔄</div>
+          <h3 class="pillar-title">Continuous Integration</h3>
+          <p class="pillar-desc">Automated unit and integration test runs on every pull request, preventing regressions.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon-box">📈</div>
+          <h3 class="pillar-title">Horizontal Scalability</h3>
+          <p class="pillar-desc">Stateless services, decoupled worker queues, and cloud elasticity to support exponential growth.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- CTA Banner -->
+  <section class="cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-card">
+        <h2>Discuss Your Project Architecture</h2>
+        <p>
+          Get direct advice on system architecture, database optimization, or mobile engineering from our founder and senior architect.
+        </p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary">
+            <span>Request Technical Consultation</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <!-- Brand & Profile -->
         <div class="footer-brand">
-          <a href="index.html" class="logo-link" aria-label="RG Infotech Solutions Home">
+          <a href="index.html" class="logo-link">
             <img src="images/logo-dark.png" alt="RG Infotech Solutions" class="site-logo logo-dark">
             <img src="images/logo-light.png" alt="RG Infotech Solutions" class="site-logo logo-light">
           </a>
-          <p>Engineering premium Android applications, robust cloud APIs, and scalable enterprise software architectures from Ahmedabad, Gujarat.</p>
-          <div style="margin-top: 1.25rem;">
-            <a href="mailto:info@rginfotechsolutions.com" class="btn btn-secondary" style="padding: 0.45rem 1.1rem; font-size: 0.85rem; gap: 0.5rem;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span>Email Support</span>
-            </a>
-          </div>
+          <p>
+            Engineering premium Android applications, robust cloud APIs, and scalable enterprise software architectures from Ahmedabad, Gujarat.
+          </p>
         </div>
 
-        <!-- Navigation Links -->
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="portfolio.html">App Portfolio</a></li>
-            <li><a href="about.html">About Founder</a></li>
             <li><a href="services.html">Engineering Services</a></li>
-            <li><a href="contact.html">Contact &amp; Consult</a></li>
+            <li><a href="about.html">About Founder</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
 
-        <!-- Mobile & Web Apps -->
         <div class="footer-col">
-          <h4>Portfolio Apps</h4>
+          <h4>Flagship Apps</h4>
           <ul class="footer-links">
-            <li><a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank" rel="noopener noreferrer">The Grand Athlete (Google Play) ↗</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.thegrandathlete.app" target="_blank" rel="noopener noreferrer">The Grand Athlete (Play Store) ↗</a></li>
             <li><a href="apps/TheGrandAthleteApp/index.html">The Grand Athlete (Website) ↗</a></li>
-            <li><a href="https://play.google.com/store/apps/details?id=com.kizmokids.learnplaygrow" target="_blank" rel="noopener noreferrer">Kizmo Kids (Google Play) ↗</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.kizmokids.learnplaygrow" target="_blank" rel="noopener noreferrer">Kizmo Kids (Play Store) ↗</a></li>
             <li><a href="apps/KizmoKidsApp/index.html">Kizmo Kids (Website) ↗</a></li>
-            <li><a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" target="_blank" rel="noopener noreferrer">PR Recipe Hub (Google Play) ↗</a></li>
-            <li><a href="https://prrecipehub.com/" target="_blank" rel="noopener noreferrer">PR Recipe Hub (Web Portal) ↗</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.prrecipehub.app" target="_blank" rel="noopener noreferrer">PR Recipe Hub (Play Store) ↗</a></li>
           </ul>
         </div>
 
-        <!-- Core Technical Stacks -->
         <div class="footer-col">
           <h4>Core Expertise</h4>
           <ul class="footer-links">
@@ -205,7 +376,6 @@
             <li><a href="services.html#frontend">React.js &amp; Next.js</a></li>
             <li><a href="services.html#mobile">React Native &amp; Android</a></li>
             <li><a href="services.html#database">Microsoft SQL Server</a></li>
-            <li><a href="services.html#devops">Azure DevOps CI/CD</a></li>
           </ul>
         </div>
       </div>
@@ -219,4 +389,6 @@
 
   <script src="js/main.js"></script>
 </body>
+
 </html>
+
