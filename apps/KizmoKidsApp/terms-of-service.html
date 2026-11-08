@@ -320,12 +320,74 @@
       text-decoration: underline;
     }
 
+    .back-btn-text-short {
+      display: none;
+    }
+
     @media (max-width: 768px) {
+      .header-inner {
+        height: 64px;
+      }
+      .brand-title {
+        font-size: 1.15rem;
+      }
+      .brand-logo {
+        width: 36px;
+        height: 36px;
+      }
       .terms-hero h1 {
         font-size: 2rem;
       }
       .summary-card {
         padding: 20px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .container {
+        padding: 0 16px;
+      }
+      .header-inner {
+        height: 60px;
+      }
+      .brand {
+        gap: 8px;
+      }
+      .brand-title {
+        font-size: 1.05rem;
+      }
+      .brand-title span {
+        display: none;
+      }
+      .header-actions {
+        gap: 8px;
+      }
+      .back-btn-text-full {
+        display: none;
+      }
+      .back-btn-text-short {
+        display: inline;
+      }
+      .back-btn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+        background: var(--bg-surface-elevated);
+        border: 1px solid var(--border-color);
+        border-radius: 9999px;
+      }
+      .theme-toggle {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand-title {
+        font-size: 0.95rem;
+      }
+      .back-btn {
+        padding: 5px 8px;
+        font-size: 0.76rem;
       }
     }
   </style>
@@ -342,8 +404,14 @@
       </a>
 
       <div class="header-actions">
-        <a href="index.html" class="back-btn">← App Website</a>
-        <a href="privacy-policy.html" class="back-btn">Privacy Policy</a>
+        <a href="index.html" class="back-btn" title="Back to Kizmo Kids Website">
+          <span class="back-btn-text-full">← App Website</span>
+          <span class="back-btn-text-short">← App</span>
+        </a>
+        <a href="privacy-policy.html" class="back-btn" title="Privacy Policy">
+          <span class="back-btn-text-full">Privacy Policy</span>
+          <span class="back-btn-text-short">Privacy</span>
+        </a>
         <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle theme">
           <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>

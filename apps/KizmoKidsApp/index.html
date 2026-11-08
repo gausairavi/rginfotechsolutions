@@ -353,11 +353,228 @@
       height: 42px;
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-color);
-      border-radius: 10px;
+      border-radius: var(--radius-sm);
       cursor: pointer;
       align-items: center;
       justify-content: center;
       color: var(--text-main);
+      padding: 0;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .mobile-menu-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    .hamburger-icon {
+      width: 20px;
+      height: 16px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .hamburger-icon span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+      transform-origin: center;
+    }
+
+    body.menu-open .hamburger-icon span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    body.menu-open .hamburger-icon span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    body.menu-open .hamburger-icon span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .cta-label-short {
+      display: none;
+    }
+
+    /* Mobile Navigation Drawer & Backdrop */
+    .mobile-nav-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 98;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    body.menu-open .mobile-nav-backdrop {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 76px;
+      left: 0;
+      right: 0;
+      max-height: calc(100vh - 76px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      background: var(--bg-glass);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 2px solid var(--border-color);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      z-index: 99;
+      transform: translateY(-12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+    }
+
+    [data-theme="dark"] .mobile-nav-drawer {
+      background: rgba(17, 24, 39, 0.96);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    [data-theme="light"] .mobile-nav-drawer {
+      background: rgba(255, 253, 249, 0.98);
+    }
+
+    body.menu-open .mobile-nav-drawer {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-content {
+      padding: 16px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .mobile-nav-brand-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    .mobile-drawer-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .mobile-drawer-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .mobile-drawer-sub {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      font-family: var(--font-display);
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-main);
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .mobile-nav-link:hover,
+    .mobile-nav-link:active {
+      border-color: var(--primary);
+      background: rgba(255, 112, 67, 0.08);
+      color: var(--primary);
+      transform: translateX(4px);
+    }
+
+    .mobile-nav-link .nav-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+    }
+
+    .mobile-drawer-divider {
+      height: 1px;
+      background: var(--border-color);
+      margin: 2px 0;
+    }
+
+    .mobile-drawer-extra {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      align-items: center;
+      padding: 2px 4px;
+    }
+
+    .mobile-extra-link {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .mobile-extra-link:hover {
+      color: var(--primary);
+    }
+
+    .mobile-extra-link.rg-link {
+      color: var(--accent-blue);
+      font-weight: 700;
+    }
+
+    .btn-drawer-download {
+      width: 100%;
+      padding: 13px 20px;
+      font-size: 0.98rem;
+      box-shadow: 0 10px 25px var(--primary-glow);
     }
 
     /* Hero Section */
@@ -1335,14 +1552,59 @@
       .footer-top {
         grid-template-columns: 1fr 1fr;
       }
+
+      /* Switch nav to mobile menu */
+      .desktop-nav,
+      .nav-links {
+        display: none !important;
+      }
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
     }
 
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
+      .header-inner {
+        height: 68px;
+      }
+      .mobile-nav-drawer {
+        top: 68px;
+        max-height: calc(100vh - 68px);
+      }
+      .container {
+        padding: 0 16px;
+      }
+      .brand-logo {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+      }
+      .brand-name {
+        font-size: 1.2rem;
+      }
+      .brand-tag {
+        font-size: 0.68rem;
+      }
+      .nav-actions {
+        gap: 8px;
+      }
+      .theme-toggle {
+        width: 38px;
+        height: 38px;
       }
       .mobile-menu-btn {
-        display: flex;
+        width: 38px;
+        height: 38px;
+      }
+      .btn-header-cta {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+      }
+      .cta-label-full {
+        display: none;
+      }
+      .cta-label-short {
+        display: inline;
       }
       .hero-title {
         font-size: 2.2rem;
@@ -1365,6 +1627,63 @@
         font-size: 2rem;
       }
     }
+
+    @media (max-width: 480px) {
+      .header-inner {
+        height: 62px;
+      }
+      .mobile-nav-drawer {
+        top: 62px;
+        max-height: calc(100vh - 62px);
+      }
+      .brand {
+        gap: 8px;
+      }
+      .brand-logo {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+      }
+      .brand-name {
+        font-size: 1.05rem;
+      }
+      .brand-tag {
+        display: none;
+      }
+      .nav-actions {
+        gap: 6px;
+      }
+      .theme-toggle {
+        width: 36px;
+        height: 36px;
+      }
+      .mobile-menu-btn {
+        width: 36px;
+        height: 36px;
+      }
+      .btn-header-cta {
+        padding: 6px 11px;
+        font-size: 0.8rem;
+        gap: 5px;
+      }
+      .btn-header-cta svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    @media (max-width: 340px) {
+      .cta-label-short {
+        display: none;
+      }
+      .btn-header-cta {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border-radius: 50%;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 
@@ -1380,7 +1699,7 @@
   <!-- Header -->
   <header>
     <div class="container header-inner">
-      <a href="index.html" class="brand">
+      <a href="index.html" class="brand" aria-label="Kizmo Kids Home">
         <img src="assets/icon.png" alt="Kizmo Kids Logo" class="brand-logo">
         <div class="brand-text">
           <span class="brand-name">Kizmo <span>Kids</span></span>
@@ -1388,14 +1707,16 @@
         </div>
       </a>
 
-      <ul class="nav-links">
-        <li><a href="#worlds" class="nav-link">Learning Worlds</a></li>
-        <li><a href="#safety" class="nav-link">Child Safety</a></li>
-        <li><a href="#creativity" class="nav-link">Creativity Studio</a></li>
-        <li><a href="#parentgate" class="nav-link">Parent Gate</a></li>
-        <li><a href="#pricing" class="nav-link">Family Pass</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
-      </ul>
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#worlds" class="nav-link">Learning Worlds</a></li>
+          <li><a href="#safety" class="nav-link">Child Safety</a></li>
+          <li><a href="#creativity" class="nav-link">Creativity Studio</a></li>
+          <li><a href="#parentgate" class="nav-link">Parent Gate</a></li>
+          <li><a href="#pricing" class="nav-link">Family Pass</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
 
       <div class="nav-actions">
         <!-- Theme Toggle -->
@@ -1416,15 +1737,67 @@
           </svg>
         </button>
 
-        <a href="download.html" class="btn btn-primary" id="btnHeaderDownload">
+        <a href="download.html" class="btn btn-primary btn-header-cta" id="btnHeaderDownload" aria-label="Get Kizmo Kids on Google Play">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M3.609 1.814L13.792 12 3.61 22.186a2.03 2.03 0 0 1-.61-1.472V3.286c0-.568.225-1.107.609-1.472zM15.207 13.414l2.748-2.748-12.87-7.43 10.122 10.178zm0-2.828L5.085 20.764l12.87-7.43-2.748-2.748zm3.923.828l3.195 1.845a1.5 1.5 0 0 1 0 2.6l-3.195 1.845-2.046-2.045 2.046-2.245z"/>
           </svg>
-          Get on Google Play
+          <span class="cta-label-full">Get on Google Play</span>
+          <span class="cta-label-short">Get App</span>
         </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+          <span class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <div class="mobile-nav-content">
+        <div class="mobile-nav-brand-badge">
+          <img src="assets/icon.png" alt="Kizmo Kids Logo" class="mobile-drawer-logo">
+          <div>
+            <div class="mobile-drawer-title">Kizmo Kids</div>
+            <div class="mobile-drawer-sub">Early Learning &amp; Play • Ages 2–8</div>
+          </div>
+        </div>
+
+        <ul class="mobile-nav-links">
+          <li><a href="#worlds" class="mobile-nav-link"><span class="nav-icon">🪐</span> Learning Worlds</a></li>
+          <li><a href="#safety" class="mobile-nav-link"><span class="nav-icon">🛡️</span> Child Safety &amp; COPPA</a></li>
+          <li><a href="#creativity" class="mobile-nav-link"><span class="nav-icon">🎨</span> Creativity Studio</a></li>
+          <li><a href="#parentgate" class="mobile-nav-link"><span class="nav-icon">🧮</span> Parent Gate Security</a></li>
+          <li><a href="#pricing" class="mobile-nav-link"><span class="nav-icon">⭐</span> Family Pass &amp; Pricing</a></li>
+          <li><a href="#faq" class="mobile-nav-link"><span class="nav-icon">❓</span> Frequent Questions</a></li>
+        </ul>
+
+        <div class="mobile-drawer-divider"></div>
+
+        <div class="mobile-drawer-extra">
+          <a href="privacy-policy.html" class="mobile-extra-link">Privacy Policy</a>
+          <a href="terms-of-service.html" class="mobile-extra-link">Terms of Service</a>
+          <a href="data-deletion.html" class="mobile-extra-link">Data Reset</a>
+          <a href="../../index.html" class="mobile-extra-link rg-link">RG Infotech ↗</a>
+        </div>
+
+        <div class="mobile-drawer-cta">
+          <a href="download.html" class="btn btn-primary btn-drawer-download">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3.609 1.814L13.792 12 3.61 22.186a2.03 2.03 0 0 1-.61-1.472V3.286c0-.568.225-1.107.609-1.472zM15.207 13.414l2.748-2.748-12.87-7.43 10.122 10.178zm0-2.828L5.085 20.764l12.87-7.43-2.748-2.748zm3.923.828l3.195 1.845a1.5 1.5 0 0 1 0 2.6l-3.195 1.845-2.046-2.045 2.046-2.245z"/>
+            </svg>
+            <span>Get Kizmo Kids on Google Play</span>
+          </a>
+        </div>
       </div>
     </div>
   </header>
+  <!-- Backdrop -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
   <!-- Hero Section -->
   <section class="hero-section">
@@ -2145,6 +2518,55 @@
       const next = cur === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
       try { localStorage.setItem('rg_theme', next); } catch (e) { }
+    });
+
+    // Mobile Navigation Drawer Controller
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+    const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+
+    function toggleMobileMenu(forceState) {
+      const isOpen = document.body.classList.contains('menu-open');
+      const shouldOpen = typeof forceState === 'boolean' ? forceState : !isOpen;
+
+      document.body.classList.toggle('menu-open', shouldOpen);
+      if (mobileMenuToggle) {
+        mobileMenuToggle.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+      }
+      if (mobileNavDrawer) {
+        mobileNavDrawer.setAttribute('aria-hidden', shouldOpen ? 'false' : 'true');
+      }
+      document.body.style.overflow = shouldOpen ? 'hidden' : '';
+    }
+
+    mobileMenuToggle?.addEventListener('click', function (e) {
+      e.stopPropagation();
+      toggleMobileMenu();
+    });
+
+    mobileNavBackdrop?.addEventListener('click', function () {
+      toggleMobileMenu(false);
+    });
+
+    // Close on any link click inside drawer
+    document.querySelectorAll('.mobile-nav-link, .mobile-extra-link, .btn-drawer-download').forEach(function (link) {
+      link.addEventListener('click', function () {
+        toggleMobileMenu(false);
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+        toggleMobileMenu(false);
+      }
+    });
+
+    // Reset when window resized above mobile threshold
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 992 && document.body.classList.contains('menu-open')) {
+        toggleMobileMenu(false);
+      }
     });
 
     // Worlds Category Filter
