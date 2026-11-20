@@ -91,4 +91,36 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Published Apps & Products: KharchKit App -->
+  <url>
+    <loc>https://www.rginfotechsolutions.com/apps/KharchKitApp/index.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.rginfotechsolutions.com/apps/KharchKitApp/privacy-policy.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.rginfotechsolutions.com/apps/KharchKitApp/terms-of-service.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.rginfotechsolutions.com/apps/KharchKitApp/download.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rginfotechsolutions.com/apps/KharchKitApp/data-deletion.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

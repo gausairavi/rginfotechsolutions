@@ -1,0 +1,18 @@
+{
+  "appName": "KharchKit - Expense Tracker",
+  "packageName": "com.kharchkit.app",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "buildNumber": "1",
+  "compileSdkVersion": 36,
+  "targetSdkVersion": 36,
+  "minSdkVersion": 26,
+  "releaseDate": "2026-11-20",
+  "publisher": "RG Infotech Solutions",
+  "supportEmail": "info@rginfotechsolutions.com",
+  "playStoreUrl": "https://play.google.com/store/apps/details?id=com.kharchkit.app",
+  "websiteUrl": "https://www.rginfotechsolutions.com/apps/KharchKitApp/index.html",
+  "privacyPolicyUrl": "https://www.rginfotechsolutions.com/apps/KharchKitApp/privacy-policy.html",
+  "termsOfServiceUrl": "https://www.rginfotechsolutions.com/apps/KharchKitApp/terms-of-service.html",
+  "dataDeletionUrl": "https://www.rginfotechsolutions.com/apps/KharchKitApp/data-deletion.html"
+}

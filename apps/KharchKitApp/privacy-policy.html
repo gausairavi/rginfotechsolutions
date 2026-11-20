@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — KharchKit: Expense & Budget Tracker</title>
+  <meta name="description"
+    content="Official Privacy Policy for KharchKit: Expense & Budget Tracker mobile application. Explaining our private on-device architecture, zero cloud tracking, zero mandatory account creation, Google Play Billing, and on-device privacy controls.">
+  <meta name="author" content="RG Infotech Solutions">
+  <meta name="theme-color" content="#14131B">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <script>
+    (function () {
+      try {
+        const t = localStorage.getItem('rg_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { }
+    })();
+  </script>
+
+  <style>
+    :root {
+      --bg-main: #14131B;
+      --bg-surface: #201F2A;
+      --bg-surface-elevated: #2A2938;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --primary: #B5A7FF;
+      --primary-dark: #6554C0;
+      --primary-glow: rgba(181, 167, 255, 0.3);
+      --accent-green: #34D399;
+      --accent-rose: #F87171;
+      --accent-amber: #FBBF24;
+      --accent-blue: #60A5FA;
+      --text-main: #F5F3FA;
+      --text-secondary: #B7B4C5;
+      --text-muted: #7E7B8D;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    [data-theme="light"] {
+      --bg-main: #F8F7FC;
+      --bg-surface: #FFFFFF;
+      --bg-surface-elevated: #F2F0F7;
+      --border-color: rgba(37, 35, 51, 0.1);
+      --primary: #6554C0;
+      --primary-dark: #5141A6;
+      --primary-glow: rgba(101, 84, 192, 0.25);
+      --accent-green: #0D8A58;
+      --accent-rose: #DC2626;
+      --accent-amber: #B45309;
+      --accent-blue: #2563EB;
+      --text-main: #252333;
+      --text-secondary: #686779;
+      --text-muted: #757388;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a, code, p, li {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(20, 19, 27, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      transition: background 0.2s ease;
+    }
+
+    [data-theme="light"] header {
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px var(--primary-glow);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-title span {
+      color: var(--primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .back-btn {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .back-btn:hover {
+      color: var(--primary);
+    }
+
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    .theme-icon-sun { display: flex; color: #F59E0B; }
+    .theme-icon-moon { display: none; color: #B5A7FF; }
+    [data-theme="light"] .theme-icon-sun { display: none; }
+    [data-theme="light"] .theme-icon-moon { display: flex; }
+
+    /* Policy Content */
+    .policy-wrapper {
+      padding: 48px 0 80px;
+    }
+
+    .policy-header {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .policy-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(181, 167, 255, 0.12);
+      border: 1px solid var(--primary-glow);
+      border-radius: 9999px;
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .policy-meta {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .quick-summary-box {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--primary-glow);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .quick-summary-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .summary-card {
+      background: var(--bg-surface-elevated);
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    .summary-card strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .summary-card span {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    .policy-section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 32px 0 16px;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 20px 0 10px;
+      color: var(--text-main);
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+
+    ul, ol {
+      color: var(--text-secondary);
+      margin-left: 24px;
+      margin-bottom: 18px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: var(--text-main);
+    }
+
+    .highlight-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary);
+      padding: 20px 24px;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 24px 0;
+    }
+
+    .highlight-card.green {
+      border-left-color: var(--accent-green);
+    }
+
+    .highlight-card.rose {
+      border-left-color: var(--accent-rose);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--text-main);
+      background: var(--bg-surface-elevated);
+    }
+
+    td {
+      color: var(--text-secondary);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 40px 0;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      background: var(--bg-surface);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand" aria-label="KharchKit Home">
+          <img src="assets/icon.png" alt="KharchKit Logo" class="brand-logo">
+          <div class="brand-title">Kharch<span>Kit</span></div>
+        </a>
+
+        <div class="header-actions">
+          <a href="index.html" class="back-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>App Overview</span>
+          </a>
+
+          <a href="../../index.html" class="back-btn" title="Back to RG Infotech Solutions">
+            <span>RG Infotech</span>
+          </a>
+
+          <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Theme">
+            <span class="theme-icon-sun">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+            <span class="theme-icon-moon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container policy-wrapper">
+    <div class="policy-header">
+      <div class="policy-tag">Privacy &amp; Security Architecture</div>
+      <h1>Privacy Policy for KharchKit</h1>
+      <div class="policy-meta">
+        <span><strong>Effective Date:</strong> November 2026</span>
+        <span>•</span>
+        <span><strong>Last Updated:</strong> November 2026</span>
+        <span>•</span>
+        <span><strong>Package:</strong> com.kharchkit.app</span>
+        <span>•</span>
+        <span><strong>Publisher:</strong> RG Infotech Solutions</span>
+      </div>
+    </div>
+
+    <!-- Quick Executive Summary -->
+    <div class="quick-summary-box">
+      <h3>🛡️ Privacy at a Glance: "Quiet Finance"</h3>
+      <p style="margin-bottom: 0;">
+        KharchKit is engineered with a core commitment: <strong>Your money. Your control.</strong> We do not operate cloud databases to harvest your financial life. All records remain in your private device sandbox.
+      </p>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <strong>Private On-Device Storage</strong>
+          <span>Expenses, incomes, and budgets stay strictly inside your phone’s private application storage.</span>
+        </div>
+        <div class="summary-card">
+          <strong>Zero Mandatory Sign-Up</strong>
+          <span>No email address, no phone number, and no account credentials required to track expenses.</span>
+        </div>
+        <div class="summary-card">
+          <strong>Zero Bank Scraping</strong>
+          <span>KharchKit never asks for banking credentials or reads SMS financial messages automatically.</span>
+        </div>
+        <div class="summary-card">
+          <strong>Biometric Sandbox Lock</strong>
+          <span>Biometric authentication runs on Android's hardware keystore; templates never leave your device.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1 -->
+    <section class="policy-section">
+      <h2>1. Introduction &amp; Privacy Principles</h2>
+      <p>
+        KharchKit ("we", "our", or "us"), published by <strong>RG Infotech Solutions</strong>, is a high-speed personal budgeting and expense tracking application. We believe that personal financial tracking must be private by default. 
+      </p>
+      <p>
+        KharchKit is built with a <strong>privacy-by-design architecture</strong>. Unlike traditional cloud-synced fintech platforms, we do not require user accounts, we do not host user expense databases on external cloud servers, and we do not sell financial behavioral insights to advertisers or financial institutions.
+      </p>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="policy-section">
+      <h2>2. Information We DO NOT Collect</h2>
+      <div class="highlight-card green">
+        <p style="margin-bottom: 0;">
+          <strong>Core Privacy Principle:</strong> If data never leaves your device, it cannot be leaked, compromised, or weaponized. KharchKit is deliberately built without remote backend collection pipelines.
+        </p>
+      </div>
+      <p>Specifically, KharchKit:</p>
+      <ul>
+        <li><strong>Does not collect personal identities:</strong> You are never asked to create an account, log in with social providers, or provide your real name, email, or telephone number.</li>
+        <li><strong>Does not read bank SMS or parse transaction notifications:</strong> All transactions are logged manually by you or scheduled via on-device recurring rules. We do not access SMS or banking APIs.</li>
+        <li><strong>Does not sync financial records to remote servers:</strong> Your transaction amounts, categories, budgets, and personal notes are never transmitted across the network to our servers.</li>
+        <li><strong>Does not capture or store biometric templates:</strong> When you enable Biometric App Lock, authentication is handled natively by Android's hardware-isolated <code>BiometricPrompt</code> API. KharchKit only receives a boolean pass/fail status and never accesses your biometric data.</li>
+        <li><strong>Does not collect device location, camera, or contact books:</strong> KharchKit requests zero location permissions and zero contact access.</li>
+      </ul>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="policy-section">
+      <h2>3. Data Stored Locally on Your Device</h2>
+      <p>
+        All information created within KharchKit is persisted locally within your Android device's isolated application sandbox:
+      </p>
+      <ul>
+        <li><strong>Transaction Ledger:</strong> Amount, transaction type (expense or income), date/time timestamp, assigned category, and optional user note.</li>
+        <li><strong>Budgets &amp; Thresholds:</strong> Monthly spending limits, category allocations, and progress indicators.</li>
+        <li><strong>Recurring Rules:</strong> User-defined recurrence schedules (e.g. monthly rent, weekly subscriptions) evaluated locally by the app engine.</li>
+        <li><strong>User Preferences:</strong> Display currency (e.g., INR ₹, USD $, EUR €), date format, number formatting, theme preference (light/dark), and local notification preferences.</li>
+      </ul>
+      <p>
+        <strong>Security Architecture:</strong> The local database is isolated under Android’s Linux UID application sandbox and encrypted by your device’s hardware-backed File-Based Encryption (FBE). Automatic Android cloud backup is explicitly disabled (<code>allowBackup: false</code> in our Android manifest) to prevent unencrypted cloud syncing to external servers without your affirmative intent.
+      </p>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="policy-section">
+      <h2>4. Third-Party Services &amp; Monetization Disclosures</h2>
+
+      <h3>A. Google Play In-App Billing (KharchKit Pro)</h3>
+      <p>
+        KharchKit offers an optional auto-renewing subscription (<strong>KharchKit Pro</strong>) to unlock advanced tools such as PDF reports, Biometric Lock, and an ad-free experience.
+      </p>
+      <ul>
+        <li>All payment processing is executed exclusively through <strong>Google Play Billing</strong> provided by Google LLC.</li>
+        <li>Google handles and stores your payment instruments (credit cards, UPI, Google Play balance) according to the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color: var(--primary);">Google Privacy Policy</a>.</li>
+        <li>RG Infotech Solutions and KharchKit never receive, process, or store your credit card numbers or banking details.</li>
+        <li>KharchKit receives only an anonymized subscription purchase token and entitlement status from the Google Play Store API to unlock Pro features.</li>
+      </ul>
+
+      <h3>B. Google AdMob (Free Tier Only)</h3>
+      <p>
+        To keep KharchKit freely accessible, the Free tier displays non-intrusive banner advertisements served by <strong>Google AdMob</strong> (<code>react-native-google-mobile-ads</code>).
+      </p>
+      <ul>
+        <li><strong>Zero Financial Sharing:</strong> KharchKit strictly <strong>never</strong> shares transaction figures, category names, budgets, or personal financial notes with Google AdMob.</li>
+        <li><strong>Non-Personalized Ads by Default:</strong> We request non-personalized ads (<code>requestNonPersonalizedAdsOnly: true</code>).</li>
+        <li><strong>Family-Safe Content Rating:</strong> Global ad requests enforce <code>MaxAdContentRating.G</code>, ensuring child- and family-appropriate content.</li>
+        <li><strong>AdMob Data Processing:</strong> Google AdMob may collect standard device identifiers (e.g., Android Advertising ID) and technical diagnostics for fraud prevention and ad delivery in accordance with Google's advertising policies.</li>
+        <li><strong>Ad-Free Pro Guarantee:</strong> When KharchKit Pro is active, Google AdMob is completely disabled and zero advertising network requests are initiated.</li>
+      </ul>
+
+      <h3>C. European &amp; UK User Consent (Google UMP)</h3>
+      <p>
+        For users in the European Economic Area (EEA) and the United Kingdom, KharchKit integrates Google's User Messaging Platform (UMP) to present GDPR and ePrivacy consent choices. You can review or adjust your advertising consent choices at any time inside the app under <strong>Settings &gt; Subscription &amp; Plan &gt; Ad Privacy Options</strong>.
+      </p>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="policy-section">
+      <h2>5. Exports, Backups &amp; Data Portability</h2>
+      <p>
+        Because your financial data belongs exclusively to you, KharchKit provides comprehensive export mechanisms:
+      </p>
+      <ul>
+        <li><strong>Local JSON Backup Files (<code>.kbackup</code>):</strong> You can generate a complete snapshot of your transactions, categories, and budgets in a standardized JSON structure. This file is written temporarily to your app cache and transferred via Android's native share sheet (<code>expo-sharing</code>) to whatever destination you select (e.g. internal device folder, personal Google Drive, or SD card). Backups never contain payment tokens or biometric credentials.</li>
+        <li><strong>CSV Spreadsheet Exports:</strong> You can export transactions into CSV format for analysis in Excel or Google Sheets. KharchKit automatically sanitizes cell values to guard against CSV formula injection attacks.</li>
+        <li><strong>PDF Financial Reports (Pro):</strong> You can generate stylized monthly and category spending reports. PDFs are compiled locally on your device using <code>expo-print</code> and shared through the system share sheet.</li>
+      </ul>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="policy-section">
+      <h2>6. Android Permissions Requested</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Type</th>
+            <th>Why KharchKit Uses It</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>INTERNET</code></td>
+            <td>Normal</td>
+            <td>Required strictly for Google Play In-App Billing verification and AdMob banner ads on the Free tier. Core expense tracking operates 100% offline.</td>
+          </tr>
+          <tr>
+            <td><code>USE_BIOMETRIC</code> / <code>USE_FINGERPRINT</code></td>
+            <td>Normal</td>
+            <td>Used exclusively to prompt the native Android BiometricPrompt dialogue when Biometric App Lock is enabled in Pro.</td>
+          </tr>
+          <tr>
+            <td><code>POST_NOTIFICATIONS</code> / <code>VIBRATE</code></td>
+            <td>Normal</td>
+            <td>Used exclusively for local on-device budget reminders, daily recap alerts, and tactile haptic keypad feedback.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        KharchKit <strong>never requests</strong> permissions for Contacts, Camera, Microphone, Exact Location, SMS, Call Logs, or System Overlay (<code>SYSTEM_ALERT_WINDOW</code>).
+      </p>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="policy-section">
+      <h2>7. Data Retention &amp; Erasure Rights</h2>
+      <p>
+        Because your records reside entirely on your personal hardware, you retain full control over their lifecycle:
+      </p>
+      <ul>
+        <li><strong>One-Tap In-App Data Wipe:</strong> Navigate to <strong>Settings &gt; Privacy &amp; Data &gt; "Erase All Data"</strong> to trigger an atomic wipe of all local data tables (expenses, budgets, custom categories, recurring rules).</li>
+        <li><strong>System Storage Reset:</strong> You can clear all data at the operating system level at any time via <code>Android Settings &gt; Apps &gt; KharchKit &gt; Storage &gt; Clear Storage</code>.</li>
+        <li><strong>Uninstalling KharchKit:</strong> Removing the app from your device automatically destroys the application sandbox and all stored data files permanently.</li>
+      </ul>
+      <p>
+        <em>Note:</em> Deleting data inside KharchKit does not retroactively delete external <code>.kbackup</code>, CSV, or PDF copies you previously exported and stored elsewhere.
+      </p>
+    </section>
+
+    <!-- Section 8 -->
+    <section class="policy-section">
+      <h2>8. Children’s Online Privacy (COPPA &amp; GDPR-K)</h2>
+      <p>
+        KharchKit is designed for adults and teenagers managing personal budgets and household finances. It is not intended for or directed toward children under 13 years of age. We do not knowingly solicit or collect personal information from children.
+      </p>
+    </section>
+
+    <!-- Section 9 -->
+    <section class="policy-section">
+      <h2>9. Updates to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time to reflect product enhancements, new Android SDK guidelines, or evolving legal standards. Any revised policy will be posted on this page and linked within the app with an updated "Last Updated" timestamp.
+      </p>
+    </section>
+
+    <!-- Section 10 -->
+    <section class="policy-section">
+      <h2>10. Contact Information</h2>
+      <p>
+        For inquiries, feedback, or technical questions regarding KharchKit’s privacy architecture, please contact us:
+      </p>
+      <div class="highlight-card">
+        <p><strong>Publisher:</strong> RG Infotech Solutions</p>
+        <p><strong>Primary Support Email:</strong> <a href="mailto:info@rginfotechsolutions.com" style="color: var(--primary);">info@rginfotechsolutions.com</a></p>
+        <p style="margin-bottom: 0;"><strong>Official Website:</strong> <a href="https://www.rginfotechsolutions.com" style="color: var(--primary);">www.rginfotechsolutions.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">KharchKit Home</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="data-deletion.html">Data Deletion</a>
+        <a href="../../portfolio.html">All Apps Portfolio</a>
+        <a href="../../index.html">RG Infotech Solutions</a>
+      </div>
+      <p>© 2026 RG Infotech Solutions. All rights reserved. KharchKit is a trademark of RG Infotech Solutions.</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('rg_theme', next);
+      });
+    }
+  </script>
+</body>
+
+</html>
