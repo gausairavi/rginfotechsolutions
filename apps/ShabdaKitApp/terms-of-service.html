@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — ShabdaKit (Learn Languages)</title>
+  <meta name="description"
+    content="Official Terms of Service for ShabdaKit: Languages & Fluency. Explaining personal educational licensing, user data ownership, acceptable use, and disclaimer of academic guarantees.">
+  <meta name="author" content="RG Infotech Solutions">
+  <meta name="theme-color" content="#12131A">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <script>
+    (function () {
+      try {
+        const t = localStorage.getItem('rg_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { }
+    })();
+  </script>
+
+  <style>
+    :root {
+      --bg-main: #12131A;
+      --bg-surface: #1A1B24;
+      --bg-surface-elevated: #222430;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --primary: #7986CB;
+      --primary-dark: #1A237E;
+      --primary-glow: rgba(121, 134, 203, 0.25);
+      --accent-saffron: #FFB74D;
+      --accent-green: #34D399;
+      --accent-rose: #F87171;
+      --accent-blue: #60A5FA;
+      --text-main: #FDFBF7;
+      --text-secondary: #B4B7C5;
+      --text-muted: #7E8294;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    [data-theme="light"] {
+      --bg-main: #FDFBF7;
+      --bg-surface: #FFFFFF;
+      --bg-surface-elevated: #F4EFE6;
+      --border-color: #E6DEC8;
+      --primary: #1A237E;
+      --primary-dark: #0D1660;
+      --primary-glow: rgba(26, 35, 126, 0.2);
+      --accent-saffron: #E65100;
+      --accent-green: #1B5E20;
+      --accent-rose: #B71C1C;
+      --accent-blue: #0277BD;
+      --text-main: #1E1E24;
+      --text-secondary: #5C5F68;
+      --text-muted: #8E92A0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-sub {
+      font-size: 0.76rem;
+      color: var(--accent-saffron);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-top: -3px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-link-pill {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: 20px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      transition: all 0.2s;
+    }
+
+    .nav-link-pill:hover {
+      color: var(--text-main);
+      border-color: var(--primary);
+      text-decoration: none;
+    }
+
+    .theme-toggle-btn {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      width: 100%;
+    }
+
+    .policy-header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 28px;
+    }
+
+    .badge-wrap {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(121, 134, 203, 0.15);
+      color: var(--primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .status-badge.green {
+      background: rgba(52, 211, 153, 0.15);
+      color: var(--accent-green);
+      border-color: rgba(52, 211, 153, 0.3);
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .meta-lead {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .meta-specs {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Policy Content */
+    .policy-section {
+      margin-bottom: 40px;
+    }
+
+    .policy-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+    }
+
+    .policy-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 20px 0 10px;
+      color: var(--text-main);
+    }
+
+    .policy-section p {
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      font-size: 0.96rem;
+    }
+
+    .policy-section ul,
+    .policy-section ol {
+      margin-left: 20px;
+      margin-bottom: 18px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .policy-section li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin: 18px 0;
+    }
+
+    .highlight-card.green {
+      border-left-color: var(--accent-green);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      padding: 36px 24px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .pill-text-short {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 14px 20px;
+      }
+      main {
+        padding: 36px 20px 60px;
+      }
+      .brand-title {
+        font-size: 1.15rem;
+      }
+      .brand-icon {
+        width: 34px;
+        height: 34px;
+      }
+      .nav-actions {
+        gap: 8px;
+      }
+      .nav-link-pill {
+        font-size: 0.82rem;
+        padding: 6px 12px;
+      }
+      .card-box, .highlight-card {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .nav-container {
+        padding: 12px 16px;
+      }
+      .brand-group {
+        gap: 8px;
+      }
+      .brand-icon {
+        width: 30px;
+        height: 30px;
+      }
+      .brand-title {
+        font-size: 1.05rem;
+      }
+      .brand-sub {
+        display: none;
+      }
+      .pill-text-full {
+        display: none;
+      }
+      .pill-text-short {
+        display: inline;
+      }
+      .nav-pill-tertiary {
+        display: none;
+      }
+      .nav-actions {
+        gap: 6px;
+      }
+      .nav-link-pill {
+        padding: 5px 9px;
+        font-size: 0.78rem;
+      }
+      .theme-toggle-btn {
+        width: 34px;
+        height: 34px;
+      }
+      main {
+        padding: 24px 16px 50px;
+      }
+      h1 {
+        font-size: clamp(1.75rem, 6vw, 2.2rem);
+      }
+      .policy-section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+      }
+      .highlight-card {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand-title {
+        font-size: 0.95rem;
+      }
+      .nav-pill-secondary {
+        display: none;
+      }
+      .nav-link-pill {
+        padding: 4px 8px;
+        font-size: 0.74rem;
+      }
+      .theme-toggle-btn {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-group">
+        <img src="assets/shabdakit-logo.png" alt="ShabdaKit Logo" class="brand-icon">
+        <div>
+          <span class="brand-title">ShabdaKit</span>
+          <span class="brand-sub">Learn Beyond Language</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <a href="index.html" class="nav-link-pill" title="Back to ShabdaKit Website">
+          <span class="pill-text-full">← Overview</span>
+          <span class="pill-text-short">← App</span>
+        </a>
+        <a href="privacy-policy.html" class="nav-link-pill nav-pill-secondary">Privacy</a>
+        <a href="data-deletion.html" class="nav-link-pill nav-pill-tertiary">Data Deletion</a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="policy-header">
+      <div class="badge-wrap">
+        <span class="status-badge green">✓ Educational Terms of Use</span>
+        <span class="status-badge">100% Free Application</span>
+        <span class="status-badge">Private Data Ownership</span>
+      </div>
+      <h1>Terms of Service for ShabdaKit</h1>
+      <p class="meta-lead">
+        Legally binding terms governing access to and use of ShabdaKit, published and maintained by RG Infotech Solutions.
+      </p>
+      <div class="meta-specs">
+        <span><strong>Effective Date:</strong> November 25, 2026</span>
+        <span><strong>Last Updated:</strong> November 28, 2026</span>
+        <span><strong>Application:</strong> ShabdaKit (<code>com.shabdakit.app</code>)</span>
+      </div>
+    </div>
+
+    <!-- Section 1 -->
+    <section class="policy-section">
+      <h2>1. Acceptance of Terms &amp; Age Eligibility</h2>
+      <p>
+        By downloading, installing, or accessing <strong>ShabdaKit: Languages &amp; Fluency</strong> (the "Application"), you acknowledge that you have read, understood, and agree to be bound by these Terms of Service ("Terms") and our <a href="privacy-policy.html">Privacy Policy</a>. If you do not agree to these Terms, you must immediately cease using and uninstall the Application.
+      </p>
+      <p>
+        <strong>Minimum Age Requirement:</strong> ShabdaKit is intended for users who are at least <strong>13 years of age</strong> (or the minimum legal age required in your country to consent to using software applications without parental guidance). If you are between 13 and the legal age of majority in your jurisdiction, you represent that your legal guardian has reviewed and consented to these Terms.
+      </p>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="policy-section">
+      <h2>2. License Grant &amp; Intellectual Property</h2>
+      <p>
+        Subject to your compliance with these Terms, <strong>RG Infotech Solutions</strong> grants you a personal, non-exclusive, non-transferable, revocable, and limited license to install and use ShabdaKit for your own non-commercial educational purposes on compatible Android and iOS devices that you own or control.
+      </p>
+      <p>
+        All rights, title, and interest in and to ShabdaKit — including but not limited to its source code, linguistic taxonomy, lesson structures, audio syntheses, algorithmic scheduling engines, brand marks, and visual designs — remain the exclusive intellectual property of RG Infotech Solutions. You may not copy, decompile, reverse-engineer, modify, distribute, sell, or rent any portion of the Application.
+      </p>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="policy-section">
+      <h2>3. User Data Sovereignty &amp; Content Ownership</h2>
+      <div class="highlight-card green">
+        <p style="margin-bottom: 0;">
+          <strong>Your Learning Data Belongs to You:</strong> You retain complete, unrestricted ownership of all study logs, interactive responses, custom flashcards, and Mistake Notebook entries generated on your device. RG Infotech Solutions asserts zero claim, ownership, or copyright over your personal educational logs.
+        </p>
+      </div>
+      <p>
+        All application state resides strictly inside your personal hardware. You are solely responsible for creating and preserving backups of your learning journey using the built-in JSON export tool.
+      </p>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="policy-section">
+      <h2>4. Free Educational Model &amp; Zero In-App Purchases</h2>
+      <p>
+        ShabdaKit is provided as a <strong>100% free educational application</strong>:
+      </p>
+      <ul>
+        <li><strong>No In-App Purchases or Subscriptions:</strong> All foundational lessons, language pair catalogues, interactive practice modes, and speaking rehearsal studios are completely unlocked without payment.</li>
+        <li><strong>No Financial Data Collection:</strong> We do not integrate payment gateways, and we never collect, request, or store your credit card or banking information.</li>
+        <li><strong>Zero Commercial Data Exploitation:</strong> We do not sell your learning habits, flashcard entries, or voice recordings to third parties or advertisers.</li>
+      </ul>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="policy-section">
+      <h2>5. Speaking Lab &amp; Acceptable Use</h2>
+      <p>
+        When utilizing the Speaking &amp; Pronunciation Rehearsal Studio:
+      </p>
+      <ul>
+        <li>You agree to use the microphone solely for genuine language learning, pronunciation assessment, and speaking practice.</li>
+        <li>All voice recordings are processed transiently in on-device cache and deleted automatically. You may not attempt to extract, inject, or tamper with audio assets or internal application memory.</li>
+        <li>You agree not to use the Application in any manner that could disable, overburden, damage, or impair software operations or security protocols.</li>
+      </ul>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="policy-section">
+      <h2>6. Educational &amp; Linguistic Disclaimer</h2>
+      <p>
+        ShabdaKit is designed as a self-directed language acquisition and communication rehearsal utility.
+      </p>
+      <div class="highlight-card">
+        <p style="margin-bottom: 0;">
+          <strong>No Academic or Certification Guarantee:</strong> While our pedagogy is grounded in established cognitive science (SuperMemo SM-2 spaced repetition and source-to-target framing), RG Infotech Solutions makes no warranties or guarantees regarding specific academic exam results, formal language certifications (e.g., IELTS, TOEFL, JLPT), or employment outcomes.
+        </p>
+      </div>
+      <p>
+        The Application and all curriculum content are provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis without warranties of any kind, whether express or implied.
+      </p>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="policy-section">
+      <h2>7. Limitation of Liability</h2>
+      <p>
+        To the maximum extent permitted by applicable law, RG Infotech Solutions shall not be liable for any indirect, incidental, consequential, special, or punitive damages arising out of or related to your access to or use of (or inability to use) ShabdaKit, including loss of study data resulting from device loss, hardware reset, or OS uninstallation.
+      </p>
+    </section>
+
+    <!-- Section 8 -->
+    <section class="policy-section">
+      <h2>8. Governing Law &amp; Jurisdiction</h2>
+      <p>
+        These Terms shall be governed by and construed in accordance with the laws of India. Any legal dispute or controversy arising out of or in connection with ShabdaKit shall be subject to the exclusive jurisdiction of the competent courts in Rajkot, Gujarat, India.
+      </p>
+    </section>
+
+    <!-- Section 9 -->
+    <section class="policy-section">
+      <h2>9. Contact Information</h2>
+      <p>
+        For inquiries, legal notices, or feedback regarding these Terms of Service, please contact:
+      </p>
+      <div class="highlight-card">
+        <p><strong>RG Infotech Solutions</strong></p>
+        <p>Support Email: <a href="mailto:info@rginfotechsolutions.com" style="color: var(--primary);">info@rginfotechsolutions.com</a></p>
+        <p style="margin-bottom: 0;">Official Website: <a href="https://www.rginfotechsolutions.com" style="color: var(--primary);">www.rginfotechsolutions.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">ShabdaKit Home</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="data-deletion.html">Data Deletion</a>
+      <a href="../../portfolio.html">All Flagship Apps</a>
+      <a href="../../index.html">RG Infotech Solutions</a>
+    </div>
+    <p>© 2026 RG Infotech Solutions. All rights reserved. ShabdaKit is a trademark of RG Infotech Solutions.</p>
+  </footer>
+
+  <script>
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('rg_theme', next);
+      });
+    }
+  </script>
+</body>
+
+</html>

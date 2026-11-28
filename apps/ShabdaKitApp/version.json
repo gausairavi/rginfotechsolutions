@@ -1,0 +1,18 @@
+{
+  "appName": "ShabdaKit – Learn Languages",
+  "packageName": "com.shabdakit.app",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "buildNumber": "1",
+  "compileSdkVersion": 36,
+  "targetSdkVersion": 36,
+  "minSdkVersion": 26,
+  "releaseDate": "2026-11-28",
+  "publisher": "RG Infotech Solutions",
+  "supportEmail": "info@rginfotechsolutions.com",
+  "playStoreUrl": "https://play.google.com/store/apps/details?id=com.shabdakit.app",
+  "websiteUrl": "https://www.rginfotechsolutions.com/apps/ShabdaKitApp/index.html",
+  "privacyPolicyUrl": "https://www.rginfotechsolutions.com/apps/ShabdaKitApp/privacy-policy.html",
+  "termsOfServiceUrl": "https://www.rginfotechsolutions.com/apps/ShabdaKitApp/terms-of-service.html",
+  "dataDeletionUrl": "https://www.rginfotechsolutions.com/apps/ShabdaKitApp/data-deletion.html"
+}

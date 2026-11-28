@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — ShabdaKit (Learn Languages)</title>
+  <meta name="description"
+    content="Official Privacy Policy for ShabdaKit: Languages & Fluency. Explaining our private on-device architecture, zero cloud tracking, ephemeral voice recording, and local learning data sovereignty.">
+  <meta name="author" content="RG Infotech Solutions">
+  <meta name="theme-color" content="#12131A">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <script>
+    (function () {
+      try {
+        const t = localStorage.getItem('rg_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { }
+    })();
+  </script>
+
+  <style>
+    :root {
+      --bg-main: #12131A;
+      --bg-surface: #1A1B24;
+      --bg-surface-elevated: #222430;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --primary: #7986CB;
+      --primary-dark: #1A237E;
+      --primary-glow: rgba(121, 134, 203, 0.25);
+      --accent-saffron: #FFB74D;
+      --accent-green: #34D399;
+      --accent-rose: #F87171;
+      --accent-blue: #60A5FA;
+      --text-main: #FDFBF7;
+      --text-secondary: #B4B7C5;
+      --text-muted: #7E8294;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    [data-theme="light"] {
+      --bg-main: #FDFBF7;
+      --bg-surface: #FFFFFF;
+      --bg-surface-elevated: #F4EFE6;
+      --border-color: #E6DEC8;
+      --primary: #1A237E;
+      --primary-dark: #0D1660;
+      --primary-glow: rgba(26, 35, 126, 0.2);
+      --accent-saffron: #E65100;
+      --accent-green: #1B5E20;
+      --accent-rose: #B71C1C;
+      --accent-blue: #0277BD;
+      --text-main: #1E1E24;
+      --text-secondary: #5C5F68;
+      --text-muted: #8E92A0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-sub {
+      font-size: 0.76rem;
+      color: var(--accent-saffron);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-top: -3px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-link-pill {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: 20px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      transition: all 0.2s;
+    }
+
+    .nav-link-pill:hover {
+      color: var(--text-main);
+      border-color: var(--primary);
+      text-decoration: none;
+    }
+
+    .theme-toggle-btn {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      width: 100%;
+    }
+
+    .policy-header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 28px;
+    }
+
+    .badge-wrap {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(121, 134, 203, 0.15);
+      color: var(--primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .status-badge.green {
+      background: rgba(52, 211, 153, 0.15);
+      color: var(--accent-green);
+      border-color: rgba(52, 211, 153, 0.3);
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .meta-lead {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .meta-specs {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Summary Callout Box */
+    .quick-summary-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .quick-summary-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-saffron);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .summary-card {
+      background: var(--bg-surface-elevated);
+      padding: 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .summary-card strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+
+    .summary-card span {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      display: block;
+    }
+
+    /* Policy Content */
+    .policy-section {
+      margin-bottom: 40px;
+    }
+
+    .policy-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+    }
+
+    .policy-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 20px 0 10px;
+      color: var(--text-main);
+    }
+
+    .policy-section p {
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      font-size: 0.96rem;
+    }
+
+    .policy-section ul,
+    .policy-section ol {
+      margin-left: 20px;
+      margin-bottom: 18px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .policy-section li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin: 18px 0;
+    }
+
+    .highlight-card.green {
+      border-left-color: var(--accent-green);
+    }
+
+    .highlight-card.amber {
+      border-left-color: var(--accent-saffron);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      padding: 36px 24px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .pill-text-short {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 14px 20px;
+      }
+      main {
+        padding: 36px 20px 60px;
+      }
+      .brand-title {
+        font-size: 1.15rem;
+      }
+      .brand-icon {
+        width: 34px;
+        height: 34px;
+      }
+      .nav-actions {
+        gap: 8px;
+      }
+      .nav-link-pill {
+        font-size: 0.82rem;
+        padding: 6px 12px;
+      }
+      .card-box, .highlight-card {
+        padding: 20px;
+      }
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .nav-container {
+        padding: 12px 16px;
+      }
+      .brand-group {
+        gap: 8px;
+      }
+      .brand-icon {
+        width: 30px;
+        height: 30px;
+      }
+      .brand-title {
+        font-size: 1.05rem;
+      }
+      .brand-sub {
+        display: none;
+      }
+      .pill-text-full {
+        display: none;
+      }
+      .pill-text-short {
+        display: inline;
+      }
+      .nav-pill-tertiary {
+        display: none;
+      }
+      .nav-actions {
+        gap: 6px;
+      }
+      .nav-link-pill {
+        padding: 5px 9px;
+        font-size: 0.78rem;
+      }
+      .theme-toggle-btn {
+        width: 34px;
+        height: 34px;
+      }
+      main {
+        padding: 24px 16px 50px;
+      }
+      h1 {
+        font-size: clamp(1.75rem, 6vw, 2.2rem);
+      }
+      .policy-section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+      }
+      .highlight-card {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand-title {
+        font-size: 0.95rem;
+      }
+      .nav-pill-secondary {
+        display: none;
+      }
+      .nav-link-pill {
+        padding: 4px 8px;
+        font-size: 0.74rem;
+      }
+      .theme-toggle-btn {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-group">
+        <img src="assets/shabdakit-logo.png" alt="ShabdaKit Logo" class="brand-icon">
+        <div>
+          <span class="brand-title">ShabdaKit</span>
+          <span class="brand-sub">Learn Beyond Language</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <a href="index.html" class="nav-link-pill" title="Back to ShabdaKit Website">
+          <span class="pill-text-full">← Overview</span>
+          <span class="pill-text-short">← App</span>
+        </a>
+        <a href="terms-of-service.html" class="nav-link-pill nav-pill-secondary">Terms</a>
+        <a href="data-deletion.html" class="nav-link-pill nav-pill-tertiary">Data Deletion</a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="policy-header">
+      <div class="badge-wrap">
+        <span class="status-badge green">🔒 On-Device Privacy Architecture</span>
+        <span class="status-badge">🛡️ Zero Third-Party Trackers</span>
+        <span class="status-badge">🎙️ Ephemeral Audio Recordings</span>
+      </div>
+      <h1>Privacy Policy for ShabdaKit</h1>
+      <p class="meta-lead">
+        Comprehensive privacy disclosure for ShabdaKit: Languages & Fluency, developed and published by RG Infotech Solutions.
+      </p>
+      <div class="meta-specs">
+        <span><strong>Effective Date:</strong> November 25, 2026</span>
+        <span><strong>Last Updated:</strong> November 28, 2026</span>
+        <span><strong>Application ID:</strong> <code>com.shabdakit.app</code></span>
+        <span><strong>Audience:</strong> Ages 13 and older</span>
+      </div>
+    </div>
+
+    <!-- Quick Executive Summary -->
+    <div class="quick-summary-box">
+      <h3>🛡️ Privacy at a Glance: "Learn Beyond Language"</h3>
+      <p style="margin-bottom: 0;">
+        ShabdaKit is engineered with a strict <strong>Local-First Privacy Architecture</strong>. We believe your educational journey, study habits, mistake notebooks, and personal voice rehearsals belong exclusively to you. All learning data stays securely in your device's isolated application storage.
+      </p>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <strong>Private On-Device Storage</strong>
+          <span>Lessons, progress scores, spaced repetition flashcards, and mistake notebooks stay on your phone.</span>
+        </div>
+        <div class="summary-card">
+          <strong>Zero Mandatory Account</strong>
+          <span>No email address, no telephone number, and no password required to master languages.</span>
+        </div>
+        <div class="summary-card">
+          <strong>Ephemeral Voice Lab</strong>
+          <span>Speaking rehearsals are saved temporarily in private cache and deleted as soon as you finish the screen.</span>
+        </div>
+        <div class="summary-card">
+          <strong>Zero External Trackers</strong>
+          <span>No advertising SDKs, no behavioral analytics (like Firebase or Meta Pixel), and zero user profiling.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1 -->
+    <section class="policy-section">
+      <h2>1. Introduction &amp; Privacy Principles</h2>
+      <p>
+        ShabdaKit ("we", "our", or "us"), published by <strong>RG Infotech Solutions</strong>, is an advanced multilingual communication and language learning platform. We believe that personal educational progress must be private by default.
+      </p>
+      <p>
+        Unlike cloud-centric language services that stream every quiz answer, keystroke, and audio snippet to remote servers to build monetization profiles, ShabdaKit is built with a <strong>privacy-by-design architecture</strong>. Your learning history remains localized within your personal device.
+      </p>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="policy-section">
+      <h2>2. Information Handled Strictly on Your Device</h2>
+      <p>
+        All information necessary to provide your personalized learning curriculum is stored exclusively inside your device's sandboxed local application storage:
+      </p>
+      <ul>
+        <li><strong>Local Learner Profile:</strong> Your self-selected display name, chosen avatar icon, and interface language preferences. No real identity, email, or telephone number is requested or collected.</li>
+        <li><strong>Curriculum Progress &amp; Streaks:</strong> Completed modules, interactive quiz results, active study streak counters, and milestone achievement badges.</li>
+        <li><strong>Vocabulary Mastery &amp; Spaced Repetition (SM-2):</strong> Saved vocabulary cards, SuperMemo SM-2 repetition schedules, review intervals, ease factors, and retention ratings.</li>
+        <li><strong>Personalized Mistake Notebook:</strong> Questions, phrases, and grammar exercises you flagged or struggled with, stored locally to power targeted revision sessions.</li>
+        <li><strong>Adaptive Practice Preferences:</strong> Your customized daily commitment goal (5, 10, 15, 20, or 30 minutes) and preferred study schedule.</li>
+      </ul>
+      <div class="highlight-card green">
+        <strong>Absolute Isolation:</strong> None of this curriculum progress, mistake history, or vocabulary data is ever transmitted across the internet to our servers or third-party databases.
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="policy-section">
+      <h2>3. Microphone Usage &amp; Ephemeral Voice Recordings</h2>
+      <p>
+        ShabdaKit includes an interactive Speaking &amp; Pronunciation Rehearsal Studio that allows you to listen to native audio models, record your own voice, and compare pronunciation side by side:
+      </p>
+      <ul>
+        <li><strong>Just-In-Time Permission:</strong> Microphone access (<code>android.permission.RECORD_AUDIO</code> / <code>NSMicrophoneUsageDescription</code>) is requested strictly when you tap the "Record" button in a speaking rehearsal exercise. We never activate the microphone in the background.</li>
+        <li><strong>Ephemeral &amp; Sandboxed:</strong> Audio recordings are captured transiently in your device's temporary cache directory.</li>
+        <li><strong>Zero Cloud Upload:</strong> Your voice recordings are never sent to external Speech-to-Text APIs, cloud servers, or linguistic data aggregators. Acoustic waveform comparison is computed entirely on-device.</li>
+        <li><strong>Automatic Disk Deletion:</strong> Voice recordings are automatically unlinked and permanently erased from storage when you exit the rehearsal exercise or trigger a data wipe.</li>
+      </ul>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="policy-section">
+      <h2>4. Local Notifications &amp; Reminders</h2>
+      <p>
+        If you elect to configure daily practice reminders:
+      </p>
+      <ul>
+        <li>Notifications are scheduled <strong>locally on your device</strong> using native system alarm managers (<code>expo-notifications</code>).</li>
+        <li>No push notification device tokens (APNs or FCM) are ever uploaded to remote servers or push delivery intermediaries.</li>
+        <li>You can modify scheduled times or disable reminder notifications at any time directly in the app settings or via system application settings.</li>
+      </ul>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="policy-section">
+      <h2>5. Data Backup, Export &amp; Portability</h2>
+      <p>
+        To ensure total sovereignty over your learning investments, ShabdaKit provides a user-initiated local backup utility:
+      </p>
+      <ul>
+        <li>You can export your complete learning journey into a portable JSON backup file protected by an FNV-1a integrity checksum.</li>
+        <li>The backup file is created locally on your hardware and shared via the native system share sheet (<code>expo-sharing</code>).</li>
+        <li>You maintain full control over the storage destination (e.g. device storage, private drive, or direct transfer). ShabdaKit maintains zero remote access to your exported backups.</li>
+      </ul>
+    </section>
+
+    <!-- Section 6 -->
+    <section class="policy-section">
+      <h2>6. Third-Party Services, SDKs &amp; Zero Tracking</h2>
+      <p>
+        To ensure strict compliance with Google Play Data Safety standards and Apple App Store Privacy rules:
+      </p>
+      <ul>
+        <li><strong>Zero Advertising Networks:</strong> ShabdaKit contains no third-party ad networks (such as Google AdMob or Unity Ads). Your learning environment is completely distraction-free.</li>
+        <li><strong>Zero Behavioral Analytics Trackers:</strong> We do not integrate Firebase Analytics, Meta Pixel, Mixpanel, or user attribution telemetry SDKs.</li>
+        <li><strong>No Cross-App Tracking:</strong> Under Apple's App Tracking Transparency framework, ShabdaKit declares <code>NSPrivacyTracking: false</code>. We do not track you across other applications or websites.</li>
+        <li><strong>Zero Tracking Cookies:</strong> The app does not set tracking cookies or collect Google Advertising Identifiers (GAID) or Apple IDFA.</li>
+      </ul>
+    </section>
+
+    <!-- Section 7 -->
+    <section class="policy-section">
+      <h2>7. User Data Sovereignty &amp; Instant Data Wipe</h2>
+      <p>
+        Because your records reside entirely on your personal device, you have immediate, unilateral control over their lifecycle:
+      </p>
+      <ul>
+        <li><strong>One-Tap In-App Data Wipe:</strong> Under <code>Settings → App Settings → "Reset All Data"</code>, you can permanently erase all local progress, flashcards, mistake notebooks, and cached recordings in a single instant operation.</li>
+        <li><strong>Operating System Storage Clear:</strong> You can purge all application state at the OS level via <code>Android Settings → Apps → ShabdaKit → Storage &amp; Cache → Clear Storage</code>.</li>
+        <li><strong>Application Uninstallation:</strong> Deleting ShabdaKit from your device automatically destroys the application sandbox and removes all stored learning records permanently.</li>
+      </ul>
+    </section>
+
+    <!-- Section 8 -->
+    <section class="policy-section">
+      <h2>8. Children's Privacy (Ages 13+ Target Audience)</h2>
+      <p>
+        ShabdaKit is designed for high school students, university learners, working professionals, and adult learners (Ages 13 and older). We do not knowingly solicit or collect personal information from children under 13 years of age, in accordance with COPPA, GDPR-K, and India's Digital Personal Data Protection Act (DPDPA).
+      </p>
+    </section>
+
+    <!-- Section 9 -->
+    <section class="policy-section">
+      <h2>9. Updates to This Privacy Policy</h2>
+      <p>
+        We may update this Privacy Policy periodically to reflect app enhancements or evolving global privacy regulations. Any updates will be published on this page with an updated "Last Updated" timestamp and made available in new application releases.
+      </p>
+    </section>
+
+    <!-- Section 10 -->
+    <section class="policy-section">
+      <h2>10. Contact Information</h2>
+      <p>
+        If you have questions, feedback, or technical inquiries regarding ShabdaKit's privacy practices, please contact:
+      </p>
+      <div class="highlight-card">
+        <p><strong>Publisher:</strong> RG Infotech Solutions</p>
+        <p><strong>Primary Support Email:</strong> <a href="mailto:info@rginfotechsolutions.com" style="color: var(--primary);">info@rginfotechsolutions.com</a></p>
+        <p style="margin-bottom: 0;"><strong>Official Website:</strong> <a href="https://www.rginfotechsolutions.com" style="color: var(--primary);">www.rginfotechsolutions.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">ShabdaKit Home</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="data-deletion.html">Data Deletion</a>
+      <a href="../../portfolio.html">All Flagship Apps</a>
+      <a href="../../index.html">RG Infotech Solutions</a>
+    </div>
+    <p>© 2026 RG Infotech Solutions. All rights reserved. ShabdaKit is a trademark of RG Infotech Solutions.</p>
+  </footer>
+
+  <script>
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('rg_theme', next);
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -343,6 +343,24 @@
       border-left-color: var(--accent-rose);
     }
 
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 24px 0;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+    }
+
+    .table-container table {
+      width: 100%;
+      min-width: 520px;
+      margin: 0;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -394,6 +412,110 @@
     .footer-links a:hover {
       color: var(--primary);
     }
+
+    .back-btn-text-short {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+      .header-inner {
+        height: 64px;
+      }
+      .brand-logo {
+        width: 38px;
+        height: 38px;
+      }
+      .brand-title {
+        font-size: 1.15rem;
+      }
+      .policy-wrapper {
+        padding: 36px 0 60px;
+      }
+      h1 {
+        font-size: clamp(1.8rem, 6vw, 2.3rem);
+      }
+      .quick-summary-box {
+        padding: 22px;
+      }
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .container {
+        padding: 0 16px;
+      }
+      .header-inner {
+        height: 60px;
+      }
+      .brand {
+        gap: 8px;
+      }
+      .brand-logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 9px;
+      }
+      .brand-title {
+        font-size: 1.05rem;
+      }
+      .header-actions {
+        gap: 8px;
+      }
+      .back-btn-text-full {
+        display: none;
+      }
+      .back-btn-text-short {
+        display: inline;
+      }
+      .back-btn-rg {
+        display: none;
+      }
+      .back-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        border-radius: 9999px;
+        background: var(--bg-surface-elevated);
+        border: 1px solid var(--border-color);
+      }
+      .theme-toggle {
+        width: 36px;
+        height: 36px;
+      }
+      .policy-tag {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+      }
+      .highlight-card {
+        padding: 16px;
+      }
+      h2 {
+        font-size: 1.25rem;
+        margin: 28px 0 12px;
+      }
+      .footer-links {
+        gap: 14px;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand-title {
+        font-size: 0.95rem;
+      }
+      .back-btn {
+        padding: 5px 8px;
+        font-size: 0.74rem;
+      }
+      .theme-toggle {
+        width: 32px;
+        height: 32px;
+      }
+    }
   </style>
 </head>
 
@@ -409,15 +531,16 @@
         </a>
 
         <div class="header-actions">
-          <a href="index.html" class="back-btn">
+          <a href="index.html" class="back-btn" title="Back to KharchKit Website">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
             </svg>
-            <span>App Overview</span>
+            <span class="back-btn-text-full">App Overview</span>
+            <span class="back-btn-text-short">← App</span>
           </a>
 
-          <a href="../../index.html" class="back-btn" title="Back to RG Infotech Solutions">
+          <a href="../../index.html" class="back-btn back-btn-rg" title="Back to RG Infotech Solutions">
             <span>RG Infotech</span>
           </a>
 
@@ -582,32 +705,34 @@
     <!-- Section 6 -->
     <section class="policy-section">
       <h2>6. Android Permissions Requested</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Permission</th>
-            <th>Type</th>
-            <th>Why KharchKit Uses It</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>INTERNET</code></td>
-            <td>Normal</td>
-            <td>Required strictly for Google Play In-App Billing verification and AdMob banner ads on the Free tier. Core expense tracking operates 100% offline.</td>
-          </tr>
-          <tr>
-            <td><code>USE_BIOMETRIC</code> / <code>USE_FINGERPRINT</code></td>
-            <td>Normal</td>
-            <td>Used exclusively to prompt the native Android BiometricPrompt dialogue when Biometric App Lock is enabled in Pro.</td>
-          </tr>
-          <tr>
-            <td><code>POST_NOTIFICATIONS</code> / <code>VIBRATE</code></td>
-            <td>Normal</td>
-            <td>Used exclusively for local on-device budget reminders, daily recap alerts, and tactile haptic keypad feedback.</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Type</th>
+              <th>Why KharchKit Uses It</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>INTERNET</code></td>
+              <td>Normal</td>
+              <td>Required strictly for Google Play In-App Billing verification and AdMob banner ads on the Free tier. Core expense tracking operates 100% offline.</td>
+            </tr>
+            <tr>
+              <td><code>USE_BIOMETRIC</code> / <code>USE_FINGERPRINT</code></td>
+              <td>Normal</td>
+              <td>Used exclusively to prompt the native Android BiometricPrompt dialogue when Biometric App Lock is enabled in Pro.</td>
+            </tr>
+            <tr>
+              <td><code>POST_NOTIFICATIONS</code> / <code>VIBRATE</code></td>
+              <td>Normal</td>
+              <td>Used exclusively for local on-device budget reminders, daily recap alerts, and tactile haptic keypad feedback.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <p>
         KharchKit <strong>never requests</strong> permissions for Contacts, Camera, Microphone, Exact Location, SMS, Call Logs, or System Overlay (<code>SYSTEM_ALERT_WINDOW</code>).
       </p>

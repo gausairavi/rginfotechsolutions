@@ -298,6 +298,107 @@
     .footer-links a:hover {
       color: var(--primary);
     }
+
+    .back-btn-text-short {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+      .header-inner {
+        height: 64px;
+      }
+      .brand-logo {
+        width: 38px;
+        height: 38px;
+      }
+      .brand-title {
+        font-size: 1.15rem;
+      }
+      .policy-wrapper {
+        padding: 36px 0 60px;
+      }
+      h1 {
+        font-size: clamp(1.8rem, 6vw, 2.3rem);
+      }
+      .highlight-card {
+        padding: 18px 20px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .container {
+        padding: 0 16px;
+      }
+      .header-inner {
+        height: 60px;
+      }
+      .brand {
+        gap: 8px;
+      }
+      .brand-logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 9px;
+      }
+      .brand-title {
+        font-size: 1.05rem;
+      }
+      .header-actions {
+        gap: 8px;
+      }
+      .back-btn-text-full {
+        display: none;
+      }
+      .back-btn-text-short {
+        display: inline;
+      }
+      .back-btn-rg {
+        display: none;
+      }
+      .back-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        border-radius: 9999px;
+        background: var(--bg-surface-elevated);
+        border: 1px solid var(--border-color);
+      }
+      .theme-toggle {
+        width: 36px;
+        height: 36px;
+      }
+      .policy-tag {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+      }
+      .highlight-card {
+        padding: 16px;
+      }
+      h2 {
+        font-size: 1.25rem;
+        margin: 28px 0 12px;
+      }
+      .footer-links {
+        gap: 14px;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand-title {
+        font-size: 0.95rem;
+      }
+      .back-btn {
+        padding: 5px 8px;
+        font-size: 0.74rem;
+      }
+      .theme-toggle {
+        width: 32px;
+        height: 32px;
+      }
+    }
   </style>
 </head>
 
@@ -312,15 +413,16 @@
         </a>
 
         <div class="header-actions">
-          <a href="index.html" class="back-btn">
+          <a href="index.html" class="back-btn" title="Back to KharchKit Website">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
             </svg>
-            <span>App Overview</span>
+            <span class="back-btn-text-full">App Overview</span>
+            <span class="back-btn-text-short">← App</span>
           </a>
 
-          <a href="../../index.html" class="back-btn">
+          <a href="../../index.html" class="back-btn back-btn-rg" title="Back to RG Infotech Solutions">
             <span>RG Infotech</span>
           </a>
 

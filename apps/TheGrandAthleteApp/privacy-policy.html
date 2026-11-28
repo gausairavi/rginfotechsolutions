@@ -361,20 +361,61 @@
       font-size: 0.88rem;
     }
 
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .terms-btn-short, .back-btn-short {
+      display: none;
+    }
+
     @media (max-width: 640px) {
       .container {
         padding: 0 16px;
       }
 
       .header-inner {
-        height: auto;
-        padding: 12px 0;
-        flex-wrap: wrap;
-        gap: 12px;
+        height: 60px;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .brand-logo {
+        width: 32px;
+        height: 32px;
       }
 
       .brand-title {
         font-size: 1.05rem;
+      }
+
+      .header-actions {
+        gap: 8px;
+      }
+
+      .back-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        border-radius: 9999px;
+        background: var(--bg-surface-elevated);
+        border: 1px solid var(--border-color);
+      }
+
+      .terms-btn-full, .back-btn-full {
+        display: none;
+      }
+
+      .terms-btn-short, .back-btn-short {
+        display: inline;
+      }
+
+      .theme-toggle {
+        width: 36px;
+        height: 36px;
       }
 
       .policy-hero h1 {
@@ -385,12 +426,36 @@
         padding: 16px 18px;
       }
 
+      .table-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
       .table-container table {
+        min-width: 520px;
         font-size: 0.82rem;
       }
 
       th, td {
         padding: 10px 12px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand-title span {
+        display: none;
+      }
+      .nav-terms-btn {
+        display: none;
+      }
+      .back-btn {
+        padding: 5px 8px;
+        font-size: 0.74rem;
+      }
+      .theme-toggle {
+        width: 32px;
+        height: 32px;
       }
     }
   </style>
@@ -406,7 +471,15 @@
           <img src="assets/logo.png" alt="The Grand Athlete Logo" class="brand-logo">
           <span class="brand-title">THE GRAND <span>ATHLETE</span></span>
         </a>
-        <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+        <div class="header-actions">
+          <a href="terms-of-service.html" class="back-btn nav-terms-btn" title="Terms of Service">
+            <span class="terms-btn-full">Terms of Service</span>
+            <span class="terms-btn-short">Terms</span>
+          </a>
+          <a href="index.html" class="back-btn" title="Back to The Grand Athlete Website">
+            <span class="back-btn-full">← Return to Website</span>
+            <span class="back-btn-short">← App</span>
+          </a>
           <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Light and Dark Mode"
             title="Toggle Light/Dark Theme">
             <span class="theme-icon-sun">
@@ -430,8 +503,6 @@
               </svg>
             </span>
           </button>
-          <a href="terms-of-service.html" class="back-btn">Terms of Service</a>
-          <a href="index.html" class="back-btn">← Return to Website</a>
         </div>
       </div>
     </div>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Deletion & Privacy Sovereignty — ShabdaKit</title>
+  <meta name="description"
+    content="Instructions and policy for data deletion, irreversible local resets, and user privacy sovereignty in ShabdaKit: Languages & Fluency.">
+  <meta name="author" content="RG Infotech Solutions">
+  <meta name="theme-color" content="#12131A">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icon.png">
+
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <script>
+    (function () {
+      try {
+        const t = localStorage.getItem('rg_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { }
+    })();
+  </script>
+
+  <style>
+    :root {
+      --bg-main: #12131A;
+      --bg-surface: #1A1B24;
+      --bg-surface-elevated: #222430;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --primary: #7986CB;
+      --primary-dark: #1A237E;
+      --primary-glow: rgba(121, 134, 203, 0.25);
+      --accent-saffron: #FFB74D;
+      --accent-green: #34D399;
+      --accent-rose: #F87171;
+      --text-main: #FDFBF7;
+      --text-secondary: #B4B7C5;
+      --text-muted: #7E8294;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    [data-theme="light"] {
+      --bg-main: #FDFBF7;
+      --bg-surface: #FFFFFF;
+      --bg-surface-elevated: #F4EFE6;
+      --border-color: #E6DEC8;
+      --primary: #1A237E;
+      --primary-dark: #0D1660;
+      --primary-glow: rgba(26, 35, 126, 0.2);
+      --accent-saffron: #E65100;
+      --accent-green: #1B5E20;
+      --accent-rose: #B71C1C;
+      --text-main: #1E1E24;
+      --text-secondary: #5C5F68;
+      --text-muted: #8E92A0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-sub {
+      font-size: 0.76rem;
+      color: var(--accent-saffron);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-top: -3px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-link-pill {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: 20px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      transition: all 0.2s;
+    }
+
+    .nav-link-pill:hover {
+      color: var(--text-main);
+      border-color: var(--primary);
+      text-decoration: none;
+    }
+
+    .theme-toggle-btn {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      width: 100%;
+    }
+
+    .page-header {
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 24px;
+    }
+
+    .badge-wrap {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(52, 211, 153, 0.15);
+      color: var(--accent-green);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .meta-lead {
+      color: var(--text-secondary);
+      font-size: 0.96rem;
+    }
+
+    /* Highlight Card */
+    .highlight-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--accent-green);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+
+    /* Step Cards */
+    .step-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      color: var(--bg-main);
+      font-weight: 900;
+      font-family: var(--font-display);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .step-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .step-card ol,
+    .step-card ul {
+      margin-left: 20px;
+      color: var(--text-secondary);
+      font-size: 0.94rem;
+      margin-bottom: 12px;
+    }
+
+    .step-card li {
+      margin-bottom: 6px;
+    }
+
+    code {
+      background: var(--bg-surface-elevated);
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      border: 1px solid var(--border-color);
+      color: var(--accent-saffron);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      padding: 36px 24px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .pill-text-short {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 14px 20px;
+      }
+      main {
+        padding: 36px 20px 60px;
+      }
+      .brand-title {
+        font-size: 1.15rem;
+      }
+      .brand-icon {
+        width: 34px;
+        height: 34px;
+      }
+      .nav-actions {
+        gap: 8px;
+      }
+      .nav-link-pill {
+        font-size: 0.82rem;
+        padding: 6px 12px;
+      }
+      .step-card, .highlight-card {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .nav-container {
+        padding: 12px 16px;
+      }
+      .brand-group {
+        gap: 8px;
+      }
+      .brand-icon {
+        width: 30px;
+        height: 30px;
+      }
+      .brand-title {
+        font-size: 1.05rem;
+      }
+      .brand-sub {
+        display: none;
+      }
+      .pill-text-full {
+        display: none;
+      }
+      .pill-text-short {
+        display: inline;
+      }
+      .nav-pill-tertiary {
+        display: none;
+      }
+      .nav-actions {
+        gap: 6px;
+      }
+      .nav-link-pill {
+        padding: 5px 9px;
+        font-size: 0.78rem;
+      }
+      .theme-toggle-btn {
+        width: 34px;
+        height: 34px;
+      }
+      main {
+        padding: 24px 16px 50px;
+      }
+      h1 {
+        font-size: clamp(1.75rem, 6vw, 2.2rem);
+      }
+      .highlight-card, .step-card {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .brand-title {
+        font-size: 0.95rem;
+      }
+      .nav-pill-secondary {
+        display: none;
+      }
+      .nav-link-pill {
+        padding: 4px 8px;
+        font-size: 0.74rem;
+      }
+      .theme-toggle-btn {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="brand-group">
+        <img src="assets/shabdakit-logo.png" alt="ShabdaKit Logo" class="brand-icon">
+        <div>
+          <span class="brand-title">ShabdaKit</span>
+          <span class="brand-sub">Learn Beyond Language</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <a href="index.html" class="nav-link-pill" title="Back to ShabdaKit Website">
+          <span class="pill-text-full">← Overview</span>
+          <span class="pill-text-short">← App</span>
+        </a>
+        <a href="privacy-policy.html" class="nav-link-pill nav-pill-secondary">Privacy</a>
+        <a href="terms-of-service.html" class="nav-link-pill nav-pill-tertiary">Terms</a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="page-header">
+      <div class="badge-wrap">
+        <span class="status-badge">🛡️ Instant Local Control</span>
+        <span class="status-badge" style="background: rgba(121, 134, 203, 0.15); color: var(--primary); border-color: rgba(121, 134, 203, 0.3);">Zero Cloud Retention</span>
+      </div>
+      <h1>Data Deletion &amp; Privacy Sovereignty</h1>
+      <p class="meta-lead">
+        Instructions for instant, autonomous erasure of learning data, vocabulary records, mistake notebooks, and audio cache in ShabdaKit.
+      </p>
+    </div>
+
+    <div class="highlight-card">
+      <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--accent-green); margin-bottom: 6px;">Zero Cloud Storage = Zero Waiting Period</h3>
+      <p style="margin-bottom: 0;">
+        Because ShabdaKit stores your entire educational journey locally on your personal device, <strong>you never need to submit an erasure request, wait 30 days, or verify your identity</strong> to delete your records. You maintain full, immediate control directly on your device.
+      </p>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-num">1</div>
+        <div class="step-title">One-Tap In-App Data Wipe ("Reset All Data")</div>
+      </div>
+      <p>
+        ShabdaKit provides an atomic in-app wipe feature that immediately purges your entire local learning profile, study history, flashcards, and settings:
+      </p>
+      <ol>
+        <li>Open <strong>ShabdaKit</strong> on your device.</li>
+        <li>Tap the <strong>Settings</strong> icon in the navigation bar.</li>
+        <li>Scroll down to <strong>App Settings</strong>.</li>
+        <li>Tap <strong>"Reset All Data"</strong>.</li>
+        <li>Confirm the deletion prompt.</li>
+      </ol>
+      <p style="margin-bottom: 0;">
+        <em>Result:</em> All local database tables, lesson completions, quiz response records, spaced repetition intervals, Mistake Notebook entries, and cached files are permanently erased instantly.
+      </p>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-num">2</div>
+        <div class="step-title">Clear App Storage at the Operating System Level</div>
+      </div>
+      <p>
+        You can also clear all application storage through your device's operating system settings:
+      </p>
+      <ul>
+        <li><strong>On Android:</strong> Open <code>Settings → Apps → ShabdaKit → Storage &amp; Cache → Clear Storage</code> (or "Clear Data").</li>
+        <li><strong>On iOS:</strong> Open <code>Settings → General → iPhone Storage → ShabdaKit → Delete App</code>.</li>
+      </ul>
+      <p style="margin-bottom: 0;">
+        <em>Result:</em> The operating system completely clears the application container, resetting ShabdaKit to a fresh, initial install state.
+      </p>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-num">3</div>
+        <div class="step-title">Uninstalling ShabdaKit</div>
+      </div>
+      <p>
+        Because all application state resides exclusively inside your personal device's sandboxed storage, removing the application immediately and irreversibly destroys all local database records, preferences, and temporary audio files.
+      </p>
+      <p style="margin-bottom: 0;">
+        No residual traces remain on any external server, cloud backup, or remote storage.
+      </p>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-num">4</div>
+        <div class="step-title">Ephemeral Voice Recordings Lifecycle</div>
+      </div>
+      <p>
+        When you rehearse speaking in the Speaking &amp; Pronunciation Rehearsal Studio:
+      </p>
+      <ul>
+        <li>Audio recordings are written exclusively to temporary cache memory.</li>
+        <li>They are never uploaded or streamed to any remote Speech-to-Text service or server.</li>
+        <li>Audio recordings are automatically purged from disk as soon as you finish or leave the rehearsal exercise.</li>
+      </ul>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step-card">
+      <div class="step-header">
+        <div class="step-num">5</div>
+        <div class="step-title">Support &amp; Verification Inquiries</div>
+      </div>
+      <p>
+        If you have questions or require confirmation regarding our privacy and deletion architecture:
+      </p>
+      <ul>
+        <li><strong>Publisher:</strong> RG Infotech Solutions</li>
+        <li><strong>Support Email:</strong> <a href="mailto:info@rginfotechsolutions.com">info@rginfotechsolutions.com</a></li>
+        <li><strong>Official Developer Website:</strong> <a href="https://www.rginfotechsolutions.com" target="_blank" rel="noopener">www.rginfotechsolutions.com</a></li>
+        <li><strong>Response Window:</strong> We respond to all inquiries within 24–48 business hours.</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">ShabdaKit Home</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="data-deletion.html">Data Deletion</a>
+      <a href="../../portfolio.html">All Flagship Apps</a>
+      <a href="../../index.html">RG Infotech Solutions</a>
+    </div>
+    <p>© 2026 RG Infotech Solutions. All rights reserved. ShabdaKit is a trademark of RG Infotech Solutions.</p>
+  </footer>
+
+  <script>
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('rg_theme', next);
+      });
+    }
+  </script>
+</body>
+
+</html>

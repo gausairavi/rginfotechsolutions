@@ -34,7 +34,7 @@ This repository hosts the static web portal and dedicated app landing pages, dow
 
 * `index.html` — Main homepage featuring hero, founder profile spotlight, core solutions, and client contact.
 * `portfolio.html` — Interactive filterable app portfolio with Google Play Store redirection and clipboard sharing.
-* `about.html` — Detailed biography of Ravi Gauswami, education (MCA from Atmiya Institute, Rajkot), and engineering tenets.
+* `about.html` — Company background, technical credentials, and engineering tenets.
 * `services.html` — Engineering services: ASP.NET Core & Web API, nopCommerce, React/Next.js, and Mobile Engineering.
 * `contact.html` — Consultation request form with direct email routing and security verification.
 * `css/style.css` — Modern dark obsidian design system with cyan & violet gradients, glassmorphism, and responsive breakpoints.
